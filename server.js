@@ -34,8 +34,8 @@ const apikey = process.env.KEY;
 //warapi.updateStaticTowns();
 
 
-http.listen(3000, function () {
-  logger.info('Your app is listening on port 3000')
+http.listen(40696, function () {
+  logger.info('Your app is listening on port 40696')
 });
 //exports.listener = listener;
 app.use(express.static('src'));
@@ -134,7 +134,7 @@ app.post('/noauth', function (req, res) {
   }
 });
 
-//app.listen(3000);
+//app.listen(40696);
 
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {

@@ -28,7 +28,7 @@ const logger = createLogger({
 const config = env.getOrElseAll({
   logger,
   fhghq: {
-    url: 'http://localhost:3000'
+    url: 'http://hq.mreboy.com'
   },
   steamApi: {
     key: ''

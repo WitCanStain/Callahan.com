@@ -46,30 +46,40 @@ export class ContextDropdown extends React.Component {  ////Component generation
     render(){
       let items = []
     switch(this.props.type){
-      case 0:
+      case 0: //SQUADS icons
     for(var i=8;i<=12;i++){
       items.push(this.GetItem(i))
     }
         break;
-      case 1:
+      case 1: //OBJECTIVES icons
      for(var i=13;i<=15;i++){
       items.push(this.GetItem(i))
     }   
         break;
-      case 2:
-    for(var i=16;i<=20;i++){
+      case 2: //TRAIN ICONS
+    for(var i=64;i<=69;i++){
       items.push(this.GetItem(i))
     }
         break;
-        case 3:
+        case 3: //SHIP icons
     for(var i=21;i<=24;i++){
       items.push(this.GetItem(i))
     }
      break;
-    case 4:
-    for(var i=29;i<=33;i++){
+    case 4: //LOGI VEHICLE icons
+    for(var i=29;i<=34;i++){
       items.push(this.GetItem(i))
-    }   
+	} 
+     break;
+    case 5: //SECTION icons
+    for(var i=36;i<=46;i++){
+      items.push(this.GetItem(i))	  
+    }
+     break;
+    case 6: //FACILITY icons
+    for(var i=47;i<=63;i++){
+      items.push(this.GetItem(i))	  
+    }	
     }
     return <React.Fragment>
       {items}

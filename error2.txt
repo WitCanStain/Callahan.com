@@ -1,0 +1,221 @@
+
+[mreboy@epsilon public]$ npm run-script build
+
+> foxhole-global@2.1.1 build /var/www/hq.mreboy.com/public
+> webpack
+
+asset global.js 15.5 MiB [compared for emit] (name: global)
+asset index.js 3.11 MiB [compared for emit] (name: index)
+asset about.js 3.06 MiB [compared for emit] (name: about)
+asset request.js 2.62 MiB [compared for emit] (name: request)
+asset auth.js 2.62 MiB [compared for emit] (name: auth)
+orphan modules 283 KiB [orphan] 148 modules
+runtime modules 5.68 KiB 25 modules
+modules by path ../../../../home/mreboy/.nvm/versions/node/v12.19.0/lib/node_mod                                               ules/node-linux-x64/lib/node_modules/node/lib/node_modules/node/lib/node_modules                                               /node/lib/node_modules/node-linux-x64/lib/node_modules/ 4.04 MiB 1108 modules
+modules by path ./src/ 713 KiB
+  modules by path ./src/components/ 547 KiB 54 modules
+  modules by path ./src/_static/ 88.3 KiB
+    modules by path ./src/_static/*.js 86.3 KiB 8 modules
+    modules by path ./src/_static/audio/*.js 1.93 KiB 3 modules
+  modules by path ./src/entries/*.js 41.2 KiB 5 modules
+  modules by path ./src/redux/ 36.7 KiB
+    modules by path ./src/redux/*.js 32.1 KiB 3 modules
+    modules by path ./src/redux/display/*.js 4.64 KiB
+      ./src/redux/display/actions.js 1.33 KiB [built] [code generated]
+      ./src/redux/display/reducer.js 3.31 KiB [built] [code generated]
+ws (ignored) 15 bytes [optional] [built] [code generated]
+webpack 5.38.1 compiled successfully in 43816 ms
+[mreboy@epsilon public]$ npm start
+
+> foxhole-global@2.1.1 start /var/www/hq.mreboy.com/public
+> node server.js
+
+2021-08-17T07:45:51.510Z [info]: Creating tables...
+2021-08-17T07:45:51.516Z [info]: Tables created.
+2021-08-17T07:45:51.517Z [info]: Anonymous user already created
+2021-08-17T07:45:51.583Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/DeadLandsHex
+2021-08-17T07:45:51.585Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/CallahansPassageHex
+2021-08-17T07:45:51.588Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/MarbanHollow
+2021-08-17T07:45:51.590Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/UmbralWildwoodHex
+2021-08-17T07:45:51.596Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/MooringCountyHex
+2021-08-17T07:45:51.598Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/HeartlandsHex
+2021-08-17T07:45:51.600Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/LochMorHex
+2021-08-17T07:45:51.602Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/LinnMercyHex
+2021-08-17T07:45:51.604Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/ReachingTrailHex
+2021-08-17T07:45:51.605Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/StonecradleHex
+2021-08-17T07:45:51.607Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/FarranacCoastHex
+2021-08-17T07:45:51.609Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/WestgateHex
+2021-08-17T07:45:51.611Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/FishermansRowHex
+2021-08-17T07:45:51.612Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/OarbreakerHex
+2021-08-17T07:45:51.614Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/GreatMarchHex
+2021-08-17T07:45:51.616Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/TempestIslandHex
+2021-08-17T07:45:51.618Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/GodcroftsHex
+2021-08-17T07:45:51.619Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/EndlessShoreHex
+2021-08-17T07:45:51.621Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/AllodsBightHex
+2021-08-17T07:45:51.623Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/WeatheredExpanseHex
+2021-08-17T07:45:51.624Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/DrownedValeHex
+2021-08-17T07:45:51.626Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/ShackledChasmHex
+2021-08-17T07:45:51.628Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/ViperPitHex
+2021-08-17T07:45:52.215Z [info]: Socket server started.
+Database functions module loaded
+2021-08-17T07:45:52.307Z [info]: Foxhole War API module loaded
+2021-08-17T07:45:52.307Z [info]: Socket module loaded
+2021-08-17T07:45:52.316Z [info]: Your app is listening on port 40696
+2021-08-17T07:45:52.318Z [warn]: Could not connect to discord Error: An invalid                                                token was provided.
+2021-08-17T07:45:56.652Z [info]: Updating dynmap...
+2021-08-17T07:46:01.660Z [info]: Updating dynmap...
+2021-08-17T07:46:06.684Z [info]: Updating dynmap...
+2021-08-17T07:46:11.696Z [info]: Updating dynmap...
+2021-08-17T07:46:16.701Z [info]: Updating dynmap...
+2021-08-17T07:46:21.726Z [info]: Updating dynmap...
+2021-08-17T07:46:26.750Z [info]: Updating dynmap...
+2021-08-17T07:46:31.776Z [info]: Updating dynmap...
+2021-08-17T07:46:36.801Z [info]: Updating dynmap...
+2021-08-17T07:46:41.824Z [info]: Updating dynmap...
+2021-08-17T07:46:46.848Z [info]: Updating dynmap...
+2021-08-17T07:46:51.660Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/DeadLandsHex
+2021-08-17T07:46:51.661Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/CallahansPassageHex
+2021-08-17T07:46:51.663Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/MarbanHollow
+2021-08-17T07:46:51.664Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/UmbralWildwoodHex
+2021-08-17T07:46:51.665Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/MooringCountyHex
+2021-08-17T07:46:51.666Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/HeartlandsHex
+2021-08-17T07:46:51.667Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/LochMorHex
+2021-08-17T07:46:51.668Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/LinnMercyHex
+2021-08-17T07:46:51.670Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/ReachingTrailHex
+2021-08-17T07:46:51.671Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/StonecradleHex
+2021-08-17T07:46:51.672Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/FarranacCoastHex
+2021-08-17T07:46:51.674Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/WestgateHex
+2021-08-17T07:46:51.675Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/FishermansRowHex
+2021-08-17T07:46:51.677Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/OarbreakerHex
+2021-08-17T07:46:51.678Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/GreatMarchHex
+2021-08-17T07:46:51.680Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/TempestIslandHex
+2021-08-17T07:46:51.681Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/GodcroftsHex
+2021-08-17T07:46:51.682Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/EndlessShoreHex
+2021-08-17T07:46:51.684Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/AllodsBightHex
+2021-08-17T07:46:51.685Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/WeatheredExpanseHex
+2021-08-17T07:46:51.686Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/DrownedValeHex
+2021-08-17T07:46:51.688Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/ShackledChasmHex
+2021-08-17T07:46:51.689Z [info]: https://war-service-live.foxholeservices.com/ap                                               i/worldconquest/warReport/ViperPitHex
+2021-08-17T07:46:51.702Z [warn]: no such column: %channelid%
+2021-08-17T07:46:51.849Z [info]: Updating dynmap...
+2021-08-17T07:46:56.860Z [info]: Updating dynmap...
+2021-08-17T07:47:01.883Z [info]: Updating dynmap...
+2021-08-17T07:47:06.908Z [info]: Updating dynmap...
+2021-08-17T07:47:11.926Z [info]: Updating dynmap...
+2021-08-17T07:47:16.956Z [info]: Updating dynmap...
+2021-08-17T07:47:21.966Z [info]: Updating dynmap...
+2021-08-17T07:47:26.980Z [info]: Updating dynmap...
+2021-08-17T07:47:32.005Z [info]: Updating dynmap...
+2021-08-17T07:47:37.006Z [info]: Updating dynmap...
+2021-08-17T07:47:42.013Z [info]: Updating dynmap...
+2021-08-17T07:47:47.039Z [info]: Updating dynmap...
+2021-08-17T07:47:51.681Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/DeadLandsHex
+2021-08-17T07:47:51.681Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/CallahansPassageHex
+2021-08-17T07:47:51.682Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/MarbanHollow
+2021-08-17T07:47:51.683Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/UmbralWildwoodHex
+2021-08-17T07:47:51.684Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/MooringCountyHex
+2021-08-17T07:47:51.685Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/HeartlandsHex
+2021-08-17T07:47:51.686Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/LochMorHex
+2021-08-17T07:47:51.687Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/LinnMercyHex
+2021-08-17T07:47:51.688Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/ReachingTrailHex
+2021-08-17T07:47:51.689Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/StonecradleHex
+2021-08-17T07:47:51.692Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/FarranacCoastHex
+2021-08-17T07:47:51.693Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/WestgateHex
+2021-08-17T07:47:51.694Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/FishermansRowHex
+2021-08-17T07:47:51.695Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/OarbreakerHex
+2021-08-17T07:47:51.696Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/GreatMarchHex
+2021-08-17T07:47:51.697Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/TempestIslandHex
+2021-08-17T07:47:51.698Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/GodcroftsHex
+2021-08-17T07:47:51.699Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/EndlessShoreHex
+2021-08-17T07:47:51.700Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/AllodsBightHex
+2021-08-17T07:47:51.700Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/WeatheredExpanseHex
+2021-08-17T07:47:51.701Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/DrownedValeHex
+2021-08-17T07:47:51.702Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/ShackledChasmHex
+2021-08-17T07:47:51.703Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/ViperPitHex
+2021-08-17T07:47:51.721Z [warn]: no such column: %channelid%
+2021-08-17T07:47:52.039Z [info]: Updating dynmap...
+2021-08-17T07:47:57.042Z [info]: Updating dynmap...
+2021-08-17T07:48:02.067Z [info]: Updating dynmap...
+2021-08-17T07:48:03.018Z [error]: An error occured, check this, or check your url
+2021-08-17T07:48:03.019Z [error]: An error occured, check this, or check your url
+2021-08-17T07:48:03.019Z [error]: An error occured, check this, or check your url
+2021-08-17T07:48:03.020Z [error]: An error occured, check this, or check your url
+2021-08-17T07:48:03.020Z [error]: An error occured, check this, or check your url
+2021-08-17T07:48:03.021Z [error]: An error occured, check this, or check your url
+2021-08-17T07:48:03.021Z [error]: An error occured, check this, or check your url
+2021-08-17T07:48:03.022Z [error]: An error occured, check this, or check your url
+2021-08-17T07:48:03.022Z [error]: An error occured, check this, or check your url
+2021-08-17T07:48:03.022Z [error]: An error occured, check this, or check your url
+2021-08-17T07:48:03.023Z [error]: An error occured, check this, or check your url
+2021-08-17T07:48:03.023Z [error]: An error occured, check this, or check your url
+2021-08-17T07:48:03.024Z [error]: An error occured, check this, or check your url
+2021-08-17T07:48:03.024Z [error]: An error occured, check this, or check your url
+2021-08-17T07:48:03.024Z [error]: An error occured, check this, or check your url
+2021-08-17T07:48:03.025Z [error]: An error occured, check this, or check your url
+2021-08-17T07:48:03.025Z [error]: An error occured, check this, or check your url
+2021-08-17T07:48:03.026Z [error]: An error occured, check this, or check your url
+2021-08-17T07:48:03.026Z [error]: An error occured, check this, or check your url
+2021-08-17T07:48:03.027Z [error]: An error occured, check this, or check your url
+2021-08-17T07:48:03.027Z [error]: An error occured, check this, or check your url
+2021-08-17T07:48:03.027Z [error]: An error occured, check this, or check your url
+2021-08-17T07:48:03.028Z [error]: An error occured, check this, or check your url
+2021-08-17T07:48:07.089Z [info]: Updating dynmap...
+2021-08-17T07:48:12.094Z [info]: Updating dynmap...
+2021-08-17T07:48:17.096Z [info]: Updating dynmap...
+2021-08-17T07:48:22.104Z [info]: Updating dynmap...
+2021-08-17T07:48:27.120Z [info]: Updating dynmap...
+2021-08-17T07:48:32.125Z [info]: Updating dynmap...
+2021-08-17T07:48:37.131Z [info]: Updating dynmap...
+2021-08-17T07:48:42.156Z [info]: Updating dynmap...
+2021-08-17T07:48:47.173Z [info]: Updating dynmap...
+2021-08-17T07:48:51.694Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/DeadLandsHex
+2021-08-17T07:48:51.696Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/CallahansPassageHex
+2021-08-17T07:48:51.698Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/MarbanHollow
+2021-08-17T07:48:51.699Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/UmbralWildwoodHex
+2021-08-17T07:48:51.700Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/MooringCountyHex
+2021-08-17T07:48:51.702Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/HeartlandsHex
+2021-08-17T07:48:51.703Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/LochMorHex
+2021-08-17T07:48:51.705Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/LinnMercyHex
+2021-08-17T07:48:51.707Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/ReachingTrailHex
+2021-08-17T07:48:51.708Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/StonecradleHex
+2021-08-17T07:48:51.710Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/FarranacCoastHex
+2021-08-17T07:48:51.711Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/WestgateHex
+2021-08-17T07:48:51.713Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/FishermansRowHex
+2021-08-17T07:48:51.715Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/OarbreakerHex
+2021-08-17T07:48:51.716Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/GreatMarchHex
+2021-08-17T07:48:51.717Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/TempestIslandHex
+2021-08-17T07:48:51.718Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/GodcroftsHex
+2021-08-17T07:48:51.720Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/EndlessShoreHex
+2021-08-17T07:48:51.721Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/AllodsBightHex
+2021-08-17T07:48:51.723Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/WeatheredExpanseHex
+2021-08-17T07:48:51.724Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/DrownedValeHex
+2021-08-17T07:48:51.726Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/ShackledChasmHex
+2021-08-17T07:48:51.727Z [info]: https://war-service-live.foxholeservices.com/api/worldconquest/warReport/ViperPitHex
+2021-08-17T07:48:51.741Z [warn]: no such column: %channelid%
+2021-08-17T07:48:52.179Z [info]: Updating dynmap...
+2021-08-17T07:48:57.181Z [info]: Updating dynmap...
+2021-08-17T07:49:00.363Z [error]: An error occured, check this, or check your url
+2021-08-17T07:49:00.364Z [error]: An error occured, check this, or check your url
+2021-08-17T07:49:00.364Z [error]: An error occured, check this, or check your url
+2021-08-17T07:49:00.365Z [error]: An error occured, check this, or check your url
+2021-08-17T07:49:00.365Z [error]: An error occured, check this, or check your url
+2021-08-17T07:49:00.366Z [error]: An error occured, check this, or check your url
+2021-08-17T07:49:00.366Z [error]: An error occured, check this, or check your url
+2021-08-17T07:49:00.367Z [error]: An error occured, check this, or check your url
+2021-08-17T07:49:00.367Z [error]: An error occured, check this, or check your url
+2021-08-17T07:49:00.368Z [error]: An error occured, check this, or check your url
+2021-08-17T07:49:00.368Z [error]: An error occured, check this, or check your url
+2021-08-17T07:49:00.369Z [error]: An error occured, check this, or check your url
+2021-08-17T07:49:00.369Z [error]: An error occured, check this, or check your url
+2021-08-17T07:49:00.369Z [error]: An error occured, check this, or check your url
+2021-08-17T07:49:00.370Z [error]: An error occured, check this, or check your url
+2021-08-17T07:49:00.370Z [error]: An error occured, check this, or check your url
+2021-08-17T07:49:00.371Z [error]: An error occured, check this, or check your url
+2021-08-17T07:49:00.371Z [error]: An error occured, check this, or check your url
+2021-08-17T07:49:00.371Z [error]: An error occured, check this, or check your url
+2021-08-17T07:49:00.372Z [error]: An error occured, check this, or check your url
+2021-08-17T07:49:00.372Z [error]: An error occured, check this, or check your url
+2021-08-17T07:49:00.372Z [error]: An error occured, check this, or check your url
+2021-08-17T07:49:00.373Z [error]: An error occured, check this, or check your url
+2021-08-17T07:49:02.195Z [info]: Updating dynmap...
+2021-08-17T07:49:07.228Z [info]: Updating dynmap...

@@ -385,9 +385,9 @@ exports.FinishUpdateStats = function () {
     .emit('updatestats', packet);
 };
 
-UpdateStats();
-setInterval(UpdateStats, 60000/*100000*/); //UPDATE RATE FOR PLAYERCOUNT
-setInterval(UpdateMap, 5000/*100000*/); //UPDATE RATE FOR DYNMAP
+//UpdateStats();
+setInterval(UpdateStats, 180000/*100000*/); //UPDATE RATE FOR PLAYERCOUNT
+setInterval(UpdateMap, 60000/*100000*/); //UPDATE RATE FOR DYNMAP
 
 function UpdateMap() {
 //logger.info("Updating dynmap...");

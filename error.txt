@@ -1,0 +1,86 @@
+
+> foxhole-global@2.1.1 start /var/www/hq.mreboy.com/public
+> node server.js
+
+2021-08-08T03:39:49.378Z [[32minfo[39m]: Creating tables...
+2021-08-08T03:39:49.382Z [[32minfo[39m]: Tables created.
+2021-08-08T03:39:49.383Z [[32minfo[39m]: Anonymous user already created
+2021-08-08T03:39:50.151Z [[32minfo[39m]: Socket server started.
+Database functions module loaded
+2021-08-08T03:39:50.252Z [[32minfo[39m]: Foxhole War API module loaded
+2021-08-08T03:39:50.253Z [[32minfo[39m]: Socket module loaded
+2021-08-08T03:39:50.261Z [[32minfo[39m]: Your app is listening on port 40696
+2021-08-08T03:39:50.262Z [[33mwarn[39m]: Could not connect to discord Error: An invalid token was provided.
+2021-08-08T03:40:49.539Z [[33mwarn[39m]: no such column: %channelid%
+2021-08-08T03:41:49.559Z [[33mwarn[39m]: no such column: %channelid%
+2021-08-08T03:42:00.019Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:42:00.020Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:42:00.021Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:42:00.022Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:42:00.022Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:42:00.023Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:42:00.024Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:42:00.025Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:42:00.026Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:42:00.026Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:42:00.026Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:42:00.027Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:42:00.028Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:42:00.028Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:42:00.029Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:42:00.029Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:42:00.030Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:42:00.030Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:42:00.031Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:42:00.031Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:42:00.032Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:42:00.032Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:42:00.033Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:42:49.561Z [[33mwarn[39m]: no such column: %channelid%
+2021-08-08T03:43:01.460Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:01.461Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:01.462Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:01.462Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:01.462Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:01.463Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:01.463Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:01.464Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:01.464Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:01.465Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:01.465Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:01.465Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:01.466Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:01.466Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:01.467Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:01.467Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:01.468Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:01.468Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:01.468Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:01.469Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:01.469Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:01.469Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:01.470Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:49.581Z [[33mwarn[39m]: no such column: %channelid%
+2021-08-08T03:43:58.808Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:58.809Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:58.809Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:58.810Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:58.810Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:58.812Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:58.812Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:58.812Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:58.813Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:58.813Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:58.814Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:58.814Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:58.814Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:58.815Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:58.815Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:58.816Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:58.816Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:58.817Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:58.817Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:58.817Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:58.818Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:58.818Z [[31merror[39m]: An error occured, check this, or check your url
+2021-08-08T03:43:58.819Z [[31merror[39m]: An error occured, check this, or check your url

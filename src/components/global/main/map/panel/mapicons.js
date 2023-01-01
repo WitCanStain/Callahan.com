@@ -88,10 +88,10 @@ class MapIcons_ extends React.Component {
         map.data.mapItems.forEach(obj => {
             switch(obj.iconType){
             //OBJECTIVES//////////////////////////
-              case 4:
-              case 5:
-              case 6:
-              case 7: //TOWNS
+              case 27:
+              case 56:
+              case 57:
+              case 58: //TOWNS
                 if(display.objectives.towns) {
                   iconlist.push(<MO.Town key={U.signature(obj)} signature={U.signature(obj)} 
                              regionId={region} 
@@ -129,9 +129,14 @@ class MapIcons_ extends React.Component {
                 case 17://REFINERIES
                   if(display.production.refineries) {
                     iconlist.push(<MO.Refinery key={U.signature(obj)} signature={U.signature(obj)} 
-                      regionId={region} dynamic={obj} />)
+                      regionId={region} dynamic={obj} />)					  
                   }
-                  break;            
+                  break;
+				case 19://TECH CENTER
+                  if(display.objectives.techcenters) {
+                    iconlist.push(this.GetIcon(obj,region))
+                  }
+                  break;				  
                 case 34://FACTORIES
                   if(display.production.productions) {
                     iconlist.push(<MO.Production key={U.signature(obj)} signature={U.signature(obj)} 
@@ -169,6 +174,31 @@ class MapIcons_ extends React.Component {
                     iconlist.push(this.GetIcon(obj,region))
                   }
                   break;
+				case 51://MASS PRODUCTION FACTORIES
+                  if(display.production.mpfs) {
+                    iconlist.push(this.GetIcon(obj,region))
+                  }
+                  break;
+				case 52://SEAPORT
+                  if(display.objectives.seaports) {
+                    iconlist.push(this.GetIcon(obj,region))
+                  }
+                  break;
+				case 53://COASTAL GUN
+                  if(display.objectives.coastalguns) {
+                    iconlist.push(this.GetIcon(obj,region))
+                  }
+                  break;
+				case 59://STORM CANNON
+                  if(display.objectives.stormcannons) {
+                    iconlist.push(this.GetIcon(obj,region))
+                  }
+                  break;
+				case 60://INTEL CENTER
+                  if(display.objectives.intelcenters) {
+                    iconlist.push(this.GetIcon(obj,region))
+                  }
+                  break;				  
               //RESOURCE SECTION/////////////////////
                 case 20:
                   if(display.resources.salvage) {
@@ -182,6 +212,11 @@ class MapIcons_ extends React.Component {
                   break;
                 case 23:
                   if(display.resources.sulfur) {
+                    iconlist.push(this.GetIcon(obj,region)) 
+                  }
+                  break;
+				case 61:
+                  if(display.resources.coal) {
                     iconlist.push(this.GetIcon(obj,region)) 
                   }
                   break;
@@ -202,6 +237,11 @@ class MapIcons_ extends React.Component {
                   }
                   break;
                 case 41:
+                  if(display.resources.mine_oil) {
+                    iconlist.push(this.GetIcon(obj,region)) 
+                  }
+                  break;
+				case 62:
                   if(display.resources.mine_oil) {
                     iconlist.push(this.GetIcon(obj,region)) 
                   }

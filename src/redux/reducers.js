@@ -577,9 +577,9 @@ const EventsReducer = (state = initialStateEvents, action) => {
         case 3:
           window.soundcontrol.PlaySingle('https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fsupplies.mp3');
           break;
-        case 4:
-          window.soundcontrol.PlaySingle('https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Frelic.mp3');
-          break;
+        //case 4:
+         // window.soundcontrol.PlaySingle('https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Frelic.mp3');
+         // break;
       }
       if (privateEvents > 50) {
         privateEvents = privateEvents.slice(1);

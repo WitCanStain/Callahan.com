@@ -153,12 +153,12 @@ export class LogiCalc extends React.Component {
                     className="totalicon"
                     src={cost.cost[0][1].src}
                   />
-                  {this.GetTotal("r")}
+                  {this.GetTotal("e")}
                   <img
                     className="totalicon"
                     src={cost.cost[0][2].src}
                   />
-                  {this.GetTotal("e")}
+                  {this.GetTotal("r")}
                   <img
                     className="totalicon"
                     src={cost.cost[0][3].src}
@@ -302,10 +302,10 @@ function Item(props) {
         {GetCost("b")}
       </td>
       <td>
-        {GetCost("r")}
+        {GetCost("e")}
       </td>
       <td>
-        {GetCost("e")}
+        {GetCost("r")}
       </td>
       <td>
         {GetCost("he")}

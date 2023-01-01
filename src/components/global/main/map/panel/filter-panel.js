@@ -28,10 +28,15 @@ function FilterPanel_(props) {
                      src={ repo + 'MapIconStaticBase2.png'} />
                 </DropdownToggle>
                 <DropdownMenu>
-                    <LGC cat='objectives' item='towns' name='Town Halls' src={ repo + 'MapIconStaticBase2.png' }/>
-                    <LGC cat='objectives' item='forts' name='Relic Bases' src={ repo + 'MapIconRelicBase.png' }/>
-                    <LGC cat='objectives' item='towers' name='Obs. Towers' src={ repo + 'MapIconObservationTower.png' }/>
-                    <LGC cat='objectives' item='safehouses' name='Safehouses' src={ repo + 'Safehouse.png' }/>
+                    <LGC cat='objectives' item='towns' name=' Town Halls' src={ repo + 'MapIconStaticBase2.png' }/>
+                    <LGC cat='objectives' item='forts' name=' Relic Bases' src={ repo + 'MapIconRelicBase.png' }/>
+                    <LGC cat='objectives' item='towers' name=' Obs. Towers' src={ repo + 'MapIconObservationTower.png' }/>
+                    <LGC cat='objectives' item='safehouses' name=' Safehouses' src={ repo + 'Safehouse.png' }/>
+					<LGC cat='objectives' item='techcenters' name=' Tech Centers' src={ repo + 'MapIconTechCenter.png' }/>
+					<LGC cat='objectives' item='seaports' name=' Seaports' src={ repo + 'MapIconSeaport.png' }/>
+					<LGC cat='objectives' item='coastalguns' name=' Coastal Guns' src={ repo + 'MapIconCoastalGun.png' }/>
+					<LGC cat='objectives' item='stormcannons' name=' Storm Cannons' src={ repo + 'MapIconStormcannon.png' }/>
+					<LGC cat='objectives' item='intelcenters' name=' Intel Centers' src={ repo + 'MapIconIntelcenter.png' }/>
                 </DropdownMenu>
             </Dropdown>
 
@@ -44,15 +49,15 @@ function FilterPanel_(props) {
                      src={ repo + 'MapIconFactory.png'} />
                 </DropdownToggle>
                 <DropdownMenu>
-                    <LGC cat='production' item='refineries' name='Refineries' src={ repo + 'MapIconManufacturing.png' }/>
-                    <LGC cat='production' item='productions' name='Factories' src={ repo + 'MapIconFactory.png' }/>
-                    <LGC cat='production' item='storages' name='Storage Depots' src={ repo + 'MapIconStorageFacility.png' }/>
-                    <LGC cat='production' item='armories' name='Ammo Factories' src={ repo + 'MapIconArmory.png' }/>
-                    <LGC cat='production' item='hospitals' name='Hospitals' src={ repo + 'MapIconHospital.png' }/>
-                    <LGC cat='production' item='vfactories' name='Vehicle Factories' src={ repo + 'MapIconVehicle.png' }/>
-                    <LGC cat='production' item='shipyards' name='Shipyards' src={ repo + 'MapIconShipyard.png' }/>
-                    <LGC cat='production' item='constructions' name='Constr. Yards' src={ repo + 'MapIconConstructionYard.png' }/>
-                    <LGC cat='production' item='rocketsites' name='Rocket Sites' src={ repo + 'MapIconRocketSite.png' }/>
+                    <LGC cat='production' item='refineries' name=' Refineries' src={ repo + 'MapIconManufacturing.png' }/>
+                    <LGC cat='production' item='productions' name=' Factories' src={ repo + 'MapIconFactory.png' }/>
+                    <LGC cat='production' item='storages' name=' Storage Depots' src={ repo + 'MapIconStorageFacility.png' }/>
+                    <LGC cat='production' item='hospitals' name=' Hospitals' src={ repo + 'MapIconHospital.png' }/>
+                    <LGC cat='production' item='vfactories' name=' Vehicle Factories' src={ repo + 'MapIconVehicle.png' }/>
+                    <LGC cat='production' item='shipyards' name=' Shipyards' src={ repo + 'MapIconShipyard.png' }/>
+                    <LGC cat='production' item='constructions' name=' Constr. Yards' src={ repo + 'MapIconConstructionYard.png' }/>
+                    <LGC cat='production' item='rocketsites' name=' Rocket Sites' src={ repo + 'MapIconRocketSite.png' }/>
+					<LGC cat='production' item='mpfs' name=' MPFs' src={ repo + 'MapIconMassProductionFactory.png' }/>
                 </DropdownMenu> 
             </Dropdown>
 
@@ -65,13 +70,14 @@ function FilterPanel_(props) {
                      src={ repo + 'MapIconSalvage.png'} />
                 </DropdownToggle>
                 <DropdownMenu>
-                    <LGC cat='resources' item='salvage' name='Salvage' src={ repo + 'MapIconSalvage.png' }/>
-                    <LGC cat='resources' item='components' name='Components' src={ repo + 'MapIconComponents.png' }/>
-                    <LGC cat='resources' item='sulfur' name='Sulfur' src={ repo + 'MapIconSulfur.png' }/>
-                    <LGC cat='resources' item='mine_salvage' name='Salvage Mines' src={ repo + 'MapIconScrapMine.png' }/>
-                    <LGC cat='resources' item='mine_components' name='Component Mines' src={ repo + 'MapIconComponentMine.png' }/>
-                    <LGC cat='resources' item='mine_sulfur' name='Sulfur Mines' src={ repo + 'MapIconSulfurMine.png' }/>
-                    <LGC cat='resources' item='mine_oil' name='Oil Wells' src={ repo + 'MapIconOilWell.png' }/>
+                    <LGC cat='resources' item='salvage' name=' Salvage' src={ repo + 'MapIconSalvage.png' }/>
+                    <LGC cat='resources' item='components' name=' Components' src={ repo + 'MapIconComponents.png' }/>
+                    <LGC cat='resources' item='sulfur' name=' Sulfur' src={ repo + 'MapIconSulfur.png' }/>
+					<LGC cat='resources' item='coal' name=' Coal' src={ repo + 'MapIconCoal.png' }/>
+                    <LGC cat='resources' item='mine_salvage' name=' Salvage Mines' src={ repo + 'MapIconScrapMine.png' }/>
+                    <LGC cat='resources' item='mine_components' name=' Component Mines' src={ repo + 'MapIconComponentMine.png' }/>
+                    <LGC cat='resources' item='mine_sulfur' name=' Sulfur Mines' src={ repo + 'MapIconSulfurMine.png' }/>
+                    <LGC cat='resources' item='mine_oil' name=' Oil Field' src={ repo + 'MapIconOilWell.png' }/>
                 </DropdownMenu>
             </Dropdown>
 
@@ -84,10 +90,10 @@ function FilterPanel_(props) {
                      src={ repo + 'Note.png'} />
                 </DropdownToggle>
                 <DropdownMenu>
-                    <LGC cat='custom' item='requests' name='Logi Requests' src={ repo + 'LogiRequest.png' }/>
-                    <LGC cat='custom' item='fobs' name='Outposts' src={ repo + 'Outpost.png' }/>
-                    <LGC cat='custom' item='miscicons' name='Misc. Icons' src={ repo + 'Note.png' }/>
-                    <LGC cat='custom' item='lines' name='Lines' src={ repo + 'Line.png' }/>
+                    <LGC cat='custom' item='requests' name=' Logi Requests' src={ repo + 'LogiRequest.png' }/>
+                    <LGC cat='custom' item='fobs' name=' Outposts' src={ repo + 'Outpost.png' }/>
+                    <LGC cat='custom' item='miscicons' name=' Misc. Icons' src={ repo + 'Note.png' }/>
+                    <LGC cat='custom' item='lines' name=' Lines' src={ repo + 'Line.png' }/>
                 </DropdownMenu>
             </Dropdown>
 

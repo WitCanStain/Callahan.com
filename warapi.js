@@ -30,7 +30,23 @@ const regionNames = ['DeadLandsHex',//3
   'WeatheredExpanseHex',//22
   'DrownedValeHex',//23
   'ShackledChasmHex',//24
-  'ViperPitHex']; //25
+  'ViperPitHex',//25
+  'NevishLineHex',//29
+  'AcrithiaHex',//30
+  'RedRiverHex',//31
+  'CallumsCapeHex',//32
+  'SpeakingWoodsHex',//33
+  'BasinSionnachHex',//34
+  'HowlCountyHex',//35
+  'ClansheadValleyHex',//36
+  'MorgensCrossingHex',//37
+  'TheFingersHex',//38
+  'TerminusHex',//39
+  'KalokaiHex',//40
+  'AshFieldsHex',//41
+  'OriginHex'//42 
+  ];
+
 
 //Pulling dynamic data from the WarAPI
 exports.updateMap = function () {
@@ -138,7 +154,7 @@ exports.updateMap = function () {
 
           for (var i = 0; i < data.mapItems.length; i++) {
             let obj = data.mapItems[i];
-            if ((obj.iconType > 3 && obj.iconType < 8) || obj.iconType === 29) {
+            if ((obj.iconType > 55 && obj.iconType < 59) || obj.iconType === 29) {
               let prevObj = findItem(obj.x, obj.y);
               if (prevObj === null || prevObj === undefined || prevObj === '') {
                 continue;
@@ -153,7 +169,7 @@ exports.updateMap = function () {
                 };
                 logger.info('New data');
                 logger.info(entry);
-                if (obj.iconType == 5 || obj.iconType == 6 || obj.iconType == 7 || obj.iconType == 29) {
+                if (obj.iconType == 56 || obj.iconType == 57 || obj.iconType == 58 || obj.iconType == 29) {
                   let signature = getSignature(obj);
                   let globallist = sql.prepare('SELECT * FROM global WHERE settings LIKE ?;')
                     .all('%' + signature + '%');
@@ -172,7 +188,7 @@ exports.updateMap = function () {
                 }
 
                 //let global = sql.prepare('SELECT * FROM global WHERE settings LIKE ?;').get(text);
-                if (obj.iconType > 3 && obj.iconType < 8) {
+                if (obj.iconType > 55 && obj.iconType < 59) {
                   insertEvent.run(entry);
                 }
               }
@@ -329,7 +345,7 @@ function compare(a, b) {
 
 //Check if icon is a town
 function checkicon(type) {
-  if (type == 4 || type == 5 || type == 6 || type == 7) {
+  if (type == 4 || type == 56 || type == 57 || type == 58) {
     return true;
   } else {
     return false;
@@ -364,6 +380,7 @@ exports.updateWarReport = function () {
     var request = new XMLHttpRequest();
     request.responseType = 'json';
     request.open('GET', str, true);
+	logger.info(str);
     request.onerror = (error) => {
       logger.error('An error occured, check this, or check your url')
     }

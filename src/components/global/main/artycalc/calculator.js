@@ -1,4 +1,5 @@
 const repo = "https://raw.githubusercontent.com/the-fellowship-of-the-warapi/Assets/master/Item Icons/"
+const repo2 = "http://hq.mreboy.com/img/"
 import React from 'react';
 import store from "../../../../redux/store";
 import {connect} from 'react-redux';
@@ -206,7 +207,7 @@ class ArtyCalc_ extends React.Component {
               }
               onClick={e => this.handleArtyChange(2, e)}
             >
-              <img className="arty_type" src={repo + 'Vehicles/GunboatColonial.png'} />
+              <img className="arty_type" src={repo2 + 'ObservationBunkerT2ItemIcon.png'} />
             </button>
             <button
               className={
@@ -216,7 +217,7 @@ class ArtyCalc_ extends React.Component {
               }
               onClick={e => this.handleArtyChange(3, e)}
             >
-              <img className="arty_type" src={ repo + 'Items/MortarItemIcon.png' } />{" "}
+              <img className="arty_type" src={ repo + 'Items/ListeningKitIcon.png'} />{" "}
             </button>
           </div>
           <table id="arttb" className="arty_table">

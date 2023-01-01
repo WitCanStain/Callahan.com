@@ -8,23 +8,23 @@ function BaseLayers_(props) {
 
   return (
     <L.LayersControl position="topright">
-      <L.LayersControl.BaseLayer name="Topographic Map" checked={!satmap}>
+      <L.LayersControl.BaseLayer name="Simple Map" checked={!satmap}>
         <L.TileLayer
           noWrap={true}
           continuousWorld={true}
           bounds={[[-256, 0], [0, 256]]}
           maxNativeZoom={5}
-          url='https://raw.githubusercontent.com/Kastow/Foxhole-Map-Tiles/master/Tiles/{z}/{z}_{x}_{y}.png'
+          url='http://hq.mreboy.com/map_tiles/{z}/{z}_{x}_{y}.png'
         />
       </L.LayersControl.BaseLayer>
 
-      <L.LayersControl.BaseLayer name="Satellite Map" checked={satmap}>
+      <L.LayersControl.BaseLayer name="Advanced Map" checked={satmap}>
         <L.TileLayer
           noWrap={true}
           continuousWorld={true}
           bounds={[[-256, 0], [0, 256]]}
           maxNativeZoom={5}
-          url='https://raw.githubusercontent.com/Kastow/Foxhole-Map-Tiles/master/Sat Tiles/{z}/{z}_{x}_{y}.png'
+          url='http://hq.mreboy.com/map_tiles_adv/{z}/{z}_{x}_{y}.png'
         />
       </L.LayersControl.BaseLayer>
     </L.LayersControl>

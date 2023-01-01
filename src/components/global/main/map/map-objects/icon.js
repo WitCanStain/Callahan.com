@@ -123,8 +123,8 @@ export class Icon extends React.Component {
         faction = GetFaction(newItem, false);
       }
     } else if (prevItem.iconType !== newItem.iconType || (prevItem.iconType === newItem.iconType && (prevItem.flags & 4) && !(newItem.flags & 4))) {
-      if (newItem.iconType === 5) {
-        if (prevItem.iconType === 5) {
+      if (newItem.iconType === 56) {
+        if (prevItem.iconType === 56) {
           actionstring = 'was taken by ';
           faction = GetFaction(newItem, false);
         } else {
@@ -132,13 +132,13 @@ export class Icon extends React.Component {
         }
       } else {
         if (newItem.flags & 4) {
-          actionstring = 'is being upgraded ';
+          actionstring = 'is being upgraded by ';
         } else {
           actionstring = 'was upgraded ';
         }
-        if (newItem.iconType === 6) {
+        if (newItem.iconType === 57) {
           actionstring = actionstring + 'to T2 by ';
-        } else if (newItem.iconType === 7) {
+        } else if (newItem.iconType === 58) {
           actionstring = actionstring + 'to T3 by ';
         }
         actionstring = actionstring;

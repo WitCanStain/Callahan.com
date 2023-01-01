@@ -148,9 +148,9 @@ class GlobalMap extends React.Component {
         this.refs.context_objectives_dropdown = obj;
       }} type={1}/>,
       document.getElementById('context_objectives_dropdown'));
-    // ReactDOM.render(
-    // <ContextDropdown ref={(obj) => {this.refs.context_relics_dropdown = obj}} type={2}/>,
-    //document.getElementById('context_relics_dropdown'));
+    ReactDOM.render(
+     <ContextDropdown ref={(obj) => {this.refs.context_relics_dropdown = obj}} type={2}/>,
+    document.getElementById('context_relics_dropdown'));
     ReactDOM.render(
       <ContextDropdown ref={(obj) => {
         this.refs.context_ships_dropdown = obj;
@@ -161,6 +161,16 @@ class GlobalMap extends React.Component {
         this.refs.context_logi_vehicles_dropdown = obj;
       }} type={4}/>,
       document.getElementById('context_logi_vehicles_dropdown'));
+	ReactDOM.render(
+      <ContextDropdown ref={(obj) => {
+        this.refs.context_sections_dropdown = obj;
+      }} type={5}/>,
+      document.getElementById('context_sections_dropdown'));
+	ReactDOM.render(
+      <ContextDropdown ref={(obj) => {
+        this.refs.context_facilities_dropdown = obj;
+      }} type={6}/>,
+      document.getElementById('context_facilities_dropdown'));	  
   }
 
   PanRegion(regionId) {
@@ -264,7 +274,7 @@ class GlobalMap extends React.Component {
                    callback: (event) => this.CreateMiscIcon(event, 1)
                  },
                    {
-                     text: '<div class="dropup"><span class="dropdown-toggle" >Logi vehicles</span>  <div class="dropdown-menu" id="context_logi_vehicles_dropdown"></div></div> ',
+                     text: '<div class="dropup"><span class="dropdown-toggle" >Logi Vehicles</span>  <div class="dropdown-menu" id="context_logi_vehicles_dropdown"></div></div> ',
                      icon: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fdagts.png?1554890715341',
                      callback: (event) => this.OpenMenu(event, 'context_logi_vehicles_dropdown', 4),
                      hideOnSelect: false
@@ -275,7 +285,7 @@ class GlobalMap extends React.Component {
                      callback: (event) => this.CreateMiscIcon(event, 4)
 
                    }, {
-                   text: 'Bases',
+                   text: 'FOB',
                    icon: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FMapIconForwardBase1.png?1554666597044',
                    callback: this.CreateFob
 
@@ -309,16 +319,16 @@ class GlobalMap extends React.Component {
                    callback: (event) => this.OpenMenu(event, 'context_ships_dropdown', 3),
                    hideOnSelect: false
                  }, /*{
-     text: 'Howitzer',
-        icon: 'https://cdn.glitch.com/6393f3fd-16a7-4641-ae3d-994f8e7cea4e%2FStaticArtilleryStructureIcon.png?1548192484552',
-       callback: (event)=>this.CreateMiscIcon(event,5)
-    }, {
+				   text: 'Howitzer',
+				   icon: 'https://cdn.glitch.com/6393f3fd-16a7-4641-ae3d-994f8e7cea4e%2FStaticArtilleryStructureIcon.png?1548192484552',
+				   callback: (event)=>this.CreateMiscIcon(event,5)
+				 }, */{
 
-      text:'<div class="dropup"><span class="dropdown-toggle" >Relics</span>  <div class="dropdown-menu" id="context_relics_dropdown"></div></div> ',
-        icon: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Frelic.png?1557925933310',
-       callback: (event)=>this.OpenMenu(event,'context_relics_dropdown',2),
-        hideOnSelect:false
-       },*/ /*{
+				   text:'<div class="dropup"><span class="dropdown-toggle" >Trains</span>  <div class="dropdown-menu" id="context_relics_dropdown"></div></div> ',
+				   icon: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Frelic.png?1557925933310',
+				   callback: (event)=>this.OpenMenu(event,'context_relics_dropdown', 2),
+				   hideOnSelect:false
+       }, /*{
            text: 'CV',
         icon: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fdagts.png?1554890715341',
        callback: (event)=>this.CreateMiscIcon(event,6)
@@ -327,7 +337,19 @@ class GlobalMap extends React.Component {
                      text: 'Note',
                      icon: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Ffdsag.png?1554889393144',
                      callback: (event) => this.CreateMiscIcon(event, 0)
-                   }
+                   },
+				   {
+                   text: '<div class="dropup"><span class="dropdown-toggle" >Sections</span>  <div class="dropdown-menu" id="context_sections_dropdown"></div></div> ',
+                   icon: 'http://hq.mreboy.com/img/82dk_regiment.png',
+                   callback: (event) => this.OpenMenu(event, 'context_sections_dropdown', 5),
+                   hideOnSelect: false
+                   },
+				   {
+                   text: '<div class="dropup"><span class="dropdown-toggle" >Facilities</span>  <div class="dropdown-menu" id="context_facilities_dropdown"></div></div> ',
+                   icon: 'http://hq.mreboy.com/img/TunnelNetworkStructureIcon.png',
+                   callback: (event) => this.OpenMenu(event, 'context_facilities_dropdown', 6),
+                   hideOnSelect: false
+                   } 				   
                  ]}
         >
 

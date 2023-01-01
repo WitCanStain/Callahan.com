@@ -1,4 +1,4 @@
-const repo = "https://raw.githubusercontent.com/the-fellowship-of-the-warapi/Assets/master/Item Icons/"
+const repo = "http://hq.mreboy.com/img/"
 import React from 'react';
 import store from "../../../../redux/store";
 import A from "../../../../redux/actions.js";
@@ -44,11 +44,11 @@ export class IconPanel extends React.Component {
         <React.Fragment>
           <div id="map_artycontrol_dropdown" className="collapse width">
             <div id="map_artycontrol_innerdiv">
-              {this.GetIcon(25, 'Items/MortarItemIcon.png')}
-              {this.GetIcon(26, 'Vehicles/GunboatColonial.png')}
-              {this.GetIcon(27, 'Vehicles/ArtilleryIcon.png')}
-              {this.GetIcon(28, 'Structures/StaticArtilleryStructureIcon.png')}
-              {this.GetIcon(34, 'Structures/LongRangedArtilleryIcon.png')}
+              {this.GetIcon(25, 'ListeningKitIcon.png')}
+              {this.GetIcon(26, 'ObservationBunkerT2ItemIcon.png')}
+              {this.GetIcon(27, 'ArtilleryIcon.png')}
+              {this.GetIcon(28, 'StaticArtilleryStructureIcon.png')}
+              {this.GetIcon(35, 'LongRangedArtilleryIcon.png')}
             </div>
           </div>
           <button
@@ -59,7 +59,7 @@ export class IconPanel extends React.Component {
           >
             <img
               id="map_artycontrol_main_img"
-              src={repo + 'Structures/StaticArtilleryStructureIcon.png'}
+              src={repo + 'StaticArtilleryStructureIcon.png'}
             />
           </button>
         </React.Fragment>
