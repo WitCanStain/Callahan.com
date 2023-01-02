@@ -28,7 +28,7 @@ Object.defineProperty( window, 'statsignore', {
   enumerable: true,
   configurable: true
 });
-var id
+let id
 
 $(function() {
 

@@ -1,0 +1,2 @@
+- centralise db management
+- dont drop tables every 5 seconds

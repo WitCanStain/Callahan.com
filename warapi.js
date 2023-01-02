@@ -380,7 +380,7 @@ exports.updateWarReport = function () {
     var request = new XMLHttpRequest();
     request.responseType = 'json';
     request.open('GET', str, true);
-	logger.info(str);
+	  logger.info(str);
     request.onerror = (error) => {
       logger.error('An error occured, check this, or check your url')
     }

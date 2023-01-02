@@ -11,7 +11,8 @@
     "test": "jest",
     "watch": "webpack --watch",
     "server": "node server.js",
-    "postinstall": "npm run build"
+    "postinstall": "npm run build",
+    "v": "node -v"
   },
   "dependencies": {
     "@babel/core": "7.6.4",

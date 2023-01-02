@@ -26,8 +26,8 @@ const vehicleArray = [
                      ]
 ///////////////////////////////////////////////////////////
 function LeaveEverything(squadarray){
-         for(var i=squadarray.length-1;i>=0;i--){
-         for(var j=0;j<squadarray[i].users.length;j++){
+         for(let i=squadarray.length-1;i>=0;i--){
+         for(let j=0;j<squadarray[i].users.length;j++){
            if(squadarray[i].users[j]==window.steamid){
             if(squadarray[i].users.length==1){
                 squadarray.splice(i,1)
@@ -43,8 +43,8 @@ function LeaveEverything(squadarray){
 }
 /////////////////////////////////////////////////////
 function GetCurrentSquad(squadarray){
-  for(var i=0;i<squadarray.length;i++){
-    for(var j=0;j<squadarray[i].users.length;j++){
+  for(let i=0;i<squadarray.length;i++){
+    for(let j=0;j<squadarray[i].users.length;j++){
            if(squadarray[i].users[j]==window.steamid){
              let packet={index:i,alone:false}
              if(squadarray[i].users.length==1){
@@ -59,8 +59,8 @@ function GetCurrentSquad(squadarray){
 //////////////////////////////////////////////
 function DeleteAnonymous(squadarray,users){
   let changed = false
-   for(var i=squadarray.length-1;i>=0;i--){
-      for(var j=squadarray[i].users.length-1;j>=0;j--){
+   for(let i=squadarray.length-1;i>=0;i--){
+      for(let j=squadarray[i].users.length-1;j>=0;j--){
         let user = U.GetUser(users,squadarray[i].users[j])
            if(!user.valid){
              //console.log("deleting user",squadarray,squadarray[i].users[j])
@@ -85,7 +85,7 @@ class SquadsCore extends React.Component {  ////Component generation
   constructor(props) {
     super(props);
     this.state={      ///State
-      var:""
+      let:""
     }
     this.CreateSquad = this.CreateSquad.bind(this)
   }
@@ -134,7 +134,7 @@ class Squad extends React.Component {  ////Component generation
   }
   CheckIfMine(){ //CODE 0:NOT IN SQUAD //CODE 1:SQUAD MEMBER //CODE 2:SQUAD LEADER
     let squad = this.props.squads[this.props.index]
-    for(var i=0;i<squad.users.length;i++){
+    for(let i=0;i<squad.users.length;i++){
       if(window.steamid==squad.users[i]){
         if(i==0){
           return 2
@@ -153,7 +153,7 @@ class Squad extends React.Component {  ////Component generation
       if(squad.users.length==1){
         squadarray.splice(this.props.index,1)
       }else{
-        for(var i =0;i<squad.users.length;i++){
+        for(let i =0;i<squad.users.length;i++){
           if(window.steamid==squad.users[i]){
             squadarray[this.props.index].users.splice(i,1)
           }
@@ -262,7 +262,7 @@ class RoleList extends React.Component {  ////Component generation
     //////ROLE LIST
     for(let i=0;i<3;i++){
       let row = []
-      for(var j=0;j<4;j++){
+      for(let j=0;j<4;j++){
         if(rolecounter[i+1+j*3]!=undefined){
           row.push(<td key={"rolecounter"+i+"|"+j}>{this.GetImage(i+1+j*3,rolecounter[i+1+j*3])}</td>)
         }else{
@@ -330,8 +330,8 @@ class ArmyComp extends React.Component {  ////Component generation
   UpdateVehicle(index,vehicle,t){
     let vehicleList = clone(this.props.squads.vehicles)
     for(let type in vehicleList){
-    for(var i=0;i<vehicleList[type].length;i++){
-      for(var prop in vehicleList[type][i]){
+    for(let i=0;i<vehicleList[type].length;i++){
+      for(let prop in vehicleList[type][i]){
         if(vehicleList[type][i][prop]==window.steamid){
           delete vehicleList[type][i][prop]
           }
@@ -371,7 +371,7 @@ class ArmyComp extends React.Component {  ////Component generation
       
       let props = this.props.squads.vehicles
       let over = true
-      for(var j=0;j<vehicleArray.length;j++){
+      for(let j=0;j<vehicleArray.length;j++){
         let indexj = j
         let type = vehicleArray[j].name
         let item = null
@@ -380,7 +380,7 @@ class ArmyComp extends React.Component {  ////Component generation
           if(props[type][index]!=undefined){
           over = false;
           let crew =0;
-          for(var prop in props[type][index]){
+          for(let prop in props[type][index]){
             if(props[type][index][prop]!=""){
               crew++;
             }
@@ -410,7 +410,7 @@ class ArmyComp extends React.Component {  ////Component generation
     let vehiclelist=[]
      let rowarray=  []
      //console.log("Army comp state",this.state)
-    for(var i =0;i<vehicleArray.length;i++){
+    for(let i =0;i<vehicleArray.length;i++){
       let index = i
       let classname = "squads_armycomp_category_col"
       let AddBtn = null
@@ -424,7 +424,7 @@ class ArmyComp extends React.Component {  ////Component generation
     if(this.state.selectedCategory!=100){     
       let category = this.props.squads.vehicles[vehicleArray[this.state.selectedCategory].name]
       if(category!=undefined){
-      for(var i=0;i<category.length;i++){
+      for(let i=0;i<category.length;i++){
         let index = i
         vehiclelist.push(<ArmyCompVehicle users={this.props.users} vehicle={category[i]} faction={this.props.faction} UpdateVehicle={this.UpdateVehicle} index={index} type={this.state.selectedCategory} RemoveVehicle={this.RemoveVehicle}/>)
       }
@@ -452,7 +452,7 @@ class ArmyCompVehicle extends React.Component {  ////Component generation
   }
   JoinRole(role){
     let vehicle = clone(this.props.vehicle)
-      for(var prop in vehicle){
+      for(let prop in vehicle){
         if(vehicle[prop]==window.steamid){
           delete vehicle[prop]
           }
@@ -470,7 +470,7 @@ class ArmyCompVehicle extends React.Component {  ////Component generation
     let vehicleStatic = vehicleArray[this.props.type]
     let vehicle = this.props.vehicle
     let rolelist = [];
-    for(var i=0; i<vehicleStatic.roles.length;i++){
+    for(let i=0; i<vehicleStatic.roles.length;i++){
       let role = vehicleStatic.roles[i]
       let item = null
         if(vehicle[role]==undefined||vehicle[role]==""){

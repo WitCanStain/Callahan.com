@@ -30,6 +30,16 @@ create_userGlobal_table.run()
 create_events.run()
 logger.info('Tables created.')
 
+
+// CREATE INDEXES
+const create_userglobal_userid_index = SQLite.prepare("CREATE INDEX idx_userglobal_userid ON userglobal(userid)")
+const create_userglobal_globalid_index = SQLite.prepare("CREATE INDEX idx_userglobal_globalid ON userglobal(globalid)")
+const create_events_date_index = SQLite.prepare("CREATE INDEX idx_events_date ON events(date DESC)")
+create_userglobal_userid_index.run()
+create_userglobal_globalid_index.run()
+create_events_date_index.run()
+
+
 try {
   const insert_anonymous = SQLite.prepare("INSERT INTO users (id, salt, name, avatar) VALUES ('anonymous','anonymous','anonymous','anonymous')")
   insert_anonymous.run()

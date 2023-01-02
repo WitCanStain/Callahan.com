@@ -390,7 +390,7 @@ setInterval(UpdateStats, 60000/*100000*/); //UPDATE RATE FOR PLAYERCOUNT
 setInterval(UpdateMap, 5000/*100000*/); //UPDATE RATE FOR DYNMAP
 
 function UpdateMap() {
-logger.info("Updating dynmap...");
+  logger.info("Updating dynmap...");
   warapi.updateMap();
   db.offlinecheck(steamidlist, io);
 }
