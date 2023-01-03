@@ -268,8 +268,8 @@ class RequestModalContainer extends React.Component {
   }
 
   ShowModal(event, type) {
-    //console.log('Modal props')
-    //console.log(this.props);
+    // console.log('Modal props')
+    // console.log(this.props);
     let position = {};
     let request = [];
     if (type == 0) {

@@ -375,8 +375,8 @@ exports.updateWarReport = function () {
   //Dynamic Data
   var dynamicCounter = 0;
   let startLoadDate = new Date();
-  regionNames.forEach(function (value) {
-    var str = conf.warApi.liveUrl + `/api/worldconquest/warReport/${value}`
+  regionNames.map((mapName) => {
+    var str = conf.warApi.liveUrl + `/api/worldconquest/warReport/${mapName}`
     var request = new XMLHttpRequest();
     request.responseType = 'json';
     request.open('GET', str, true);
@@ -388,17 +388,17 @@ exports.updateWarReport = function () {
       if (request.status >= 200 && request.status < 400) {
         try {
           //logger.info(this.response);
-          WR[value] = this.response;
+          WR[mapName] = this.response;
           dynamicCounter++;
           if (dynamicCounter == regionNames.length) {
             finishUpdate(startLoadDate);
           }
         } catch (err) {
-          logger.info('ERROR -Could not load dynamic data for', value);
+          logger.info('ERROR -Could not load dynamic data for', mapName);
           logger.info(err);
         }
       } else {
-        logger.error('ERROR - Could not load dynamic data for', value);
+        logger.error('ERROR - Could not load dynamic data for', mapName);
       }
     };
     request.send();

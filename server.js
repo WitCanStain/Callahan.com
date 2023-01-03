@@ -33,9 +33,9 @@ const apikey = process.env.KEY;
 //warapi.pullStatic();
 //warapi.updateStaticTowns();
 
-
-http.listen(40696, function () {
-  logger.info('Your app is listening on port 40696')
+const PORT = process.env.PORT ? process.env.PORT : 40696
+http.listen(PORT, function () {
+  logger.info(`Your app is listening on port ${PORT}`)
 });
 //exports.listener = listener;
 app.use(express.static('src'));
@@ -134,7 +134,7 @@ app.post('/noauth', function (req, res) {
   }
 });
 
-//app.listen(40696);
+
 
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
