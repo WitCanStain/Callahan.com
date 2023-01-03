@@ -1,12 +1,9 @@
 //ANCIENT TECHNOLOGIES BORROWED FROM INTERACTIVE MAP PROJECT
-const SQLite = require('better-sqlite3');
-
 const conf = require('./conf/config');
 const logger = conf.logger
-const sql = SQLite(conf.sqlLite.fileNameGiven);
-const db = require('./dbfunctions.js');
+const sql = require('./db');
 const socket = require('./socket.js');
-const discordbot = require('./discordbot.js');
+// const discordbot = require('./discordbot.js');
 var XMLHttpRequest = require('xhr2');
 const regionNames = ['DeadLandsHex',//3
   'CallahansPassageHex',//4
@@ -169,23 +166,23 @@ exports.updateMap = function () {
                 };
                 logger.info('New data');
                 logger.info(entry);
-                if (obj.iconType == 56 || obj.iconType == 57 || obj.iconType == 58 || obj.iconType == 29) {
-                  let signature = getSignature(obj);
-                  let globallist = sql.prepare('SELECT * FROM global WHERE settings LIKE ?;')
-                    .all('%' + signature + '%');
-                  if (globallist.length > 0) {
-                    for (let j = 0; j < globallist.length; j++) {
-                      discordbot.emitNotify({
-                        global: globallist[j],
-                        region: data.regionId,
-                        date: new Date(),
-                        prevItem: prevObj,
-                        newItem: obj
-                      });
-                    }
-                  }
-                  //logger.info("Global list",globallist)
-                }
+                // if (obj.iconType == 56 || obj.iconType == 57 || obj.iconType == 58 || obj.iconType == 29) {
+                //   let signature = getSignature(obj);
+                //   let globallist = sql.prepare('SELECT * FROM global WHERE settings LIKE ?;')
+                //     .all('%' + signature + '%');
+                //   if (globallist.length > 0) {
+                //     for (let j = 0; j < globallist.length; j++) {
+                //       discordbot.emitNotify({
+                //         global: globallist[j],
+                //         region: data.regionId,
+                //         date: new Date(),
+                //         prevItem: prevObj,
+                //         newItem: obj
+                //       });
+                //     }
+                //   }
+                //   //logger.info("Global list",globallist)
+                // }
 
                 //let global = sql.prepare('SELECT * FROM global WHERE settings LIKE ?;').get(text);
                 if (obj.iconType > 55 && obj.iconType < 59) {
@@ -238,17 +235,9 @@ exports.pullStatic = function () {
     let timedif = Math.abs(finishLoadDate - startDate) / 1000;
     logger.info(timedif + ' seconds to load data');
   }
-
-  try {
-    sql.prepare('DROP TABLE apidata_static_temp;')
-      .run();
-  } //K - if there is no table to drop, just ignore the error and create a new one, meh.
-  catch (err) {
-    logger.error(err)
-  }
   try {
     logger.info("CREATE apidata_static")
-    sql.prepare('CREATE TABLE apidata_static (regionName TEXT PRIMARY KEY, regionId INT, data TEXT, etag TEXT);')
+    sql.prepare('CREATE TABLE IF NOT EXISTS apidata_static (regionName TEXT PRIMARY KEY, regionId INT, data TEXT, etag TEXT);')
       .run();
   } catch (err) {
     logger.error(err)

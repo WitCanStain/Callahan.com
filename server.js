@@ -10,7 +10,7 @@ require('dotenv')
   .config();
 
 //OTHER SERVER MODULES MADE BY US
-const discordbot = require('./discordbot.js'); //SHUTDOWN UNTIL FURTHER NOTICE
+// const discordbot = require('./discordbot.js'); //SHUTDOWN UNTIL FURTHER NOTICE
 
 const db = require('./dbfunctions.js');
 const warapi = require('./warapi.js');
@@ -86,7 +86,7 @@ app.get('/auth/steam/return',
   passport.authenticate('steam', { failureRedirect: '/' }),
   function (req, res) {
     var salt = shortid.generate();
-    //console.log("User "+req.user._json.steamid+" "+req.user._json.personaname+" has logged on");
+    console.log("User "+req.user._json.steamid+" "+req.user._json.personaname+" has logged on");
     //discordbot.auth(req.user._json.steamid,req.user._json.personaname);
     if (!db.existscheck(req.user._json.steamid)) {
       db.insertuser.run(req.user._json.steamid, salt, req.user._json.personaname, req.user._json.avatarmedium);

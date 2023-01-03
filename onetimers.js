@@ -7,7 +7,7 @@ if (!fs.existsSync(databaseDir)) {
   fs.mkdirSync(databaseDir)
 }
 
-const SQLite = require("better-sqlite3")(conf.sqlLite.fileNameGiven, {});
+const sql = require('./db');
 const logger = conf.logger
 
 //const warapi = require('./warapi.js');
@@ -17,11 +17,11 @@ const logger = conf.logger
 //warapi.updateMap();
 ////SQL MANAGEMENT
 
-const create_global_table = SQLite.prepare("CREATE TABLE IF NOT EXISTS global (id TEXT PRIMARY KEY, admin TEXT, settings TEXT, techtree TEXT, fobs TEXT, requests TEXT, misc TEXT, arty TEXT, squads TEXT, refinery TEXT, production TEXT, storage TEXT, stockpiles TEXT, logi TEXT, events TEXT);");
-const create_users_table = SQLite.prepare("CREATE TABLE IF NOT EXISTS users (id TEXT PRIMARY KEY, salt TEXT, name TEXT, avatar TEXT);");
+const create_global_table = sql.prepare("CREATE TABLE IF NOT EXISTS global (id TEXT PRIMARY KEY, admin TEXT, settings TEXT, techtree TEXT, fobs TEXT, requests TEXT, misc TEXT, arty TEXT, squads TEXT, refinery TEXT, production TEXT, storage TEXT, stockpiles TEXT, logi TEXT, events TEXT);");
+const create_users_table = sql.prepare("CREATE TABLE IF NOT EXISTS users (id TEXT PRIMARY KEY, salt TEXT, name TEXT, avatar TEXT);");
 // //SETTINGS: name, side, channel, secure, password
-const create_userGlobal_table = SQLite.prepare("CREATE TABLE IF NOT EXISTS userglobal (id TEXT PRIMARY KEY, userid TEXT, globalid TEXT, rank INT, role INT, FOREIGN KEY (userid) REFERENCES users(id), FOREIGN KEY (globalid) REFERENCES global(id));");
-const create_events = SQLite.prepare("CREATE TABLE IF NOT EXISTS events (region INT, date TEXT, prevItem TEXT, newItem TEXT);")
+const create_userGlobal_table = sql.prepare("CREATE TABLE IF NOT EXISTS userglobal (id TEXT PRIMARY KEY, userid TEXT, globalid TEXT, rank INT, role INT, FOREIGN KEY (userid) REFERENCES users(id), FOREIGN KEY (globalid) REFERENCES global(id));");
+const create_events = sql.prepare("CREATE TABLE IF NOT EXISTS events (region INT, date TEXT, prevItem TEXT, newItem TEXT);")
 
 logger.info('Creating tables...')
 create_global_table.run()
@@ -32,16 +32,16 @@ logger.info('Tables created.')
 
 
 // CREATE INDEXES
-const create_userglobal_userid_index = SQLite.prepare("CREATE INDEX IF NOT EXISTS idx_userglobal_userid ON userglobal(userid)")
-const create_userglobal_globalid_index = SQLite.prepare("CREATE INDEX IF NOT EXISTS idx_userglobal_globalid ON userglobal(globalid)")
-const create_events_date_index = SQLite.prepare("CREATE INDEX IF NOT EXISTS idx_events_date ON events(date DESC)")
+const create_userglobal_userid_index = sql.prepare("CREATE INDEX IF NOT EXISTS idx_userglobal_userid ON userglobal(userid)")
+const create_userglobal_globalid_index = sql.prepare("CREATE INDEX IF NOT EXISTS idx_userglobal_globalid ON userglobal(globalid)")
+const create_events_date_index = sql.prepare("CREATE INDEX IF NOT EXISTS idx_events_date ON events(date DESC)")
 create_userglobal_userid_index.run()
 create_userglobal_globalid_index.run()
 create_events_date_index.run()
 
 
 try {
-  const insert_anonymous = SQLite.prepare("INSERT INTO users (id, salt, name, avatar) VALUES ('anonymous','anonymous','anonymous','anonymous')")
+  const insert_anonymous = sql.prepare("INSERT INTO users (id, salt, name, avatar) VALUES ('anonymous','anonymous','anonymous','anonymous')")
   insert_anonymous.run()
 } catch (error) {
   if (error.code === 'SQLITE_CONSTRAINT_PRIMARYKEY') {
@@ -64,8 +64,8 @@ try {
 //sql.prepare("DROP TABLE global;").run();
 //sql.prepare("CREATE TABLE warhistory (warnumber INT, warstats TEXT, events TEXT, reports TEXT, startpoint TEXT);").run();
 exports.wipe = function (){
-  SQLite.prepare("DELETE FROM userglobal;").run();
-  SQLite.prepare("DELETE FROM global;").run();
+  sql.prepare("DELETE FROM userglobal;").run();
+  sql.prepare("DELETE FROM global;").run();
   //sql.prepare("DELETE FROM towns;").run();
   //sql.prepare("DELETE FROM forts;").run();
   //sql.prepare("DELETE FROM fobs;").run();

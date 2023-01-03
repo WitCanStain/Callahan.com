@@ -34,6 +34,7 @@ socket.on("deleteblueprint", function(id) {
   store.dispatch(A.deleteBlueprint(id));
 });
 socket.on("submitEvent", function(packet) {
+  console.log(`TEST submitEvent userful_react: ${JSON.stringify(packet)}`)
   store.dispatch(
     A.submitEvent({
       type: packet.type,
@@ -43,6 +44,7 @@ socket.on("submitEvent", function(packet) {
   );
 });
 socket.on("submitOpTimer", function(packet) {
+  console.log(`TEST submitOpTimer userful_react: ${JSON.stringify(packet)}`)
   store.dispatch(A.submitOpTimer(packet.date));
 });
 socket.on("toggleSecure", function(packet) {

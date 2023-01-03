@@ -2,10 +2,9 @@ const { logger } = require('./conf/config');
 const db = require('./dbfunctions.js');
 const warapi = require('./warapi.js');
 var XMLHttpRequest = require('xhr2');
-const discordbot = require('./discordbot.js');
-const SQLite = require('better-sqlite3');
+// const discordbot = require('./discordbot.js');
 const conf = require('./conf/config');
-const sql = SQLite(conf.sqlLite.fileNameGiven);
+const sql = require('./db');
 var http;
 var io;
 var steamidlist = [];
@@ -106,6 +105,7 @@ exports.import = function (importhttp) {
 
           socket.on('updateObject', (packet) => { //packet
             //logger.info(packet)
+            logger.info(`TEST updating object: ${JSON.stringify(packet)}`)
             packet.globalid = getglobalid(socket);
             rank = db.getmembership(account.id, link);
             if (rank > 0 && rank < 4) {
@@ -148,6 +148,7 @@ exports.import = function (importhttp) {
 
           socket.on('submitEvent', (packet) => { //packet
             //logger.info(packet)
+            logger.info(`TEST submitting event: ${JSON.stringify(packet)}`)
             packet.globalid = getglobalid(socket);
             rank = db.getmembership(account.id, link);
             if (rank > 0 && rank < 4) {
@@ -159,6 +160,7 @@ exports.import = function (importhttp) {
 
           socket.on('submitOpTimer', (packet) => { //packet
             //logger.info(packet)
+            logger.info(`TEST submitting timer: ${JSON.stringify(packet)}`)
             packet.globalid = getglobalid(socket);
             rank = db.getmembership(account.id, link);
             if (rank > 0 && rank < 4) {
@@ -256,6 +258,7 @@ exports.import = function (importhttp) {
 
           socket.on('addMessage', (packet, category) => { //packet
             //logger.info(packet)
+            logger.info(`TEST adding message: ${JSON.stringify(packet)}`)
             let globalid = getglobalid(socket);
             rank = db.getmembership(account.id, link);
             if (rank > 0 && rank < 4) {
@@ -289,6 +292,7 @@ exports.warstats = {};
 
 function UpdateStats() {
   var xhr = new XMLHttpRequest();
+  logger.info(`TEST updating stats`)
   xhr.open('GET', 'https://api.steampowered.com/ISteamUserStats/GetNumberOfCurrentPlayers/v1/?appid=505460', true);
   xhr.responseType = 'json';
   xhr.onload = function (e) {
@@ -524,5 +528,5 @@ function emitOnlineCount() {
       ids.push(steamidlist[i]);
     }
   }
-  discordbot.emitOnlineCount(ids.length, db.GetCounts());
+  // discordbot.emitOnlineCount(ids.length, db.GetCounts());
 }

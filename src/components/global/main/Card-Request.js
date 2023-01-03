@@ -39,6 +39,7 @@ class RequestContainer extends React.Component {
   }
   SubmitItems(){
     let request = this.GetRequest()
+    console.log(`TEST submitItems: ${JSON.stringify(request)}`);
     let mywip =request.wip[FindMyProduction(request.wip)]
     if(request.done==undefined){
       request.done=[];
@@ -129,6 +130,7 @@ class RequestContainer extends React.Component {
       let wip = clone(this.props.requests[this.props.selected.key].wip[i])
       let author = U.GetUsername(this.props.users.users,wip.author)
       if(author=="Anonymous"){
+        console.log(`TEST author anonymous`)
         let obj = this.GetRequest()
         obj.wip.splice(i,1)
         store.dispatch(A.updateObject("requests",obj,this.props.selected.key))
@@ -179,6 +181,7 @@ class RequestCard extends React.Component { //What needs to be done?
   }
   
   UpdateRequest(obj){
+    console.log(`TEST UpdateRequest`)
     store.dispatch(A.updateObject("requests",obj,this.props.signature))
     socket.emit('updateObject',{type:"requests",object:obj,key:this.props.signature})
   }
@@ -309,7 +312,8 @@ class RequestCard extends React.Component { //What needs to be done?
     )
   }
   
-  DeleteRequest(){   
+  DeleteRequest(){
+    console.log(`TEST delete Request`)
     store.dispatch(A.deleteObject("requests",this.props.signature))
     socket.emit('deleteObject',{type:"requests",key:this.props.signature})
   }

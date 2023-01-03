@@ -1,9 +1,8 @@
 // Here we keep all functions related to database requests
-const SQLite = require('better-sqlite3');
 
 const conf = require('./conf/config')
 const logger = conf.logger
-const sql = SQLite(conf.sqlLite.fileNameGiven);
+const sql = require('./db');
 const XMLHttpRequest = require('xhr2');
 const discordbot = require('./discordbot.js');
 const socket = require('./socket.js');
@@ -481,12 +480,13 @@ exports.updateSquads = function (packet) {
 // Adds a private event
 exports.submitEvent = function (packet) {
 // console.log(packet)
+  console.log(`TEST submitEvent db: ${JSON.stringify(packet)}`)
   const global = sql.prepare('SELECT * FROM global WHERE id = ?').get(packet.globalid);
-  switch (packet.type) {
-    case 0:// TECH EVENT
-      discordbot.techEvent(global, packet.packet);
-      break;
-  }
+  // switch (packet.type) {
+  //   case 0:// TECH EVENT
+  //     discordbot.techEvent(global, packet.packet);
+  //     break;
+  // }
   let events = [];
   if (global.events != '') {
     events = JSON.parse(global.events);
@@ -505,7 +505,7 @@ exports.submitOpTimer = function (packet) {
   let settings = JSON.parse(global.settings);
   settings.optimer = packet.date;
   global.settings = settings;
-  discordbot.startOpTimer(global);
+  // discordbot.startOpTimer(global);
   settings = JSON.stringify(settings);
   sql.prepare('UPDATE global SET settings = ? WHERE id = ?').run(settings, packet.globalid);
 };
@@ -636,17 +636,17 @@ function CheckOpTimers() {
   date = JSON.stringify(date);
   date = date.substring(0, 17);
   // console.log(date)
-  try {
-    const globallist = sql.prepare('SELECT settings FROM global WHERE settings LIKE ? AND settings LIKE "%channelid%" ').all(`%"optimer":${date}%`);
-    if (globallist.length > 0) {
-      for (let i = 0; i < globallist.length; i++) {
-        const settings = JSON.parse(globallist[i].settings);
-        discordbot.emitNotifyOp(settings);
-      }
-    }
-  } catch(error) {
-    logger.warn(error)
-  }
+  // try {
+  //   const globallist = sql.prepare('SELECT settings FROM global WHERE settings LIKE ? AND settings LIKE "%channelid%" ').all(`%"optimer":${date}%`);
+  //   if (globallist.length > 0) {
+  //     for (let i = 0; i < globallist.length; i++) {
+  //       const settings = JSON.parse(globallist[i].settings);
+  //       discordbot.emitNotifyOp(settings);
+  //     }
+  //   }
+  // } catch(error) {
+  //   logger.warn(error)
+  // }
 
 // console.log("Op check global list")
 // console.log(globallist)

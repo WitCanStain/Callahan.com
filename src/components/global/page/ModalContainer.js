@@ -6,6 +6,7 @@ import socket from "../../../_static/socket";
 import store from "../../../redux/store";
 import clone from 'clone'
 import { connect } from "react-redux";
+import { loggers } from "winston";
 
 class ModalContainer extends React.Component {
   constructor(props) {
@@ -295,6 +296,7 @@ class RequestModalContainer extends React.Component {
   }
 
   AddItem(cat, id, priority) {
+    console.log(`TEST AddItem: ${cat, id, priority}`)
     this.setState(state => {
       let array = clone(state.request);
       let item = {
@@ -350,6 +352,7 @@ class RequestModalContainer extends React.Component {
   }
 
   GetRequest() {
+    console.log(`TEST GetRequest`)
     let ChangeItem = this.ChangeItem;
     let RemoveItem = this.RemoveItem;
     function RenderLine(obj, priority, index) {
@@ -430,12 +433,13 @@ class RequestModalContainer extends React.Component {
     return 0;
   }
   CreateRequest() {
-    //console.log("Creating request");
-    //console.log(this.state)
+    console.log("Creating request");
+    console.log(this.state)
     let key = U.signature({
       x: this.state.position.lng,
       y: this.state.position.lat
     });
+    logger.info(`Test request here`)
     if (
       this.state.request[0].length == 0 &&
       this.state.request[1].length == 0 &&
@@ -573,6 +577,7 @@ class RequestModalContainer extends React.Component {
                 </button>
                 <button
                   type="button"
+                  id="cancelrequestBtn"
                   className="btn requestmodal_cancelbtn"
                   onClick={() => this.CloseModal()}
                 >

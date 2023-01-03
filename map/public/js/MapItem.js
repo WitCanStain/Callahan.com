@@ -1,5 +1,4 @@
 import * as MapIcon from './MapIcons.js';
-import * as MapData from './MapRegions.js';
 import { mapLayers } from './MapLayers.js';
 import { regions } from './MapRegions.js';
 

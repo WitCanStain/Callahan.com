@@ -72,6 +72,7 @@ const initialStateMouse = {
 // ////////////////////////////////////////////////////////////////////////////////
 const RoomInfoReducer = (state = initialStateMap, action) => {
   let info = {};
+  console.log(`TEST RoomInfoReducer: ${state}, ${action}`)
   switch (action.type) {
     case A.LOAD_PAGE:
       return { ...state, dynamic: action.data.dynamic,
@@ -145,6 +146,7 @@ const RoomInfoReducer = (state = initialStateMap, action) => {
 const PrivateReducer = (state = initialStateMapPrivate, action) => {
   // console.log("info:")
   // console.log(state)
+  console.log(`TEST PrivateReducer: ${state}, ${action}`)
   let info = {};
   switch (action.type) {
     case A.LOAD_PAGE:
@@ -232,6 +234,7 @@ const TechtreeReducer = (state = initialStateTech, action) => {
 // ///////////////////////////////////////////////////////////////////////////////////////////////////////
 const UserReducer = (state = initialStateUsers, action) => {
   let { users } = state;
+  console.log(`TEST UserReducer: ${state}, ${action}`)
   // let meta = state.meta
 
   switch (action.type) {
@@ -339,6 +342,7 @@ const UserReducer = (state = initialStateUsers, action) => {
 // //////////////////////////////////////////////////////////////////////////////////////////////////
 const MetaReducer = (state = initialStateMeta, action) => {
   let settings = JSON.parse(JSON.stringify(state.settings));
+  console.log(`TEST MetaReducer: ${state}, ${action}`)
   switch (action.type) {
     case A.LOAD_PAGE:
       return {
@@ -385,6 +389,7 @@ const MetaReducer = (state = initialStateMeta, action) => {
 // /////////////////////////////////////////////////////////////////////////////////////////////////////
 const SelectedReducer = (state = initialStateSelected, action) => {
   let kind = '';
+  console.log(`TEST SelectedReducer: ${state}, ${action}`)
   switch (action.type) {
     case A.SELECT_OBJECT:
       // console.log("Selecting object")
@@ -454,6 +459,7 @@ const SelectedReducer = (state = initialStateSelected, action) => {
 // ////////////////////////////////////////////////////////////////////////////////////////////////
 const TabReducer = (state = initialStateTab, action) => {
   let info = {};
+  console.log(`TEST TabReducer: ${state}, ${action}`)
   switch (action.type) {
     case A.SELECT_TAB:
       if (action.tab == 5) {
@@ -550,6 +556,7 @@ const SquadsReducer = (state = initialStateSquads, action) => {
 // //////////////
 const EventsReducer = (state = initialStateEvents, action) => {
   let privateEvents = [];
+  console.log(`TEST EventsReducer`);
   if (state.privateEvents != undefined) {
     privateEvents = JSON.parse(JSON.stringify(state.privateEvents));
   }
@@ -575,6 +582,7 @@ const EventsReducer = (state = initialStateEvents, action) => {
           window.soundcontrol.PlaySingle('https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fsupp%20completed.mp3');
           break;
         case 3:
+          console.log(`Playing supplies sound`)
           window.soundcontrol.PlaySingle('https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fsupplies.mp3');
           break;
         //case 4:
