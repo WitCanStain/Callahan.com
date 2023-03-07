@@ -6,7 +6,7 @@ import socket from "../../../_static/socket";
 import store from "../../../redux/store";
 import clone from 'clone'
 import { connect } from "react-redux";
-import { loggers } from "winston";
+//import { loggers } from "winston";
 
 class ModalContainer extends React.Component {
   constructor(props) {
@@ -439,7 +439,7 @@ class RequestModalContainer extends React.Component {
       x: this.state.position.lng,
       y: this.state.position.lat
     });
-    logger.info(`Test request here`)
+    //logger.info(`Test request here`)
     if (
       this.state.request[0].length == 0 &&
       this.state.request[1].length == 0 &&

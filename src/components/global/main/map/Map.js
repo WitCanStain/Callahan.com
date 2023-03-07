@@ -170,7 +170,12 @@ class GlobalMap extends React.Component {
       <ContextDropdown ref={(obj) => {
         this.refs.context_facilities_dropdown = obj;
       }} type={6}/>,
-      document.getElementById('context_facilities_dropdown'));	  
+      document.getElementById('context_facilities_dropdown'));
+	ReactDOM.render(
+      <ContextDropdown ref={(obj) => {
+        this.refs.context_bunkers_dropdown = obj;
+      }} type={7}/>,
+      document.getElementById('context_bunkers_dropdown'));	  	  
   }
 
   PanRegion(regionId) {
@@ -328,7 +333,7 @@ class GlobalMap extends React.Component {
 				   icon: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Frelic.png?1557925933310',
 				   callback: (event)=>this.OpenMenu(event,'context_relics_dropdown', 2),
 				   hideOnSelect:false
-       }, /*{
+				}, /*{
            text: 'CV',
         icon: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fdagts.png?1554890715341',
        callback: (event)=>this.CreateMiscIcon(event,6)
@@ -349,7 +354,12 @@ class GlobalMap extends React.Component {
                    icon: 'http://hq.mreboy.com/img/TunnelNetworkStructureIcon.png',
                    callback: (event) => this.OpenMenu(event, 'context_facilities_dropdown', 6),
                    hideOnSelect: false
-                   } 				   
+                   },
+				   {text: '<div class="dropup"><span class="dropdown-toggle" >Bunkers</span>  <div class="dropdown-menu" id="context_bunkers_dropdown"></div></div> ',
+                   icon: 'http://hq.mreboy.com/img/FortT1BaseIcon.png',
+                   callback: (event) => this.OpenMenu(event, 'context_bunkers_dropdown', 7),
+                   hideOnSelect: false
+                   }, 				    				   
                  ]}
         >
 

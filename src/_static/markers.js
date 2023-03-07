@@ -257,6 +257,28 @@ const MiscIconArray = [
   { name: ' Flat Car', url: 'http://hq.mreboy.com/img/TrainCarVehicleIcon.png' }, // 67
   { name: ' TSC Car', url: 'http://hq.mreboy.com/img/TrainLRArtilleryVehicleIcon_halo.png' }, // 68
   { name: ' Caboose', url: 'http://hq.mreboy.com/img/WideGaugeCaboose.png' }, // 69
+  
+  
+  { name: ' T1 Blank', url: 'http://hq.mreboy.com/img/FortT1Icon.png' }, // 70
+  { name: ' T1 Rifle', url: 'http://hq.mreboy.com/img/FortT1GunAIIcon.png' }, // 71
+  { name: ' T1 MG', url: 'http://hq.mreboy.com/img/FortT1MGunAIIcon.png' }, // 72
+  { name: ' T2 Blank', url: 'http://hq.mreboy.com/img/FortT2Icon.png' }, // 73
+  { name: ' T2 Rifle', url: 'http://hq.mreboy.com/img/FortT2GunAIIcon.png' }, // 74
+  { name: ' T2 MG', url: 'http://hq.mreboy.com/img/FortT2MGunAIIcon.png' }, // 75
+  { name: ' T2 AT', url: 'http://hq.mreboy.com/img/FortT2ATGunAIIcon.png' }, // 76
+  { name: ' T2 Obs.', url: 'http://hq.mreboy.com/img/ObservationBunkerT2BBItemIcon.png' }, // 77
+  { name: ' T2 Engine', url: 'http://hq.mreboy.com/img/EngineRoomT2Icon.png' }, // 78
+  { name: ' T3 Blank', url: 'http://hq.mreboy.com/img/FortT3Icon.png' }, // 79
+  { name: ' T3 Rifle', url: 'http://hq.mreboy.com/img/FortT3GunAIIcon.png' }, // 80
+  { name: ' T3 MG', url: 'http://hq.mreboy.com/img/FortT3MGunAIIcon.png' }, // 81
+  { name: ' T3 AT', url: 'http://hq.mreboy.com/img/FortT3ATGunAIIcon.png' }, // 82
+  { name: ' T3 Obs.', url: 'http://hq.mreboy.com/img/ObservationBunkerT3BBItemIcon.png' }, // 83
+  { name: ' T3 Engine', url: 'http://hq.mreboy.com/img/EngineRoomT3Icon.png' }, // 84
+  { name: ' T3 Howitzer', url: 'http://hq.mreboy.com/img/FortT3HowitzerAIIcon.png' }, // 85
+  { name: ' T3 Ammo', url: 'http://hq.mreboy.com/img/AmmoRoomT3Icon.png' }, // 86
+  { name: ' T3 Intel', url: 'http://hq.mreboy.com/img/IntelligenceCenterT3Icon.png' }, // 87
+  { name: ' T3 S. Cannon', url: 'http://hq.mreboy.com/img/LongRangedArtilleryT3Icon.png' }, // 88
+  
 ];
 
 const icons = ['', // 0

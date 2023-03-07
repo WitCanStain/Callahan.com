@@ -50,18 +50,18 @@ export class ContextDropdown extends React.Component {  ////Component generation
     for(var i=8;i<=12;i++){
       items.push(this.GetItem(i))
     }
-        break;
-      case 1: //OBJECTIVES icons
+     break;
+     case 1: //OBJECTIVES icons
      for(var i=13;i<=15;i++){
       items.push(this.GetItem(i))
     }   
-        break;
-      case 2: //TRAIN ICONS
+     break;
+     case 2: //TRAIN ICONS
     for(var i=64;i<=69;i++){
       items.push(this.GetItem(i))
     }
-        break;
-        case 3: //SHIP icons
+     break;
+     case 3: //SHIP icons
     for(var i=21;i<=24;i++){
       items.push(this.GetItem(i))
     }
@@ -78,7 +78,12 @@ export class ContextDropdown extends React.Component {  ////Component generation
      break;
     case 6: //FACILITY icons
     for(var i=47;i<=63;i++){
-      items.push(this.GetItem(i))	  
+	items.push(this.GetItem(i))
+	}
+	 break;
+    case 7: //BUNKER icons
+    for(var i=70;i<=88;i++){
+      items.push(this.GetItem(i))  
     }	
     }
     return <React.Fragment>
