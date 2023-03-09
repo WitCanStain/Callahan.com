@@ -10,7 +10,12 @@ const initialState = {
         towns: true,
         forts: true,
         towers: true,
-        safehouses: true
+        safehouses: true,
+		techcenters: true,
+		seaports: true,
+		coastalguns: true,
+		stormcannons: true,
+		intelcenters: true
     },
     production: {
         total: false,
@@ -22,13 +27,15 @@ const initialState = {
         hospitals: false,
         vfactories: false,
         shipyards: false,
-        rocketsites: false
+        rocketsites: false,
+		mpfs: false
     },
     resources: {
         total: false,
         salvage: false,
         components: false,
         sulfur: false,
+		coal: false,
         mine_salvage: false,
         mine_components: false,
         mine_sulfur: false,
