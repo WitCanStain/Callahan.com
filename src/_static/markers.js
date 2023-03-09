@@ -125,6 +125,10 @@ const FobIcon = [
     new FobIconBase({ iconUrl: `${repo}Bases/MapIconBunkerBaseTier3.png` }), //BB T3 NEUT
     new FobIconBase({ iconUrl: `${repo}Bases/MapIconBunkerBaseTier3Colonial.png` }), //BB T3 COL
     new FobIconBase({ iconUrl: `${repo}Bases/MapIconBunkerBaseTier3Warden.png` })], //BB T3 WAR 
+  [
+    new FobIconBase({ iconUrl: `${repo}Bases/MapIconBorderBase.png` }), //BORDER BASE NEUT
+    new FobIconBase({ iconUrl: `${repo}Bases/MapIconBorderBaseC.png` }), //BORDER BASE COL
+    new FobIconBase({ iconUrl: `${repo}Bases/MapIconBorderBaseW.png` })], //BORDER BASE WAR 
   ];  
 
 const MiscIcon = L.Icon.extend({
