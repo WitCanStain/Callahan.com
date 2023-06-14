@@ -91,10 +91,12 @@ const regionlist = [
   { name: /*The*/ "Linn of Mercy", center: [o.y + 0.5 * k, o.x - 0.75 * w] }, //10
   { name: "Reaching Trail", center: [o.y + 2 * k, o.x] }, //11
   { name: "Stonecradle", center: [o.y + k, o.x - 1.5 * w] }, //12
-  { name: "Farranac Coast", center: [o.y, o.x - 1.5 * w] }, //13
-  { name: "Westgate", center: [o.y - k, o.x - 1.5 * w] }, //14
-  { name: "Fisherman's Row", center: [o.y - 0.5 * k, o.x - 2.25 * w] }, //15
-  { name: /*The*/ "Oarbreaker Isles", center: [o.y + 0.5 * k, o.x - 2.25 * w] }, //16
+  { name: "Farranac Coast", center:[o.y + 0.5 * k, o.x - 2.25 * w] },//13
+  { name: "Westgate", center:[o.y - 0.5 * k, o.x - 2.25 * w] },//14
+  //{ name: "Fisherman's Row", center: [o.y - 0.5 * k, o.x - 2.25 * w] }, //15
+  //{ name: /*The*/ "Oarbreaker Isles", center: [o.y + 0.5 * k, o.x - 2.25 * w] }, //16
+  { name: "", center: [-1000, -1000] }, //15
+  { name: "", center: [-1000, -1000] }, //16
   { name: "Great March", center: [o.y - 2 * k, o.x] }, //17
   { name: "Tempest Island", center: [o.y - 0.5 * k, o.x + 2.25 * w] }, //18
   { name: "Godcrofts", center: [o.y + 0.5 * k, o.x + 2.25 * w] }, //19
@@ -120,8 +122,10 @@ const regionlist = [
   { name: "Terminus", center:[o.y - 2 * k, o.x + 1.5 * w] },//39
   { name: "Kalokai", center: [o.y - 3 * k, o.x] },//40
   { name: "Ash Fields", center: [o.y - 2 * k, o.x - 1.5 * w] },//41
-  { name: "Origin", center: [o.y - 1.5 * k, o.x - 2.25 * w] }//42  
-];
+  { name: "Origin", center: [o.y - 1.5 * k, o.x - 2.25 * w] },//42  
+  { name: "Sableport", center: [o.y - k, o.x - 1.5 * w] },//43
+  { name: "King's Cage", center: [o.y, o.x - 1.5 * w] },//44
+  ];
 
 function GetBounds(index) {
   let region = regionlist[index];

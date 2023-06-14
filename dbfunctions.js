@@ -19,8 +19,8 @@ let regionNames = ['DeadLandsHex',//3
   'StonecradleHex',//12
   'FarranacCoastHex',//13
   'WestgateHex',//14
-  'FishermansRowHex',//15
-  'OarbreakerHex',//16
+  //'FishermansRowHex',//15
+  //'OarbreakerHex',//16
   'GreatMarchHex', //17
   'TempestIslandHex', //18
   'GodcroftsHex',//19
@@ -43,7 +43,10 @@ let regionNames = ['DeadLandsHex',//3
   'TerminusHex',//39
   'KalokaiHex',//40
   'AshFieldsHex',//41
-  'OriginHex'];//42
+  'OriginHex',//42
+  'SableportHex',//43
+  'KingsCageHex'//44
+  ];
   
 function UpdateMapList() {
   const request = new XMLHttpRequest();

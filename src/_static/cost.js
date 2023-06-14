@@ -164,7 +164,7 @@ var iteminfo= [
 {name:"APC", i:1, r:20, v:true, src:'Mulloy_LPC_Vehicle_Icon.png'},
 {name:"ST", i:1, r:80, v:true, src:'King_Spire_MK-I_Icon.png'},
 {name:"Gallant ST", i:1, r:90, v:true, src:'KingGallant.png'},
-{name:"Joker ST", i:1, r:90, v:true, src:'ScoutTankMultiWIcon.png'},
+{name:"Jester ST", i:1, r:90, v:true, src:'ScoutTankMultiWIcon.png'},
 {name:"LT", i:1, r:140, v:true, src:'Devitt_Mark_III_Vehicle_Icon.png'},
 {name:"ULT", i:1, r:160, v:true, src:'Devitt_Ironhide_Mk._IV_Vehicle_Icon.png'},
 {name:"MLT", i:1, r:150, v:true, src:'Devitte-Caine_Mk-IV_MMR_Icon.png'},
@@ -229,7 +229,8 @@ var iteminfo= [
 {name:"Pallet - 250mm", i:120, b:100, src:'pallet_250.png'},
 {name:"Pallet - 300mm", i:120, b:100, src:'pallet_300.png'},
 {name:"Pallet - Flame Ammo", i:120, b:100, src:'pallet_flamer.png'},
-{name:"Pallet - Rockets", i:60, b:100, src:'pallet_rockets.png'},
+{name:"Pallet - HE Rockets", i:60, b:100, src:'pallet_rockets.png'},
+{name:"Pallet - Fire Rockets", i:60, b:100, src:'pallet_rockets_red.png'},
 
 {name:"Railcart - 75mm", i:50, b:100, src:'cart_75.png'},
 {name:"Railcart - 94mm", i:50, b:100, src:'cart_94.png'},
@@ -238,7 +239,8 @@ var iteminfo= [
 {name:"Railcart - 250mm", i:100, b:100, src:'cart_250.png'},
 {name:"Railcart - 300mm", i:100, b:100, src:'cart_300.png'},
 {name:"Railcart - Flame Ammo", i:100, b:100, src:'cart_flamer.png'},
-{name:"Railcart - Rockets", i:50, b:100, src:'cart_rockets.png'},
+{name:"Railcart - HE Rockets", i:50, b:100, src:'cart_rockets.png'},
+{name:"Railcart - Fire Rockets", i:50, b:100, src:'cart_rockets_red.png'},
 
 
 //{name:"P/D 40x 120mm Ammo", i:1, b:1, v:true, src:'LightArtilleryAmmoItemIconYellow.png'},

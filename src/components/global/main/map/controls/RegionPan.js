@@ -9,16 +9,16 @@ export class RegionPan extends React.Component {
 <div className="btn-group btn-group-sm region_pan_btn_group">
     <div className="btn-group-vertical region_pan_btn_group_vertical">
 	    <button type="button" className="btn regionbtn" onClick={()=>this.props.PanRegion(29)}>Nevish <br />Line</button>
-    <button type="button" className="btn regionbtn" onClick={()=>this.props.PanRegion(16)}>Oarbreaker <br />Isles</button>
-  <button type="button" className="btn regionbtn" onClick={()=>this.props.PanRegion(15)}>Fishermans<br />Row</button>
+    <button type="button" className="btn regionbtn" onClick={()=>this.props.PanRegion(13)}>Farranac <br />Coast</button>
+  <button type="button" className="btn regionbtn" onClick={()=>this.props.PanRegion(14)}>Westgate</button>
     <button type="button" className="btn regionbtn" onClick={()=>this.props.PanRegion(42)}>Origin</button>
 
 </div> 
   <div className="btn-group-vertical region_pan_btn_group_vertical">
       <button type="button" className="btn regionbtn" onClick={()=>this.props.PanRegion(32)}>Callum's <br />Cape</button>
     <button type="button" className="btn regionbtn" onClick={()=>this.props.PanRegion(12)}>Stonecradle</button>
-  <button type="button" className="btn regionbtn" onClick={()=>this.props.PanRegion(13)}>Farranac Coast</button>
-  <button type="button" className="btn regionbtn" onClick={()=>this.props.PanRegion(14)}>Westgate</button>
+  <button type="button" className="btn regionbtn" onClick={()=>this.props.PanRegion(44)}>King's <br />Cage</button>
+  <button type="button" className="btn regionbtn" onClick={()=>this.props.PanRegion(43)}>Sableport</button>
       <button type="button" className="btn regionbtn" onClick={()=>this.props.PanRegion(41)}>Ash Fields</button>
 </div> 
     <div className="btn-group-vertical region_pan_btn_group_vertical">

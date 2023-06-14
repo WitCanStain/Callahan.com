@@ -1,7 +1,0 @@
-DirectoryIndex disabled
-PassengerEnabled on
-RewriteEngine On
-PassengerStartupFile app.js
-PassengerAppType node
-PassengerAppRoot /var/www/hq.mreboy.com/public/map
-PassengerNodejs /home/mreboy/.nvm/versions/node/v12.19.0/bin/node
