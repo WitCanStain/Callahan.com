@@ -17,8 +17,8 @@ const regionNames = ['DeadLandsHex',//3
   'StonecradleHex',//12
   'FarranacCoastHex',//13
   'WestgateHex',//14
-  //'FishermansRowHex',//15
-  //'OarbreakerHex',//16
+  'FishermansRowHex',//15
+  'OarbreakerHex',//16
   'GreatMarchHex', //17
   'TempestIslandHex', //18
   'GodcroftsHex',//19
@@ -43,7 +43,11 @@ const regionNames = ['DeadLandsHex',//3
   'AshFieldsHex',//41
   'OriginHex',//42
   'SableportHex',//43
-  'KingsCageHex'//44
+  'KingsCageHex',//44
+  'StlicanShelfHex', // 45
+  'ClahstraHex', // 46
+  'ReaversPassHex', // 47
+  'StemaLandingHex', // 48
   ];
 
 

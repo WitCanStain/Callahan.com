@@ -14,7 +14,7 @@ function BaseLayers_(props) {
           continuousWorld={true}
           bounds={[[-256, 0], [0, 256]]}
           maxNativeZoom={5}
-          url='http://hq.mreboy.com/map_tiles/{z}/{z}_{x}_{y}.png'
+          url='../../../../../map_tiles/{z}/{z}_{x}_{y}.png'
         />
       </L.LayersControl.BaseLayer>
 
@@ -24,7 +24,7 @@ function BaseLayers_(props) {
           continuousWorld={true}
           bounds={[[-256, 0], [0, 256]]}
           maxNativeZoom={5}
-          url='http://hq.mreboy.com/map_tiles_adv/{z}/{z}_{x}_{y}.png'
+          url='../../../../../map_tiles_adv/{z}/{z}_{x}_{y}.png'
         />
       </L.LayersControl.BaseLayer>
     </L.LayersControl>

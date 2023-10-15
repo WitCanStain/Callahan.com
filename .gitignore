@@ -23,3 +23,9 @@ yarn-error.log*
 
 
 .nvmrc
+src/components/global/main/map/baselayers - Copy.js
+dbfunctions - Copy.js
+src/_static/region-images - Copy.js
+warapi - Copy.js
+src/components/global/main/map/controls/RegionPan - Copy.js
+.htaccess
