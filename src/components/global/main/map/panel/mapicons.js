@@ -220,6 +220,11 @@ class MapIcons_ extends React.Component {
                     iconlist.push(this.GetIcon(obj,region)) 
                   }
                   break;
+				case 75:
+                  if(display.resources.oilrigs) {
+                    iconlist.push(this.GetIcon(obj,region)) 
+                  }
+                  break;
               //MINE SECTION/////////////////////////
                 case 38:
                   if(display.resources.mine_salvage) {

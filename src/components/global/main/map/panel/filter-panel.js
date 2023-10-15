@@ -78,6 +78,7 @@ function FilterPanel_(props) {
                     <LGC cat='resources' item='mine_components' name=' Component Mines' src={ repo + 'MapIconComponentMine.png' }/>
                     <LGC cat='resources' item='mine_sulfur' name=' Sulfur Mines' src={ repo + 'MapIconSulfurMine.png' }/>
                     <LGC cat='resources' item='mine_oil' name=' Oil Field' src={ repo + 'MapIconOilWell.png' }/>
+					<LGC cat='resources' item='oilrigs' name=' Oil Rigs' src={ repo + 'MapIconFacilityMineOilRig.png' }/>
                 </DropdownMenu>
             </Dropdown>
 

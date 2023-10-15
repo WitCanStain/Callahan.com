@@ -29,3 +29,7 @@ src/_static/region-images - Copy.js
 warapi - Copy.js
 src/components/global/main/map/controls/RegionPan - Copy.js
 .htaccess
+src/components/global/main/map/panel/filter-panel - Copy.js
+src/components/global/main/map/panel/mapicons - Copy.js
+src/_static/markers - Copy.js
+src/redux/display/reducer - Copy.js

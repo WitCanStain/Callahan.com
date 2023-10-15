@@ -460,6 +460,24 @@ const icons = ['', // 0
   'Resources/MapIconCoal.png', // 61 COAL FIELD
   'Resources/MineOil.png', // 62 OIL FIELD
   
+'',
+'',
+'',
+'',
+'',
+'',
+'',
+'',
+'',
+'',
+'',
+'',
+
+  {
+    n: 'Resources/MapIconFacilityMineOilRig.png',
+    c: 'Resources/MapIconFacilityMineOilRigC.png',
+    w: 'Resources/MapIconFacilityMineOilRigW.png',
+  },//75 - Offshore Oil Rig ICONS
   
   // RELIC BASES
   /* {n:'',
@@ -533,7 +551,7 @@ function GenerateIcon(obj, param) {
     }
   } else {
     switch (obj.iconType) {
-      case 11: case 17: case 19: case 27: case 28: case 29: case 33: case 34: case 35: case 36: case 45: case 46: case 47: case 51: case 52: case 53: case 56: case 57: case 58: case 59: case 60:
+      case 11: case 17: case 19: case 27: case 28: case 29: case 33: case 34: case 35: case 36: case 45: case 46: case 47: case 51: case 52: case 53: case 56: case 57: case 58: case 59: case 60: case 75:
         if (param == 'min') {
           iconUrl = icons[obj.iconType].min[obj.teamId[0].toLowerCase()];
         } else {

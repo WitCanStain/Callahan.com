@@ -29,6 +29,7 @@ const initialState = {
         shipyards: false,
         rocketsites: false,
 		mpfs: false
+
     },
     resources: {
         total: false,
@@ -39,7 +40,8 @@ const initialState = {
         mine_salvage: false,
         mine_components: false,
         mine_sulfur: false,
-        mine_oil: false
+        mine_oil: false,
+		oilrigs: false
     },
     custom: {
         total: true,
