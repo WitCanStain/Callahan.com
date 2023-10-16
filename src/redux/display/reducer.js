@@ -15,7 +15,9 @@ const initialState = {
 		seaports: true,
 		coastalguns: true,
 		stormcannons: true,
-		intelcenters: true
+		intelcenters: true,
+		rtarget: true,
+		rcrater: true
     },
     production: {
         total: false,
@@ -28,6 +30,7 @@ const initialState = {
         vfactories: false,
         shipyards: false,
         rocketsites: false,
+		rprepped: false,
 		mpfs: false
 
     },

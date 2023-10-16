@@ -198,6 +198,21 @@ class MapIcons_ extends React.Component {
                   if(display.objectives.intelcenters) {
                     iconlist.push(this.GetIcon(obj,region))
                   }
+                  break;
+				case 70://ROCKET TARGET
+                  if(display.objectives.rtarget) {
+                    iconlist.push(this.GetIcon(obj,region))
+                  }
+                  break;
+				case 71://ROCKET GROUND ZERO
+                  if(display.objectives.rcrater) {
+                    iconlist.push(this.GetIcon(obj,region))
+                  }
+                  break;
+				case 72://ROCKET SITE WITH ROCKET
+                  if(display.production.rprepped) {
+                    iconlist.push(this.GetIcon(obj,region))
+                  }
                   break;				  
               //RESOURCE SECTION/////////////////////
                 case 20:

@@ -37,6 +37,8 @@ function FilterPanel_(props) {
 					<LGC cat='objectives' item='coastalguns' name=' Coastal Guns' src={ repo + 'MapIconCoastalGun.png' }/>
 					<LGC cat='objectives' item='stormcannons' name=' Storm Cannons' src={ repo + 'MapIconStormcannon.png' }/>
 					<LGC cat='objectives' item='intelcenters' name=' Intel Centers' src={ repo + 'MapIconIntelcenter.png' }/>
+					<LGC cat='objectives' item='rtarget' name=' R. Targets' src={ repo + 'MapIconRocketTarget.png' }/>
+					<LGC cat='objectives' item='rcrater' name=' R. Craters' src={ repo + 'MapIconRocketCrater.png' }/>					
                 </DropdownMenu>
             </Dropdown>
 
@@ -57,7 +59,9 @@ function FilterPanel_(props) {
                     <LGC cat='production' item='shipyards' name=' Shipyards' src={ repo + 'MapIconShipyard.png' }/>
                     <LGC cat='production' item='constructions' name=' Constr. Yards' src={ repo + 'MapIconConstructionYard.png' }/>
                     <LGC cat='production' item='rocketsites' name=' Rocket Sites' src={ repo + 'MapIconRocketSite.png' }/>
+					<LGC cat='production' item='rprepped' name=' Rocket Ready' src={ repo + 'RocketSiteWithRocketMapIcon.png' }/>						
 					<LGC cat='production' item='mpfs' name=' MPFs' src={ repo + 'MapIconMassProductionFactory.png' }/>
+				
                 </DropdownMenu> 
             </Dropdown>
 
