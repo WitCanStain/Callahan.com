@@ -140,19 +140,12 @@ const MiscIcon = L.Icon.extend({
 });
 const MiscIconArray = [
   { name: 'Note', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Ffdsag.png?1554889393144' }, // 0 NOTE
-
   { name: 'Enemy', url: 'https://cdn.glitch.com/6393f3fd-16a7-4641-ae3d-994f8e7cea4e%2FIndicator_queue.png?1548525724233' }, // 1
-
   { name: 'Attack', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fattack.png?1554589500531' }, // 2
-
   { name: 'Defend', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fdefend.png?v=1554589500846' }, // 3
-
   { name: 'Move', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fmove.png?1554589501432' }, // 4
-
   { name: 'Howitzer', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Ffsdd-9.png?1558099235579' }, // 5
-
   { name: 'CV', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fcv.png?1554890422722' }, // 6
-
   { name: 'Build', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FUndsfsed-6.png?1558094804796' }, // 7
 
   { name: ' Squad 1', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2F1s.png?1557484360213' }, // 8
@@ -171,16 +164,13 @@ const MiscIconArray = [
  //{ name: ' Tractor', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Ffdsa1.png?1558524670995' }, // 19
  //{ name: ' Staff Car', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fsh3.png?1558524399172' }, // 20
 
-  { name: ' Locomotive', url: 'http://hq.mreboy.com/img/TrainEngineVehicleIcon.png' }, // 16
+  { name: ' Locomotive', url: 'http://hq.mreboy.com/img/TrainEngineVehicleIcon.png' }, // 16 ABANDONED SECTION, MOVED
   { name: ' Infantry Car', url: 'http://hq.mreboy.com/img/InfantryCarVehicleIcon.png' }, // 17
   { name: ' 40mm Gun Car', url: 'http://hq.mreboy.com/img/CombatCarWVehicleIcon.png' }, // 18
   { name: ' Flat Car', url: 'http://hq.mreboy.com/img/TrainCarVehicleIcon.png' }, // 19
   { name: ' TSC Car', url: 'http://hq.mreboy.com/img/TrainLRArtilleryVehicleIcon_halo.png' }, // 20
 
-
-
-
-  { name: ' Barge', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FBRG-2.png?1558692837627' }, // 21
+  { name: ' Barge', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FBRG-2.png?1558692837627' }, // 21 ABANDONED SECTION, MOVED
   { name: ' Gunboat', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FGBT2.png?1558692846451' }, // 22
   { name: ' APC', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FAPC-2.png?1558692836707' }, // 23
   { name: ' Freighter', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FCARGO.png?1558692847027' }, // 24
@@ -210,13 +200,12 @@ const MiscIconArray = [
     size: 600,
   }, // 28
 
-  { name: ' CV', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fcv.png?1554890422722' }, // 29
+  { name: ' CV', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fcv.png?1554890422722' }, // 29 ABANDONED SECTION, MOVED
   { name: ' Crane', url: 'https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2Fcrane1.png?v=1563106383574' }, // 30
   { name: ' Flatbed', url: 'https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2Ffltbd.png?v=1563106384699' }, // 31
   { name: ' Container', url: 'https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2Fconta1.png?v=1563106385043' }, // 32
   { name: ' Fuel Truck', url: 'https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2Foilta.png?v=1563106384068' }, // 33
   { name: ' Klausmobile', url: 'http://hq.mreboy.com/img/TrainEngineVehicleIcon.png' }, // 34
-
 
   {
     name: 'Storm Cannon',
@@ -225,7 +214,7 @@ const MiscIconArray = [
     size: 2400,
   }, // 35
   
-  { name: ' Armored', url: 'http://hq.mreboy.com/img/82dk_armor.png' }, // 36
+  { name: ' Armored', url: 'http://hq.mreboy.com/img/82dk_armor.png' }, // 36 SECTION ICONS
   { name: ' Artillery', url: 'http://hq.mreboy.com/img/82dk_arty.png' }, // 37
   { name: ' Combat Eng.', url: 'http://hq.mreboy.com/img/82dk_ce.png' }, // 38
   { name: ' Chimera', url: 'http://hq.mreboy.com/img/82dk_chimera.png' }, // 39
@@ -237,7 +226,7 @@ const MiscIconArray = [
   { name: ' Scarus', url: 'http://hq.mreboy.com/img/82dk_scarus.png' }, // 45
   { name: ' Tempestus', url: 'http://hq.mreboy.com/img/82dk_tempestus.png' }, // 46
   
-  { name: ' Materials Fact.', url: 'http://hq.mreboy.com/img/MetalworksFactoryBase.png' }, // 47
+  { name: ' Materials Fact.', url: 'http://hq.mreboy.com/img/MetalworksFactoryBase.png' }, // 47 FACILITY ICONS
   { name: ' Metalworks Fact.', url: 'http://hq.mreboy.com/img/FacilityRefinery2Icon.png' }, // 48 
   { name: ' Coal Refinery', url: 'http://hq.mreboy.com/img/FacilitiesCoolRefineryBaseIcon.png' }, // 49
   { name: ' Oil Refinery', url: 'http://hq.mreboy.com/img/OilRefineryBaseIcon.png' }, // 50  
@@ -255,15 +244,14 @@ const MiscIconArray = [
   { name: ' Resource TS', url: 'http://hq.mreboy.com/img/MaterialTransferStationIcon.png' }, // 62 
   { name: ' Liquid TS', url: 'http://hq.mreboy.com/img/MaterialTransferStationLiquidIcon.png' }, // 63 
   
-  { name: ' Locomotive', url: 'http://hq.mreboy.com/img/TrainEngineVehicleIcon.png' }, // 64
+  { name: ' Locomotive', url: 'http://hq.mreboy.com/img/TrainEngineVehicleIcon.png' }, // 64 TRAIN ICONS
   { name: ' Infantry Car', url: 'http://hq.mreboy.com/img/InfantryCarVehicleIcon.png' }, // 65
   { name: ' 40mm Gun Car', url: 'http://hq.mreboy.com/img/CombatCarWVehicleIcon.png' }, // 66
   { name: ' Flat Car', url: 'http://hq.mreboy.com/img/TrainCarVehicleIcon.png' }, // 67
   { name: ' TSC Car', url: 'http://hq.mreboy.com/img/TrainLRArtilleryVehicleIcon_halo.png' }, // 68
   { name: ' Caboose', url: 'http://hq.mreboy.com/img/WideGaugeCaboose.png' }, // 69
   
-  
-  { name: ' T1 Blank', url: 'http://hq.mreboy.com/img/FortT1Icon.png' }, // 70
+  { name: ' T1 Blank', url: 'http://hq.mreboy.com/img/FortT1Icon.png' }, // 70 BUNKER PC ICONS
   { name: ' T1 Rifle', url: 'http://hq.mreboy.com/img/FortT1GunAIIcon.png' }, // 71
   { name: ' T1 MG', url: 'http://hq.mreboy.com/img/FortT1MGunAIIcon.png' }, // 72
   { name: ' T2 Blank', url: 'http://hq.mreboy.com/img/FortT2Icon.png' }, // 73
@@ -282,6 +270,11 @@ const MiscIconArray = [
   { name: ' T3 Ammo', url: 'http://hq.mreboy.com/img/AmmoRoomT3Icon.png' }, // 86
   { name: ' T3 Intel', url: 'http://hq.mreboy.com/img/IntelligenceCenterT3Icon.png' }, // 87
   { name: ' T3 S. Cannon', url: 'http://hq.mreboy.com/img/LongRangedArtilleryT3Icon.png' }, // 88
+  
+  { name: ' Barge', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FBRG-2.png?1558692837627' }, // 89
+  { name: ' Gunboat', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FGBT2.png?1558692846451' }, // 90
+  { name: ' APC', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FAPC-2.png?1558692836707' }, // 91
+  { name: ' Freighter', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FCARGO.png?1558692847027' }, // 92
   
 ];
 
@@ -389,7 +382,14 @@ const icons = ['', // 0
     w: 'Production/MapIconArmoryWarden.png',
   }, // 36 ADVANCED AMMO FACTORY (ARMORY)
 
-  'Production/MapIconRocketSite.png', // 37 ROCKET SITE
+{
+    n: 'Production/RocketSiteMapIcon.png',
+    c: 'Production/RocketSiteMapIconC.png',
+    w: 'Production/RocketSiteMapIconW.png',
+  },//37 ROCKET SITE - NEW
+
+
+  //'Production/MapIconRocketSite.png', // 37 ROCKET SITE - OLD
   'Resources/MineSalvage.png', // 38 SALVAGE MINE
   'Production/MapIconConstructionYard.png', // 39 CONSTRUCTION YARD
   'Resources/MineComponents.png', // 40 COMPONENT MINE
@@ -563,7 +563,7 @@ function GenerateIcon(obj, param) {
     }
   } else {
     switch (obj.iconType) {
-      case 11: case 17: case 19: case 27: case 28: case 29: case 33: case 34: case 35: case 36: case 45: case 46: case 47: case 51: case 52: case 53: case 56: case 57: case 58: case 59: case 60: case 70: case 71: case 72: case 75:
+      case 11: case 17: case 19: case 27: case 28: case 29: case 33: case 34: case 35: case 36: case 37: case 45: case 46: case 47: case 51: case 52: case 53: case 56: case 57: case 58: case 59: case 60: case 70: case 71: case 72: case 75:
         if (param == 'min') {
           iconUrl = icons[obj.iconType].min[obj.teamId[0].toLowerCase()];
         } else {
@@ -583,7 +583,7 @@ function GenerateIcon(obj, param) {
       }
       return new TownIcon({ iconUrl });
 
-    case 12: case 17: case 20: case 23: case 33: case 34: case 36: case 37: case 39: case 61:
+    case 12: case 17: case 20: case 23: case 33: case 34: case 36: case 39: case 61:
       return new MapIcon({ iconUrl });
     case 32: case 38: case 40: case 41: case 62:
       return new MineIcon({ iconUrl });

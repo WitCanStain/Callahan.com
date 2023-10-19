@@ -33,3 +33,4 @@ src/components/global/main/map/panel/filter-panel - Copy.js
 src/components/global/main/map/panel/mapicons - Copy.js
 src/_static/markers - Copy.js
 src/redux/display/reducer - Copy.js
+DropdownIconsArray.js
