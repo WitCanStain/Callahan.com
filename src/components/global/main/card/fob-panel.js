@@ -21,7 +21,7 @@ class FobPanel_ extends React.Component{
   handleChangeLevel(event){
     let value = event.target.value
     let obj = clone(this.props.storeObj)
-    if(value==0||value==1||value==2||value==3||value==4||value==5||value==6){
+    if(value==0||value==1||value==2||value==3||value==4||value==5||value==6||value==7||value==8||value==9){
       if(obj.level!=value){
         obj.level=value;
         store.dispatch(A.updateObject("fobs",obj,this.props.selected.key))
@@ -56,7 +56,9 @@ return(
          <option value={1}>FOB T2</option>
          <option value={2}>FOB T3</option>
 		 <option value={6}>BOBER</option>
-
+		 <option value={7}>SLEEPER T1</option>		 
+		 <option value={8}>SLEEPER T2</option>
+		 <option value={9}>SLEEPER T3</option>		 
       </select>
     </div>
 
