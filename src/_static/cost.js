@@ -4,16 +4,16 @@ const repo = 'http://hq.mreboy.com/img/'
 //repo+''
 var iteminfo= [
 [//Resources 0
-  {name:"Bmats", i:100, b:100,src:'BasicMaterialsIcon.png'},
-  {name:"Emats", i:20, e:20,src:'ExplosiveMaterialIcon.png'},
-  {name:"Rmats", i:20, r:20,src:'RefinedMaterialsIcon.png'},
-  {name:"HEMats", i:20, he:20,src:'HeavyExplosiveMaterialIcon.png'},
-  {name:"Diesel", i:1, src:'ResourceFuelIcon.png'},
-  {name:"Petrol", i:1, src:'RefinedFuelIcon.png'},
-  {name:"Aluminium", i:20, src:'ResouceAluminumRefinedIcon.png'},
-  {name:"Iron", i:20, src:'ResouceIronRefinedIcon.png'},
-  {name:"Copper", i:20, src:'ResourceCopperRefinedIcon.png'},
-  {name:"Gravel", i:10, b:50,src:'GroundMaterialsIcon.png'},
+{name:"Bmats", i:100, b:100,src:'BasicMaterialsIcon.png'},
+{name:"Emats", i:20, e:20,src:'ExplosiveMaterialIcon.png'},
+{name:"Rmats", i:20, r:20,src:'RefinedMaterialsIcon.png'},
+{name:"HEMats", i:20, he:20,src:'HeavyExplosiveMaterialIcon.png'},
+{name:"Diesel", i:1, src:'ResourceFuelIcon.png'},
+{name:"Petrol", i:1, src:'RefinedFuelIcon.png'},
+{name:"Aluminium", i:20, src:'ResouceAluminumRefinedIcon.png'},
+{name:"Iron", i:20, src:'ResouceIronRefinedIcon.png'},
+{name:"Copper", i:20, src:'ResourceCopperRefinedIcon.png'},
+{name:"Gravel", i:10, b:50,src:'GroundMaterialsIcon.png'},
 ],
  
 [ // Light Arms 1
@@ -66,19 +66,24 @@ var iteminfo= [
 {name:"Sticky AT Grenade", i:10, b:50, e:50, t:75, src:'StickyBombIcon.png'},
 {name:"Flask AT Grenade", i:10, b:100, e:40, t:75, src:'WhiteAsh.png'},
 {name:"30mm Ammo", i:20, b:80, e:20, t:100, src:'MiniTankAmmoItemIcon.png'},
-//{name:"75mm Ammo", i:20, b:200, e:400, t:200,src:'BattleTankAmmoItemIcon.png'},
-//{name:"Daucus isg.III", i:5, b:150, t:125, src:'InfantrySupportGunItemIcon.png'}
   //{i:, b:, name:"",src:""},
 ],
 
 [//Heavy Ammo 3
 {name:"120mm Arty Ammo", i:5, b:60, e:15, t:55, src:'LightArtilleryAmmoItemIcon.png'},
 {name:"150mm Arty Ammo", i:5, b:120, he:10, t:65, src:'HeavyArtilleryAmmoItemIcon.png'},
-//{name:"300mm SC Ammo", i:5, b:125, he:60, t:125, src:'LRArtilleryAmmoItemIcon.png'},
 {name:"250mm Ammo", i:5, b:120, he:25, t:150, src:'MortarTankIcon.png'},
 {name:"68mm Ammo", i:20, b:120, e:120, t:200, src:'ATAmmoIcon.png'},
-{name:"40mm Ammo", i:20, b:160, e:120, t:200, src:'LightTankAmmoItemIcon.png'}, 
-//{name:"Rocket Warhead", i:1, r:200, he:1000, t:600, src:'RocketWarheadIcon.png'},
+{name:"40mm Ammo", i:20, b:160, e:120, t:200, src:'LightTankAmmoItemIcon.png'},
+ 
+{name:"300mm SC Ammo", i:1, b:125, he:60, t:125, src:'LRArtilleryAmmoItemIcon.png'},
+{name:"75mm Ammo", i:1, b:120, he:25, t:150, src:'BattleTankAmmoItemIcon.png'},
+{name:"94.5mm Ammo", i:1, b:120, he:25, t:150, src:'ATLargeAmmoIcon.png'},
+{name:"Rocket - Fire", i:1, b:120, he:25, t:150, src:'FlameRocketAmmoIcon.png'},
+{name:"Rocket - HE", i:1, b:120, he:25, t:150, src:'HERocketAmmoIcon.png'},
+{name:"Hvy. Flamer Fuel", i:1, b:1, v:true, src:'FlameAmmoIcon.png'},
+{name:"Sea Mine", i:1, b:120, he:25, t:150, src:'SeaMineIcon.png'},
+{name:"Depth Charge", i:1, b:120, he:25, t:150, src:'DepthChargeIcon.png'},
   //{i:, b:, name:"",src:""},
 ],
 
@@ -104,7 +109,6 @@ var iteminfo= [
 {name:"AT Mine", i:10, b:100,e:10, t:200, src:'MineItemIcon.png'},
 {name:"Tripod", i:5, b:100, src:'DeployableTripodItemIcon.png'},
 {name:"Wrench", i:5, b:75, t:50, src:'WorkWrench.png'},
-//{name:"Rocket Booster",i:1, r:800, t:600, src:'RocketBoosterIcon.png'},
 {name:"Listening Kit", i:5, b:120, t:50, src:'ListeningKitIcon.png'},
 
   //{i:, b:, name:"",src:""},
@@ -120,7 +124,6 @@ var iteminfo= [
 ],
 
 [//Supplies 6 
-//{name:"Bunker Supplies", i:150, b:75, t:125, src:'BunkerSuppliesIcon.png'},
 {name:"Maintenance Supplies", i:100, b:250, t:125, src:'GarrisonSuppliesIcon.png'},
   //{i:, b:, name:"",src:""},
 ],
@@ -194,12 +197,7 @@ var iteminfo= [
 {name:"Barge", i:1, b:150, v:true, src:'BargeVehicleIcon.png'},
 {name:"Freighter", i:1, r:300, v:true, src:'FreighterVehicleIcon.png'},
 {name:"Gunboat", i:1, r:120, v:true, src:'74b-1_Ronan_Gunship_Vehicle_Icon.png'},
-//{name:"Arty Gunboat", i:1, r:120, v:true, src:'74c-2_Ronan_Meteora_Gunship_Vehicle_Icon.png'},
-//{name:"Landing Ship", i:1, r:300, v:true, src:'Cargoship.png'},
 {name:"SC Train Car", i:1, r:400, v:true, src:'TrainLRArtilleryVehicleIcon.png'},
-{name:"Hvy. Flamer Fuel", i:1, b:1, v:true, src:'FlameAmmoIcon.png'},
-//{name:"BT Juggernaut", i:1, r:400, v:true, src:'Flood_Juggernaut_Mk._VII_Vehicle_Icon.png'},
-//{name:"BT Ascension", i:1, r:400, v:true, src:'Flood_Ascension_Mk._V_Vehicle_Icon.png'},
 
   /*{name:"Vehicle", i:1, b:0, r:0, e:0, t:0, v:true, src:""}*/
   //{i:, b:, name:"",src:""},
@@ -233,6 +231,9 @@ var iteminfo= [
 {name:"Pallet - Flame Ammo", i:120, b:100, src:'pallet_flamer.png'},
 {name:"Pallet - HE Rockets", i:60, b:100, src:'pallet_rockets.png'},
 {name:"Pallet - Fire Rockets", i:60, b:100, src:'pallet_rockets_red.png'},
+{name:"Pallet - Depth Charges", i:60, b:100, src:'pallet_depth_charge.png'},
+{name:"Pallet - Sea Mines", i:60, b:100, src:'pallet_sea_mine.png'},
+{name:"Pallet - Torpedoes", i:60, b:100, src:'pallet_torpedoes.png'},
 
 {name:"Tank - Water", i:100, b:100, src:'liquids_blue.png'},
 {name:"Tank - Diesel", i:100, b:100, src:'liquids_green.png'},
@@ -255,6 +256,8 @@ var iteminfo= [
 {name:"Railcart - Flame Ammo", i:100, b:100, src:'cart_flamer.png'},
 {name:"Railcart - HE Rockets", i:50, b:100, src:'cart_rockets.png'},
 {name:"Railcart - Fire Rockets", i:50, b:100, src:'cart_rockets_red.png'},
+{name:"Railcart - Depth Charges", i:50, b:100, src:'cart_depth_charge.png'},
+{name:"Railcart - Sea Mines", i:50, b:100, src:'cart_sea_mine.png'},
 
 {name:"Trailer - Barbed Wire", i:100, b:100, src:'CartBarbedWire.png'},
 {name:"Trailer - Metal Beams", i:100, b:100, src:'CartMetalBeams.png'},
@@ -269,13 +272,11 @@ var iteminfo= [
 {name:"Trailer - Flame Ammo", i:100, b:100, src:'CartFlamer.png'},
 {name:"Trailer - HE Rockets", i:100, b:100, src:'CartRocketsHE.png'},
 {name:"Trailer - Fire Rockets", i:100, b:100, src:'CartRocketsFire.png'},
+{name:"Trailer - Depth Charges", i:100, b:100, src:'CartDepthCharge.png'},
+{name:"Trailer - Sea Mines", i:100, b:100, src:'CartSeaMine.png'},
 
 
 
-
-//{name:"P/D 40x 120mm Ammo", i:1, b:1, v:true, src:'LightArtilleryAmmoItemIconYellow.png'},
-//{name:"P/D 40x 150mm Ammo", i:1, b:1, v:true, src:'HeavyArtilleryAmmoItemIconYellow.png'},
-//{name:"P/D 40x BMat Crates", i:1, b:1, v:true, src:'BasicMaterialsIconYellow.png'},
 {name:"P/D 120mm Gun (W)", i:1, b:1, v:true, src:'Huber_Lariat_120mm_Structure_IconOrange.png'},
 {name:"P/D 150mm Gun (W)", i:1, b:1, v:true, src:'Huber_Exalt_150mm_Structure_IconOrange.png'},
 {name:"P/D 150mm Gun (C)", i:1, b:1, v:true, src:'HeavyArtilleryCIconOrange.png'},
@@ -294,7 +295,6 @@ var iteminfo= [
 {name:"P/D Rampart", i:1, b:1, v:true, src:'BalfourRampartRed.png'},
 {name:"P/D FC", i:1, b:1, v:true, src:'Balfour_Wolfhound_40mm_Vehicle_IconRed.png'},
 {name:"P/D FM", i:1, b:1, v:true, src:'Balfour_Falconer_250mm_Vehicle_IconRed.png'},
-//{name:"Gaming Chair", i:1, b:1, v:true, src:'SmallGaugeEngineVehicleIcon.png'},
 
 ],
 

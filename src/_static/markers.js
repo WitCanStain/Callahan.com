@@ -290,8 +290,10 @@ const MiscIconArray = [
   
   { name: ' BS (W)', url: 'http://hq.mreboy.com/img/LargeShipBattleshipWIcon.png' }, //90 SHIPS
   { name: ' BS (C)', url: 'http://hq.mreboy.com/img/LargeShipBattleshipCIcon.png' }, //
+  { name: ' Frigate (W)', url: 'http://hq.mreboy.com/img/ShipFrigate.png' }, //
   { name: ' Destroyer (C)', url: 'http://hq.mreboy.com/img/LargeShipDestroyerCIcon.png' }, //
   { name: ' Submarine (W)', url: 'http://hq.mreboy.com/img/LargeShipSubmarineWIcon.png' }, //
+  { name: ' Submarine (C)', url: 'http://hq.mreboy.com/img/LargeShipSubmarineCIcon.png' }, //
   { name: ' Gunboat (W)', url: 'http://hq.mreboy.com/img/GunboatWIcon.png' }, //  
   { name: ' Gunboat (C)', url: 'http://hq.mreboy.com/img/GunBoatVehicleIcon.png' }, //  
   { name: ' Barge', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FBRG-2.png?1558692837627' }, // 
@@ -299,15 +301,15 @@ const MiscIconArray = [
   { name: ' APC', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FAPC-2.png?1558692836707' },
   { name: ' Base Ship', url: 'http://hq.mreboy.com/img/LargeShipBaseShipIcon.png' }, //
   { name: ' Depot Ship', url: 'http://hq.mreboy.com/img/LargeShipStorageShipIcon.png' }, //
-  { name: ' Freighter', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FCARGO.png?1558692847027' }, // 101
+  { name: ' Freighter', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FCARGO.png?1558692847027' }, // 103
   
-  { name: ' CV', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fcv.png?1554890422722' }, // 102 LOGI REQUEST
+  { name: ' CV', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fcv.png?1554890422722' }, // 104 LOGI REQUEST
   { name: ' Crane', url: 'https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2Fcrane1.png?v=1563106383574' }, // 
   { name: ' Flatbed', url: 'https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2Ffltbd.png?v=1563106384699' }, // 
   { name: ' Container', url: 'https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2Fconta1.png?v=1563106385043' }, // 
   { name: ' Fuel Truck', url: 'https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2Foilta.png?v=1563106384068' }, // 
   { name: ' Drop EAT', url: 'http://hq.mreboy.com/img/RequestEAT.png' }, // 
-  { name: ' Shirt Truck', url: 'http://hq.mreboy.com/img/ShirtTruck.png' }, // 108
+  { name: ' Shirt Truck', url: 'http://hq.mreboy.com/img/ShirtTruck.png' }, // 110
   
 ];
 
