@@ -524,7 +524,7 @@ exports.toggleSecure = function (globalid, data) {
   settings = JSON.stringify(settings);
   sql.prepare('UPDATE global SET settings = ? WHERE id = ?').run(settings, globalid);
   if (data == 1) {
-    sql.prepare('DELETE FROM userglobal WHERE userid LIKE "anonymous%" AND globalid = ?;').run(globalid);
+    sql.prepare('DELETE FROM userglobal WHERE userid LIKE ? AND globalid = ?;').run('anonymous%', globalid);
     const users = exports.getroomusers(globalid);
     return users;
   }
@@ -536,8 +536,20 @@ exports.clearRoom = function (globalid) {
     id: global.id,
     admin: global.admin,
     settings: global.settings,
+    techtree: '',
+    refinery: '',
+    production: '',
+    storage: '',
+    stockpiles: '',
+    fobs: '',
+    requests: '',
+    misc: '',
+    arty: '',
+    squads: '',
+    logi: '',
+    events: '[]',
   };
-  sql.prepare('INSERT OR REPLACE INTO global (id, admin, settings, techtree,refinery, production, storage, stockpiles,fobs, requests, misc, arty,squads,logi,events) VALUES (@id, @admin, @settings, "", "","", "", "","", "", "", "", "",  "","[]");').run(e);
+  sql.prepare('INSERT OR REPLACE INTO global (id, admin, settings, techtree,refinery, production, storage, stockpiles,fobs, requests, misc, arty,squads,logi,events) VALUES (@id, @admin, @settings, @techtree, @refinery, @production, @storage, @stockpiles,@fobs, @requests, @misc, @arty,@squads, @logi, @events);').run(e);
 };
 
 exports.clearMap = function (globalid) {
@@ -553,7 +565,7 @@ exports.clearMap = function (globalid) {
     }
   }
   misc = JSON.stringify(misc);
-  sql.prepare('UPDATE global SET fobs="",requests="",misc=?  WHERE id = ?').run(misc, globalid);
+  sql.prepare('UPDATE global SET fobs=?,requests=?,misc=? WHERE id=?').run('', '', misc, globalid);
 };
 
 exports.changeSettings = function (globalid, type, data) {
