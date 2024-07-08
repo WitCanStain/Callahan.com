@@ -301,15 +301,16 @@ const MiscIconArray = [
   { name: ' APC', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FAPC-2.png?1558692836707' },
   { name: ' Base Ship', url: 'http://hq.mreboy.com/img/LargeShipBaseShipIcon.png' }, //
   { name: ' Depot Ship', url: 'http://hq.mreboy.com/img/LargeShipStorageShipIcon.png' }, //
-  { name: ' Freighter', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FCARGO.png?1558692847027' }, // 103
+  { name: ' Resource Ship', url: 'http://hq.mreboy.com/img/LargeShipResourceIcon.png' }, //
+  { name: ' Freighter', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FCARGO.png?1558692847027' }, // 104
   
-  { name: ' CV', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fcv.png?1554890422722' }, // 104 LOGI REQUEST
+  { name: ' CV', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fcv.png?1554890422722' }, // 105 LOGI REQUEST
   { name: ' Crane', url: 'https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2Fcrane1.png?v=1563106383574' }, // 
   { name: ' Flatbed', url: 'https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2Ffltbd.png?v=1563106384699' }, // 
   { name: ' Container', url: 'https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2Fconta1.png?v=1563106385043' }, // 
   { name: ' Fuel Truck', url: 'https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2Foilta.png?v=1563106384068' }, // 
   { name: ' Drop EAT', url: 'http://hq.mreboy.com/img/RequestEAT.png' }, // 
-  { name: ' Shirt Truck', url: 'http://hq.mreboy.com/img/ShirtTruck.png' }, // 110
+  { name: ' Shirt Truck', url: 'http://hq.mreboy.com/img/ShirtTruck.png' }, // 111
   
 ];
 
@@ -349,7 +350,11 @@ const icons = ['', // 0
     c: 'Production/MapIconHospitalColonial.png',
     w: 'Production/MapIconHospitalWarden.png',
   }, // 11 HOSPITAL
-  'Production/MapIconVehicle.png', // 12 VEHICLE FACTORY
+ {
+    n: 'Production/MapIconVehicleN.png',
+    c: 'Production/MapIconVehicleC.png',
+    w: 'Production/MapIconVehicleW.png',
+  }, // 12 VEHICLE FACTORY
   13, 14, 15, 16, // 16
   {
     n: 'Production/MapIconManufacturing.png',
@@ -357,7 +362,11 @@ const icons = ['', // 0
     w: 'Production/MapIconManufacturingWarden.png',
   }, // 17 REFINERY
 
-  'Production/MapIconShipyard.png', // 18 SHIPYARD
+  {
+    n: 'Production/ShipyardNeutral.png',
+    c: 'Production/ShipyardColonial.png',
+    w: 'Production/ShipyardWarden.png',
+  }, // 18 SHIPYARD
   {
     n: 'Production/MapIconTechCenter.png',
     c: 'Production/MapIconTechCenterColonial.png',
@@ -426,7 +435,13 @@ const icons = ['', // 0
 
   //'Production/MapIconRocketSite.png', // 37 ROCKET SITE - OLD
   'Resources/MineSalvage.png', // 38 SALVAGE MINE
-  'Production/MapIconConstructionYard.png', // 39 CONSTRUCTION YARD
+  
+{
+    n: 'Production/MapIconConstructionYardN.png',
+    c: 'Production/MapIconConstructionYardC.png',
+    w: 'Production/MapIconConstructionYardW.png',
+  }, // 39 CONSTRUCTION YARD
+  
   'Resources/MineComponents.png', // 40 COMPONENT MINE
   'Resources/MineOil.png', // 41 OIL MINE
   '', // 42
@@ -598,7 +613,7 @@ function GenerateIcon(obj, param) {
     }
   } else {
     switch (obj.iconType) {
-      case 11: case 17: case 19: case 27: case 28: case 29: case 33: case 34: case 35: case 36: case 37: case 45: case 46: case 47: case 51: case 52: case 53: case 56: case 57: case 58: case 59: case 60: case 70: case 71: case 72: case 75:
+      case 11: case 12: case 17: case 18: case 19: case 27: case 28: case 29: case 33: case 34: case 35: case 36: case 37: case 39: case 45: case 46: case 47: case 51: case 52: case 53: case 56: case 57: case 58: case 59: case 60: case 70: case 71: case 72: case 75:
         if (param == 'min') {
           iconUrl = icons[obj.iconType].min[obj.teamId[0].toLowerCase()];
         } else {
@@ -618,7 +633,7 @@ function GenerateIcon(obj, param) {
       }
       return new TownIcon({ iconUrl });
 
-    case 12: case 17: case 20: case 23: case 33: case 34: case 36: case 39: case 61:
+    case 17: case 20: case 23: case 33: case 34: case 36: case 61:
       return new MapIcon({ iconUrl });
     case 32: case 38: case 40: case 41: case 62:
       return new MineIcon({ iconUrl });

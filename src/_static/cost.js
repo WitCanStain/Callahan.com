@@ -110,6 +110,7 @@ var iteminfo= [
 {name:"Tripod", i:5, b:100, src:'DeployableTripodItemIcon.png'},
 {name:"Wrench", i:5, b:75, t:50, src:'WorkWrench.png'},
 {name:"Listening Kit", i:5, b:120, t:50, src:'ListeningKitIcon.png'},
+{name:"Wind Sock", i:5, b:120, t:50, src:'WindsockItemIcon.png'},
 
   //{i:, b:, name:"",src:""},
 ],

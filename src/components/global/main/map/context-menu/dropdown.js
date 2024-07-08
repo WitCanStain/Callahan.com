@@ -62,12 +62,12 @@ export class ContextDropdown extends React.Component {  ////Component generation
     }
      break;
      case 3: //SHIP icons
-    for(var i=90;i<=103;i++){
+    for(var i=90;i<=104;i++){
       items.push(this.GetItem(i))
     }
      break;
     case 4: //LOGI REQUEST icons
-    for(var i=104;i<=110;i++){
+    for(var i=105;i<=111;i++){
       items.push(this.GetItem(i))
 	} 
      break;
