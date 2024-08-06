@@ -16,6 +16,7 @@ const initialState = {
 		coastalguns: true,
 		stormcannons: true,
 		intelcenters: true,
+		wstations: true,
 		rtarget: true,
 		rcrater: true
     },

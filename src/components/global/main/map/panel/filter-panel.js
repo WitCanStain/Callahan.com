@@ -37,6 +37,7 @@ function FilterPanel_(props) {
 					<LGC cat='objectives' item='coastalguns' name=' Coastal Guns' src={ repo + 'MapIconCoastalGun.png' }/>
 					<LGC cat='objectives' item='stormcannons' name=' Storm Cannons' src={ repo + 'MapIconStormcannon.png' }/>
 					<LGC cat='objectives' item='intelcenters' name=' Intel Centers' src={ repo + 'MapIconIntelcenter.png' }/>
+					<LGC cat='objectives' item='wstations' name=' Weather Centers' src={ repo + 'MapIconWeatherStation.png' }/>
 					<LGC cat='objectives' item='rtarget' name=' R. Targets' src={ repo + 'MapIconRocketTarget.png' }/>
 					<LGC cat='objectives' item='rcrater' name=' R. Craters' src={ repo + 'MapIconRocketCrater.png' }/>					
                 </DropdownMenu>

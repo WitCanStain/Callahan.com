@@ -213,6 +213,11 @@ class MapIcons_ extends React.Component {
                   if(display.production.rprepped) {
                     iconlist.push(this.GetIcon(obj,region))
                   }
+                  break;
+				case 83://WEATHER STATION
+                  if(display.objectives.wstations) {
+                    iconlist.push(this.GetIcon(obj,region))
+                  }
                   break;				  
               //RESOURCE SECTION/////////////////////
                 case 20:
