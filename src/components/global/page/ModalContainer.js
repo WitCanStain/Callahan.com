@@ -496,6 +496,17 @@ class RequestModalContainer extends React.Component {
   }
 
   render() {
+    let totalRequestCrates = 0;
+    if (this.state.request && this.state.request.length) {
+      for (let i = 0; i <= 2; i++) {
+        this.state.request[i].forEach(obj => {
+          if (obj.crates) {
+            totalRequestCrates += obj.crates;
+          }
+        });
+      }
+    }
+    const highlightRequestColumns = totalRequestCrates > 0 && totalRequestCrates % 15 === 0;
     //console.log("Request:")
     //console.log(this.state);
     //console.log("Rendering request modal")
@@ -531,7 +542,7 @@ class RequestModalContainer extends React.Component {
                       className="table table-condensed "
                       id="reqmodaltable"
                     >
-                      <thead className="indextable">
+                      <thead className={`indextable requestmodal_cols ${highlightRequestColumns ? 'requestmodal_highlight_cols' : ''}`}>
                         <tr>
                           <th className="tablecol"></th>
                           <th></th>
@@ -539,7 +550,7 @@ class RequestModalContainer extends React.Component {
                             <p>Item</p>
                           </th>
                           <th>
-                            <p>Crates</p>
+                            <p>Crates{totalRequestCrates ? <small>{totalRequestCrates}</small> : null}</p>
                           </th>
                           <th>
                             <p>Amount</p>

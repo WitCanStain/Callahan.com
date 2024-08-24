@@ -729,6 +729,20 @@ padding:0px;
 .requestmodal_btn:hover{
 background-color: #d9dad8;
 }
+.requestmodal_highlight_cols{
+background-color: #7dd717;
+}
+.requestmodal_highlight_cols > tr > th > p{
+color: #2a2a2a;
+}
+.requestmodal_cols > tr > th > p{
+position: relative;
+}
+.requestmodal_cols > tr > th > p > small{
+position: absolute;
+inset: auto 0 -12px 0;
+font-size: 75%;
+}
 .requestmodal_priority_high{
 background-color:#f42b2b;
   text-align:center;
