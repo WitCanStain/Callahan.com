@@ -218,6 +218,11 @@ class MapIcons_ extends React.Component {
                   if(display.objectives.wstations) {
                     iconlist.push(this.GetIcon(obj,region))
                   }
+                  break;
+				case 84://MORTAR HOUSE
+                  if(display.objectives.mhouses) {
+                    iconlist.push(this.GetIcon(obj,region))
+                  }
                   break;				  
               //RESOURCE SECTION/////////////////////
                 case 20:

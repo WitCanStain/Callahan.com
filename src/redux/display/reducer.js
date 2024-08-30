@@ -17,6 +17,7 @@ const initialState = {
 		stormcannons: true,
 		intelcenters: true,
 		wstations: true,
+		mhouses: true,
 		rtarget: true,
 		rcrater: true
     },

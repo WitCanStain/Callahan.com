@@ -38,6 +38,7 @@ function FilterPanel_(props) {
 					<LGC cat='objectives' item='stormcannons' name=' Storm Cannons' src={ repo + 'MapIconStormcannon.png' }/>
 					<LGC cat='objectives' item='intelcenters' name=' Intel Centers' src={ repo + 'MapIconIntelcenter.png' }/>
 					<LGC cat='objectives' item='wstations' name=' Weather Centers' src={ repo + 'MapIconWeatherStation.png' }/>
+					<LGC cat='objectives' item='mhouses' name=' Mortar Houses' src={ repo + 'MapIconMortarHouse.png' }/>
 					<LGC cat='objectives' item='rtarget' name=' R. Targets' src={ repo + 'MapIconRocketTarget.png' }/>
 					<LGC cat='objectives' item='rcrater' name=' R. Craters' src={ repo + 'MapIconRocketCrater.png' }/>					
                 </DropdownMenu>
@@ -54,6 +55,7 @@ function FilterPanel_(props) {
                 <DropdownMenu>
                     <LGC cat='production' item='refineries' name=' Refineries' src={ repo + 'MapIconManufacturing.png' }/>
                     <LGC cat='production' item='productions' name=' Factories' src={ repo + 'MapIconFactory.png' }/>
+					<LGC cat='production' item='mpfs' name=' MPFs' src={ repo + 'MapIconMassProductionFactory.png' }/>
                     <LGC cat='production' item='storages' name=' Storage Depots' src={ repo + 'MapIconStorageFacility.png' }/>
                     <LGC cat='production' item='hospitals' name=' Hospitals' src={ repo + 'MapIconHospital.png' }/>
                     <LGC cat='production' item='vfactories' name=' Vehicle Factories' src={ repo + 'MapIconVehicle.png' }/>
@@ -61,7 +63,7 @@ function FilterPanel_(props) {
                     <LGC cat='production' item='constructions' name=' Constr. Yards' src={ repo + 'MapIconConstructionYard.png' }/>
                     <LGC cat='production' item='rocketsites' name=' Rocket Sites' src={ repo + 'MapIconRocketSite.png' }/>
 					<LGC cat='production' item='rprepped' name=' Rocket Ready' src={ repo + 'RocketSiteWithRocketMapIcon.png' }/>						
-					<LGC cat='production' item='mpfs' name=' MPFs' src={ repo + 'MapIconMassProductionFactory.png' }/>
+
 				
                 </DropdownMenu> 
             </Dropdown>
