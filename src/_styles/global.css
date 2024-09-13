@@ -729,6 +729,13 @@ padding:0px;
 .requestmodal_btn:hover{
 background-color: #d9dad8;
 }
+.requestmodal_presets_sel{
+width: 80px;
+padding: 4px 8px;
+position: absolute;
+bottom: -9px;
+left: -20px;
+}
 .requestmodal_highlight_cols{
 background-color: #7dd717;
 }

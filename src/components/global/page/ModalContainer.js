@@ -240,6 +240,7 @@ class RequestModalContainer extends React.Component {
   constructor() {
     super();
     this.state = {
+      presets: [],
       position: { lat: 0, lng: 0 },
       request: [[], [], []],
       show: false,
@@ -251,7 +252,30 @@ class RequestModalContainer extends React.Component {
     this.RemoveItem = this.RemoveItem.bind(this);
     this.ChangeItem = this.ChangeItem.bind(this);
     this.EmptyRequest = this.EmptyRequest.bind(this);
+    fetch('/_static/assets/logi-request-presets.json')
+    .then((response) => response.json())
+    .then((data) => {
+      if (Array.isArray(data)) {
+        this.setState({ presets: data });
+      } else {
+        console.error('Unable to load presets.');
+      }
+    })
+    .catch((error) => console.error('Error fetching request presets:', error));
   }
+  componentDidMount() {
+    window.addEventListener("keydown", this.handleKeydown);
+  }
+  componentWillUnmount() {
+    window.removeEventListener("keydown", this.handleKeydown);
+  }
+
+  handleKeydown = (event) => {
+    if (event.key === "F8") {
+      this.CopyRequest();
+    }
+  };
+
   shouldComponentUpdate(nextProps, nextState) {
     //console.log("Request modal container - check")
     if (JSON.stringify(this.state) != JSON.stringify(nextState)) {
@@ -296,7 +320,7 @@ class RequestModalContainer extends React.Component {
   }
 
   AddItem(cat, id, priority) {
-    console.log(`TEST AddItem: ${cat, id, priority}`)
+    console.log('TEST AddItem:', cat, id, priority);
     this.setState(state => {
       let array = clone(state.request);
       let item = {
@@ -340,7 +364,7 @@ class RequestModalContainer extends React.Component {
     if (value === "") {
       value = 0;
     }
-    request[priority][index].amount = value;
+    request[priority][index].amount = Number(value);
     var crates = Math.ceil(value / cost.cost[item.catid][item.itemid].i);
     request[priority][index].crates = crates;
     //console.log(request);
@@ -349,6 +373,32 @@ class RequestModalContainer extends React.Component {
 
   EmptyRequest() {
     this.setState({ request: [[], [], []] });
+  }
+
+  CopyRequest() {
+    const request = clone(this.state.request);
+    request.forEach(items => {
+      items.forEach(item => {
+        delete item.crates;
+      });
+    });
+    const str = JSON.stringify({ name: "Default Preset", request }, null, '\t');
+    if (navigator && navigator.clipboard) {
+      navigator.clipboard.writeText(str);
+    } else {
+      console.info('Using alternative clipboard method to copy preset.');
+      const textArea = document.createElement("textarea");
+      textArea.value = str;
+      document.body.appendChild(textArea);
+      textArea.focus();
+      textArea.select();
+      try {
+        document.execCommand('copy');
+      } catch (err) {
+        console.error('Unable to copy to clipboard', err);
+      }
+      document.body.removeChild(textArea);
+    }
   }
 
   GetRequest() {
@@ -420,6 +470,54 @@ class RequestModalContainer extends React.Component {
         ) : null}
         {this.state.request[2].map((obj, index) => RenderLine(obj, 2, index))}
       </React.Fragment>
+    );
+  }
+
+  GetRequestPresets() {
+    const selectPreset = (preset) => {
+      if (preset && preset.request) {
+        const request = this.state.request ? clone(this.state.request) : [[], [], []];
+        for (let i = 0; i <= 2; i++) {
+          const items = preset.request[i];
+          if (items && items.length) {
+            items.forEach(item => {
+              const categoryInfo = cost.cost[item.catid];
+              const itemInfo = categoryInfo && categoryInfo[item.itemid];
+              if (categoryInfo && itemInfo) {
+                item.crates = Math.ceil(item.amount / Number(itemInfo.i));
+                const obj = request[i].find(
+                  obj => obj.catid == item.catid && obj.itemid == item.itemid
+                );
+                if (!obj) {
+                  request[i].push(item);
+                  request[i].sort(this.comparereq);
+                } else {
+                  obj.amount += item.amount;
+                  obj.crates += item.crates;
+                }
+              } else {
+                console.warn(`Failed to find item for preset(${index}):`, item.itemid, item.catid);
+              }
+            });
+          }
+        }
+        this.setState({ request });
+      }
+    };
+
+    return (
+      <div className="dropdown">
+        <button type="button" className="btn btn-primary dropdown-toggle requestmodal_presets_sel" data-toggle="dropdown">
+          Presets
+        </button>
+        <div className="dropdown-menu dropdown-menu-left" style={{maxWidth: 'initial'}}>
+          {this.state.presets.map((preset, index) => (
+            <button key={index} className="dropdown-item" onClick={() => selectPreset(preset)}>
+              {preset.name}
+            </button>
+          ))}
+        </div>
+      </div>
     );
   }
 
@@ -545,7 +643,7 @@ class RequestModalContainer extends React.Component {
                       <thead className={`indextable requestmodal_cols ${highlightRequestColumns ? 'requestmodal_highlight_cols' : ''}`}>
                         <tr>
                           <th className="tablecol"></th>
-                          <th></th>
+                          <th style={{ position: 'relative', zIndex: 100 }}>{this.GetRequestPresets()}</th>
                           <th>
                             <p>Item</p>
                           </th>

@@ -145,7 +145,7 @@ class UserList extends React.Component {
             <col width="60" />
           </colgroup>
           <thead></thead>
-          <tbody id="usertablebodyoffline" hidden>{userlist.offline}</tbody>
+          <tbody id="usertablebodyoffline">{userlist.offline}</tbody>
         </table>
       </div>
     );

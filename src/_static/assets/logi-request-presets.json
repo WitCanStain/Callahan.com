@@ -1,0 +1,86 @@
+[
+	{
+		"name": "Example Preset #1",
+		"description": "No description provided.",
+		"request": [
+			[
+				{
+					"amount": 20,
+					"crates": 1,
+					"catid": 1,
+					"itemid": 10
+				},
+				{
+					"amount": 25,
+					"crates": 5,
+					"catid": 2,
+					"itemid": 11
+				}
+			],
+			[
+				{
+					"amount": 5,
+					"crates": 1,
+					"catid": 2,
+					"itemid": 10
+				},
+				{
+					"amount": 10,
+					"crates": 1,
+					"catid": 2,
+					"itemid": 17
+				}
+			],
+			[
+				{
+					"amount": 1,
+					"crates": 1,
+					"catid": 3,
+					"itemid": 12
+				}
+			]
+		]
+	},
+	{
+		"name": "Example Preset #2",
+		"description": "No description provided.",
+		"request": [
+			[
+				{
+					"amount": 20,
+					"crates": 1,
+					"catid": 1,
+					"itemid": 10
+				},
+				{
+					"amount": 25,
+					"crates": 5,
+					"catid": 2,
+					"itemid": 11
+				}
+			],
+			[
+				{
+					"amount": 5,
+					"crates": 1,
+					"catid": 2,
+					"itemid": 10
+				},
+				{
+					"amount": 10,
+					"crates": 1,
+					"catid": 2,
+					"itemid": 17
+				}
+			],
+			[
+				{
+					"amount": 1,
+					"crates": 1,
+					"catid": 3,
+					"itemid": 12
+				}
+			]
+		]
+	}
+]
