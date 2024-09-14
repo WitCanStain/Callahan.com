@@ -565,7 +565,16 @@ class RequestModalContainer extends React.Component {
           object: object,
           key: key
         });
-        let packet = { type: 3, date: JSON.stringify(new Date()), packet: key };
+        let packet = {
+          type: 3,
+          date: JSON.stringify(new Date()),
+          packet: JSON.stringify({
+            key,
+            request: {
+              author: object.author
+            }
+          })
+        };
         store.dispatch(A.submitEvent(packet));
         socket.emit("submitEvent", packet);
         this.EmptyRequest();

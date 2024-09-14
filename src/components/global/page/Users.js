@@ -62,9 +62,19 @@ class UserList extends React.Component {
   ////Component generation
   constructor(props) {
     super(props);
+    this.state = {
+      showOnlineUsers: true,
+      showOfflineUsers: false
+    };
   }
   shouldComponentUpdate(nextProps, nextState) {
     //console.log(this.props.tab,nextProps.tab)
+    if (
+      this.state.showOnlineUsers !== nextState.showOnlineUsers || 
+      this.state.showOfflineUsers !== nextState.showOfflineUsers
+    ) {
+      return true;
+    }
     if (
       JSON.stringify(this.props.tab.messagespersonal) !=
       JSON.stringify(nextProps.tab.messagespersonal)
@@ -132,21 +142,36 @@ class UserList extends React.Component {
     //console.log('Rendering Online Users'); do you see me?ya
     return (
       <div id="usrow" className="col-sm-12 col-lg-2 user_panel">
-        <table className="usertable">
-          <colgroup>
-            <col width="60" />
-          </colgroup>
-          <thead></thead>
-          <tbody id="usertablebody">{userlist.online}</tbody>
-        </table>
-
-        <table className="usertable">
-          <colgroup>
-            <col width="60" />
-          </colgroup>
-          <thead></thead>
-          <tbody id="usertablebodyoffline">{userlist.offline}</tbody>
-        </table>
+        <label className="user-row usertable_heading">
+          <span>Online Users</span>
+          <button type="button" className="usertable_heading_btn" onClick={() => this.setState({ showOnlineUsers: !this.state.showOnlineUsers })}>
+            {this.state.showOnlineUsers ? '−' : '+'}
+          </button>
+        </label>
+        {this.state.showOnlineUsers && (
+          <table className="usertable">
+            <colgroup>
+              <col width="60" />
+            </colgroup>
+            <thead></thead>
+            <tbody id="usertablebody">{userlist.online}</tbody>
+          </table>
+        )}
+        <label className="user-row usertable_heading">
+          <span>Offline Users</span>
+          <button type="button" className="usertable_heading_btn" onClick={() => this.setState({ showOfflineUsers: !this.state.showOfflineUsers })}>
+            {this.state.showOfflineUsers ? '−' : '+'}
+          </button>
+        </label>
+        {this.state.showOfflineUsers && (
+          <table className="usertable">
+            <colgroup>
+              <col width="60" />
+            </colgroup>
+            <thead></thead>
+            <tbody id="usertablebodyoffline">{userlist.offline}</tbody>
+          </table>
+        )}
       </div>
     );
   }

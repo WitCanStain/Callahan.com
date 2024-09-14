@@ -190,7 +190,16 @@ class PrivateEvents extends React.Component {  ////Component generation
           actionstring =<span><img style={{width:15,height:15}} src='https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FIconStatusEncumbered.png?1554591180726' onClick={()=>store.dispatch(A.selectObject("requests",obj.packet))}/> completed</span>
           break;
         case 3:
-          actionstring = <span>New supply order requested <img id="eventlog_logi_img" src='https://cdn.glitch.com/6393f3fd-16a7-4641-ae3d-994f8e7cea4e%2FIconStatusEncumberedRed.png?1549573551066' onClick={()=>store.dispatch(A.selectObject("requests",obj.packet))}/></span>
+          let key = obj.packet;
+          let user;
+          if (typeof obj.packet === 'string') {
+            const packet = JSON.parse(obj.packet);
+            if (packet) {
+              key = packet.key;
+              user = <span>by <b>{U.GetUsername(this.props.users.users,packet.request.author)}</b></span>
+            }
+          }
+          actionstring = <span>New supply order requested {user} <img id="eventlog_logi_img" src='https://cdn.glitch.com/6393f3fd-16a7-4641-ae3d-994f8e7cea4e%2FIconStatusEncumberedRed.png?1549573551066' onClick={()=>store.dispatch(A.selectObject("requests",key))}/></span>
           break;
         case 4:
           let item = markers.MiscIconArray[obj.packet.type]

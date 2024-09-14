@@ -209,7 +209,7 @@ class RequestCard extends React.Component { //What needs to be done?
     this.UpdateRequest(packet);
   }
   
-  GetPriority(index,totalwip,done){
+  GetPriority(index,totalwip,done,stats){
     let card = this
   if(this.props.request.request!=undefined){
     if(this.props.request.request[index].length==0){
@@ -228,7 +228,13 @@ class RequestCard extends React.Component { //What needs to be done?
       if(y%2==0){
         alignclass = "pb_request_row_even"
       }
+      if (stats) {
+        stats.totalCrates += obj.crates;
+      }
       if(item!=undefined){////////SCANNING IN 'DONE' ARRAY
+        if (stats) {
+          stats.pickupCrates += Math.min(obj.crates, item.crates);
+        }
         abbrDoneCrates = item.crates;
         abbrDoneAmount = item.crates*cost.cost[item.catid][item.itemid].i
         if(item.crates>obj.crates){
@@ -240,6 +246,9 @@ class RequestCard extends React.Component { //What needs to be done?
         item.crates=0;
         }}
        if(itemwip!=undefined){
+        if (stats) {
+          stats.pickupCrates += Math.min(obj.crates, itemwip.crates);
+        }
         abbrWipCrates = itemwip.crates;
         abbrWipAmount = itemwip.crates*cost.cost[itemwip.catid][itemwip.itemid].i
          if(doneWidth<100){ //SCANNING IN 'WIP' ARRAY
@@ -343,20 +352,25 @@ class RequestCard extends React.Component { //What needs to be done?
     let priorities = [];
     let totalwip = this.MergeWIPs()
     let done = []
+    let stats = {
+      pickupCrates: 0,
+      totalCrates: 0
+    };
     if(this.props.request.done){
     done = clone(this.props.request.done)}
     for(var i=0;i<3;i++){
-      priorities.push(this.GetPriority(i,totalwip,done))
+      priorities.push(this.GetPriority(i,totalwip,done,stats))
     }
    // console.log("Total WIP");
    // console.log(totalwip)
     return(
     <React.Fragment> <div className="card">
-  <div className="card-header cardheader">
+  <div className={`card-header cardheader ${stats.pickupCrates >= stats.totalCrates ? 'requestmodal_highlight_cols' : ''}`}>
   <table>
     <tbody>
       <tr><td style={{width:27}}><button className="card_req_manufacturerbtn" onClick={()=>window.requestmodalcontainer.ShowModal(this.props.signature,1)}><img className="card_req_manufacturerimage" src="https://cdn.glitch.com/6393f3fd-16a7-4641-ae3d-994f8e7cea4e%2FIconFilterUtility.png?1548935226605" /></button></td>
       <td className="card_ambush_0cell noclip" style={{minWidth:50}}>{"Request by "+U.GetUsername(this.props.users.users,this.props.request.author)}</td>
+      <td className="card_crate_count_cell">{stats.pickupCrates} / {stats.totalCrates}</td>
       <td style={{width:24}}>
         <Popover.default
             isOpen={this.state.isPopoverOpen}
@@ -400,9 +414,11 @@ class MyProductionCard extends React.Component {
     this.props.SubmitItems()   
   }
   
-  GetLine(index){
+  GetLine(index, stats){
     let obj = this.props.request.request[index]
-
+    if (stats && obj && obj.crates) {
+      stats.totalCrates += obj.crates;
+    }
     return(<tr style={{height:26}}>
       <td className="card_ambush_removebutton useronly" style={{width:24}} onClick={()=>this.props.RemoveItem(index)}><img className="card_ambush_removeimage" src="https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Ffdsgafd.png?1556797745838" /></td>
       <td><img className="card_req_itemimage" src={cost.cost[obj.catid][obj.itemid].src}/></td>
@@ -418,11 +434,15 @@ class MyProductionCard extends React.Component {
     if(this.props.request.length==0){return null}else{
   let show = this.props.request.request.length>0
   let prodlines = []
+  let stats = {
+    totalCrates: 0
+  };
   for(var i=0;i<this.props.request.request.length;i++){
-    prodlines.push(this.GetLine(i))
+    prodlines.push(this.GetLine(i, stats))
   }
       //console.log("Prodlines");
       //console.log(prodlines);
+    const highlightCrates = stats.totalCrates > 0 && stats.totalCrates % 15 === 0;
     return (<div className="card">
         <Popover.default
             isOpen={this.state.isPopoverOpen}
@@ -443,9 +463,10 @@ class MyProductionCard extends React.Component {
                 <img className="card_req_submitmenu_img" src="https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fgsds.jpg?1555235385083"/>
             </button>
         </Popover.default>
-        <div className="card-header cardheader">
-          Your production
-          </div>
+        <div className={`card-header cardheader requestmodal_production_header ${highlightCrates ? 'requestmodal_highlight_cols' : ''}`}>
+          <span className="requestmodal_production_heading">Your production</span>
+          <span className="requestmodal_production_amt">{stats.totalCrates}</span>
+        </div>
         <div className="card-body cardheader">
      <table className="table">
     <thead>
@@ -471,8 +492,11 @@ class OtherProductionCard extends React.Component{
     super(props);
     this.GetLine=this.GetLine.bind(this)
   }
-  GetLine(index){
+  GetLine(index, stats){
     let obj = this.props.request[index]
+    if (stats && obj && obj.crates) {
+      stats.totalCrates += obj.crates;
+    }
     return <tr>
     <td><img className="card_req_itemimage" src={cost.cost[obj.catid][obj.itemid].src}/></td>
       {/*<td>{cost.cost[obj.catid][obj.itemid].name}</td>*/}
@@ -482,13 +506,18 @@ class OtherProductionCard extends React.Component{
   }
   render(){
     let lines = [];
+    let stats = {
+      totalCrates: 0
+    };
     for(var i=0;i<this.props.request.length;i++){
-      lines.push(this.GetLine(i));
+      lines.push(this.GetLine(i, stats));
     }
+    const highlightCrates = stats.totalCrates > 0 && stats.totalCrates % 15 === 0;
     return(<div className={"card other_production_card "+this.props.margin}>
-        <div className="card-header cardheader other_production_cardheader noclip">  
+        <div className={`card-header cardheader other_production_cardheader noclip ${highlightCrates ? 'requestmodal_highlight_cols' : ''}`}>  
           <img className="other_production_avatar" src={this.props.avatar}/>
           <span className="other_production_headertext">{this.props.author}</span>
+          <span className="other_production_amount">{stats.totalCrates}</span>
         </div>
         <div className="card-body cardheader">
           <table className="table">
