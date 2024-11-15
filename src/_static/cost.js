@@ -58,7 +58,7 @@ var iteminfo= [
 {name:"Flamethrower", i:10, b:165, r:30, t:50, src:'FlamegunWICon.png'},
 {name:"Anti-Tank Rifle", i:3, b:150, t:37, src:'ATRifleItemIcon.png'},
 {name:"Booker Greyhound ATR", i:3, b:150, t:37, src:'ATRGreyhound.png'},
-{name:"Satterly ATR", i:3, b:150, t:37, src:'ATRSatterley.png'},
+{name:"Satterly ATR", i:5, b:150, t:37, src:'ATRSatterley.png'},
 {name:"20mm ATR Ammo", i:10, b:100, t:100, src:'ATRifleAmmoItemIcon.png'},
 {name:"Bonesaw RPG", i:5, b:100, r:25, src:'Bonesaw_Icon.png'},
 {name:"Tripod Bonesaw RPG", i:5, b:200, src:'Mounted_Bonesaw_Icon.png'},
