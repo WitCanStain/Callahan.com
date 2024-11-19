@@ -242,32 +242,34 @@ const MiscIconArray = [
   { name: ' Tempestus', url: 'http://hq.mreboy.com/img/82dk_tempestus.png' }, // 46
   
   { name: ' Materials Fact.', url: 'http://hq.mreboy.com/img/MetalworksFactoryBase.png' }, // 47 FACILITY ICONS
-  { name: ' Metalworks Fact.', url: 'http://hq.mreboy.com/img/FacilityRefinery2Icon.png' }, // 48 
-  { name: ' Coal Refinery', url: 'http://hq.mreboy.com/img/FacilitiesCoolRefineryBaseIcon.png' }, // 49
-  { name: ' Oil Refinery', url: 'http://hq.mreboy.com/img/OilRefineryBaseIcon.png' }, // 50  
-  { name: ' Ammo Factory', url: 'http://hq.mreboy.com/img/AmmoFactoryBaseIcon.png' }, // 51
-  { name: ' Maint. Tunnel', url: 'http://hq.mreboy.com/img/TunnelNetworkStructureIcon.png' }, // 52 
-  { name: ' Power Plant', url: 'http://hq.mreboy.com/img/DiesePowerPlanetBaseIcon.png' }, // 53
-  { name: ' Power Station', url: 'http://hq.mreboy.com/img/FacilityPowerOilIcon.png' }, // 54 
-  { name: ' Light VAS', url: 'http://hq.mreboy.com/img/fieldAssembly01Icon.png' }, // 55
-  { name: ' Large VAS', url: 'http://hq.mreboy.com/img/LargeAssemblyStation.png' }, // 56  
-  { name: ' Water Pump', url: 'http://hq.mreboy.com/img/FacilityMineWaterIcon.png' }, // 57
-  { name: ' Field Mod Cntr.', url: 'http://hq.mreboy.com/img/FacilityModificationCenterIcon.png' }, // 58  
-  { name: ' Lg. Crane', url: 'http://hq.mreboy.com/img/LargeCraneItemIcon.png' }, // 59
-  { name: ' Oil Well', url: 'http://hq.mreboy.com/img/OilWellMineIcon.png' }, // 60 
-  { name: ' Material TS', url: 'http://hq.mreboy.com/img/FacilityResourceTransfer3Icon.png' }, // 61 
-  { name: ' Resource TS', url: 'http://hq.mreboy.com/img/MaterialTransferStationIcon.png' }, // 62 
-  { name: ' Liquid TS', url: 'http://hq.mreboy.com/img/MaterialTransferStationLiquidIcon.png' }, // 63 
-  { name: ' Dry Dock', url: 'http://hq.mreboy.com/img/DryDockItemIcon.png' }, // 64 
+  { name: ' Sm. Arms Fact.', url: 'http://hq.mreboy.com/img/FacilitySmallArmsFactoryIcon.png' }, //
+  { name: ' Metalworks Fact.', url: 'http://hq.mreboy.com/img/FacilityRefinery2Icon.png' }, //
+  { name: ' Coal Refinery', url: 'http://hq.mreboy.com/img/FacilitiesCoolRefineryBaseIcon.png' }, //
+  { name: ' Oil Refinery', url: 'http://hq.mreboy.com/img/OilRefineryBaseIcon.png' }, //
+  { name: ' Ammo Factory', url: 'http://hq.mreboy.com/img/AmmoFactoryBaseIcon.png' }, //
+  { name: ' Maint. Tunnel', url: 'http://hq.mreboy.com/img/TunnelNetworkStructureIcon.png' }, // 
+  { name: ' Power Plant', url: 'http://hq.mreboy.com/img/DiesePowerPlanetBaseIcon.png' }, //
+  { name: ' Power Station', url: 'http://hq.mreboy.com/img/FacilityPowerOilIcon.png' }, //
+  { name: ' Light VAS', url: 'http://hq.mreboy.com/img/fieldAssembly01Icon.png' }, //
+  { name: ' Large VAS', url: 'http://hq.mreboy.com/img/LargeAssemblyStation.png' }, //
+  { name: ' Water Pump', url: 'http://hq.mreboy.com/img/FacilityMineWaterIcon.png' }, //
+  { name: ' Field Mod Cntr.', url: 'http://hq.mreboy.com/img/FacilityModificationCenterIcon.png' }, //
+  { name: ' Lg. Crane', url: 'http://hq.mreboy.com/img/LargeCraneItemIcon.png' }, //
+  { name: ' Oil Well', url: 'http://hq.mreboy.com/img/OilWellMineIcon.png' }, //
+  { name: ' Material TS', url: 'http://hq.mreboy.com/img/FacilityResourceTransfer3Icon.png' }, //
+  { name: ' Resource TS', url: 'http://hq.mreboy.com/img/MaterialTransferStationIcon.png' }, //
+  { name: ' Liquid TS', url: 'http://hq.mreboy.com/img/MaterialTransferStationLiquidIcon.png' }, //
+  { name: ' Crate TS', url: 'http://hq.mreboy.com/img/FacilityTransferCrateIcon.png' }, //
+  { name: ' Dry Dock', url: 'http://hq.mreboy.com/img/DryDockItemIcon.png' }, // 66
   
-  { name: ' Locomotive', url: 'http://hq.mreboy.com/img/TrainEngineVehicleIcon.png' }, // 65 TRAIN ICONS
+  { name: ' Locomotive', url: 'http://hq.mreboy.com/img/TrainEngineVehicleIcon.png' }, // 67 TRAIN ICONS
   { name: ' Infantry Car', url: 'http://hq.mreboy.com/img/InfantryCarVehicleIcon.png' }, // 
   { name: ' 40mm Gun Car', url: 'http://hq.mreboy.com/img/CombatCarWVehicleIcon.png' }, // 
   { name: ' Flat Car', url: 'http://hq.mreboy.com/img/TrainCarVehicleIcon.png' }, // 
   { name: ' TSC Car', url: 'http://hq.mreboy.com/img/TrainLRArtilleryVehicleIcon_halo.png' }, // 
-  { name: ' Caboose', url: 'http://hq.mreboy.com/img/WideGaugeCaboose.png' }, // 70
+  { name: ' Caboose', url: 'http://hq.mreboy.com/img/WideGaugeCaboose.png' }, // 72
   
-  { name: ' T1 Blank', url: 'http://hq.mreboy.com/img/FortT1Icon.png' }, // 71 BUNKER PC ICONS
+  { name: ' T1 Blank', url: 'http://hq.mreboy.com/img/FortT1Icon.png' }, // 73 BUNKER PC ICONS
   { name: ' T1 Rifle', url: 'http://hq.mreboy.com/img/FortT1GunAIIcon.png' }, // 
   { name: ' T1 MG', url: 'http://hq.mreboy.com/img/FortT1MGunAIIcon.png' }, // 
   { name: ' T2 Blank', url: 'http://hq.mreboy.com/img/FortT2Icon.png' }, // 
@@ -285,10 +287,10 @@ const MiscIconArray = [
   { name: ' T3 Howitzer', url: 'http://hq.mreboy.com/img/FortT3HowitzerAIIcon.png' }, // 
   { name: ' T3 Ammo', url: 'http://hq.mreboy.com/img/AmmoRoomT3Icon.png' }, // 
   { name: ' T3 Intel', url: 'http://hq.mreboy.com/img/IntelligenceCenterT3Icon.png' }, // 
-  { name: ' T3 S. Cannon', url: 'http://hq.mreboy.com/img/LongRangedArtilleryT3Icon.png' }, // 89
+  { name: ' T3 S. Cannon', url: 'http://hq.mreboy.com/img/LongRangedArtilleryT3Icon.png' }, // 91
  
   
-  { name: ' BS (W)', url: 'http://hq.mreboy.com/img/LargeShipBattleshipWIcon.png' }, //90 SHIPS
+  { name: ' BS (W)', url: 'http://hq.mreboy.com/img/LargeShipBattleshipWIcon.png' }, //92 SHIPS
   { name: ' BS (C)', url: 'http://hq.mreboy.com/img/LargeShipBattleshipCIcon.png' }, //
   { name: ' Frigate (W)', url: 'http://hq.mreboy.com/img/ShipFrigate.png' }, //
   { name: ' Destroyer (C)', url: 'http://hq.mreboy.com/img/LargeShipDestroyerCIcon.png' }, //
@@ -302,15 +304,15 @@ const MiscIconArray = [
   { name: ' Base Ship', url: 'http://hq.mreboy.com/img/LargeShipBaseShipIcon.png' }, //
   { name: ' Depot Ship', url: 'http://hq.mreboy.com/img/LargeShipStorageShipIcon.png' }, //
   { name: ' Resource Ship', url: 'http://hq.mreboy.com/img/LargeShipResourceIcon.png' }, //
-  { name: ' Freighter', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FCARGO.png?1558692847027' }, // 104
+  { name: ' Freighter', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FCARGO.png?1558692847027' }, // 106
   
-  { name: ' CV', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fcv.png?1554890422722' }, // 105 LOGI REQUEST
+  { name: ' CV', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fcv.png?1554890422722' }, // 107 LOGI REQUEST
   { name: ' Crane', url: 'https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2Fcrane1.png?v=1563106383574' }, // 
   { name: ' Flatbed', url: 'https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2Ffltbd.png?v=1563106384699' }, // 
   { name: ' Container', url: 'https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2Fconta1.png?v=1563106385043' }, // 
   { name: ' Fuel Truck', url: 'https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2Foilta.png?v=1563106384068' }, // 
   { name: ' Drop EAT', url: 'http://hq.mreboy.com/img/RequestEAT.png' }, // 
-  { name: ' Shirt Truck', url: 'http://hq.mreboy.com/img/ShirtTruck.png' }, // 111
+  { name: ' Shirt Truck', url: 'http://hq.mreboy.com/img/ShirtTruck.png' }, // 113
   
 ];
 
