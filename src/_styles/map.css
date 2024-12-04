@@ -24,11 +24,11 @@ width:100%
 .regionbtn{
   color: #d6d6d6;
   background-color: #292929;
-  font-weight: bold;
+  font-weight: normal;
   font-family: Jost;
-  font-size: 10px;
+  font-size: 12px;
   margin:0px;
-  padding:0px;
+  padding:4px 8px;
   border-radius:0px;
   border-style: solid;
   border-width: 1px;
