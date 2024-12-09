@@ -6,6 +6,7 @@ import {connect} from 'react-redux';
 import A from '../../../../../redux/actions.js';
 import socket from '../../../../../_static/socket';
 import U from '../../../useful_functions'
+import { NoteAddon } from './note-addon.js';
 
 class RequestIcon_ extends React.Component {
     constructor(props) {
@@ -13,12 +14,15 @@ class RequestIcon_ extends React.Component {
       this.markerRef = React.createRef();
     }
       shouldComponentUpdate(nextProps,nextState){
-      let signature = U.signature(this.props.request.position)
-      //console.log("Request props",this.props,nextProps)
+        let signature = U.signature(this.props.request.position)
+        //console.log("Request props",this.props,nextProps)
         if(JSON.stringify(this.props.requests[signature])!=JSON.stringify(nextProps.requests[signature])){
           return true
         }
-          return false
+        if(JSON.stringify(this.props.zoom)!=JSON.stringify(nextProps.zoom)){
+          return true
+        }
+        return false
       }
 
   SelectRequest(request){
@@ -66,21 +70,25 @@ class RequestIcon_ extends React.Component {
   }
 
   render(){
-  //console.log("Rendering request")
-  let request = this.props.request
-  let icon = markers.RequestIcon.incomplete
-  if(this.CheckCompleted()){
-    icon=markers.RequestIcon.complete
-  }
-  return(
-    <L.Marker ref={this.markerRef} 
-              position={[request.position.y,request.position.x]} 
-              icon={icon} 
-              onClick={()=>this.SelectRequest(this.props.request)}
-              draggable={true} 
-              onDragend={(e)=>this.handleDragEnd(e)}>
-      </L.Marker>
-      )
+    //console.log("Rendering request")
+    let request = this.props.request
+    let reqObj = this.props.requests[U.signature(this.props.request.position)];
+    let icon = markers.RequestIcon.incomplete
+    if(this.CheckCompleted()){
+      icon=markers.RequestIcon.complete
+    }
+    return(
+      <React.Fragment>
+        {(this.props.zoom > 3.5) && <NoteAddon obj={reqObj} />}
+        <L.Marker ref={this.markerRef} 
+          position={[request.position.y,request.position.x]} 
+          icon={icon} 
+          onClick={()=>this.SelectRequest(this.props.request)}
+          draggable={true} 
+          onDragend={(e)=>this.handleDragEnd(e)}>
+        </L.Marker>
+      </React.Fragment>
+    )
   }
 }
 

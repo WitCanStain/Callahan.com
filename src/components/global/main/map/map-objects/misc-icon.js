@@ -7,6 +7,7 @@ import {connect} from 'react-redux';
 import A from '../../../../../redux/actions.js';
 import socket from '../../../../../_static/socket';
 import RegionImages from '../../../../../_static/region-images';
+import { NoteAddon } from './note-addon.js';
 
 class MiscIcon_ extends React.Component {
     constructor(props) {
@@ -130,35 +131,25 @@ class MiscIcon_ extends React.Component {
      </React.Fragment>
     }
     render(){
-    let obj = this.props.private[this.props.signature]
-    //console.log(this.props)
-    let text = obj.notes
-    if(text!=""){
-      text = JSON.parse(JSON.stringify(this.props.private[this.props.signature].notes))
-     text = text.replace(/(?:\r\n|\r|\n)/g, '<br>')
-    }
-    var IconText = NativeL.divIcon({className: 'note_icon_txtc', html:"<div className='note_icon_text_container'><span class='note_icon_text'><b>"+text+"</b></span></div>"});
-          IconText.options.iconSize=[undefined,undefined]   
-          IconText.options.iconAnchor = [-10,10]
-    let addon = <L.Marker position={[obj.position.y,obj.position.x]} icon={IconText} opacity={1} zIndexOffset={1000}/>
-    let icon = new markers.MiscIcon({iconUrl:markers.MiscIconArray[obj.type].url})
-    if(obj.type === 25 || obj.type === 26 || obj.type === 27 || obj.type === 28 || obj.type === 35){
-      return this.GetArtyIcon(obj)
-    }
-    if(obj.type==0){
-        return(
-          <React.Fragment>
-        {(this.props.zoom>3.5||this.state.displayText)&&addon}
-        <L.Marker position={[obj.position.y,obj.position.x]} icon={icon} zIndexOffset={1000} onMouseOver={(e)=>this.handleMouseOver(e)} onMouseOut={(e)=>this.handleMouseOut(e)} draggable={true} onDragstart={(e)=>this.handleDragStart(e)} onDragend={(e)=>this.handleDragEnd(e)} onClick={()=>this.HandleSelect(obj.type)} />
-          </React.Fragment>
-    )
-    }
-    return(
-          <React.Fragment>
-        <L.Marker position={[obj.position.y,obj.position.x]} icon={icon} zIndexOffset={1000} onClick={()=>this.HandleSelect(obj.type)} draggable={true} onDragend={(e)=>this.handleDragEnd(e)}>
-        </L.Marker>
-          </React.Fragment>
-    )
+      let obj = this.props.private[this.props.signature]
+      //console.log(this.props)
+      let iconURL = new markers.MiscIcon({iconUrl:markers.MiscIconArray[obj.type].url})
+      let marker = null;
+      if(obj.type==0){
+        // These are specifically note markers, they have additional events for displaying notes when hovering the marker while zoomed out.
+        marker = <L.Marker position={[obj.position.y,obj.position.x]} icon={iconURL} zIndexOffset={1000} onMouseOver={(e)=>this.handleMouseOver(e)} onMouseOut={(e)=>this.handleMouseOut(e)} draggable={true} onDragstart={(e)=>this.handleDragStart(e)} onDragend={(e)=>this.handleDragEnd(e)} onClick={()=>this.HandleSelect(obj.type)} />
+      } else if (obj.type === 25 || obj.type === 26 || obj.type === 27 || obj.type === 28 || obj.type === 35) {
+        marker = this.GetArtyIcon(obj);
+      }
+      if (!marker) {
+        marker = <L.Marker position={[obj.position.y,obj.position.x]} icon={iconURL} zIndexOffset={1000} onClick={()=>this.HandleSelect(obj.type)} draggable={true} onDragend={(e)=>this.handleDragEnd(e)} />
+      }
+      return(
+        <React.Fragment>
+          {(this.props.zoom > 3.5 || this.state.displayText) && <NoteAddon obj={obj} />}
+          {marker}
+        </React.Fragment>
+      )
     }
   }
 

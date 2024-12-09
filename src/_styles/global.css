@@ -1679,6 +1679,17 @@ align-items: center;
   background-size:contain;
   background-size: 17px 17px;
 }
+.leaflet-touch .leaflet-draw-toolbar .leaflet-draw-draw-circlemarker,
+.leaflet-touch .leaflet-draw-toolbar .leaflet-draw-draw-rectangle,
+.leaflet-touch .leaflet-draw-toolbar .leaflet-draw-draw-marker {
+  background-color: rgba(255, 255, 255, 0.1);
+  filter: invert(1) brightness(1.15);
+}
+.leaflet-touch .leaflet-draw-toolbar .leaflet-draw-draw-circlemarker:hover,
+.leaflet-touch .leaflet-draw-toolbar .leaflet-draw-draw-rectangle:hover,
+.leaflet-touch .leaflet-draw-toolbar .leaflet-draw-draw-marker:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
 
 .leaflet-touch .leaflet-draw-toolbar .leaflet-draw-edit-edit.leaflet-disabled, .leaflet-touch .leaflet-draw-toolbar .leaflet-draw-edit-edit{
   background-image:url('https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fedit4.png');

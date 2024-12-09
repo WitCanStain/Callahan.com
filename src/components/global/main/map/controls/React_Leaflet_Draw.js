@@ -55,6 +55,20 @@ class RLDComp_ extends React.Component {
         packet={position:this.convertArray(e.layer._latlngs)}
         key = Number(packet.position[0][0])+Number(packet.position[0][1])
         break;
+      case "rectangle":
+        const b = e.layer._bounds;
+        const bounds = [[b._northEast.lat, b._northEast.lng], [b._southWest.lat, b._southWest.lng]];
+        packet={position:bounds}
+        key = Number(packet.position[0][0])+Number(packet.position[0][1])
+        break;
+      case "marker":
+        packet={position:[e.layer._latlng.lat,e.layer._latlng.lng]}
+        key = Number(packet.position[0])+Number(packet.position[1])
+        break;
+      case "circlemarker":
+        packet={position:[e.layer._latlng.lat,e.layer._latlng.lng]}
+        key = Number(packet.position[0])+Number(packet.position[1])
+        break;
     }
     packet.type=e.layerType;
     packet.color=this.state.color
@@ -74,14 +88,25 @@ class RLDComp_ extends React.Component {
      // console.log(e.layers._layers[prop])
       switch(obj.options.type){
         case "circle":
-         packets.push({position:[obj._latlng.lat,obj._latlng.lng],radius:obj._mRadius,type:obj.options.type})
-         break;
+          packets.push({position:[obj._latlng.lat,obj._latlng.lng],radius:obj._mRadius,type:obj.options.type})
+          break;
         case "polygon":
           packets.push({position:this.convertArray(obj._latlngs[0]),type:obj.options.type})
-         break;
+          break;
         case "polyline":
           packets.push({position:this.convertArray(obj._latlngs),type:obj.options.type})
-         break;
+          break;
+        case "rectangle":
+          const b = obj._bounds;
+          const bounds = [[b._northEast.lat, b._northEast.lng], [b._southWest.lat, b._southWest.lng]];
+          packets.push({position:bounds,type:obj.options.type})
+          break;
+        case "marker":
+          packets.push({position:[obj._latlng.lat,obj._latlng.lng],type:obj.options.type})
+          break;
+        case "circlemarker":
+          packets.push({position:[obj._latlng.lat,obj._latlng.lng],type:obj.options.type})
+          break;
       }
     }
     for(var i=0;i<packets.length;i++){
@@ -114,6 +139,13 @@ class RLDComp_ extends React.Component {
           return <Arrow obj={obj} color={color} signature={signature}/>
         }
         return <L.Polyline color={color} dashArray="5, 5" fillOpacity={0.1} dashOffset='0' positions={obj.position} signature={signature} type="polyline"/>
+      case "rectangle":
+        return <L.Rectangle color={color} dashArray="5, 5" fillOpacity={0.1} bounds={obj.position} signature={signature} type="rectangle"/>
+      case "marker":
+        // TODO: Add support for selecting an icon?
+        return <L.Marker position={obj.position} signature={signature} type="marker"/>
+      case "circlemarker":
+        return <L.CircleMarker color={color} dashArray="5, 5" fillOpacity={0.1} center={obj.position} radius={10} signature={signature} type="circlemarker"/>
     }
   }
   handleDrawStart(e){
@@ -154,9 +186,9 @@ class RLDComp_ extends React.Component {
         polyline:{showLength:false,shapeOptions:{color:"#790000", dashArray: '20, 20', dashOffset: '0'}},
         circle:{showRadius:false,shapeOptions:{color:"#790000"}},
         polygon:{shapeOptions:{color:"#790000"}},
-        rectangle: false,
-        marker:false,
-        circlemarker:false
+        rectangle:{shapeOptions:{color:"#790000"}},
+        // marker:{shapeOptions:{}},
+        circlemarker:{shapeOptions:{color:"#790000"}}
       }}
     /> {this.state.draw ? <LeafletControl.default position="topleft" className="leaflet_control_pan">
       <span>Style</span> <select       

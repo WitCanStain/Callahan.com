@@ -60,13 +60,13 @@ class MapIcons_ extends React.Component {
 
       if(display.custom.fobs) {
         for(var fob in roominfo.fobs){
-        objects.push(<MO.Fob key={"fob"+fob} signature={fob} />)
+        objects.push(<MO.Fob key={"fob"+fob} signature={fob} zoom={this.props.zoom} />)
         }
       }
       if(display.custom.requests) {
         for(var request in roominfo.requests){
           let obj = this.props.roominfo.requests[request];
-          objects.push(<MO.RequestIcon key={"request"+request} request={obj} />)
+          objects.push(<MO.RequestIcon key={"request"+request} request={obj} zoom={this.props.zoom} />)
         }
       }
       if(display.custom.miscicons) {
