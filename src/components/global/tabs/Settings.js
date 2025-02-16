@@ -9,6 +9,13 @@ import shortid from 'shortid';
 const Popover = require('react-tiny-popover');
 
 class Settings_ extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showAuthenticatedUsers: false,
+      showBannedUsers: false
+    };
+  }
  handleChangeRoomName(e){
    let name = e.target.value
    if(name.length<33){
@@ -53,12 +60,36 @@ class Settings_ extends React.Component {
       discordbtn = <button className="btn" onClick={this.DisconnectDiscord}>Remove link to channel</button>
     }
     //console.log(this.props)
-     const management = this.props.users.sort(U.compare).map(user => <ManagementlistUnit key={user.id} HandleRankChange={this.HandleRankChange} user={user} myrank={this.props.myrank}/>)
-                                                           
+     const management = this.props.users.sort(U.compare).map(user => {
+      if (
+        (user.rank !== 3 || this.state.showAuthenticatedUsers) &&
+        (user.rank !== 4 || this.state.showBannedUsers)
+      ) {
+        return <ManagementlistUnit key={user.id} HandleRankChange={this.HandleRankChange} user={user} myrank={this.props.myrank}/>
+      }
+     })
     return  <div id="manage" className="container tab-pane row">
             <div className="row">
             <div className="col" id="settings_usertable_col">
-         <h4>Manage users</h4>
+         <h4 className="d-flex align-items-center">
+          <span className="flex-grow-1">
+            Manage users
+          </span>
+          <button
+            type="button"
+            className="btn"
+            onClick={() => this.setState({ showAuthenticatedUsers: !this.state.showAuthenticatedUsers })}
+          >
+            {this.state.showAuthenticatedUsers ? 'Hide' : 'Show'} Authenticated
+          </button>
+          <button
+            type="button"
+            className="btn"
+            onClick={() => this.setState({ showBannedUsers: !this.state.showBannedUsers })}
+          >
+            {this.state.showBannedUsers ? 'Hide' : 'Show'} Banned
+          </button>
+        </h4>
     <table className="table" id="settings_usertable" >
       <colgroup>
       <col width="200" />
