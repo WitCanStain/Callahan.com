@@ -61,7 +61,7 @@ var iteminfo= [
 {name:"Satterly ATR", i:5, b:150, t:37, src:'ATRSatterley.png'},
 {name:"20mm ATR Ammo", i:10, b:100, t:100, src:'ATRifleAmmoItemIcon.png'},
 {name:"Carnyx AP/RPG", i:5, b:100, t:100, src:'ATRPGHeavyWIcon.png'},
-{name:"AP/RPG Ammo", i:5, b:100, t:100, src:'ATRpgAmmoItemIcon.png'},
+{name:"AP/RPG Ammo", i:15, b:100, t:100, src:'ATRpgAmmoItemIcon.png'},
 {name:"Bonesaw ARC/RPG", i:5, b:100, r:25, src:'Bonesaw_Icon.png'},
 {name:"Mounted Bonesaw (Tripod)", i:5, b:200, src:'Mounted_Bonesaw_Icon.png'},
 {name:"ARC/RPG Ammo", i:15, b:60, e:75, t:112, src:'ATRPG_Indirect_shell.png'},
