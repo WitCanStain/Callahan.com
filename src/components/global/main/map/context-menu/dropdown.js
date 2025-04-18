@@ -67,7 +67,7 @@ export class ContextDropdown extends React.Component {  ////Component generation
     }
      break;
     case 4: //LOGI REQUEST icons
-    for(var i=108;i<=114;i++){
+    for(var i=108;i<=117;i++){
       items.push(this.GetItem(i))
 	} 
      break;
