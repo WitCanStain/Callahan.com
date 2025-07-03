@@ -1,0 +1,4 @@
+These folders contain placeholder imgs of otherwise non-existant map surface tiles to help prevent https://hq.mreboy.com/map/ (separate project but uses the same tile sets) from driving the anti-DDoS protection on the hosting server psycho with 404 requests which results in IP bans and HTTP 429 crap.
+App is apparently generating requests for map tile pcs that do not exist and the server anti-DDoS likes to go full anaphylactic shock/exterminatus over excessive 404s being generated.
+These are being kept separate because they are not directly needed by the HQ app.
+All images are copies of 256x256blank.png (purely transparent PNG)
