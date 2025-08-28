@@ -37,7 +37,7 @@ var iteminfo= [
 {name:"Clancy-Raca Sniper Rifle", i:3, b:200, r:15, t:125, src:'SniperRifleItemIcon.png'},
 {name:"Malone HMG", i:5, r:30, t:100, src:'Malone_MG_Icon.png'},
 {name:"12.7mm HMG Ammo", i:20, b:100, t:70, src:'MachineGunAmmoIcon.png'},
-{name:"Smoke Grenade", i:10, b:120, t:75, src:'SmokeGrenade.png'},
+{name:"Smoke Grenade", i:15, b:120, t:75, src:'SmokeGrenade.png'},
 {name:"Fragmentation Grenade", i:20, b:100, e:20, t:100,  src:'GrenadeItemIcon.png'},
 {name:"Gas Grenade", i:10, b:140, t:100, src:'DeadlyGas01Icon.png'},
 {name:"Cascadier Burst Pistol", i:40, b:60, t:50, src:'Burst_Pistol_Icon.png'},
