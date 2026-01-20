@@ -222,7 +222,7 @@ super()
           name="faction" 
           value="0" 
           checked={this.state.faction==0}
-          onChange={this.handleChange} /><img className="faction_img" src="https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fcol.png?v=1560274203875"/></h5>
+          onChange={this.handleChange} /><img className="faction_img" src="https://hq.mreboy.com/img/glitch/logoColonial64.png"/></h5>
   </label>
 </div>
 <div className="form-check-inline">
@@ -232,7 +232,7 @@ super()
           name="faction" 
           value="1" 
           checked={this.state.faction==1}
-          onChange={this.handleChange}/><img className="faction_img" src="https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FUward.png?v=1560274204371"/></h5>
+          onChange={this.handleChange}/><img className="faction_img" src="https://hq.mreboy.com/img/glitch/logoWarden64.png"/></h5>
   </label>
 </div>
         <hr />
