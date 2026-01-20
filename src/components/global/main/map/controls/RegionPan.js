@@ -3,7 +3,7 @@ import React from 'react';
 export class RegionPan extends React.Component {
  render(){
   return (  <div className="dropdown pan-card" >
-  <div id="filter_panheader" className="cardheader" data-toggle="dropdown" /*data-target="#filter_panbody"*/><img className="leaflet_pan_icon" src="https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fdad-9.png"/></div>
+  <div id="filter_panheader" className="cardheader" data-toggle="dropdown" /*data-target="#filter_panbody"*/><img className="leaflet_pan_icon" src="https://hq.mreboy.com/img/glitch/quickmovehex.png"/></div>
       
     <div className="dropdown-menu dropdown-menu-right" id="filter_panbody">
 <div className="btn-group btn-group-sm region_pan_btn_group">

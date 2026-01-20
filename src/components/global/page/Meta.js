@@ -83,9 +83,9 @@ class SoundControl extends React.Component {
       prop = "prevDateRelic";
     } else if (
       obj ==
-        "https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fsupp%20completed.mp3" ||
+        "https://hq.mreboy.com/img/glitch/supplies_completed.mp3" ||
       obj ==
-        "https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fsupplies.mp3"
+        "https://hq.mreboy.com/img/glitch/supplies.mp3"
     ) {
       prop = "prevDateLogi";
     } else if (
@@ -123,7 +123,7 @@ class SoundControl extends React.Component {
   render() {
     //console.log("Updating sound control")
     let img =
-      "https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FUntitled-2.png?1559249870353";
+      "https://hq.mreboy.com/img/glitch/speaker_sm.png";
     if (!this.state.toggle) {
       img =
         "https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2F42.png?1559249871623";

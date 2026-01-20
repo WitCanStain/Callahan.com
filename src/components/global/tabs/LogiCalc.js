@@ -166,12 +166,12 @@ export class LogiCalc extends React.Component {
                   {this.GetTotal("he")}
                   <img
                     className="totalicon"
-                    src="https://cdn.glitch.com/6393f3fd-16a7-4641-ae3d-994f8e7cea4e%2FCrateItemIcon.png?1548192460894"
+                    src="https://hq.mreboy.com/img/glitch/CrateItemIcon.png"
                   />
                   <a id="totalcrates">{this.GetCrates()}</a>
                   <img
                     className="totalicon"
-                    src="https://cdn.glitch.com/98ac14b2-4603-4541-b92e-320b855d2e65%2FTruckVehicleIcon.png?1542349073226"
+                    src="https://hq.mreboy.com/img/glitch/TruckWarden.png"
                   />
                   <a id="totalvehicles">{this.GetVehicles()}</a>
                 </h4>
@@ -205,7 +205,7 @@ export class LogiCalc extends React.Component {
                     <th>
                       <img
                         className="crate"
-                        src="https://cdn.glitch.com/6393f3fd-16a7-4641-ae3d-994f8e7cea4e%2FCrateItemIcon.png?1548192460894"
+                        src="https://hq.mreboy.com/img/glitch/CrateItemIcon.png"
                         style={{ width: 34, height: 34 }}
                       />
                     </th>
@@ -273,7 +273,7 @@ function Item(props) {
         >
           <img
             className="removebutton"
-            src="https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FX.png?v=1557668374293"
+            src="https://hq.mreboy.com/img/glitch/X.png"
           />
         </button>
       </td>

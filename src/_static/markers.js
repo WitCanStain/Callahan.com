@@ -68,7 +68,7 @@ const SelectIcon = L.Icon.extend({
     iconSize: [36, 36],
     iconAnchor: [18, 18],
     popupAnchor: [0, 0],
-    iconUrl: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fgfds-3.png?v=1560690535457',
+    iconUrl: 'https://hq.mreboy.com/img/glitch/gfds-3.png',
     className: 'map_icon_selected',
   },
 });
@@ -85,13 +85,13 @@ const RequestIconBase = L.Icon.extend({
     iconSize: [24, 24],
     iconAnchor: [12, 12],
     popupAnchor: [0, 0],
-    iconUrl: 'https://cdn.glitch.com/6393f3fd-16a7-4641-ae3d-994f8e7cea4e%2FIconStatusEncumberedRed.png?1549573551066',
+    iconUrl: 'https://hq.mreboy.com/img/glitch/IconStatusEncumberedRed.png',
     className: 'map_icon_request',
   },
 });
 const RequestIcon = {
-  incomplete: new RequestIconBase({ iconUrl: 'https://cdn.glitch.com/6393f3fd-16a7-4641-ae3d-994f8e7cea4e%2FIconStatusEncumberedRed.png?1549573551066' }),
-  complete: new RequestIconBase({ iconUrl: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FIconStatusEncumbered.png?1554591180726' }),
+  incomplete: new RequestIconBase({ iconUrl: 'https://hq.mreboy.com/img/glitch/IconStatusEncumberedRed.png' }),
+  complete: new RequestIconBase({ iconUrl: 'https://hq.mreboy.com/img/glitch/IconStatusEncumbered.png' }),
 };
 const FobIconBase = L.Icon.extend({
 	 	options: {
@@ -154,24 +154,24 @@ const MiscIcon = L.Icon.extend({
   },
 });
 const MiscIconArray = [
-  { name: 'Note', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Ffdsag.png?1554889393144' }, // 0 NOTE
-  { name: 'Enemy', url: 'https://cdn.glitch.com/6393f3fd-16a7-4641-ae3d-994f8e7cea4e%2FIndicator_queue.png?1548525724233' }, // 1
-  { name: 'Attack', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fattack.png?1554589500531' }, // 2
-  { name: 'Defend', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fdefend.png?v=1554589500846' }, // 3
-  { name: 'Move', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fmove.png?1554589501432' }, // 4
-  { name: 'Howitzer', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Ffsdd-9.png?1558099235579' }, // 5
-  { name: 'CV', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fcv.png?1554890422722' }, // 6
-  { name: 'Build', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FUndsfsed-6.png?1558094804796' }, // 7
+  { name: 'Note', url: 'https://hq.mreboy.com/img/Note.png' }, // 0 NOTE
+  { name: 'Enemy', url: 'https://hq.mreboy.com/img/Indicator_queue.png' }, // 1
+  { name: 'Attack', url: 'https://hq.mreboy.com/img/attack.png' }, // 2
+  { name: 'Defend', url: 'https://hq.mreboy.com/img/defend.png' }, // 3
+  { name: 'Move', url: 'https://hq.mreboy.com/img/move.png' }, // 4
+  { name: 'Howitzer', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Ffsdd-9.png?1558099235579' }, // 5 NOT USED
+  { name: 'CV', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fcv.png?1554890422722' }, // 6 NOT USED
+  { name: 'Build', url: 'https://hq.mreboy.com/img/build.png' }, // 7
 
-  { name: ' Squad 1', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2F1s.png?1557484360213' }, // 8
-  { name: ' Squad 2', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fs2.png?1557485248288' }, // 9
-  { name: ' Squad 3', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fs3.png?1557485249108' }, // 10
-  { name: ' Squad 4', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fs4.png?1557485250384' }, // 11
-  { name: ' Squad 5', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fs5.png?1557485251552' }, // 12
+  { name: ' Squad 1', url: 'https://hq.mreboy.com/img/glitch/1s.png' }, // 8
+  { name: ' Squad 2', url: 'https://hq.mreboy.com/img/glitch/s2.png' }, // 9
+  { name: ' Squad 3', url: 'https://hq.mreboy.com/img/glitch/s3.png' }, // 10
+  { name: ' Squad 4', url: 'https://hq.mreboy.com/img/glitch/s4.png' }, // 11
+  { name: ' Squad 5', url: 'https://hq.mreboy.com/img/glitch/s5.png' }, // 12
 
-  { name: ' Objective 1', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FOBJ1.png?1554589501515' }, // 13
-  { name: ' Objective 2', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FOBJ2.png?1554589501600' }, // 14
-  { name: ' Objective 3', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FOBJ3.png?1554589501849' }, // 15
+  { name: ' Objective 1', url: 'https://hq.mreboy.com/img/glitch/Objective1.png' }, // 13
+  { name: ' Objective 2', url: 'https://hq.mreboy.com/img/glitch/Objective2.png' }, // 14
+  { name: ' Objective 3', url: 'https://hq.mreboy.com/img/glitch/Objective3.png' }, // 15
 
  //{ name: ' Truck', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fsh21.png?1558524397895' }, // 16 OLD RELIC VEHICLE ICONS
  //{ name: ' Bus', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fsh1.png?1558524400417' }, // 17	NOT USED ANYMORE
@@ -299,23 +299,23 @@ const MiscIconArray = [
   { name: ' Submarine (C)', url: 'http://hq.mreboy.com/img/LargeShipSubmarineCIcon.png' }, //
   { name: ' Gunboat (W)', url: 'http://hq.mreboy.com/img/GunboatWIcon.png' }, //  
   { name: ' Gunboat (C)', url: 'http://hq.mreboy.com/img/GunBoatVehicleIcon.png' }, //  
-  { name: ' Barge', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FBRG-2.png?1558692837627' }, // 
+  { name: ' Barge', url: 'https://hq.mreboy.com/img/BargeVehicleIcon.png' }, // 
   { name: ' Landing Craft', url: 'http://hq.mreboy.com/img/LandingShipWIcon.png' }, //
-  { name: ' APC', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FAPC-2.png?1558692836707' },
+  { name: ' APC', url: 'https://hq.mreboy.com/img/LandingCraftWarVehicleIcon.png' },
   { name: ' Base Ship', url: 'http://hq.mreboy.com/img/LargeShipBaseShipIcon.png' }, //
   { name: ' Depot Ship', url: 'http://hq.mreboy.com/img/LargeShipStorageShipIcon.png' }, //
   { name: ' Resource Ship', url: 'http://hq.mreboy.com/img/LargeShipResourceIcon.png' }, //
-  { name: ' Freighter', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FCARGO.png?1558692847027' }, // 107
+  { name: ' Freighter', url: 'https://hq.mreboy.com/img/FreighterVehicleIcon.png' }, // 107
   
   
   { name: ' Std. Truck', url: 'http://hq.mreboy.com/img/TruckWarVehicleIconBW.png' }, // 108 LOGI REQUEST
   { name: ' Hvy. Truck', url: 'http://hq.mreboy.com/img/HeavyTruckWItemIcon_copyBW.png' }, // 
   { name: ' Fuel Truck', url: 'http://hq.mreboy.com/img/OilTankerWarIcon.png' }, // 
-  { name: ' Flatbed', url: 'https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2Ffltbd.png?v=1563106384699' }, // 
-  { name: ' Std. Container', url: 'https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2Fconta1.png?v=1563106385043' }, //
+  { name: ' Flatbed', url: 'https://hq.mreboy.com/img/FlatbedTruckVehicleIcon.png' }, // 
+  { name: ' Std. Container', url: 'https://hq.mreboy.com/img/ShippingContainerStructureIcon.png' }, //
   { name: ' Liquid Cont.', url: 'http://hq.mreboy.com/img/FuelTankIconBW.png' }, // 
-  { name: ' CV', url: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fcv.png?1554890422722' }, // 
-  { name: ' Crane', url: 'https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2Fcrane1.png?v=1563106383574' }, // 
+  { name: ' CV', url: 'https://hq.mreboy.com/img/ConstructionVehicleIcon.png' }, // 
+  { name: ' Crane', url: 'https://hq.mreboy.com/img/CraneVehicleIcon.png' }, // 
   { name: ' Drop EAT', url: 'http://hq.mreboy.com/img/RequestEAT.png' }, // 
   { name: ' Shirt Truck', url: 'http://hq.mreboy.com/img/ShirtTruck.png' }, // 117
   

@@ -207,10 +207,10 @@ class ManagementlistUnit extends React.Component{
       {this.props.user.rank==5 &&
       <p>Approve 
           <button className="approvebtn" onClick={()=>this.HandleRankChange(3)}>
-            <img className="approve_img" src="https://cdn.glitch.com/6393f3fd-16a7-4641-ae3d-994f8e7cea4e%2Fcheckmark.png?1546938883091" />
+            <img className="approve_img" src="https://hq.mreboy.com/img/glitch/checkmark.png" />
           </button>
           <button className="approvebtn" onClick={()=>this.HandleRankChange(4)}>
-            <img className="approve_img" src="https://cdn.glitch.com/6393f3fd-16a7-4641-ae3d-994f8e7cea4e%2FX%20icon%20small.png?1546753641488" />
+            <img className="approve_img" src="https://hq.mreboy.com/img/glitch/XIconSmall.png" />
           </button>
         </p>
       }

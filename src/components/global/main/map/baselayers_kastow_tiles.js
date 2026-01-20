@@ -8,7 +8,7 @@ function BaseLayers_(props) {
 
   return (
     <L.LayersControl position="topright">
-      <L.LayersControl.BaseLayer name="Topographic Map" checked={!satmap}>
+      <L.LayersControl.BaseLayer name="Simple Map" checked={!satmap}>
         <L.TileLayer
           noWrap={true}
           continuousWorld={true}
@@ -18,7 +18,7 @@ function BaseLayers_(props) {
         />
       </L.LayersControl.BaseLayer>
 
-      <L.LayersControl.BaseLayer name="Satellite Map" checked={satmap}>
+      <L.LayersControl.BaseLayer name="Advanced Map" checked={satmap}>
         <L.TileLayer
           noWrap={true}
           continuousWorld={true}

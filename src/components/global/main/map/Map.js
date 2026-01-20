@@ -271,56 +271,56 @@ class GlobalMap extends React.Component {
                  [
                    {
                      text: 'Logi Request',
-                     icon: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Ftra.png?1558692436307',
+                     icon: 'https://hq.mreboy.com/img/truckmove.png',
                      callback: (event) => window.requestmodalcontainer.ShowModal(event, 0)
                    }, {
                    text: 'Enemy',
-                   icon: 'https://cdn.glitch.com/6393f3fd-16a7-4641-ae3d-994f8e7cea4e%2FIndicator_queue.png?1548525724233',
+                   icon: 'https://hq.mreboy.com/img/Indicator_queue.png',
                    callback: (event) => this.CreateMiscIcon(event, 1)
                  },
                    {
                      text: '<div class="dropup"><span class="dropdown-toggle" >Logi Vehicles</span>  <div class="dropdown-menu" id="context_logi_vehicles_dropdown"></div></div> ',
-                     icon: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fdagts.png?1554890715341',
+                     icon: 'https://hq.mreboy.com/img/ConstructionVehicleIcon.png',
                      callback: (event) => this.OpenMenu(event, 'context_logi_vehicles_dropdown', 4),
                      hideOnSelect: false
                    },
                    {
                      text: 'Move',
-                     icon: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fmove.png?1554589501432',
+                     icon: 'https://hq.mreboy.com/img/move.png',
                      callback: (event) => this.CreateMiscIcon(event, 4)
 
                    }, {
                    text: 'FOB / BB',
-                   icon: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FMapIconForwardBase1.png?1554666597044',
+                   icon: 'https://hq.mreboy.com/img/MapIconForwardBase1.png?1554666597044',
                    callback: this.CreateFob
 
                  }, {
                    text: 'Attack',
-                   icon: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fattack.png?1554589500531',
+                   icon: 'https://hq.mreboy.com/img/attack.png',
                    callback: (event) => this.CreateMiscIcon(event, 2)
                  }, {
                    text: '<div class="dropup"><span class="dropdown-toggle" >Squads</span>  <div class="dropdown-menu" id="context_squad_dropdown"></div></div> ',
-                   icon: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2F1s.png?1557484360213',
+                   icon: 'https://hq.mreboy.com/img/glitch/1s.png',
                    hideOnSelect: false,
                    callback: (event) => this.OpenMenu(event, 'context_squad_dropdown', 0)
 
                  }, {
                    text: 'Defend',
-                   icon: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fdefend.png?1554589500846',
+                   icon: 'https://hq.mreboy.com/img/defend.png',
                    callback: (event) => this.CreateMiscIcon(event, 3)
                  }, {
                    text: '<div class="dropup"><span class="dropdown-toggle" >Objectives</span>  <div class="dropdown-menu" id="context_objectives_dropdown"></div></div> ',
-                   icon: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FOBJ1.png?1554589501515',
+                   icon: 'https://hq.mreboy.com/img/glitch/Objective1.png',
                    callback: (event) => this.OpenMenu(event, 'context_objectives_dropdown', 1),
                    hideOnSelect: false
                  }, {
                    text: 'Build',
-                   icon: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FUndsfsed-6.png?1558094804796',
+                   icon: 'https://hq.mreboy.com/img/build.png',
                    callback: (event) => this.CreateMiscIcon(event, 7)
 
                  }, {
                    text: '<div class="dropup"><span class="dropdown-toggle" >Ships</span>  <div class="dropdown-menu" id="context_ships_dropdown"></div></div> ',
-                   icon: 'https://cdn.glitch.com/6393f3fd-16a7-4641-ae3d-994f8e7cea4e%2FMapIconShipyard.png?1547280455531',
+                   icon: 'https://hq.mreboy.com/img/Shipyard.png',
                    callback: (event) => this.OpenMenu(event, 'context_ships_dropdown', 3),
                    hideOnSelect: false
                  }, /*{
@@ -330,7 +330,7 @@ class GlobalMap extends React.Component {
 				 }, */{
 
 				   text:'<div class="dropup"><span class="dropdown-toggle" >Trains</span>  <div class="dropdown-menu" id="context_relics_dropdown"></div></div> ',
-				   icon: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Frelic.png?1557925933310',
+				   icon: 'https://hq.mreboy.com/img/TrainEngineVehicleIcon.png',
 				   callback: (event)=>this.OpenMenu(event,'context_relics_dropdown', 2),
 				   hideOnSelect:false
 				}, /*{
@@ -340,7 +340,7 @@ class GlobalMap extends React.Component {
     }*/
                    {
                      text: 'Note',
-                     icon: 'https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Ffdsag.png?1554889393144',
+                     icon: 'https://hq.mreboy.com/img/Note.png',
                      callback: (event) => this.CreateMiscIcon(event, 0)
                    },
 				   {
@@ -389,7 +389,7 @@ class GlobalMap extends React.Component {
             </div>
           </LeafletControl.default>
           <FullscreenControl position="topleft"
-                             content="<img src='https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Faaaaaa.png' />"
+                             content="<img src='https://hq.mreboy.com/img/glitch/fullscreen-aaaaaa.png' />"
           />
           <L.AttributionControl position="bottomright" prefix={false}/>
           <L.LayerGroup>{this.state.zoom == 1 ? this.props.info.regionlabels : null}</L.LayerGroup>

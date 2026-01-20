@@ -306,7 +306,7 @@ class RequestCard extends React.Component { //What needs to be done?
           <th></th>
            <th style={{width:20}}><i className="fas fa-chevron-down align-right" /></th>
            <th>{headertype+" Priority"}</th>
-           <th style={{width:30}}><img className="card_req_manufacturerimage" src="https://cdn.glitch.com/6393f3fd-16a7-4641-ae3d-994f8e7cea4e%2FCrateItemIcon.png?1548192460894"/></th>
+           <th style={{width:30}}><img className="card_req_manufacturerimage" src="https://hq.mreboy.com/img/glitch/CrateItemIcon.png"/></th>
            <th style={{width:40}}>#</th>
            
             </tr>
@@ -368,7 +368,7 @@ class RequestCard extends React.Component { //What needs to be done?
   <div className={`card-header cardheader ${stats.pickupCrates >= stats.totalCrates ? 'requestmodal_highlight_cols' : ''}`}>
   <table>
     <tbody>
-      <tr><td style={{width:27}}><button className="card_req_manufacturerbtn" onClick={()=>window.requestmodalcontainer.ShowModal(this.props.signature,1)}><img className="card_req_manufacturerimage" src="https://cdn.glitch.com/6393f3fd-16a7-4641-ae3d-994f8e7cea4e%2FIconFilterUtility.png?1548935226605" /></button></td>
+      <tr><td style={{width:27}}><button className="card_req_manufacturerbtn" onClick={()=>window.requestmodalcontainer.ShowModal(this.props.signature,1)}><img className="card_req_manufacturerimage" src="https://hq.mreboy.com/img/glitch/IconFilterUtility.png" /></button></td>
       <td className="card_ambush_0cell noclip" style={{minWidth:50}}>{"Request by "+U.GetUsername(this.props.users.users,this.props.request.author)}</td>
       <td className="card_crate_count_cell">{stats.pickupCrates} / {stats.totalCrates}</td>
       <td style={{width:24}}>
@@ -380,14 +380,14 @@ class RequestCard extends React.Component { //What needs to be done?
                 <div id="submit_popover">
                 <p>Delete request?</p>
                 <button className="popover_submit_btn" onClick={()=>this.DeleteRequest()}>
-              <img className="popover_submit_img" src="https://cdn.glitch.com/6393f3fd-16a7-4641-ae3d-994f8e7cea4e%2Fcheckmark.png?1546938883091" />
+              <img className="popover_submit_img" src="https://hq.mreboy.com/img/glitch/checkmark.png" />
             </button>
             <button className="popover_submit_btn" onClick={()=>this.setState({ isPopoverOpen: false })}>
-              <img className="popover_submit_img" src="https://cdn.glitch.com/6393f3fd-16a7-4641-ae3d-994f8e7cea4e%2FX%20icon%20small.png?1546753641488" />
+              <img className="popover_submit_img" src="https://hq.mreboy.com/img/glitch/XIconSmall.png" />
             </button>
                 </div>
           )} >
-          <img className="card_ambush_removeimage" onClick={() => this.setState({ isPopoverOpen: !this.state.isPopoverOpen })} src="https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FX.png?1557668374293" />
+          <img className="card_ambush_removeimage" onClick={() => this.setState({ isPopoverOpen: !this.state.isPopoverOpen })} src="https://hq.mreboy.com/img/glitch/X.png" />
         </Popover.default></td>
       </tr>
     </tbody>
@@ -420,7 +420,7 @@ class MyProductionCard extends React.Component {
       stats.totalCrates += obj.crates;
     }
     return(<tr style={{height:26}}>
-      <td className="card_ambush_removebutton useronly" style={{width:24}} onClick={()=>this.props.RemoveItem(index)}><img className="card_ambush_removeimage" src="https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Ffdsgafd.png?1556797745838" /></td>
+      <td className="card_ambush_removebutton useronly" style={{width:24}} onClick={()=>this.props.RemoveItem(index)}><img className="card_ambush_removeimage" src="https://hq.mreboy.com/img/glitch/fdsgafd.png" /></td>
       <td><img className="card_req_itemimage" src={cost.cost[obj.catid][obj.itemid].src}/></td>
       <td>{cost.cost[obj.catid][obj.itemid].name}</td>
       <td>{obj.crates}</td>
@@ -452,15 +452,15 @@ class MyProductionCard extends React.Component {
                 <div id="submit_popover">
                      <p>Submit items?</p>
                 <button className="popover_submit_btn" onClick={()=>this.SubmitItems()}>
-              <img className="popover_submit_img" src="https://cdn.glitch.com/6393f3fd-16a7-4641-ae3d-994f8e7cea4e%2Fcheckmark.png?1546938883091" />
+              <img className="popover_submit_img" src="https://hq.mreboy.com/img/glitch/checkmark.png" />
             </button>
             <button className="popover_submit_btn" onClick={()=>this.setState({ isPopoverOpen: false })}>
-              <img className="popover_submit_img" src="https://cdn.glitch.com/6393f3fd-16a7-4641-ae3d-994f8e7cea4e%2FX%20icon%20small.png?1546753641488" />
+              <img className="popover_submit_img" src="https://hq.mreboy.com/img/glitch/XIconSmall.png" />
             </button> 
                 </div>
             )} >
               <button type="button" className="btn card_req_submitmenubtn" onClick={() => this.setState({ isPopoverOpen: !this.state.isPopoverOpen })}>
-                <img className="card_req_submitmenu_img" src="https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fgsds.jpg?1555235385083"/>
+                <img className="card_req_submitmenu_img" src="https://hq.mreboy.com/img/glitch/gsds.jpg"/>
             </button>
         </Popover.default>
         <div className={`card-header cardheader requestmodal_production_header ${highlightCrates ? 'requestmodal_highlight_cols' : ''}`}>
@@ -474,7 +474,7 @@ class MyProductionCard extends React.Component {
         <td></td>
         <td></td>
         <td>Item</td>
-        <td style={{width:30}}><img className="card_req_manufacturerimage" src="https://cdn.glitch.com/6393f3fd-16a7-4641-ae3d-994f8e7cea4e%2FCrateItemIcon.png?1548192460894"/></td>
+        <td style={{width:30}}><img className="card_req_manufacturerimage" src="https://hq.mreboy.com/img/glitch/CrateItemIcon.png"/></td>
         <td style={{width:40}}>#</td>
       </tr>
        </thead>
@@ -525,7 +525,7 @@ class OtherProductionCard extends React.Component{
               <tr>
                 <td></td>
                 {/*<td>Item</td>*/}
-                <td style={{width:30}}><img className="card_req_manufacturerimage" src="https://cdn.glitch.com/6393f3fd-16a7-4641-ae3d-994f8e7cea4e%2FCrateItemIcon.png?1548192460894"/></td>
+                <td style={{width:30}}><img className="card_req_manufacturerimage" src="https://hq.mreboy.com/img/glitch/CrateItemIcon.png"/></td>
                 <td style={{width:40}}>#</td>
               </tr>
                </thead> 

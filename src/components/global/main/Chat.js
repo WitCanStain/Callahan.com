@@ -184,7 +184,7 @@ class ChatPersonal extends React.Component {
   
     return <div className="chat_window_container" id="chat_personal_totalcontainer"><div className="chat_window_header" id="chat_window_header_personal">
       <span className={"chat_message_username "+username_class}><img className="chat_userimg" src={user.avatar} />{user.name}</span>
-      <button className="card_remove_btn" onClick={() => this.handleClose()}><img className="card_remove_image"  src="https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FX.png?1557668374293" />
+      <button className="card_remove_btn" onClick={() => this.handleClose()}><img className="card_remove_image"  src="https://hq.mreboy.com/img/glitch/X.png" />
             </button>
       
       </div>

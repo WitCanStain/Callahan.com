@@ -2,7 +2,7 @@
 
 @font-face{
  font-family: Jost;
-  src: url('https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FJost-400.ttf?1556105927235');
+  src: url('https://hq.mreboy.com/src/_styles/Jost-400.ttf');
 }
 
 body {
@@ -171,7 +171,7 @@ text-align: left;
   width: 120px;
   height: 44px;
   border: 0px;
-  background: url(https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fsits_landing.png?v=1559680682388)  center center no-repeat;
+  background: url(https://hq.mreboy.com/src/_static/assets/new_sits_landing.png)  center center no-repeat;
 opacity: 0.8;
 }
 #stm:hover{

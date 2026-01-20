@@ -205,7 +205,7 @@ class DeletePopover extends React.Component {
             >
               <img
                 className="popover_submit_img"
-                src="https://cdn.glitch.com/6393f3fd-16a7-4641-ae3d-994f8e7cea4e%2Fcheckmark.png?1546938883091"
+                src="https://hq.mreboy.com/img/glitch/checkmark.png"
               />
             </button>
             <button
@@ -214,7 +214,7 @@ class DeletePopover extends React.Component {
             >
               <img
                 className="popover_submit_img"
-                src="https://cdn.glitch.com/6393f3fd-16a7-4641-ae3d-994f8e7cea4e%2FX%20icon%20small.png?1546753641488"
+                src="https://hq.mreboy.com/img/glitch/XIconSmall.png"
               />
             </button>
           </div>
@@ -228,7 +228,7 @@ class DeletePopover extends React.Component {
         >
           <img
             className="card_remove_image"
-            src="https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FX.png?1557668374293"
+            src="https://hq.mreboy.com/img/glitch/X.png"
           />
         </button>
       </Popover.default>

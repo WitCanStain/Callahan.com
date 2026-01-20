@@ -220,74 +220,74 @@ const GetStoreProps = store => {
 };
 //////////////////////////////////
 const squadnumbers = [
-  "https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2F1s.png?1557484360213",
-  "https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fs2.png?1557485248288",
-  "https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fs3.png?1557485249108",
-  "https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fs4.png?1557485250384",
-  "https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fs5.png?1557485251552"
+  "https://hq.mreboy.com/img/glitch/1s.png",
+  "https://hq.mreboy.com/img/glitch/s2.png",
+  "https://hq.mreboy.com/img/glitch/s3.png",
+  "https://hq.mreboy.com/img/glitch/s4.png",
+  "https://hq.mreboy.com/img/glitch/s5.png"
 ];
 ////////////////////////////////////////////////////////////////////////////
 const roleicons = [
   {
     name: "No role",
     url:
-      "https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Ftrasp.png?1557577826580"
+      "https://hq.mreboy.com/img/glitch/trasp.png"
   },
 
   {
     name: "  Medic",
     url:
-      "https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2F6393f3fd-16a7-4641-ae3d-994f8e7cea4eIconFilterMedical.png?1554067564203"
+      "https://hq.mreboy.com/img/IconFilterMedical.png"
   },
   {
     name: "  Engineer",
     url:
-      "https://cdn.glitch.com/6393f3fd-16a7-4641-ae3d-994f8e7cea4e%2FIconFilterUtility.png?1548935226605"
+      "https://hq.mreboy.com/img/glitch/IconFilterUtility.png"
   },
   {
     name: "  Scrapper",
     url:
-      "https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2F98ac14b2-4603-4541-b92e-320b855d2e65SledgeHammerItemIcon.png?1554067559208"
+      "https://hq.mreboy.com/img/SledgeHammerItemIcon.png"
   },
   {
     name: "  Rifleman",
     url:
-      "https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2F98ac14b2-4603-4541-b92e-320b855d2e65RifleItemIcon.png?1554067557676"
+      "https://hq.mreboy.com/img/RifleItemIcon.png"
   },
   {
     name: "  Sniper",
     url:
-      "https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2F98ac14b2-4603-4541-b92e-320b855d2e65SniperRifleItemIcon.png?1554067559653"
+      "https://hq.mreboy.com/img/SniperRifleItemIcon.png"
   },
   {
     name: "  Machine Gunner",
     url:
-      "https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2F98ac14b2-4603-4541-b92e-320b855d2e65HeavyMachineGunIcon.png?1554067573521"
+      "https://hq.mreboy.com/img/HeavyMachineGunIcon.png"
   },
   {
     name: "  Grenadier",
     url:
-      "https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2F98ac14b2-4603-4541-b92e-320b855d2e65GrenadeItemIcon.png?1554067573845"
+      "https://hq.mreboy.com/img/GrenadeItemIcon.png"
   },
   {
     name: "  RPG",
     url:
-      "https://cdn.glitch.com/6393f3fd-16a7-4641-ae3d-994f8e7cea4e%2FRpgItemIcon.png?1548192480952"
+      "https://hq.mreboy.com/img/RpgItemIcon.png"
   },
   {
     name: "  Artillery Crew",
     url:
-      "https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FField_Artillery.png?1555248898255"
+      "https://hq.mreboy.com/img/ArtilleryIcon.png"
   },
   {
     name: "  Sailor",
     url:
-      "https://cdn.glitch.com/6393f3fd-16a7-4641-ae3d-994f8e7cea4e%2FMapIconShipyard.png?1547280455531"
+      "https://hq.mreboy.com/img/Shipyard.png"
   },
   {
     name: "  Vehicle Crew",
     url:
-      "https://cdn.glitch.com/6393f3fd-16a7-4641-ae3d-994f8e7cea4e%2FPistolItemIcon.png?v=1548192477296"
+      "https://hq.mreboy.com/img/PistolWItemIcon.png"
   }
 ];
 /////////////////////////////////////////////////////////////////////////////

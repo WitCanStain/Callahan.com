@@ -414,7 +414,7 @@ class RequestModalContainer extends React.Component {
           >
             <img
               className="removebutton"
-              src="https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Ffdssred.png?1554997544338"
+              src="https://hq.mreboy.com/img/glitch/fdssred.png"
             />
           </td>
           <td>

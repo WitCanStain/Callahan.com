@@ -62,7 +62,7 @@ let roomlist = this.state.rooms.map((item) => <RoomUnit key={item.globalid} item
 function RoomUnit (props){
   return(
   <tr>
-      <td className="removecell"><button onClick={()=>window.leavemodal.ShowModal(props.item)} className="removebutton"><img className="removeimage" src="https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FX.png?1557668374293" /></button></td>
+      <td className="removecell"><button onClick={()=>window.leavemodal.ShowModal(props.item)} className="removebutton"><img className="removeimage" src="https://hq.mreboy.com/img/glitch/X.png" /></button></td>
       <td><p>{props.item.roomname}</p></td>
       <td><a href={'https://steamcommunity.com/profiles/'+props.item.adminid}>{props.item.admin}</a></td>
       <td><a href={window.location.origin+'/room/'+props.item.globalid}>{props.item.globalid}</a></td>

@@ -25,32 +25,32 @@ function Tabs(props) {
   }
   return <ul className="nav nav-tabs" role="tablist">
     <li className="nav-item" id="hometab" onClick={()=>store.dispatch(A.selectTab(0))}>
-      <a id="homehref" className="nav-link active" data-toggle="tab" href="#home"><img className="nav_image" src="https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fdadf1.png?v=1560105039857" /></a>
+      <a id="homehref" className="nav-link active" data-toggle="tab" href="#home"><img className="nav_image" src="https://hq.mreboy.com/img/glitch/MapIconHomeTownHallNeutral.png" /></a>
     </li>
     {
         <li className="nav-item" id="chat" onClick={()=>store.dispatch(A.selectTab(7))}>
-      <a className="nav-link" data-toggle="tab" href="#home"><img className="nav_image" src="https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2FIconFacilitiesRadioStation3.png?v=1565529795969" /></a>
+      <a className="nav-link" data-toggle="tab" href="#home"><img className="nav_image" src="https://hq.mreboy.com/img/glitch/IconFacilitiesRadioStation.png" /></a>
         {messagepill}
     </li>
       }
         <li className="nav-item" id="squad" onClick={()=>store.dispatch(A.selectTab(1))}>
-      <a className="nav-link" data-toggle="tab" href="#squadtab"><img className="nav_image" src="https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FIconFacilitiesLargeGarrison.png?v=1560375757858" /></a>
+      <a className="nav-link" data-toggle="tab" href="#squadtab"><img className="nav_image" src="https://hq.mreboy.com/img/glitch/IconFacilitiesLargeGarrison.png" /></a>
     </li>
         <li className="nav-item" id="refi"  onClick={()=>store.dispatch(A.selectTab(2))}>
-      <a id="refineryhref" className="nav-link" data-toggle="tab" href="#refinery"  onClick={()=>store.dispatch(A.selectTab(2))}><img className="nav_image" src="https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fref.png?1556809275423" /></a>
+      <a id="refineryhref" className="nav-link" data-toggle="tab" href="#refinery"  onClick={()=>store.dispatch(A.selectTab(2))}><img className="nav_image" src="https://hq.mreboy.com/img/glitch/MapIconManufacturing.png" /></a>
     </li>
         <li className="nav-item" id="logi" onClick={()=>store.dispatch(A.selectTab(3))}>
-      <a className="nav-link" data-toggle="tab" href="#logicalc"><img className="nav_image" src="https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Flogi.png?1554636831579" /></a>
+      <a className="nav-link" data-toggle="tab" href="#logicalc"><img className="nav_image" src="https://hq.mreboy.com/img/glitch/logi.png" /></a>
     </li>
     <li className="nav-item" id="techtreetab" onClick={()=>store.dispatch(A.selectTab(4))}>
-      <a className="nav-link" data-toggle="tab" href="#techtree" onClick={()=>store.dispatch(A.selectTab(4))}><img className="nav_image" src="https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FUntitled-3.png?1556809844470" /></a>
+      <a className="nav-link" data-toggle="tab" href="#techtree" onClick={()=>store.dispatch(A.selectTab(4))}><img className="nav_image" src="https://hq.mreboy.com/img/glitch/flowcharticon.png" /></a>
     </li>
     {/* <li className="nav-item" id="Stats" onClick={()=>store.dispatch(A.selectTab(5))}>*/}
     {/*  <a className="nav-link" data-toggle="tab" href="#statstab"><img className="nav_image" src="https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fsta0.png?v=1557932324597" /></a>*/}
     {/*</li>*/}
 
     {props.users.myrank<3 && <li className="nav-item" id="managetab" onClick={()=>store.dispatch(A.selectTab(6))}>
-      <a id="managetablink" className="nav-link" data-toggle="tab" href="#manage" ><img className="nav_image" src="https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fsetting.png?1554570996253" />
+      <a id="managetablink" className="nav-link" data-toggle="tab" href="#manage" ><img className="nav_image" src="https://hq.mreboy.com/img/glitch/6toothcog.png" />
         </a>
       {requestpill}
     </li>}
@@ -261,14 +261,14 @@ class TotalResources_ extends React.Component{
 
   render(){
     let imglinks= [
-      "https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2Fbm.png?v=1563790619306",
-      "https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2Ffuel.png?v=1563792365865",
-      "https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2Femad.png?v=1563790618836",
-      "https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2Frmaaat.png?v=1563790808963",
-      "https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2FHE.png?v=1563791976757",
-      "https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2Frefinedfuel.png?v=1563790619764",
-      "https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2Fuparts.png?v=1563745195056",
-      "https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2Ftech.png?v=1563745196308"
+      "https://hq.mreboy.com/img/glitch/BasicMaterialsIcon.png",
+      "https://hq.mreboy.com/img/glitch/ResourceFuelIcon.png",
+      "https://hq.mreboy.com/img/glitch/ExplosiveMaterialIcon.png",
+      "https://hq.mreboy.com/img/glitch/RefinedMaterialsIcon.png",
+      "https://hq.mreboy.com/img/glitch/HeavyExplosiveMaterialIcon.png",
+      "https://hq.mreboy.com/img/glitch/RefinedFuelIcon.png",
+      "https://hq.mreboy.com/img/glitch/ResouceAluminumRefinedIcon.png",
+      "https://hq.mreboy.com/img/glitch/ResouceIronRefinedIcon.png"
                   ]
     let resource = []
     for(let i=0;i<imglinks.length;i++){

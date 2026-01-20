@@ -654,7 +654,7 @@ padding: 0 6px;
 }
 
 #req_modal_header{
-  background-image: url(https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Ftruckmove.png?v=1554654847337);
+  background-image: url(https://hq.mreboy.com/img/glitch/truckmove.png);
   background-repeat: no-repeat;
  background-position: left; 
 padding-left: 10px;
@@ -1662,19 +1662,19 @@ align-items: center;
   height:150px;
 }
 .leaflet-touch .leaflet-draw-toolbar .leaflet-draw-draw-polyline{
-    background-image:url('https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fdffasd.png');
+    background-image:url('https://hq.mreboy.com/img/glitch/line.png');
   background-position:center;
   background-size:contain;
  background-size: 17px 17px;
 }
 .leaflet-touch .leaflet-draw-toolbar .leaflet-draw-draw-polygon{
-  background-image:url('https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fpoli.png');
+  background-image:url('https://hq.mreboy.com/img/glitch/polygon.png');
   background-position:center;
   background-size:contain;
  background-size: 17px 17px;
 }
 .leaflet-touch .leaflet-draw-toolbar .leaflet-draw-draw-circle{
-  background-image:url('https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fcirc.png');
+  background-image:url('https://hq.mreboy.com/img/glitch/circle.png');
   background-position:center;
   background-size:contain;
   background-size: 17px 17px;
@@ -1692,13 +1692,13 @@ align-items: center;
 }
 
 .leaflet-touch .leaflet-draw-toolbar .leaflet-draw-edit-edit.leaflet-disabled, .leaflet-touch .leaflet-draw-toolbar .leaflet-draw-edit-edit{
-  background-image:url('https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fedit4.png');
+  background-image:url('https://hq.mreboy.com/img/glitch/edit.png');
   background-position:center;
   background-size:contain;
   background-size: 17px 17px;
 }
 .leaflet-touch .leaflet-draw-toolbar .leaflet-draw-edit-remove{
-  background-image:url('https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fbin.png');
+  background-image:url('https://hq.mreboy.com/img/glitch/remove.png');
   background-position:center;
   background-size:contain;
   background-size: 17px 17px;
