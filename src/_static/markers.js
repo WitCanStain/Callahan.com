@@ -5,9 +5,9 @@ const ReactL = require("react-leaflet");
 
 const Leaflet_Pulse = require("leaflet-pulse-icon");
 
-const repo = "/img/Map%20Icons/";
-const repo2 = "/img/Item%20Icons/";
-const repo3 = "/img/";
+const repo = IMG + "/img/Map Icons/";
+const repo2 = IMG + "/img/Item Icons/";
+const repo3 = IMG + "/img/";
 
 const MapIcon = L.Icon.extend({
   options: {

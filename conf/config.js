@@ -1,6 +1,6 @@
-const env = require('common-env')()
+const env = require("common-env")();
 
-const { createLogger, format, transports } = require('winston');
+const { createLogger, format, transports } = require("winston");
 const { combine, timestamp, printf } = format;
 
 const myFormat = printf(({ level, message, timestamp }) => {
@@ -8,18 +8,14 @@ const myFormat = printf(({ level, message, timestamp }) => {
 });
 
 const logger = createLogger({
-  level: 'info',
-  format: combine(
-    format.colorize(),
-    timestamp(),
-    myFormat
-  ),
+  level: "info",
+  format: combine(format.colorize(), timestamp(), myFormat),
   transports: [
     //
     // - Write all logs with level `error` and below to `error.log`
     // - Write all logs with level `info` and below to `combined.log`
     //
-    new (transports.Console)({'timestamp':true}),
+    new transports.Console({ timestamp: true }),
     // new winston.transports.File({ filename: 'error.log', level: 'error' }),
     // new winston.transports.File({ filename: 'combined.log' }),
   ],
@@ -34,25 +30,31 @@ const logger = createLogger({
 const config = env.getOrElseAll({
   logger,
   fhghq: {
-    url: 'https://BASE_SITE_URL_HERE.com'
+    url: "https://BASE_SITE_URL_HERE.com",
   },
   // STEAM OpenID API Key required in order to use Steam for site login functions. See https://steamcommunity.com/dev/apikey to get one for free. REQUIRES FQDN for sign-up.
   steamApi: {
-    key: 'API KEY STRING GOES HERE'
+    key: "API KEY STRING GOES HERE",
   },
   //DEFAULT: Shard known as ABLE in-game. See https://github.com/clapfoot/warapi/ for full info on WarAPI & endpoints for BAKER or CHARLIE shards if needed
   warApi: {
-    liveUrl: 'https://war-service-live.foxholeservices.com'
+    liveUrl: "https://war-service-live.foxholeservices.com",
+  },
+  imageSource: {
+    // Source of the loaded in maps or factories. Use this to offload image hosting from the main host and onto github.
+    img: "", // "https://raw.githubusercontent.com/WitCanStain/Callahan.com/a402c4135178580ba204bda67a44dda9fa644d5f",
+    map_tiles: "",
+    //  "https://raw.githubusercontent.com/WitCanStain/Callahan.com/a402c4135178580ba204bda67a44dda9fa644d5f",
   },
   // ALL DISCORD FUNCTIONS WERE COMMENTED OUT SOME TIME AGO - DON'T BOTHER PUTTING ANYTHING HERE
   discord: {
-    token: ''
+    token: "",
   },
   sqlLite: {
-    fileNameGiven : {
-      $default: './.data/FHGHQ.db'
-    }
-  }
-})
+    fileNameGiven: {
+      $default: "./.data/FHGHQ.db",
+    },
+  },
+});
 
-module.exports = config
+module.exports = config;

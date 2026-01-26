@@ -10,7 +10,7 @@ import * as MO from "../main/map/map-objects";
 const NativeL = require("leaflet");
 import RegionImages from "../../../_static/region-images";
 import markers from "../../../_static/markers";
-const repo = "/img/Item%20Icons/Materials/";
+const repo = IMG + "/img/Item Icons/Materials/";
 //Images of resources
 const refineryStatic = [
   {

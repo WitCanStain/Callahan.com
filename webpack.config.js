@@ -1,51 +1,59 @@
-const path = require('path');
+const path = require("path");
+const webpack = require("webpack");
+const config = require("./conf/config");
 
 module.exports = {
-  mode: 'development',
-  context: path.join(__dirname, './'),
+  mode: "development",
+  context: path.join(__dirname, "./"),
   entry: {
-    index: './src/entries/index',
-    global: './src/entries/global',
-    request: './src/entries/request',
-    auth: './src/entries/auth',
-    about: './src/entries/about'
+    index: "./src/entries/index",
+    global: "./src/entries/global",
+    request: "./src/entries/request",
+    auth: "./src/entries/auth",
+    about: "./src/entries/about",
   },
   output: {
-    path: path.join(__dirname, 'src/webpack'),
-    filename: '[name].js',
-    publicPath: "/"
+    path: path.join(__dirname, "src/webpack"),
+    filename: "[name].js",
+    publicPath: "/",
   },
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: [".js", ".jsx"],
   },
-  devtool: 'inline-source-map',
+  devtool: "inline-source-map",
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        include: path.join(__dirname, 'src'),
+        include: path.join(__dirname, "src"),
         use: {
-          loader: 'babel-loader'
-        }
+          loader: "babel-loader",
+        },
       },
       {
         test: /\.scss$/,
         use: [
           {
-            loader: "style-loader" // creates style nodes from JS strings
+            loader: "style-loader", // creates style nodes from JS strings
           },
           {
-            loader: "css-loader" // translates CSS into CommonJS
+            loader: "css-loader", // translates CSS into CommonJS
           },
           {
-            loader: "sass-loader" // compiles Sass to CSS
-          }
-        ]
+            loader: "sass-loader", // compiles Sass to CSS
+          },
+        ],
       },
     ],
   },
+  plugins: [
+    new webpack.DefinePlugin({
+      IMG: JSON.stringify(config.imageSource.img),
+      MAP_TILES: JSON.stringify(config.imageSource.map_tiles),
+    }),
+  ],
 };

@@ -1,6 +1,6 @@
 //database of items
 import React from "react";
-const repo = "/img/";
+const repo = IMG + "/img/";
 //repo+''
 var iteminfo = [
   [

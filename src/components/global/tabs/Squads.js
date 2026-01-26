@@ -5,7 +5,7 @@ import socket from "../../../_static/socket";
 import A from "../../../redux/actions";
 import U from "../useful_functions";
 import clone from "clone";
-const repo = "/img/Item%20Icons/Vehicles/";
+const repo = IMG + "/img/Item Icons/Vehicles/";
 socket.on("updateSquads", function (packet) {
   store.dispatch(A.updateSquads(packet.data, packet.type));
 });
@@ -743,5 +743,5 @@ export const Squads = connect(mapStateToProps)(SquadsCore); //Connecting compone
 ///Array of icons that could be displayed as squad icon
 const squadicons = [
   "/img/glitch/1s.png?1557484360213",
-  "/img/Map%20Icons/Production/MapIconVehicle.png?1547280031111",
+  "/img/Map Icons/Production/MapIconVehicle.png?1547280031111",
 ];

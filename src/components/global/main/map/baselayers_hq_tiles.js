@@ -17,7 +17,7 @@ function BaseLayers_(props) {
             [0, 256],
           ]}
           maxNativeZoom={5}
-          url="/map_tiles/{z}/{z}_{x}_{y}.png"
+          url={MAP_TILES + "/map_tiles/{z}/{z}_{x}_{y}.png"}
         />
       </L.LayersControl.BaseLayer>
 

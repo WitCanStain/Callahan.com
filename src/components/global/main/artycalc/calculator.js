@@ -1,5 +1,5 @@
-const repo = "/img/Item%20Icons/";
-const repo2 = "/img/";
+const repo = IMG + "/img/Item Icons/";
+const repo2 = IMG + "/img/";
 import React from "react";
 import store from "../../../../redux/store";
 import { connect } from "react-redux";

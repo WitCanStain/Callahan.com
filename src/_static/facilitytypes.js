@@ -1,4 +1,4 @@
-const repo = "/img/Item%20Icons/";
+const repo = IMG + "/img/Item Icons/";
 let facilitytypes = {
   refinery: [
     { name: "bmatlvl", src: repo + "Materials/SalvageIcon.png" },
