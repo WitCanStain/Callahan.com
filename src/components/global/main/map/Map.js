@@ -427,13 +427,15 @@ class GlobalMap extends React.Component {
           <BaseLayers checked={this.state.satmap} />
 
           <L.Pane name="backgroundpane">
-            <L.ImageOverlay
-              url="https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2Fdd3f06b2-b7d4-4ccchhhh5_WorldMapBG.jpg?v=1565481206934"
+            <L.Rectangle
+              color="#333"
+              fillOpacity=".95"
+              weight={1}
               bounds={[
-                [-349.538, -265.846],
+                [-549.538, -265.846],
                 [93.538, 521.846],
               ]}
-            ></L.ImageOverlay>
+            />
           </L.Pane>
 
           <L.Pane name="toppane"></L.Pane>

@@ -366,8 +366,7 @@ class Top_ extends React.Component {
     }
     //console.log(this.props.users.users)
     if (window.steamid.includes("anonymous")) {
-      profile.avatar =
-        "https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fdasd.jpg?1556805827222";
+      profile.avatar = "/img/glitch/dasd.jpg?1556805827222";
     }
 
     window.myname = profile.name;

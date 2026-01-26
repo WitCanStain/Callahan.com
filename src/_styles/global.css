@@ -1,4 +1,3 @@
-/*https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fdfasd-2.jpg?v=1559728730814*/
 body {
     margin: 0px;
     background: url(https://raw.githubusercontent.com/Kassandros44/Assets/master/Backgrounds/Shiv_Defiance.PNG);
@@ -119,10 +118,6 @@ tr.strikeout td:after {
 }
 
 #aboutBtn {
-    background-image: url(https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Faag.png?1557230934083);
-    background-repeat: no-repeat;
-    background-position: center;
-    color: transparent;
     min-height: 35px;
     max-height: 35px;
     min-width: 35px;
@@ -131,17 +126,12 @@ tr.strikeout td:after {
     border-radius: 0px;
 }
 #aboutBtn:hover {
-    color: transparent;
     background-color: #424242;
     border: 1px solid black;
     border-radius: 0px;
 }
 
 #profileBtn {
-    background-image: url(https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Ffdsad-3.png?1557230294503);
-    background-repeat: no-repeat;
-    background-position: center;
-    color: transparent;
     min-height: 35px;
     max-height: 35px;
     min-width: 35px;
@@ -151,17 +141,12 @@ tr.strikeout td:after {
 }
 
 #profileBtn:hover {
-    color: transparent;
     background-color: #424242;
     border: 1px solid black;
     border-radius: 0px;
 }
 
 #logoutBtn {
-    background-image: url(https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Flgout.png?v=1554633960210);
-    background-repeat: no-repeat;
-    background-position: center;
-    color: transparent;
     min-height: 35px;
     max-height: 35px;
     min-width: 35px;
@@ -171,7 +156,6 @@ tr.strikeout td:after {
 }
 
 #logoutBtn:hover {
-    color: transparent;
     background-color: #424242;
     border: 1px solid black;
     border-radius: 0px;

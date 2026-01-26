@@ -762,8 +762,7 @@ class RefTotalTable_ extends React.Component {
         let user = U.GetUser(users, userid);
         if (!user.valid) {
           user.name = "Anonymous";
-          user.avatar =
-            "https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fdasd.jpg?1556805827222";
+          user.avatar = "/img/glitch/dasd.jpg?1556805827222";
         }
         let show = false;
         for (let prop in reftotal[userid]) {

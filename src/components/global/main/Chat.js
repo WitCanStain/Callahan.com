@@ -174,7 +174,7 @@ class ChatInput extends React.Component {
         <button onClick={() => this.handleOnSend()} className="chat_input_btn">
           <img
             className="chat_input_btn_img"
-            src="https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2Farw.png?v=1565705731914"
+            src="/img/glitch/arw.png?v=1565705731914"
           />
         </button>
       </div>

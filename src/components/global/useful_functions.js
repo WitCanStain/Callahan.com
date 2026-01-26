@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import RegionImages from "../../_static/region-images";
 ///////////////////////////////////////////////////////////////////////
 function GetMyRank(users) {
@@ -45,14 +45,14 @@ function ConvertTeam(obj) {
 ///////////////////////////////////////////////////////////////////////
 function GetAvatar(users, id) {
   if (id.includes("anonymous")) {
-    return "https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fdasd.jpg?1556805827222";
+    return "/img/glitch/dasd.jpg?1556805827222";
   }
   for (var i = 0; i < users.length; i++) {
     if (id == users[i].id) {
       return users[i].avatar;
     }
   }
-  return "https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fdasd.jpg?1556805827222";
+  return "/img/glitch/dasd.jpg?1556805827222";
 }
 //////////////////////////////////////////////////////////////////////
 function GetUser(users, id) {
@@ -62,8 +62,7 @@ function GetUser(users, id) {
       let user = JSON.parse(JSON.stringify(users[i]));
       user.valid = true;
       if (user.id.includes("anonymous")) {
-        user.avatar =
-          "https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fdasd.jpg?1556805827222";
+        user.avatar = "/img/glitch/dasd.jpg?1556805827222";
       }
       return user;
     }
@@ -105,7 +104,7 @@ function GetUpdate(props) {
       "Sep",
       "Oct",
       "Nov",
-      "Dec"
+      "Dec",
     ];
     var day = addZero(date.getDate());
     var month = months[date.getMonth()];
@@ -152,8 +151,8 @@ function SplitTime(time) {
 ////////////////////////////////////////////////////////////////////
 function GetTownName(regionid, town, staticdata) {
   let labellist = [];
-  const found = staticdata.find((element) => element.regionId === regionid)
-  if (found) labellist = found.data.mapTextItems
+  const found = staticdata.find((element) => element.regionId === regionid);
+  if (found) labellist = found.data.mapTextItems;
 
   function compare(a, b) {
     if (a.distance < b.distance) return -1;
@@ -182,13 +181,13 @@ function convert(regionid, x, y) {
   return RegionImages.convert(regionid, x, y);
 }
 ////////////////////////////////////////////////////
-const GetStoreProps = store => {
+const GetStoreProps = (store) => {
   let privateinfo = store.private;
   let selected = store.selected;
   if (selected.type == "" || selected.key == "") {
     return {
       storeObj: {},
-      selected: selected
+      selected: selected,
     };
   }
   let obj = {};
@@ -202,11 +201,11 @@ const GetStoreProps = store => {
   } else {
     if (selected.townname == "misc") {
       obj = JSON.parse(
-        JSON.stringify(privateinfo.misc[selected.type][selected.key])
+        JSON.stringify(privateinfo.misc[selected.type][selected.key]),
       );
     } else {
       obj = JSON.parse(
-        JSON.stringify(privateinfo[selected.type][selected.key])
+        JSON.stringify(privateinfo[selected.type][selected.key]),
       );
     }
   }
@@ -215,7 +214,7 @@ const GetStoreProps = store => {
     selected: selected,
     refinery: privateinfo.refinery[selected.refinery],
     production: privateinfo.production[selected.production],
-    storage: privateinfo.storage[selected.storage]
+    storage: privateinfo.storage[selected.storage],
   };
 };
 //////////////////////////////////
@@ -224,71 +223,59 @@ const squadnumbers = [
   "/img/glitch/s2.png",
   "/img/glitch/s3.png",
   "/img/glitch/s4.png",
-  "/img/glitch/s5.png"
+  "/img/glitch/s5.png",
 ];
 ////////////////////////////////////////////////////////////////////////////
 const roleicons = [
   {
     name: "No role",
-    url:
-      "/img/glitch/trasp.png"
+    url: "/img/glitch/trasp.png",
   },
 
   {
     name: "  Medic",
-    url:
-      "/img/IconFilterMedical.png"
+    url: "/img/IconFilterMedical.png",
   },
   {
     name: "  Engineer",
-    url:
-      "/img/glitch/IconFilterUtility.png"
+    url: "/img/glitch/IconFilterUtility.png",
   },
   {
     name: "  Scrapper",
-    url:
-      "/img/SledgeHammerItemIcon.png"
+    url: "/img/SledgeHammerItemIcon.png",
   },
   {
     name: "  Rifleman",
-    url:
-      "/img/RifleItemIcon.png"
+    url: "/img/RifleItemIcon.png",
   },
   {
     name: "  Sniper",
-    url:
-      "/img/SniperRifleItemIcon.png"
+    url: "/img/SniperRifleItemIcon.png",
   },
   {
     name: "  Machine Gunner",
-    url:
-      "/img/HeavyMachineGunIcon.png"
+    url: "/img/HeavyMachineGunIcon.png",
   },
   {
     name: "  Grenadier",
-    url:
-      "/img/GrenadeItemIcon.png"
+    url: "/img/GrenadeItemIcon.png",
   },
   {
     name: "  RPG",
-    url:
-      "/img/RpgItemIcon.png"
+    url: "/img/RpgItemIcon.png",
   },
   {
     name: "  Artillery Crew",
-    url:
-      "/img/ArtilleryIcon.png"
+    url: "/img/ArtilleryIcon.png",
   },
   {
     name: "  Sailor",
-    url:
-      "/img/Shipyard.png"
+    url: "/img/Shipyard.png",
   },
   {
     name: "  Vehicle Crew",
-    url:
-      "/img/PistolWItemIcon.png"
-  }
+    url: "/img/PistolWItemIcon.png",
+  },
 ];
 /////////////////////////////////////////////////////////////////////////////
 function GetShortDate(date) {
@@ -330,5 +317,5 @@ export default {
   ConvertTeam: ConvertTeam,
   copy: copy,
   GetShortDate: GetShortDate,
-  FormatNumber: FormatNumber
+  FormatNumber: FormatNumber,
 };
