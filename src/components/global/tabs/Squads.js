@@ -487,7 +487,7 @@ class ArmyCompVehicle extends React.Component {  ////Component generation
         <table><tbody>{rolelist}</tbody></table>
       </div>
       </div>
-             <button className="squads_armycomp_card_remove_btn" onClick={()=>this.RemoveVehicle()}><img className="ref_order_table_smallicon"  src="https://hq.mreboy.com/img/glitch/X.png" />
+             <button className="squads_armycomp_card_remove_btn" onClick={()=>this.RemoveVehicle()}><img className="ref_order_table_smallicon"  src="/img/glitch/X.png" />
             </button>
     </div>
   }

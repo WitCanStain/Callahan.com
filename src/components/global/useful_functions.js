@@ -220,74 +220,74 @@ const GetStoreProps = store => {
 };
 //////////////////////////////////
 const squadnumbers = [
-  "https://hq.mreboy.com/img/glitch/1s.png",
-  "https://hq.mreboy.com/img/glitch/s2.png",
-  "https://hq.mreboy.com/img/glitch/s3.png",
-  "https://hq.mreboy.com/img/glitch/s4.png",
-  "https://hq.mreboy.com/img/glitch/s5.png"
+  "/img/glitch/1s.png",
+  "/img/glitch/s2.png",
+  "/img/glitch/s3.png",
+  "/img/glitch/s4.png",
+  "/img/glitch/s5.png"
 ];
 ////////////////////////////////////////////////////////////////////////////
 const roleicons = [
   {
     name: "No role",
     url:
-      "https://hq.mreboy.com/img/glitch/trasp.png"
+      "/img/glitch/trasp.png"
   },
 
   {
     name: "  Medic",
     url:
-      "https://hq.mreboy.com/img/IconFilterMedical.png"
+      "/img/IconFilterMedical.png"
   },
   {
     name: "  Engineer",
     url:
-      "https://hq.mreboy.com/img/glitch/IconFilterUtility.png"
+      "/img/glitch/IconFilterUtility.png"
   },
   {
     name: "  Scrapper",
     url:
-      "https://hq.mreboy.com/img/SledgeHammerItemIcon.png"
+      "/img/SledgeHammerItemIcon.png"
   },
   {
     name: "  Rifleman",
     url:
-      "https://hq.mreboy.com/img/RifleItemIcon.png"
+      "/img/RifleItemIcon.png"
   },
   {
     name: "  Sniper",
     url:
-      "https://hq.mreboy.com/img/SniperRifleItemIcon.png"
+      "/img/SniperRifleItemIcon.png"
   },
   {
     name: "  Machine Gunner",
     url:
-      "https://hq.mreboy.com/img/HeavyMachineGunIcon.png"
+      "/img/HeavyMachineGunIcon.png"
   },
   {
     name: "  Grenadier",
     url:
-      "https://hq.mreboy.com/img/GrenadeItemIcon.png"
+      "/img/GrenadeItemIcon.png"
   },
   {
     name: "  RPG",
     url:
-      "https://hq.mreboy.com/img/RpgItemIcon.png"
+      "/img/RpgItemIcon.png"
   },
   {
     name: "  Artillery Crew",
     url:
-      "https://hq.mreboy.com/img/ArtilleryIcon.png"
+      "/img/ArtilleryIcon.png"
   },
   {
     name: "  Sailor",
     url:
-      "https://hq.mreboy.com/img/Shipyard.png"
+      "/img/Shipyard.png"
   },
   {
     name: "  Vehicle Crew",
     url:
-      "https://hq.mreboy.com/img/PistolWItemIcon.png"
+      "/img/PistolWItemIcon.png"
   }
 ];
 /////////////////////////////////////////////////////////////////////////////

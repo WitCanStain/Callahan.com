@@ -325,7 +325,7 @@ class RefinerySubmitMenu_ extends React.Component {
         <td key={"refinery1" + index}>
           <img
             className="refinery_arrow"
-            src="https://hq.mreboy.com/img/downarrow.png"
+            src="/img/downarrow.png"
           />
         </td>
       );

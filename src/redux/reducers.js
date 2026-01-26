@@ -579,11 +579,11 @@ const EventsReducer = (state = initialStateEvents, action) => {
       // console.log("Submit event",action.packet)
       switch (action.packet.type) {
         case 2:
-          window.soundcontrol.PlaySingle('https://hq.mreboy.com/img/glitch/supplies_completed.mp3');
+          window.soundcontrol.PlaySingle('/img/glitch/supplies_completed.mp3');
           break;
         case 3:
           console.log(`Playing supplies sound`)
-          window.soundcontrol.PlaySingle('https://hq.mreboy.com/img/glitch/supplies.mp3');
+          window.soundcontrol.PlaySingle('/img/glitch/supplies.mp3');
           break;
         //case 4:
          // window.soundcontrol.PlaySingle('https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Frelic.mp3');

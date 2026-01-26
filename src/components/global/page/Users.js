@@ -311,7 +311,7 @@ class UserlistUnit extends React.Component {
                   <img
                     className="userlist_status_icon"
                     id="userlist_truck_icon"
-                    src="https://hq.mreboy.com/img/glitch/truckmove.png"
+                    src="/img/glitch/truckmove.png"
                   />
                 )}
               </div>

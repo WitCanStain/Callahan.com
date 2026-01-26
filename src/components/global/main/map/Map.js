@@ -271,56 +271,56 @@ class GlobalMap extends React.Component {
                  [
                    {
                      text: 'Logi Request',
-                     icon: 'https://hq.mreboy.com/img/truckmove.png',
+                     icon: '/img/truckmove.png',
                      callback: (event) => window.requestmodalcontainer.ShowModal(event, 0)
                    }, {
                    text: 'Enemy',
-                   icon: 'https://hq.mreboy.com/img/Indicator_queue.png',
+                   icon: '/img/Indicator_queue.png',
                    callback: (event) => this.CreateMiscIcon(event, 1)
                  },
                    {
                      text: '<div class="dropup"><span class="dropdown-toggle" >Logi Vehicles</span>  <div class="dropdown-menu" id="context_logi_vehicles_dropdown"></div></div> ',
-                     icon: 'https://hq.mreboy.com/img/ConstructionVehicleIcon.png',
+                     icon: '/img/ConstructionVehicleIcon.png',
                      callback: (event) => this.OpenMenu(event, 'context_logi_vehicles_dropdown', 4),
                      hideOnSelect: false
                    },
                    {
                      text: 'Move',
-                     icon: 'https://hq.mreboy.com/img/move.png',
+                     icon: '/img/move.png',
                      callback: (event) => this.CreateMiscIcon(event, 4)
 
                    }, {
                    text: 'FOB / BB',
-                   icon: 'https://hq.mreboy.com/img/MapIconForwardBase1.png?1554666597044',
+                   icon: '/img/MapIconForwardBase1.png?1554666597044',
                    callback: this.CreateFob
 
                  }, {
                    text: 'Attack',
-                   icon: 'https://hq.mreboy.com/img/attack.png',
+                   icon: '/img/attack.png',
                    callback: (event) => this.CreateMiscIcon(event, 2)
                  }, {
                    text: '<div class="dropup"><span class="dropdown-toggle" >Squads</span>  <div class="dropdown-menu" id="context_squad_dropdown"></div></div> ',
-                   icon: 'https://hq.mreboy.com/img/glitch/1s.png',
+                   icon: '/img/glitch/1s.png',
                    hideOnSelect: false,
                    callback: (event) => this.OpenMenu(event, 'context_squad_dropdown', 0)
 
                  }, {
                    text: 'Defend',
-                   icon: 'https://hq.mreboy.com/img/defend.png',
+                   icon: '/img/defend.png',
                    callback: (event) => this.CreateMiscIcon(event, 3)
                  }, {
                    text: '<div class="dropup"><span class="dropdown-toggle" >Objectives</span>  <div class="dropdown-menu" id="context_objectives_dropdown"></div></div> ',
-                   icon: 'https://hq.mreboy.com/img/glitch/Objective1.png',
+                   icon: '/img/glitch/Objective1.png',
                    callback: (event) => this.OpenMenu(event, 'context_objectives_dropdown', 1),
                    hideOnSelect: false
                  }, {
                    text: 'Build',
-                   icon: 'https://hq.mreboy.com/img/build.png',
+                   icon: '/img/build.png',
                    callback: (event) => this.CreateMiscIcon(event, 7)
 
                  }, {
                    text: '<div class="dropup"><span class="dropdown-toggle" >Ships</span>  <div class="dropdown-menu" id="context_ships_dropdown"></div></div> ',
-                   icon: 'https://hq.mreboy.com/img/Shipyard.png',
+                   icon: '/img/Shipyard.png',
                    callback: (event) => this.OpenMenu(event, 'context_ships_dropdown', 3),
                    hideOnSelect: false
                  }, /*{
@@ -330,7 +330,7 @@ class GlobalMap extends React.Component {
 				 }, */{
 
 				   text:'<div class="dropup"><span class="dropdown-toggle" >Trains</span>  <div class="dropdown-menu" id="context_relics_dropdown"></div></div> ',
-				   icon: 'https://hq.mreboy.com/img/TrainEngineVehicleIcon.png',
+				   icon: '/img/TrainEngineVehicleIcon.png',
 				   callback: (event)=>this.OpenMenu(event,'context_relics_dropdown', 2),
 				   hideOnSelect:false
 				}, /*{
@@ -340,23 +340,23 @@ class GlobalMap extends React.Component {
     }*/
                    {
                      text: 'Note',
-                     icon: 'https://hq.mreboy.com/img/Note.png',
+                     icon: '/img/Note.png',
                      callback: (event) => this.CreateMiscIcon(event, 0)
                    },
 				   {
                    text: '<div class="dropup"><span class="dropdown-toggle" >Sections</span>  <div class="dropdown-menu" id="context_sections_dropdown"></div></div> ',
-                   icon: 'http://hq.mreboy.com/img/82dk_regiment.png',
+                   icon: '/img/82dk_regiment.png',
                    callback: (event) => this.OpenMenu(event, 'context_sections_dropdown', 5),
                    hideOnSelect: false
                    },
 				   {
                    text: '<div class="dropup"><span class="dropdown-toggle" >Facilities</span>  <div class="dropdown-menu" id="context_facilities_dropdown"></div></div> ',
-                   icon: 'http://hq.mreboy.com/img/TunnelNetworkStructureIcon.png',
+                   icon: '/img/TunnelNetworkStructureIcon.png',
                    callback: (event) => this.OpenMenu(event, 'context_facilities_dropdown', 6),
                    hideOnSelect: false
                    },
 				   {text: '<div class="dropup"><span class="dropdown-toggle" >Bunkers</span>  <div class="dropdown-menu" id="context_bunkers_dropdown"></div></div> ',
-                   icon: 'http://hq.mreboy.com/img/FortT1BaseIcon.png',
+                   icon: '/img/FortT1BaseIcon.png',
                    callback: (event) => this.OpenMenu(event, 'context_bunkers_dropdown', 7),
                    hideOnSelect: false
                    }, 				    				   
@@ -389,7 +389,7 @@ class GlobalMap extends React.Component {
             </div>
           </LeafletControl.default>
           <FullscreenControl position="topleft"
-                             content="<img src='https://hq.mreboy.com/img/glitch/fullscreen-aaaaaa.png' />"
+                             content="<img src='/img/glitch/fullscreen-aaaaaa.png' />"
           />
           <L.AttributionControl position="bottomright" prefix={false}/>
           <L.LayerGroup>{this.state.zoom == 1 ? this.props.info.regionlabels : null}</L.LayerGroup>
