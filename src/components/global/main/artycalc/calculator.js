@@ -1,5 +1,4 @@
-const repo =
-  "https://raw.githubusercontent.com/the-fellowship-of-the-warapi/Assets/master/Item Icons/";
+const repo = "/img/Item%20Icons/";
 const repo2 = "/img/";
 import React from "react";
 import store from "../../../../redux/store";

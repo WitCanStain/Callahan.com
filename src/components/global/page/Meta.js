@@ -76,20 +76,14 @@ class SoundControl extends React.Component {
   PlaySingle(obj) {
     let prop = "";
     console.log("Sound obj", obj);
-    if (
-      obj ==
-      "https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Frelic.mp3"
-    ) {
+    if (obj == "/assets/audio/misc/relic.mp3") {
       prop = "prevDateRelic";
     } else if (
       obj == "/img/glitch/supplies_completed.mp3" ||
       obj == "/img/glitch/supplies.mp3"
     ) {
       prop = "prevDateLogi";
-    } else if (
-      obj ==
-      "https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2FOP.mp3"
-    ) {
+    } else if (obj == "/assets/audio/misc/OP.mp3") {
       prop = "prevDateOp";
     }
     //console.log("Sound prop",prop)
@@ -144,8 +138,7 @@ class SoundControl extends React.Component {
   }
   initiateSoundControl() {
     // see: https://gitlab.com/a.couty/fhghq/-/issues/7
-    const soundFile =
-      "https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Frelic.mp3";
+    const soundFile = "/assets/audio/misc/relic.mp3";
     const audio = new Audio(soundFile);
     audio.muted = true;
     audio.play();

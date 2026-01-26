@@ -1,8 +1,8 @@
-const { combineReducers } = require('redux');
+const { combineReducers } = require("redux");
 import A from "./actions";
-import DisplayReducer from './display/reducer';
-import U from '../components/global/useful_functions';
-import socket from '../_static/socket';
+import DisplayReducer from "./display/reducer";
+import U from "../components/global/useful_functions";
+import socket from "../_static/socket";
 
 const initialStateMap = {
   dynamic: [],
@@ -30,21 +30,21 @@ const initialStateUsers = {
   myrank: 3,
 };
 const initialStateMeta = {
-  adminid: '',
-  adminname: '',
+  adminid: "",
+  adminname: "",
   settings: {},
   users: [],
 };
 const initialStateSelected = {
-  type: '',
-  key: '',
-  refinery: '',
-  production: '',
-  storage: '',
-  townname: '',
-  tech: '',
+  type: "",
+  key: "",
+  refinery: "",
+  production: "",
+  storage: "",
+  townname: "",
+  tech: "",
   misctype: 0,
-  refselect: '',
+  refselect: "",
 };
 const initialStateTab = {
   tab: 0,
@@ -55,9 +55,7 @@ const initialStateTab = {
 const initialStateArty = {
   arty: [],
 };
-const initialStateRefinery = {
-
-};
+const initialStateRefinery = {};
 const initialStateSquads = {
   squads: [],
   vehicles: {},
@@ -72,72 +70,79 @@ const initialStateMouse = {
 // ////////////////////////////////////////////////////////////////////////////////
 const RoomInfoReducer = (state = initialStateMap, action) => {
   let info = {};
-  console.log(`TEST RoomInfoReducer: ${state}, ${action}`)
+  console.log(`TEST RoomInfoReducer: ${state}, ${action}`);
   switch (action.type) {
     case A.LOAD_PAGE:
-      return { ...state, dynamic: action.data.dynamic,
-            static: action.data.static,
+      return {
+        ...state,
+        dynamic: action.data.dynamic,
+        static: action.data.static,
 
-            fobs:TransformArray(action.data.private.fobs),
-            requests:TransformArray(action.data.private.requests),
-            misc:action.data.private.misc,
-            stats:action.data.stats};
+        fobs: TransformArray(action.data.private.fobs),
+        requests: TransformArray(action.data.private.requests),
+        misc: action.data.private.misc,
+        stats: action.data.stats,
+      };
 
     case A.SET_DYNAMIC: // Updates the map from API
-      return { ...state, dynamic: action.dynamic,};
+      return { ...state, dynamic: action.dynamic };
     case A.SET_STATS: // Updates the map from API
-      return { ...state, stats: action.stats,};
+      return { ...state, stats: action.stats };
     case A.UPDATE_OBJECT:
       info = JSON.parse(JSON.stringify(state));
       // console.log(action)
       // console.log(info)
       // console.log("State",state)
-      if (action.kind.includes('misc')) {
+      if (action.kind.includes("misc")) {
         const kind = action.kind.slice(5);
         if (info.misc[kind] == undefined) {
           info.misc[kind] = {};
         }
-        if (action.object.type > 24 && info.misc[kind][action.signature] != undefined) {
-
+        if (
+          action.object.type > 24 &&
+          info.misc[kind][action.signature] != undefined
+        ) {
         }
         info.misc[kind][action.signature] = TransformObject(action.object);
         return { ...state, misc: info.misc };
       }
-      if (action.kind != 'refinery' && action.kind != 'production' && action.kind != 'storage' && action.kind != 'stockpiles' && action.kind != 'artypanel') {
+      if (
+        action.kind != "refinery" &&
+        action.kind != "production" &&
+        action.kind != "storage" &&
+        action.kind != "stockpiles" &&
+        action.kind != "artypanel"
+      ) {
         info[action.kind][action.signature] = TransformObject(action.object);
         // console.log(action)
-        return { ...state, [action.kind]: info[action.kind]};
+        return { ...state, [action.kind]: info[action.kind] };
       }
 
       break;
     case A.DELETE_OBJECT:
       info = JSON.parse(JSON.stringify(state));
-      if (action.kind.includes('misc')) {
+      if (action.kind.includes("misc")) {
         const kind = action.kind.slice(5);
         if (info.misc[kind] == undefined) {
           info.misc[kind] = {};
         }
         delete info.misc[kind][action.signature];
-        return { ...state, misc: info.misc};
+        return { ...state, misc: info.misc };
       }
-      if (action.kind != 'towns' && action.kind != 'forts') {
+      if (action.kind != "towns" && action.kind != "forts") {
         delete info[action.kind][action.signature];
-        return { ...state, [action.kind]: info[action.kind]};
+        return { ...state, [action.kind]: info[action.kind] };
       }
 
     case A.CLEAR_ROOM:
       window.selecticon.ChangePosition([-10000, -10000]);
-      return { ...state, fobs:{},
-            requests:{},
-            misc:{}};
+      return { ...state, fobs: {}, requests: {}, misc: {} };
     case A.CLEAR_MAP:
       window.selecticon.ChangePosition([-10000, -10000]);
       info = JSON.parse(JSON.stringify(state));
       info.misc.icon = {};
       info.misc.rld = {};
-      return { ...state, fobs:{},
-            requests:{},
-            misc:info.misc,};
+      return { ...state, fobs: {}, requests: {}, misc: info.misc };
   }
 
   return state;
@@ -146,50 +151,55 @@ const RoomInfoReducer = (state = initialStateMap, action) => {
 const PrivateReducer = (state = initialStateMapPrivate, action) => {
   // console.log("info:")
   // console.log(state)
-  console.log(`TEST PrivateReducer: ${state}, ${action}`)
+  console.log(`TEST PrivateReducer: ${state}, ${action}`);
   let info = {};
   switch (action.type) {
     case A.LOAD_PAGE:
-      return { ...state, refinery:action.data.private.refinery,
-            production:action.data.private.production,
-            storage:action.data.private.storage,
-            stockpiles:action.data.private.stockpiles,
-            fobs:action.data.private.fobs,
-            requests:action.data.private.requests,
-            misc:action.data.private.misc,};
+      return {
+        ...state,
+        refinery: action.data.private.refinery,
+        production: action.data.private.production,
+        storage: action.data.private.storage,
+        stockpiles: action.data.private.stockpiles,
+        fobs: action.data.private.fobs,
+        requests: action.data.private.requests,
+        misc: action.data.private.misc,
+      };
     case A.UPDATE_OBJECT:
       info = JSON.parse(JSON.stringify(state));
-      if (action.kind.includes('misc')) {
+      if (action.kind.includes("misc")) {
         const kind = action.kind.slice(5);
         if (info.misc[kind] == undefined) {
           info.misc[kind] = {};
         }
-        info.misc[kind][action.signature] = JSON.parse(JSON.stringify(action.object));
+        info.misc[kind][action.signature] = JSON.parse(
+          JSON.stringify(action.object),
+        );
         info.misc[kind][action.signature].lastupdate = new Date();
 
-        return { ...state, misc: info.misc};
+        return { ...state, misc: info.misc };
       }
       info[action.kind][action.signature] = action.object;
       info[action.kind][action.signature].lastupdate = new Date();
-      return { ...state, [action.kind]: info[action.kind]};
+      return { ...state, [action.kind]: info[action.kind] };
 
     case A.DELETE_OBJECT:
       info = JSON.parse(JSON.stringify(state));
-      if (action.kind.includes('misc')) {
+      if (action.kind.includes("misc")) {
         const kind = action.kind.slice(5);
         if (info.misc[kind] == undefined) {
           info.misc[kind] = {};
         }
         delete info.misc[kind][action.signature];
-        return { ...state, misc: info.misc};
+        return { ...state, misc: info.misc };
       }
       delete info[action.kind][action.signature];
-      return { ...state, [action.kind]: info[action.kind]};
+      return { ...state, [action.kind]: info[action.kind] };
 
       break;
     case A.ADD_MESSAGE:
       info = JSON.parse(JSON.stringify(state));
-      console.log('Adding message', state.misc.chat);
+      console.log("Adding message", state.misc.chat);
       if (info.misc.chat == undefined) {
         info.misc.chat = {};
         info.misc.chat[action.category] = [];
@@ -198,23 +208,24 @@ const PrivateReducer = (state = initialStateMapPrivate, action) => {
         info.misc.chat[action.category] = [];
       }
       info.misc.chat[action.category].push(action.packet);
-      console.log('Added message', info.misc.chat);
-      return { ...state, misc: info.misc};
+      console.log("Added message", info.misc.chat);
+      return { ...state, misc: info.misc };
     case A.CLEAR_ROOM:
-      return { ...state, refinery:{},
-            production:{},
-            storage:{},
-            stockpiles:{},
-            fobs:{},
-            requests:{},
-            misc:{},};
+      return {
+        ...state,
+        refinery: {},
+        production: {},
+        storage: {},
+        stockpiles: {},
+        fobs: {},
+        requests: {},
+        misc: {},
+      };
     case A.CLEAR_MAP:
       info = JSON.parse(JSON.stringify(state));
       info.misc.icon = {};
       info.misc.rld = {};
-      return { ...state, fobs:{},
-            requests:{},
-            misc:info.misc,};
+      return { ...state, fobs: {}, requests: {}, misc: info.misc };
   }
 
   return state;
@@ -234,7 +245,7 @@ const TechtreeReducer = (state = initialStateTech, action) => {
 // ///////////////////////////////////////////////////////////////////////////////////////////////////////
 const UserReducer = (state = initialStateUsers, action) => {
   let { users } = state;
-  console.log(`TEST UserReducer: ${state}, ${action}`)
+  console.log(`TEST UserReducer: ${state}, ${action}`);
   // let meta = state.meta
 
   switch (action.type) {
@@ -276,7 +287,8 @@ const UserReducer = (state = initialStateUsers, action) => {
         }
       }
       // console.log("Store",store)
-      if (rank == 4) { // kicks if banned
+      if (rank == 4) {
+        // kicks if banned
         window.modalcontainer.ShowModal(2);
         socket.close();
       }
@@ -295,7 +307,7 @@ const UserReducer = (state = initialStateUsers, action) => {
       }
       // console.log("Redux top",Top,socket)
 
-      socket.emit('updateusers', users, window.steamid);
+      socket.emit("updateusers", users, window.steamid);
       return {
         ...state,
         users,
@@ -342,7 +354,7 @@ const UserReducer = (state = initialStateUsers, action) => {
 // //////////////////////////////////////////////////////////////////////////////////////////////////
 const MetaReducer = (state = initialStateMeta, action) => {
   let settings = JSON.parse(JSON.stringify(state.settings));
-  console.log(`TEST MetaReducer: ${state}, ${action}`)
+  console.log(`TEST MetaReducer: ${state}, ${action}`);
   switch (action.type) {
     case A.LOAD_PAGE:
       return {
@@ -378,7 +390,7 @@ const MetaReducer = (state = initialStateMeta, action) => {
     case A.TOGGLE_SECURE:
       settings = JSON.parse(JSON.stringify(state.settings));
       settings.secure = action.data;
-      if (action.data == 1 && window.steamid.includes('anonymous')) {
+      if (action.data == 1 && window.steamid.includes("anonymous")) {
         window.modalcontainer.ShowModal(2);
         socket.close();
       }
@@ -388,19 +400,25 @@ const MetaReducer = (state = initialStateMeta, action) => {
 };
 // /////////////////////////////////////////////////////////////////////////////////////////////////////
 const SelectedReducer = (state = initialStateSelected, action) => {
-  let kind = '';
-  console.log(`TEST SelectedReducer: ${state}, ${action}`)
+  let kind = "";
+  console.log(`TEST SelectedReducer: ${state}, ${action}`);
   switch (action.type) {
     case A.SELECT_OBJECT:
       // console.log("Selecting object")
       let selectbool = true;
-      if (action.objtype != 'refinery' && action.objtype != 'production' && action.objtype != 'storage' && action.objtype != 'stockpiles' && action.objtype != 'artypanel') {
+      if (
+        action.objtype != "refinery" &&
+        action.objtype != "production" &&
+        action.objtype != "storage" &&
+        action.objtype != "stockpiles" &&
+        action.objtype != "artypanel"
+      ) {
         selectbool = window.selecticon.SelectPrivate(action);
       }
-      if (action.objtype != 'artypanel') {
-        const refdropdown = document.getElementById('map_artycontrol_dropdown');
-        if (refdropdown.classList.contains('show')) {
-          const reftab = document.getElementById('map_artycontrol_btn');
+      if (action.objtype != "artypanel") {
+        const refdropdown = document.getElementById("map_artycontrol_dropdown");
+        if (refdropdown.classList.contains("show")) {
+          const reftab = document.getElementById("map_artycontrol_btn");
 
           reftab.click();
         }
@@ -419,15 +437,15 @@ const SelectedReducer = (state = initialStateSelected, action) => {
       }
     case A.DELETE_OBJECT:
       kind = action.kind;
-      if (action.kind.includes('misc')) {
+      if (action.kind.includes("misc")) {
         kind = action.kind.slice(5);
       }
       if (state.type == kind && state.key == action.signature) {
         window.selecticon.ChangePosition([-10000, -10000]);
         return {
           ...state,
-          type: '',
-          key: '',
+          type: "",
+          key: "",
         };
       }
     case A.SELECT_TECH:
@@ -436,19 +454,22 @@ const SelectedReducer = (state = initialStateSelected, action) => {
     case A.CLEAR_ROOM:
       return {
         ...state,
-        type: '',
-        key: '',
-        townname: '',
-        misctype: '',
+        type: "",
+        key: "",
+        townname: "",
+        misctype: "",
       };
     case A.UPDATE_OBJECT:
       kind = action.kind;
-      if (action.kind.includes('misc')) {
+      if (action.kind.includes("misc")) {
         kind = action.kind.slice(5);
       }
       if (state.type == kind && state.key == action.signature) {
         if (action.object.position != undefined) {
-          window.selecticon.ChangePosition([action.object.position.y, action.object.position.x]);
+          window.selecticon.ChangePosition([
+            action.object.position.y,
+            action.object.position.x,
+          ]);
         }
       }
       break;
@@ -459,13 +480,13 @@ const SelectedReducer = (state = initialStateSelected, action) => {
 // ////////////////////////////////////////////////////////////////////////////////////////////////
 const TabReducer = (state = initialStateTab, action) => {
   let info = {};
-  console.log(`TEST TabReducer: ${state}, ${action}`)
+  console.log(`TEST TabReducer: ${state}, ${action}`);
   switch (action.type) {
     case A.SELECT_TAB:
       if (action.tab == 5) {
-        socket.emit('joinStats');
+        socket.emit("joinStats");
       } else {
-        socket.emit('leaveStats');
+        socket.emit("leaveStats");
       }
       if (action.tab == 7) {
         return {
@@ -477,7 +498,10 @@ const TabReducer = (state = initialStateTab, action) => {
       return { ...state, tab: action.tab };
     case A.ADD_MESSAGE:
       info = JSON.parse(JSON.stringify(state));
-      if (state.tab != 7 && (action.category == 'general' || action.category == 'announcements')) {
+      if (
+        state.tab != 7 &&
+        (action.category == "general" || action.category == "announcements")
+      ) {
         return { ...state, messages: info.messages + 1 };
       }
       if (info.user != action.category) {
@@ -502,7 +526,9 @@ const ArtyReducer = (state = initialStateArty, action) => {
   switch (action.type) {
     case A.LOAD_PAGE:
       arty = action.data.private.arty;
-      if (arty.constructor != Array) { arty = []; }
+      if (arty.constructor != Array) {
+        arty = [];
+      }
       return { ...state, arty };
     case A.ADD_ARTY_RESULT:
       arty.push(action.totalstring);
@@ -579,15 +605,12 @@ const EventsReducer = (state = initialStateEvents, action) => {
       // console.log("Submit event",action.packet)
       switch (action.packet.type) {
         case 2:
-          window.soundcontrol.PlaySingle('/img/glitch/supplies_completed.mp3');
+          window.soundcontrol.PlaySingle("/img/glitch/supplies_completed.mp3");
           break;
         case 3:
-          console.log(`Playing supplies sound`)
-          window.soundcontrol.PlaySingle('/img/glitch/supplies.mp3');
+          console.log(`Playing supplies sound`);
+          window.soundcontrol.PlaySingle("/img/glitch/supplies.mp3");
           break;
-        //case 4:
-         // window.soundcontrol.PlaySingle('https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Frelic.mp3');
-         // break;
       }
       if (privateEvents > 50) {
         privateEvents = privateEvents.slice(1);
@@ -612,7 +635,6 @@ export const rootReducer = combineReducers({
 
   arty: ArtyReducer,
   squads: SquadsReducer,
-
 });
 
 function TransformArray(array) {

@@ -5,9 +5,7 @@ const ReactL = require("react-leaflet");
 
 const Leaflet_Pulse = require("leaflet-pulse-icon");
 
-//const repo = 'https://raw.githubusercontent.com/the-fellowship-of-the-warapi/Assets/master/Map%20Icons/';
 const repo = "/img/Map%20Icons/";
-//const repo2 = 'https://raw.githubusercontent.com/the-fellowship-of-the-warapi/Assets/master/Item%20Icons/';
 const repo2 = "/img/Item%20Icons/";
 const repo3 = "/img/";
 
