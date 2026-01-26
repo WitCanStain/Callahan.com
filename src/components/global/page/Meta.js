@@ -122,8 +122,7 @@ class SoundControl extends React.Component {
     //console.log("Updating sound control")
     let img = "/img/glitch/speaker_sm.png";
     if (!this.state.toggle) {
-      img =
-        "https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2F42.png?1559249871623";
+      img = "/img/glitch/speaker_sm_red.png";
     }
     return (
       <React.Fragment>
