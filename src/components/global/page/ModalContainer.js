@@ -4,7 +4,7 @@ import U from "../useful_functions";
 import cost from "../../../_static/cost";
 import socket from "../../../_static/socket";
 import store from "../../../redux/store";
-import clone from 'clone'
+import clone from "clone";
 import { connect } from "react-redux";
 //import { loggers } from "winston";
 
@@ -14,7 +14,7 @@ class ModalContainer extends React.Component {
     this.state = {
       title: "",
       body: "",
-      footer: ""
+      footer: "",
     };
     this.ShowModal = this.ShowModal.bind(this);
     this.CloseModal = this.CloseModal.bind(this);
@@ -26,7 +26,7 @@ class ModalContainer extends React.Component {
         title: "",
         body: "",
         footer: "",
-        show: false
+        show: false,
       };
     });
   }
@@ -76,7 +76,7 @@ class ModalContainer extends React.Component {
                 </button>
               </React.Fragment>
             ),
-            show: true
+            show: true,
           });
         } else {
           this.setState({
@@ -105,7 +105,7 @@ class ModalContainer extends React.Component {
                 </button>
               </React.Fragment>
             ),
-            show: true
+            show: true,
           });
         }
         break;
@@ -122,7 +122,7 @@ class ModalContainer extends React.Component {
               Return to profile
             </button>
           ),
-          show: true
+          show: true,
         });
         break;
       case 2:
@@ -140,7 +140,7 @@ class ModalContainer extends React.Component {
               Return to profile
             </button>
           ),
-          show: true
+          show: true,
         });
         break;
       case 3:
@@ -170,7 +170,7 @@ class ModalContainer extends React.Component {
               </button>
             </React.Fragment>
           ),
-          show: true
+          show: true,
         });
         break;
       case 4:
@@ -200,7 +200,7 @@ class ModalContainer extends React.Component {
               </button>
             </React.Fragment>
           ),
-          show: true
+          show: true,
         });
         break;
     }
@@ -244,7 +244,7 @@ class RequestModalContainer extends React.Component {
       position: { lat: 0, lng: 0 },
       request: [[], [], []],
       show: false,
-      type: 0
+      type: 0,
     };
     this.ShowModal = this.ShowModal.bind(this);
     this.CloseModal = this.CloseModal.bind(this);
@@ -252,16 +252,18 @@ class RequestModalContainer extends React.Component {
     this.RemoveItem = this.RemoveItem.bind(this);
     this.ChangeItem = this.ChangeItem.bind(this);
     this.EmptyRequest = this.EmptyRequest.bind(this);
-    fetch('/_static/assets/logi-request-presets.json')
-    .then((response) => response.json())
-    .then((data) => {
-      if (Array.isArray(data)) {
-        this.setState({ presets: data });
-      } else {
-        console.error('Unable to load presets.');
-      }
-    })
-    .catch((error) => console.error('Error fetching request presets:', error));
+    fetch("/_static/assets/logi-request-presets.json")
+      .then((response) => response.json())
+      .then((data) => {
+        if (Array.isArray(data)) {
+          this.setState({ presets: data });
+        } else {
+          console.error("Unable to load presets.");
+        }
+      })
+      .catch((error) =>
+        console.error("Error fetching request presets:", error),
+      );
   }
   componentDidMount() {
     window.addEventListener("keydown", this.handleKeydown);
@@ -287,7 +289,7 @@ class RequestModalContainer extends React.Component {
     this.setState(() => {
       return {
         position: { lat: 0, lng: 0 },
-        show: false
+        show: false,
       };
     });
   }
@@ -314,23 +316,23 @@ class RequestModalContainer extends React.Component {
         request: request,
         position: position,
         show: true,
-        type: type
+        type: type,
       };
     });
   }
 
   AddItem(cat, id, priority) {
-    console.log('TEST AddItem:', cat, id, priority);
-    this.setState(state => {
+    console.log("TEST AddItem:", cat, id, priority);
+    this.setState((state) => {
       let array = clone(state.request);
       let item = {
         amount: cost.cost[cat][id].i,
         crates: 1,
         catid: cat,
-        itemid: id
+        itemid: id,
       };
       let obj = array[priority].find(
-        obj => obj.catid == item.catid && obj.itemid == item.itemid
+        (obj) => obj.catid == item.catid && obj.itemid == item.itemid,
       );
       if (obj === undefined) {
         array[priority].push(item);
@@ -341,17 +343,17 @@ class RequestModalContainer extends React.Component {
       }
       return {
         request: array,
-        show: true
+        show: true,
       };
     });
   }
 
   RemoveItem(priority, index) {
-    this.setState(state => {
+    this.setState((state) => {
       let request = clone(state.request);
       request[priority].splice(index, 1);
       return {
-        request: request
+        request: request,
       };
     });
   }
@@ -377,32 +379,31 @@ class RequestModalContainer extends React.Component {
 
   CopyRequest() {
     const request = clone(this.state.request);
-    request.forEach(items => {
-      items.forEach(item => {
+    request.forEach((items) => {
+      items.forEach((item) => {
         delete item.crates;
       });
     });
-    const str = JSON.stringify({ name: "Default Preset", request }, null, '\t');
+    const str = JSON.stringify({ name: "Default Preset", request }, null, "\t");
     if (navigator && navigator.clipboard) {
       navigator.clipboard.writeText(str);
     } else {
-      console.info('Using alternative clipboard method to copy preset.');
+      console.info("Using alternative clipboard method to copy preset.");
       const textArea = document.createElement("textarea");
       textArea.value = str;
       document.body.appendChild(textArea);
       textArea.focus();
       textArea.select();
       try {
-        document.execCommand('copy');
+        document.execCommand("copy");
       } catch (err) {
-        console.error('Unable to copy to clipboard', err);
+        console.error("Unable to copy to clipboard", err);
       }
       document.body.removeChild(textArea);
     }
   }
 
   GetRequest() {
-    console.log(`TEST GetRequest`)
     let ChangeItem = this.ChangeItem;
     let RemoveItem = this.RemoveItem;
     function RenderLine(obj, priority, index) {
@@ -412,10 +413,7 @@ class RequestModalContainer extends React.Component {
             className="removebutton"
             onClick={() => RemoveItem(priority, index)}
           >
-            <img
-              className="removebutton"
-              src="/img/glitch/fdssred.png"
-            />
+            <img className="removebutton" src="/img/glitch/fdssred.png" />
           </td>
           <td>
             <img
@@ -436,7 +434,7 @@ class RequestModalContainer extends React.Component {
               step={cost.cost[obj.catid][obj.itemid].i}
               value={obj.amount}
               style={{ width: 90 }}
-              onChange={event => ChangeItem(priority, index, event)}
+              onChange={(event) => ChangeItem(priority, index, event)}
             ></input>
           </td>
         </tr>
@@ -476,17 +474,19 @@ class RequestModalContainer extends React.Component {
   GetRequestPresets() {
     const selectPreset = (preset) => {
       if (preset && preset.request) {
-        const request = this.state.request ? clone(this.state.request) : [[], [], []];
+        const request = this.state.request
+          ? clone(this.state.request)
+          : [[], [], []];
         for (let i = 0; i <= 2; i++) {
           const items = preset.request[i];
           if (items && items.length) {
-            items.forEach(item => {
+            items.forEach((item) => {
               const categoryInfo = cost.cost[item.catid];
               const itemInfo = categoryInfo && categoryInfo[item.itemid];
               if (categoryInfo && itemInfo) {
                 item.crates = Math.ceil(item.amount / Number(itemInfo.i));
                 const obj = request[i].find(
-                  obj => obj.catid == item.catid && obj.itemid == item.itemid
+                  (obj) => obj.catid == item.catid && obj.itemid == item.itemid,
                 );
                 if (!obj) {
                   request[i].push(item);
@@ -496,7 +496,11 @@ class RequestModalContainer extends React.Component {
                   obj.crates += item.crates;
                 }
               } else {
-                console.warn(`Failed to find item for preset(${index}):`, item.itemid, item.catid);
+                console.warn(
+                  `Failed to find item for preset(${index}):`,
+                  item.itemid,
+                  item.catid,
+                );
               }
             });
           }
@@ -507,12 +511,23 @@ class RequestModalContainer extends React.Component {
 
     return (
       <div className="dropdown">
-        <button type="button" className="btn btn-primary dropdown-toggle requestmodal_presets_sel" data-toggle="dropdown">
+        <button
+          type="button"
+          className="btn btn-primary dropdown-toggle requestmodal_presets_sel"
+          data-toggle="dropdown"
+        >
           Presets
         </button>
-        <div className="dropdown-menu dropdown-menu-left" style={{maxWidth: 'initial'}}>
+        <div
+          className="dropdown-menu dropdown-menu-left"
+          style={{ maxWidth: "initial" }}
+        >
           {this.state.presets.map((preset, index) => (
-            <button key={index} className="dropdown-item" onClick={() => selectPreset(preset)}>
+            <button
+              key={index}
+              className="dropdown-item"
+              onClick={() => selectPreset(preset)}
+            >
               {preset.name}
             </button>
           ))}
@@ -532,10 +547,10 @@ class RequestModalContainer extends React.Component {
   }
   CreateRequest() {
     console.log("Creating request");
-    console.log(this.state)
+    console.log(this.state);
     let key = U.signature({
       x: this.state.position.lng,
-      y: this.state.position.lat
+      y: this.state.position.lat,
     });
     //logger.info(`Test request here`)
     if (
@@ -550,12 +565,13 @@ class RequestModalContainer extends React.Component {
       if (this.state.type == 0) {
         let object = {
           author: window.steamid,
+          key,
           lastupdate: new Date(),
           wip: [],
           done: [],
           notes: "",
           request: this.state.request,
-          position: { x: this.state.position.lng, y: this.state.position.lat }
+          position: { x: this.state.position.lng, y: this.state.position.lat },
         };
         //console.log("Request object");
         //console.log(object)
@@ -563,7 +579,7 @@ class RequestModalContainer extends React.Component {
         socket.emit("updateObject", {
           type: "requests",
           object: object,
-          key: key
+          key: key,
         });
         let packet = {
           type: 3,
@@ -571,29 +587,27 @@ class RequestModalContainer extends React.Component {
           packet: JSON.stringify({
             key,
             request: {
-              author: object.author
-            }
-          })
+              author: object.author,
+            },
+          }),
         };
         store.dispatch(A.submitEvent(packet));
         socket.emit("submitEvent", packet);
         this.EmptyRequest();
       } else {
-        if (this.props.requests[this.state.position] == undefined) {
+        key = this.state.position;
+        if (this.props.requests[key] == undefined) {
           //this.CloseModal();
           alert("This request has been deleted while you were editing.");
         } else {
-          key = this.state.position;
-          let object = JSON.parse(
-            JSON.stringify(this.props.requests[this.state.position])
-          );
+          let object = JSON.parse(JSON.stringify(this.props.requests[key]));
           object.request = this.state.request;
-          //console.log("changing request",object)
+          object.key = object.key || key;
           store.dispatch(A.updateObject("requests", object, key));
           socket.emit("updateObject", {
             type: "requests",
             object: object,
-            key: key
+            key: key,
           });
           this.EmptyRequest();
         }
@@ -606,14 +620,15 @@ class RequestModalContainer extends React.Component {
     let totalRequestCrates = 0;
     if (this.state.request && this.state.request.length) {
       for (let i = 0; i <= 2; i++) {
-        this.state.request[i].forEach(obj => {
+        this.state.request[i].forEach((obj) => {
           if (obj.crates) {
             totalRequestCrates += obj.crates;
           }
         });
       }
     }
-    const highlightRequestColumns = totalRequestCrates > 0 && totalRequestCrates % 15 === 0;
+    const highlightRequestColumns =
+      totalRequestCrates > 0 && totalRequestCrates % 15 === 0;
     //console.log("Request:")
     //console.log(this.state);
     //console.log("Rendering request modal")
@@ -649,15 +664,24 @@ class RequestModalContainer extends React.Component {
                       className="table table-condensed "
                       id="reqmodaltable"
                     >
-                      <thead className={`indextable requestmodal_cols ${highlightRequestColumns ? 'requestmodal_highlight_cols' : ''}`}>
+                      <thead
+                        className={`indextable requestmodal_cols ${highlightRequestColumns ? "requestmodal_highlight_cols" : ""}`}
+                      >
                         <tr>
                           <th className="tablecol"></th>
-                          <th style={{ position: 'relative', zIndex: 100 }}>{this.GetRequestPresets()}</th>
+                          <th style={{ position: "relative", zIndex: 100 }}>
+                            {this.GetRequestPresets()}
+                          </th>
                           <th>
                             <p>Item</p>
                           </th>
                           <th>
-                            <p>Crates{totalRequestCrates ? <small>{totalRequestCrates}</small> : null}</p>
+                            <p>
+                              Crates
+                              {totalRequestCrates ? (
+                                <small>{totalRequestCrates}</small>
+                              ) : null}
+                            </p>
                           </th>
                           <th>
                             <p>Amount</p>
@@ -720,7 +744,7 @@ class FilterContainer extends React.Component {
     super();
     this.state = {
       filter: 0,
-      priority: 0
+      priority: 0,
     };
     this.SetPriority = this.SetPriority.bind(this);
     this.SetFilter = this.SetFilter.bind(this);
@@ -731,7 +755,7 @@ class FilterContainer extends React.Component {
     this.setState(() => {
       return {
         priority: value,
-        show: true
+        show: true,
       };
     });
   }
@@ -741,7 +765,7 @@ class FilterContainer extends React.Component {
     this.setState(() => {
       return {
         filter: filter,
-        show: true
+        show: true,
       };
     });
   }
@@ -788,7 +812,7 @@ class FilterContainer extends React.Component {
             name="reqmodalpriority"
             value="0"
             className="btn requestmodal_btn requestmodal_priority_high"
-            onClick={event => this.SetPriority(event)}
+            onClick={(event) => this.SetPriority(event)}
             disabled={this.state.priority == 0}
           >
             High Priority
@@ -798,7 +822,7 @@ class FilterContainer extends React.Component {
             name="reqmodalpriority"
             value="1"
             className="btn requestmodal_btn requestmodal_priority_medium"
-            onClick={event => this.SetPriority(event)}
+            onClick={(event) => this.SetPriority(event)}
             disabled={this.state.priority == 1}
           >
             Medium Priority
@@ -808,7 +832,7 @@ class FilterContainer extends React.Component {
             name="reqmodalpriority"
             value="2"
             className="btn requestmodal_btn requestmodal_priority_low"
-            onClick={event => this.SetPriority(event)}
+            onClick={(event) => this.SetPriority(event)}
             disabled={this.state.priority == 2}
           >
             Low Priority
@@ -826,29 +850,23 @@ class FilterContainer extends React.Component {
   }
 }
 
-const mapStateToProps = store => {
+const mapStateToProps = (store) => {
   return {
-    meta: store.meta
+    meta: store.meta,
   };
 };
 
-const mapStateToPropsRequest = store => {
+const mapStateToPropsRequest = (store) => {
   let privateinfo = store.private;
   return {
-    requests: privateinfo.requests
+    requests: privateinfo.requests,
   };
 };
 export default {
-  ModalContainer: connect(
-    mapStateToProps,
-    null,
-    null,
-    { forwardRef: true }
-  )(ModalContainer),
-  RequestModalContainer: connect(
-    mapStateToPropsRequest,
-    null,
-    null,
-    { forwardRef: true }
-  )(RequestModalContainer)
+  ModalContainer: connect(mapStateToProps, null, null, { forwardRef: true })(
+    ModalContainer,
+  ),
+  RequestModalContainer: connect(mapStateToPropsRequest, null, null, {
+    forwardRef: true,
+  })(RequestModalContainer),
 };
