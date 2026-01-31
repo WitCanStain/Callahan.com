@@ -48,6 +48,16 @@ const regionNames = ['DeadLandsHex',//3
   'ClahstraHex', // 46
   'ReaversPassHex', // 47
   'StemaLandingHex', // 48
+  'OlavisWakeHex', // 49
+  'PariPeakHex', // 50
+  'PalantineBermHex', // 51
+  'KuuraStrandHex', //52
+  'GutterHex', //53
+  'WrestaHex', //54
+  'OnyxHex', //55
+  'LykosIsleHex', //56
+  'TyrantFoothillsHex', //57
+  'PipersEnclaveHex', //58
   ];
 
 
