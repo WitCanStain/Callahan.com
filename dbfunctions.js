@@ -529,7 +529,7 @@ exports.updateObject = function (packet) {
     type[packet.key] = obj;
     sql
       .prepare(`UPDATE global SET ${packet.type} = ? WHERE id = ?;`)
-      .run(type, packet.globalid);
+      .run(JSON.stringify(type), packet.globalid);
   }
 };
 
