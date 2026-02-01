@@ -59,33 +59,50 @@ class RequestIcon_ extends React.Component {
 
   CheckCompleted() {
     const request = this.request;
-    if (request.done == undefined) {
-      return false;
+    if (!request.done || request.done.length === 0) {
+      return markers.RequestIcon.incomplete;
     }
-    const donestring = JSON.stringify(request.done);
-    if (donestring == "") {
-      return false;
-    }
-    const done = JSON.parse(donestring);
-    for (var i = 0; i < 3; i++) {
-      for (var j = 0; j < request.request[i].length; j++) {
-        let obj = request.request[i][j];
-        let item = done.find(
-          (item) => obj.catid == item.catid && obj.itemid == item.itemid,
-        );
-        // console.log("Request items",obj,item)
-        if (item == undefined) {
-          return false;
-        } else {
-          if (obj.crates > item.crates) {
-            return false;
-          } else {
-            item.crates = item.crates - obj.crates;
-          }
-        }
+
+    const combinedRequests = request.request.flat().reduce((acc, item) => {
+      const accItem = acc.find(
+        (accItem) =>
+          accItem.catId === item.catid && accItem.itemId === item.itemid,
+      );
+      if (accItem) {
+        accItem.crates += item.crates;
+        return acc;
       }
+      return [
+        ...acc,
+        { catId: item.catid, itemId: item.itemid, crates: item.crates },
+      ];
+    }, []);
+    const totalLines = combinedRequests.reduce(
+      (acc, item) => item.crates + acc,
+      0,
+    );
+    const completedLines =
+      totalLines -
+      request.done
+        .each((item) => {
+          const requested = combinedRequests.find(
+            (r) => r.catId === item.catid && r.itemId === item.itemId,
+          );
+          requested.crates = Math.max(0, requested.crates - item.crates);
+        })
+        .reduce((acc, item) => item.crates + acc, 0);
+    const pct = completedLines / totalLines;
+
+    if (pct < 0.33) {
+      return markers.RequestIcon.incomplete;
     }
-    return true;
+    if (pct < 0.66) {
+      return markers.RequestIcon.early;
+    }
+    if (pct < 1) {
+      return markers.RequestIcon.late;
+    }
+    return markers.RequestIcon.complete;
   }
 
   handleDragEnd(e) {
@@ -108,10 +125,7 @@ class RequestIcon_ extends React.Component {
     //console.log("Rendering request")
     let request = this.props.request;
     let reqObj = getRequest(this.props.requests, request.position);
-    let icon = markers.RequestIcon.incomplete;
-    if (this.CheckCompleted()) {
-      icon = markers.RequestIcon.complete;
-    }
+    let icon = this.CheckCompleted();
     return (
       <React.Fragment>
         {this.props.zoom > 3.5 && <NoteAddon obj={reqObj} />}
