@@ -25,73 +25,77 @@ const regionNames = [
   ,
   ,
   ,
-  'DeadLandsHex',//3
-  'CallahansPassageHex',//4
-  'MarbanHollow',//5
-  'UmbralWildwoodHex',//6
-  'MooringCountyHex',//7
-  'HeartlandsHex', //8
-  'LochMorHex',//9
-  'LinnMercyHex',//10
-  'ReachingTrailHex',//11
-  'StonecradleHex',//12
-  'FarranacCoastHex',//13
-  'WestgateHex',//14
-  'FishermansRowHex',//15
-  'OarbreakerHex',//16
-  'GreatMarchHex', //17
-  'TempestIslandHex', //18
-  'GodcroftsHex',//19
-  'EndlessShoreHex',//20
-  'AllodsBightHex',//21
-  'WeatheredExpanseHex',//22
-  'DrownedValeHex',//23
-  'ShackledChasmHex',//24
-  'ViperPitHex',//25
+  "DeadLandsHex", //3
+  "CallahansPassageHex", //4
+  "MarbanHollow", //5
+  "UmbralWildwoodHex", //6
+  "MooringCountyHex", //7
+  "HeartlandsHex", //8
+  "LochMorHex", //9
+  "LinnMercyHex", //10
+  "ReachingTrailHex", //11
+  "StonecradleHex", //12
+  "FarranacCoastHex", //13
+  "WestgateHex", //14
+  "FishermansRowHex", //15
+  "OarbreakerHex", //16
+  "GreatMarchHex", //17
+  "TempestIslandHex", //18
+  "GodcroftsHex", //19
+  "EndlessShoreHex", //20
+  "AllodsBightHex", //21
+  "WeatheredExpanseHex", //22
+  "DrownedValeHex", //23
+  "ShackledChasmHex", //24
+  "ViperPitHex", //25
   ,
   ,
   ,
-  'NevishLineHex',//29
-  'AcrithiaHex',//30
-  'RedRiverHex',//31
-  'CallumsCapeHex',//32
-  'SpeakingWoodsHex',//33
-  'BasinSionnachHex',//34
-  'HowlCountyHex',//35
-  'ClansheadValleyHex',//36
-  'MorgensCrossingHex',//37
-  'TheFingersHex',//38
-  'TerminusHex',//39
-  'KalokaiHex',//40
-  'AshFieldsHex',//41
-  'OriginHex',//42
-  'SableportHex',//43
-  'KingsCageHex',//44
-  'StlicanShelfHex', // 45
-  'ClahstraHex', // 46
-  'ReaversPassHex', // 47
-  'StemaLandingHex' // 48
-  'OlavisWakeHex', // 49
-  'PariPeakHex', // 50
-  'PalantineBermHex', // 51
-  'KuuraStrandHex', //52
-  'GutterHex', //53
-  'WrestaHex', //54
-  'OnyxHex', //55
-  'LykosIsleHex', //56
-  'TyrantFoothillsHex', //57
-  'PipersEnclaveHex', //58
-  ];  
+  "NevishLineHex", //29
+  "AcrithiaHex", //30
+  "RedRiverHex", //31
+  "CallumsCapeHex", //32
+  "SpeakingWoodsHex", //33
+  "BasinSionnachHex", //34
+  "HowlCountyHex", //35
+  "ClansheadValleyHex", //36
+  "MorgensCrossingHex", //37
+  "TheFingersHex", //38
+  "TerminusHex", //39
+  "KalokaiHex", //40
+  "AshFieldsHex", //41
+  "OriginHex", //42
+  "SableportHex", //43
+  "KingsCageHex", //44
+  "StlicanShelfHex", // 45
+  "ClahstraHex", // 46
+  "ReaversPassHex", // 47
+  "StemaLandingHex", // 48
+  "OlavisWakeHex", // 49
+  "PariPeakHex", // 50
+  "PalantineBermHex", // 51
+  "KuuraStrandHex", //52
+  "GutterHex", //53
+  "WrestaHex", //54
+  "OnyxHex", //55
+  "LykosIsleHex", //56
+  "TyrantFoothillsHex", //57
+  "PipersEnclaveHex", //58
+];
 
-const bounds = [[-256,-50],[0,306]];
+const bounds = [
+  [-256, -50],
+  [0, 306],
+];
 const o = { y: -128, x: 128 };
 const height = bounds[1][0] - bounds[0][0];
 const width = bounds[1][1] - bounds[0][1];
 //const mapwidth = 18769;
-const mapwidth = 18769
+const hexWidth = 2184;
+const numHexesWide = 9.73;
+const mapwidth = hexWidth * numHexesWide;
 const ratio = (bounds[1][1] - bounds[0][1]) / mapwidth;
-//let w = width / 8.43;
-let w = width / 9.73;
+let w = width / numHexesWide;
 let k = (w * Math.sqrt(3)) / 2;
 
 const regionlist = [
@@ -108,14 +112,14 @@ const regionlist = [
   { name: /*The*/ "Linn of Mercy", center: [o.y + 0.5 * k, o.x - 0.75 * w] }, //10
   { name: "Reaching Trail", center: [o.y + 2 * k, o.x] }, //11
   { name: "Stonecradle", center: [o.y + k, o.x - 1.5 * w] }, //12
-  { name: "Farranac Coast", center:[o.y + 0.5 * k, o.x - 2.25 * w] },//13
-  { name: "Westgate", center:[o.y - 0.5 * k, o.x - 2.25 * w] },//14
-  { name: "Fisherman's Row", center: [o.y,o.x-3*w] }, //15
-  { name: /*The*/ "Oarbreaker Isles", center: [o.y-0.5*k,o.x-3.75*w] }, //16
+  { name: "Farranac Coast", center: [o.y + 0.5 * k, o.x - 2.25 * w] }, //13
+  { name: "Westgate", center: [o.y - 0.5 * k, o.x - 2.25 * w] }, //14
+  { name: "Fisherman's Row", center: [o.y, o.x - 3 * w] }, //15
+  { name: /*The*/ "Oarbreaker Isles", center: [o.y - 0.5 * k, o.x - 3.75 * w] }, //16
   { name: "Great March", center: [o.y - 2 * k, o.x] }, //17
-  { name: "Tempest Island", center: [o.y,o.x+3*w] }, //18
-  { name: "Godcrofts", center: [o.y+k,o.x+3*w] }, //19
-  { name: "Endless Shore", center: [o.y-0.5*k,o.x+2.25*w] }, //20
+  { name: "Tempest Island", center: [o.y, o.x + 3 * w] }, //18
+  { name: "Godcrofts", center: [o.y + k, o.x + 3 * w] }, //19
+  { name: "Endless Shore", center: [o.y - 0.5 * k, o.x + 2.25 * w] }, //20
   { name: "Allod's Bight", center: [o.y - k, o.x + 1.5 * w] }, //21
   { name: "Weathered Expanse", center: [o.y + k, o.x + 1.5 * w] }, //22
   { name: /*The*/ "Drowned Vale", center: [o.y - 0.5 * k, o.x + 0.75 * w] }, //23
@@ -124,43 +128,43 @@ const regionlist = [
   { name: "", center: [-1000, -1000] }, //26
   { name: "", center: [-1000, -1000] }, //27
   { name: "", center: [-1000, -1000] }, //28
-  { name: "Nevish Line", center: [o.y + 1.5 * k, o.x -2.25 * w] }, //29
-  { name: "Acrithia", center: [o.y - 2.5 * k, o.x + .75 * w] },//30
-  { name: "Red River", center: [o.y -2.5 * k, o.x -.75 * w] },//31
-  { name: "Callum's Cape", center: [o.y + 2 * k, o.x - 1.5 * w] },//32
-  { name: "Speaking Woods", center: [o.y + 2.5 * k, o.x - .75 * w] },//33
-  { name: "Basin Sionnach", center: [o.y +3 * k, o.x] },//34
-  { name: "Howl County", center: [o.y + 2.5 * k, o.x + .75 * w] },//35
-  { name: "Clanshead Valley", center: [o.y + 2 * k, o.x + 1.5 * w] },//36
-  { name: "Morgen's Crossing", center: [o.y + 1.5 * k, o.x + 2.25 * w] },//37
-  { name: "The Fingers", center: [o.y-0.5*k,o.x+3.75*w] },//38
-  { name: "Terminus", center:[o.y - 2 * k, o.x + 1.5 * w] },//39
-  { name: "Kalokai", center: [o.y - 3 * k, o.x] },//40
-  { name: "Ash Fields", center: [o.y - 2 * k, o.x - 1.5 * w] },//41
-  { name: "Origin", center: [o.y - 1.5 * k, o.x - 2.25 * w] },//42  
-  { name: "Sableport", center: [o.y - k, o.x - 1.5 * w] },//43
-  { name: "King's Cage", center: [o.y, o.x - 1.5 * w] },//44
-  { name: "Stlican Shelf", center:[o.y+0.5*k,o.x+2.25*w] },//45
-  { name: "The Clahstra", center:[o.y,o.x+1.5*w] },//46
-  { name: "Reaver's Pass", center:[o.y-1.5*k,o.x+2.25*w] },//47
-  { name: "Stema Landing", center:[o.y-k,o.x-3*w] },//48 
-  { name: "Olavi's Wake", center:[o.y+k,o.x-4.5*w] }, //49
-  { name: "Pari Peak", center:[o.y+1.5*k,o.x-3.75*w] }, //50
-  { name: "Palantine Berm",	center:[o.y+0.5*k,o.x-3.75*w] }, //51
-  { name: "Kurra Strand", center:[o.y+2*k,o.x-3*w] }, //52
-  { name: "The Gutter", center:[o.y+k,o.x-3*w] }, //53
-  { name: "Wresta",	center:[o.y-k,o.x+3*w] }, //54
-  { name: "Onyx", center:[o.y-2*k,o.x+3*w] }, //55
-  { name: "Lykos Isle",	center:[o.y+0.5*k,o.x+3.75*w] }, //56
-  { name: "Tyrant Foothills", center:[o.y-1.5*k,o.x+3.75*w] }, //57
-  { name: "Piper's Enclave", center:[o.y-k,o.x+4.5*w] }, //58  
-  ];
+  { name: "Nevish Line", center: [o.y + 1.5 * k, o.x - 2.25 * w] }, //29
+  { name: "Acrithia", center: [o.y - 2.5 * k, o.x + 0.75 * w] }, //30
+  { name: "Red River", center: [o.y - 2.5 * k, o.x - 0.75 * w] }, //31
+  { name: "Callum's Cape", center: [o.y + 2 * k, o.x - 1.5 * w] }, //32
+  { name: "Speaking Woods", center: [o.y + 2.5 * k, o.x - 0.75 * w] }, //33
+  { name: "Basin Sionnach", center: [o.y + 3 * k, o.x] }, //34
+  { name: "Howl County", center: [o.y + 2.5 * k, o.x + 0.75 * w] }, //35
+  { name: "Clanshead Valley", center: [o.y + 2 * k, o.x + 1.5 * w] }, //36
+  { name: "Morgen's Crossing", center: [o.y + 1.5 * k, o.x + 2.25 * w] }, //37
+  { name: "The Fingers", center: [o.y - 0.5 * k, o.x + 3.75 * w] }, //38
+  { name: "Terminus", center: [o.y - 2 * k, o.x + 1.5 * w] }, //39
+  { name: "Kalokai", center: [o.y - 3 * k, o.x] }, //40
+  { name: "Ash Fields", center: [o.y - 2 * k, o.x - 1.5 * w] }, //41
+  { name: "Origin", center: [o.y - 1.5 * k, o.x - 2.25 * w] }, //42
+  { name: "Sableport", center: [o.y - k, o.x - 1.5 * w] }, //43
+  { name: "King's Cage", center: [o.y, o.x - 1.5 * w] }, //44
+  { name: "Stlican Shelf", center: [o.y + 0.5 * k, o.x + 2.25 * w] }, //45
+  { name: "The Clahstra", center: [o.y, o.x + 1.5 * w] }, //46
+  { name: "Reaver's Pass", center: [o.y - 1.5 * k, o.x + 2.25 * w] }, //47
+  { name: "Stema Landing", center: [o.y - k, o.x - 3 * w] }, //48
+  { name: "Olavi's Wake", center: [o.y + k, o.x - 4.5 * w] }, //49
+  { name: "Pari Peak", center: [o.y + 1.5 * k, o.x - 3.75 * w] }, //50
+  { name: "Palantine Berm", center: [o.y + 0.5 * k, o.x - 3.75 * w] }, //51
+  { name: "Kurra Strand", center: [o.y + 2 * k, o.x - 3 * w] }, //52
+  { name: "The Gutter", center: [o.y + k, o.x - 3 * w] }, //53
+  { name: "Wresta", center: [o.y - k, o.x + 3 * w] }, //54
+  { name: "Onyx", center: [o.y - 2 * k, o.x + 3 * w] }, //55
+  { name: "Lykos Isle", center: [o.y + 0.5 * k, o.x + 3.75 * w] }, //56
+  { name: "Tyrant Foothills", center: [o.y - 1.5 * k, o.x + 3.75 * w] }, //57
+  { name: "Piper's Enclave", center: [o.y - k, o.x + 4.5 * w] }, //58
+];
 
 function GetBounds(index) {
   let region = regionlist[index];
   return [
     [region.center[0] - k / 2, region.center[1] - w / 2],
-    [region.center[0] + k / 2, region.center[1] + w / 2]
+    [region.center[0] + k / 2, region.center[1] + w / 2],
   ];
 }
 function convert(regionid, x, y) {
@@ -187,5 +191,5 @@ export default {
   k: k,
   w: w,
   ratio: ratio,
-  GetRegionIndex: GetRegionIndex
+  GetRegionIndex: GetRegionIndex,
 };
