@@ -66,7 +66,7 @@ class RequestIcon_ extends React.Component {
     const combinedRequests = request.request.flat().reduce((acc, item) => {
       const accItem = acc.find(
         (accItem) =>
-          accItem.catId === item.catid && accItem.itemId === item.itemid,
+          accItem.catid === item.catid && accItem.itemid === item.itemid,
       );
       if (accItem) {
         accItem.crates += item.crates;
@@ -74,23 +74,22 @@ class RequestIcon_ extends React.Component {
       }
       return [
         ...acc,
-        { catId: item.catid, itemId: item.itemid, crates: item.crates },
+        { catid: item.catid, itemid: item.itemid, crates: item.crates },
       ];
     }, []);
     const totalLines = combinedRequests.reduce(
       (acc, item) => item.crates + acc,
       0,
     );
+
+    request.done.forEach((item) => {
+      const requested = combinedRequests.find(
+        (r) => r.catid === item.catid && r.itemid === item.itemid,
+      );
+      requested.crates = Math.max(0, requested.crates - item.crates);
+    });
     const completedLines =
-      totalLines -
-      request.done
-        .each((item) => {
-          const requested = combinedRequests.find(
-            (r) => r.catId === item.catid && r.itemId === item.itemId,
-          );
-          requested.crates = Math.max(0, requested.crates - item.crates);
-        })
-        .reduce((acc, item) => item.crates + acc, 0);
+      totalLines - combinedRequests.reduce((acc, item) => item.crates + acc, 0);
     const pct = completedLines / totalLines;
 
     if (pct < 0.33) {

@@ -93,10 +93,10 @@ const RequestIcon = {
     iconUrl: "/img/glitch/IconStatusEncumberedRed.png",
   }),
   early: new RequestIconBase({
-    iconUrl: "/img/glitch/IconStatusEncumberedYellow.png",
+    iconUrl: "/img/glitch/IconStatusEncumberedOrange.png",
   }),
   late: new RequestIconBase({
-    iconUrl: "/img/glitch/IconStatusEncumberedRed.png",
+    iconUrl: "/img/glitch/IconStatusEncumberedYellow.png",
   }),
   complete: new RequestIconBase({
     iconUrl: "/img/glitch/IconStatusEncumbered.png",
