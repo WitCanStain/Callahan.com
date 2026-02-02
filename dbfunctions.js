@@ -1,58 +1,67 @@
 // Here we keep all functions related to database requests
 
-const conf = require("./conf/config");
-const logger = conf.logger;
-const sql = require("./db");
-const XMLHttpRequest = require("xhr2");
-const discordbot = require("./discordbot.js");
-const socket = require("./socket.js");
+const conf = require('./conf/config')
+const logger = conf.logger
+const sql = require('./db');
+const XMLHttpRequest = require('xhr2');
+const discordbot = require('./discordbot.js');
+const socket = require('./socket.js');
 
-let regionNames = [
-  "DeadLandsHex", //3
-  "CallahansPassageHex", //4
-  "MarbanHollow", //5
-  "UmbralWildwoodHex", //6
-  "MooringCountyHex", //7
-  "HeartlandsHex", //8
-  "LochMorHex", //9
-  "LinnMercyHex", //10
-  "ReachingTrailHex", //11
-  "StonecradleHex", //12
-  "FarranacCoastHex", //13
-  "WestgateHex", //14
-  "FishermansRowHex", //15
-  "OarbreakerHex", //16
-  "GreatMarchHex", //17
-  "TempestIslandHex", //18
-  "GodcroftsHex", //19
-  "EndlessShoreHex", //20
-  "AllodsBightHex", //21
-  "WeatheredExpanseHex", //22
-  "DrownedValeHex", //23
-  "ShackledChasmHex", //24
-  "ViperPitHex", //25
-  "NevishLineHex", //29
-  "AcrithiaHex", //30
-  "RedRiverHex", //31
-  "CallumsCapeHex", //32
-  "SpeakingWoodsHex", //33
-  "BasinSionnachHex", //34
-  "HowlCountyHex", //35
-  "ClansheadValleyHex", //36
-  "MorgensCrossingHex", //37
-  "TheFingersHex", //38
-  "TerminusHex", //39
-  "KalokaiHex", //40
-  "AshFieldsHex", //41
-  "OriginHex", //42
-  "SableportHex", //43
-  "KingsCageHex", //44
-  "StlicanShelfHex", // 45
-  "ClahstraHex", // 46
-  "ReaversPassHex", // 47
-  "StemaLandingHex", // 48
-];
-
+let regionNames = ['DeadLandsHex',//3
+  'CallahansPassageHex',//4
+  'MarbanHollow',//5
+  'UmbralWildwoodHex',//6
+  'MooringCountyHex',//7
+  'HeartlandsHex', //8
+  'LochMorHex',//9
+  'LinnMercyHex',//10
+  'ReachingTrailHex',//11
+  'StonecradleHex',//12
+  'FarranacCoastHex',//13
+  'WestgateHex',//14
+  'FishermansRowHex',//15
+  'OarbreakerHex',//16
+  'GreatMarchHex', //17
+  'TempestIslandHex', //18
+  'GodcroftsHex',//19
+  'EndlessShoreHex',//20
+  'AllodsBightHex',//21
+  'WeatheredExpanseHex',//22
+  'DrownedValeHex',//23
+  'ShackledChasmHex',//24
+  'ViperPitHex',//25
+  'NevishLineHex',//29
+  'AcrithiaHex',//30
+  'RedRiverHex',//31
+  'CallumsCapeHex',//32
+  'SpeakingWoodsHex',//33
+  'BasinSionnachHex',//34
+  'HowlCountyHex',//35
+  'ClansheadValleyHex',//36
+  'MorgensCrossingHex',//37
+  'TheFingersHex',//38
+  'TerminusHex',//39
+  'KalokaiHex',//40
+  'AshFieldsHex',//41
+  'OriginHex',//42
+  'SableportHex',//43
+  'KingsCageHex',//44
+  'StlicanShelfHex', // 45
+  'ClahstraHex', // 46
+  'ReaversPassHex', // 47
+  'StemaLandingHex', // 48
+  'OlavisWakeHex', // 49
+  'PariPeakHex', // 50
+  'PalantineBermHex', // 51
+  'KuuraStrandHex', //52
+  'GutterHex', //53
+  'WrestaHex', //54
+  'OnyxHex', //55
+  'LykosIsleHex', //56
+  'TyrantFoothillsHex', //57
+  'PipersEnclaveHex', //58
+  ];
+  
 function UpdateMapList() {
   const request = new XMLHttpRequest();
   request.responseType = "json";
