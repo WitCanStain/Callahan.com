@@ -130,12 +130,10 @@ class RequestContainer extends React.Component {
     let value = event.target.value;
     let validity = event.target.validity.valid;
     if (validity) {
-      wip[mywip].request[index].amount = value;
-      wip[mywip].request[index].crates = Math.ceil(
+      wip.request[index].amount = value;
+      wip.request[index].crates = Math.ceil(
         value /
-          cost.cost[wip[mywip].request[index].catid][
-            wip[mywip].request[index].itemid
-          ].i,
+          cost.cost[wip.request[index].catid][wip.request[index].itemid].i,
       );
     }
     this.UpdateRequest({ wip: [wip] });
