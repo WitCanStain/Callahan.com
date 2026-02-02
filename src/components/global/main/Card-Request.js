@@ -162,19 +162,6 @@ class RequestContainer extends React.Component {
     ) {
       let wip = clone(this.props.requests[this.props.selected.key].wip[i]);
       let author = U.GetUsername(this.props.users.users, wip.author);
-      if (author == "Anonymous") {
-        console.log(`TEST author anonymous`);
-        let obj = this.GetRequest();
-        obj.wip.splice(i, 1);
-        store.dispatch(
-          A.updateObject("requests", obj, this.props.selected.key),
-        );
-        socket.emit("updateObject", {
-          type: "requests",
-          object: obj,
-          key: this.props.selected.key,
-        });
-      }
       if (window.steamid != wip.author && wip.request.length > 0) {
         otherProductionCounter++;
         let margin = "other_production_right";
@@ -183,7 +170,7 @@ class RequestContainer extends React.Component {
         }
         otherProductions.push(
           <OtherProductionCard
-            avatar={U.GetAvatar(this.props.users.users, wip.author)}
+            avatar={U.GetAvatar(this.props.users.users, author)}
             author={author}
             request={wip.request}
             margin={margin}
