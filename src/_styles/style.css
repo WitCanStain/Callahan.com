@@ -2,7 +2,7 @@
 
 @font-face {
     font-family: Jost;
-    src: url("/src/_styles/Jost-400.ttf");
+    src: url("/_styles/Jost-400.ttf");
 }
 
 body {

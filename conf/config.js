@@ -1,3 +1,4 @@
+require("dotenv").config();
 const env = require("common-env")();
 
 const { createLogger, format, transports } = require("winston");
@@ -30,11 +31,14 @@ const logger = createLogger({
 const config = env.getOrElseAll({
   logger,
   fhghq: {
-    url: "https://BASE_SITE_URL_HERE.com",
+    url: "https://hq.mreboy.com",
   },
   // STEAM OpenID API Key required in order to use Steam for site login functions. See https://steamcommunity.com/dev/apikey to get one for free. REQUIRES FQDN for sign-up.
   steamApi: {
-    key: "API KEY STRING GOES HERE",
+    key: {
+      $default: "Configure key in .env as STEAMAPI_KEY",
+      $aliases: ["STEAMAPI_KEY"],
+    },
   },
   //DEFAULT: Shard known as ABLE in-game. See https://github.com/clapfoot/warapi/ for full info on WarAPI & endpoints for BAKER or CHARLIE shards if needed
   warApi: {
@@ -42,9 +46,16 @@ const config = env.getOrElseAll({
   },
   imageSource: {
     // Source of the loaded in maps or factories. Use this to offload image hosting from the main host and onto github.
-    img: "", // "https://raw.githubusercontent.com/WitCanStain/Callahan.com/a402c4135178580ba204bda67a44dda9fa644d5f",
-    map_tiles: "",
-    //  "https://raw.githubusercontent.com/WitCanStain/Callahan.com/a402c4135178580ba204bda67a44dda9fa644d5f",
+    img: {
+      $default:
+        "https://raw.githubusercontent.com/WitCanStain/Callahan.com/oxblood-dev",
+      $aliases: ["IMAGESOURCE_IMG"],
+    },
+    map_tiles: {
+      $default:
+        "https://raw.githubusercontent.com/WitCanStain/Callahan.com/oxblood-dev",
+      $aliases: ["IMAGESOURCE_MAP_TILES"],
+    },
   },
   // ALL DISCORD FUNCTIONS WERE COMMENTED OUT SOME TIME AGO - DON'T BOTHER PUTTING ANYTHING HERE
   discord: {
@@ -53,6 +64,7 @@ const config = env.getOrElseAll({
   sqlLite: {
     fileNameGiven: {
       $default: "./.data/FHGHQ.db",
+      $aliases: ["SQLLITE_FILENAME_GIVEN"],
     },
   },
 });

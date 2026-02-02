@@ -5,8 +5,6 @@ const onetime = require("./onetimers");
 const conf = require("./conf/config");
 const logger = conf.logger;
 
-require("dotenv").config();
-
 //OTHER SERVER MODULES MADE BY US
 // const discordbot = require('./discordbot.js'); //SHUTDOWN UNTIL FURTHER NOTICE
 
