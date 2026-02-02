@@ -10,7 +10,9 @@ export class NoteAddon extends React.Component {
           ? this.props.obj.wip.map((wip) => wip.author)
           : []),
         this.props.obj.notes,
-      ].join("\n");
+      ]
+        .filter((x) => x)
+        .join("\n");
       text = text.replace(/(?:\r\n|\r|\n)/g, "<br>");
       if (text.length) {
         var IconText = NativeL.divIcon({
