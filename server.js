@@ -1,44 +1,45 @@
 // server.js
 // where your node app starts
-const onetime = require('./onetimers')
+const onetime = require("./onetimers");
 
-const conf = require('./conf/config');
+const conf = require("./conf/config");
 const logger = conf.logger;
 
-
-require('dotenv')
-  .config();
+require("dotenv").config();
 
 //OTHER SERVER MODULES MADE BY US
 // const discordbot = require('./discordbot.js'); //SHUTDOWN UNTIL FURTHER NOTICE
 
-const db = require('./dbfunctions.js');
-const warapi = require('./warapi.js');
-const socket = require('./socket.js');
+const db = require("./dbfunctions.js");
+const warapi = require("./warapi.js");
+const socket = require("./socket.js");
 
 // init project
-const express = require('express');
+const express = require("express");
 const app = express();
-var http = require('http')
-  .Server(app);
-var session = require('express-session');
+var http = require("http").Server(app);
+var session = require("express-session");
 
-var passport = require('passport');
-const shortid = require('shortid');
+var passport = require("passport");
+const shortid = require("shortid");
 
-var SteamStrategy = require('passport-steam').Strategy;
+var SteamStrategy = require("passport-steam").Strategy;
 const apikey = process.env.KEY;
 
 //warapi.updateMap();
 //warapi.pullStatic();
 //warapi.updateStaticTowns();
 
-const PORT = process.env.PORT ? process.env.PORT : 40696
+const PORT = process.env.PORT ? process.env.PORT : 40696;
 http.listen(PORT, function () {
-  logger.info(`Your app is listening on port ${PORT}`)
+  logger.info(`Your app is listening on port ${PORT}`);
 });
 //exports.listener = listener;
-app.use(express.static('src'));
+app.use(express.static("src"));
+app.use("/map_tiles", express.static("map_tiles"));
+app.use("/map_tiles_adv", express.static("map_tiles_adv"));
+app.use("/map_tiles_placeholders", express.static("map_tiles_placeholders"));
+app.use("/img", express.static("img"));
 socket.import(http);
 
 ////STEAM AUTH AREA
@@ -50,145 +51,176 @@ passport.deserializeUser(function (obj, done) {
   done(null, obj);
 });
 
-passport.use(new SteamStrategy({
-    returnURL: conf.fhghq.url + '/auth/steam/return',
-    realm: conf.fhghq.url,
-    apiKey: conf.steamApi.key
-  },
-  function (identifier, profile, done) {
-    // asynchronous verification, for effect...
-    process.nextTick(function () {
+passport.use(
+  new SteamStrategy(
+    {
+      returnURL: conf.fhghq.url + "/auth/steam/return",
+      realm: conf.fhghq.url,
+      apiKey: conf.steamApi.key,
+    },
+    function (identifier, profile, done) {
+      // asynchronous verification, for effect...
+      process.nextTick(function () {
+        profile.identifier = identifier;
+        return done(null, profile);
+      });
+    },
+  ),
+);
 
-      profile.identifier = identifier;
-      return done(null, profile);
-    });
-  }
-));
-
-app.use(session({
-  secret: 'your secret',
-  name: 'name of session id',
-  resave: true,
-  saveUninitialized: true
-}));
+app.use(
+  session({
+    secret: "your secret",
+    name: "name of session id",
+    resave: true,
+    saveUninitialized: true,
+  }),
+);
 
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(express.static(__dirname + '/../../src'));
+app.use(express.static(__dirname + "/../../src"));
 
-app.get('/auth/steam',
-  passport.authenticate('steam', { failureRedirect: '/' }),
+app.get(
+  "/auth/steam",
+  passport.authenticate("steam", { failureRedirect: "/" }),
   function (req, res) {
-    res.redirect('/');
-  });
+    res.redirect("/");
+  },
+);
 
-app.get('/auth/steam/return',
-  passport.authenticate('steam', { failureRedirect: '/' }),
+app.get(
+  "/auth/steam/return",
+  passport.authenticate("steam", { failureRedirect: "/" }),
   function (req, res) {
     var salt = shortid.generate();
-    console.log("User "+req.user._json.steamid+" "+req.user._json.personaname+" has logged on");
+    console.log(
+      "User " +
+        req.user._json.steamid +
+        " " +
+        req.user._json.personaname +
+        " has logged on",
+    );
     //discordbot.auth(req.user._json.steamid,req.user._json.personaname);
     if (!db.existscheck(req.user._json.steamid)) {
-      db.insertuser.run(req.user._json.steamid, salt, req.user._json.personaname, req.user._json.avatarmedium);
+      db.insertuser.run(
+        req.user._json.steamid,
+        salt,
+        req.user._json.personaname,
+        req.user._json.avatarmedium,
+      );
     } else {
       salt = db.getaccount(req.user._json.steamid).salt;
-      db.updateuser.run(req.user._json.personaname, req.user._json.avatarmedium, req.user._json.steamid);
+      db.updateuser.run(
+        req.user._json.personaname,
+        req.user._json.avatarmedium,
+        req.user._json.steamid,
+      );
     }
     //res.clearCookie('')
-    res.cookie('steamid', req.user._json.steamid);
-    res.cookie('salt', salt);
-    if (req.headers['cookie'] === undefined) {
-      res.redirect('/');
-    } else if (!req.headers['cookie'].includes('redir_room')) {
-      res.redirect('/');
+    res.cookie("steamid", req.user._json.steamid);
+    res.cookie("salt", salt);
+    if (req.headers["cookie"] === undefined) {
+      res.redirect("/");
+    } else if (!req.headers["cookie"].includes("redir_room")) {
+      res.redirect("/");
     } else {
-      var cookiestring = req.headers['cookie'];
-      var id = cookiestring.substring(cookiestring.indexOf(' redir_room') + 12, cookiestring.indexOf(' redir_room') + 21);
-      res.redirect('/room/' + id);
+      var cookiestring = req.headers["cookie"];
+      var id = cookiestring.substring(
+        cookiestring.indexOf(" redir_room") + 12,
+        cookiestring.indexOf(" redir_room") + 21,
+      );
+      res.redirect("/room/" + id);
     }
-  });
-app.post('/noauth', function (req, res) {
-  var idsalt = shortid.generate()
-    .slice(0, 8);
+  },
+);
+app.post("/noauth", function (req, res) {
+  var idsalt = shortid.generate().slice(0, 8);
   var salt = shortid.generate();
-  db.insertuser.run('anonymous' + idsalt, salt, req.query.name, new Date().toString());
-  res.cookie('steamid', 'anonymous' + idsalt);
-  res.cookie('salt', salt);
+  db.insertuser.run(
+    "anonymous" + idsalt,
+    salt,
+    req.query.name,
+    new Date().toString(),
+  );
+  res.cookie("steamid", "anonymous" + idsalt);
+  res.cookie("salt", salt);
   //console.log("Anonymous login",idsalt)
-  if (req.headers['cookie'] == undefined) {
+  if (req.headers["cookie"] == undefined) {
     res.send({ redir: false });
     //res.redirect('/');
-  } else if (!req.headers['cookie'].includes('redir_room')) {
+  } else if (!req.headers["cookie"].includes("redir_room")) {
     res.send({ redir: false });
     //res.redirect('/');
   } else {
     //console.log("redirecting noauth")
-    var cookiestring = req.headers['cookie'];
-    var id = cookiestring.substring(cookiestring.indexOf(' redir_room') + 12, cookiestring.indexOf(' redir_room') + 21);
-//console.log("redir room",id)
+    var cookiestring = req.headers["cookie"];
+    var id = cookiestring.substring(
+      cookiestring.indexOf(" redir_room") + 12,
+      cookiestring.indexOf(" redir_room") + 21,
+    );
+    //console.log("redir room",id)
     res.send({
       redir: true,
-      redirId: id
+      redirId: id,
     });
     //res.redirect('/room/'+id);
   }
 });
 
-
-
 function ensureAuthenticated(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
   }
-  res.redirect('/');
+  res.redirect("/");
 }
 
 ////STEAM AUTH AREA ENDS
 //About
-app.get('/about', function (request, response) {
+app.get("/about", function (request, response) {
   if (db.logincheck(request)) {
-    response.sendFile(__dirname + '/views/about.html');
+    response.sendFile(__dirname + "/views/about.html");
   } else {
-    response.redirect('/auth');
+    response.redirect("/auth");
   }
 });
 //Profile page
-app.get('/', function (request, response) {
+app.get("/", function (request, response) {
   if (db.logincheck(request)) {
-    response.sendFile(__dirname + '/views/index.html');
+    response.sendFile(__dirname + "/views/index.html");
   } else {
-    response.redirect('/auth');
+    response.redirect("/auth");
   }
 });
 
 //Get users profile from the DB
-app.post('/getprofile', function (request, response) {
+app.post("/getprofile", function (request, response) {
   if (db.logincheck(request)) {
     var id = request.query.id;
     var account = db.getaccount(id);
-//console.log(id)
-//console.log(request.query);
+    //console.log(id)
+    //console.log(request.query);
     var packet = {
       name: account.id,
       name: account.name,
       blueprint: account.blueprint,
-      avatar: account.avatar
+      avatar: account.avatar,
     };
     //console.log(packet);
     response.send(packet);
   } else {
-    response.redirect('/auth');
+    response.redirect("/auth");
   }
 });
 
 //Get info on rooms connected to a profile
-app.post('/getuserrooms', function (request, response) {
+app.post("/getuserrooms", function (request, response) {
   var rooms = db.getrooms(request.query.id);
   response.send(rooms);
 });
 
 //Leave a room from profile page
-app.post('/leaveroom', function (request, response) {
+app.post("/leaveroom", function (request, response) {
   if (db.logincheck(request)) {
     var account = parsecookies(request);
     var globalid = request.query.globalid;
@@ -196,32 +228,31 @@ app.post('/leaveroom', function (request, response) {
     if (account.id != roominfo.adminid) {
       var packet = {
         globalid: globalid,
-        userid: account.id
+        userid: account.id,
       };
       socket.emitleaveroom(packet);
     }
     db.leaveroom(account.id, globalid);
-    response.redirect('/');
+    response.redirect("/");
   }
 });
 
 //Authorization page
-app.get('/auth', function (request, response) {
-  response.sendFile(__dirname + '/views/auth.html');
+app.get("/auth", function (request, response) {
+  response.sendFile(__dirname + "/views/auth.html");
 });
 
-
 //Request page for a room - get link
-app.get('/request/:id', function (request, response) {
+app.get("/request/:id", function (request, response) {
   if (db.logincheck(request)) {
-    response.sendFile(__dirname + '/views/request.html');
+    response.sendFile(__dirname + "/views/request.html");
   } else {
-    response.redirect('/auth');
+    response.redirect("/auth");
   }
 });
 
 //Request page, part 2 - return user status in the room
-app.post('/request2', function (request, response) {
+app.post("/request2", function (request, response) {
   var globalid = request.query.id;
   var account = parsecookies(request);
   var rank = db.getmembership(account.id, globalid);
@@ -238,7 +269,7 @@ app.post('/request2', function (request, response) {
       roomname: settings.name,
       secure: settings.secure,
       admin: roominfo.adminname,
-      adminid: roominfo.adminid
+      adminid: roominfo.adminid,
     };
     //console.log(packet);
     response.send(packet);
@@ -246,42 +277,54 @@ app.post('/request2', function (request, response) {
 });
 
 //Request page, part 3 - submit access request
-app.post('/request3', function (request, response) {
+app.post("/request3", function (request, response) {
   var globalid = request.query.globalid;
   var account = parsecookies(request);
   var rank = db.getmembership(account.id, globalid);
   //console.log(rank);
   if (rank == 8) {
-    response.redirect('/');
+    response.redirect("/");
   }
   if (rank == 7) {
-    db.insertrelation.run(account.id + globalid, account.id, globalid, 5, '[0,0]');
+    db.insertrelation.run(
+      account.id + globalid,
+      account.id,
+      globalid,
+      5,
+      "[0,0]",
+    );
     var packet = {
       globalid: globalid,
-      userid: account.id
+      userid: account.id,
     };
     socket.emitaccessrequest(packet);
     // discordbot.requestaccess(account.id,globalid);
-    response.redirect('/');
+    response.redirect("/");
   }
 });
 
 //Request unsecure page - submit password
-app.post('/requestPassword', function (request, response) {
+app.post("/requestPassword", function (request, response) {
   var globalid = request.query.globalid;
   var account = parsecookies(request);
   //console.log(request.originalUrl);
   let check = db.checkpassword(globalid, request.query.password);
   if (check) {
-    db.insertrelation.run(account.id + globalid, account.id, globalid, 3, '[0,0]');
-    response.send('right');
+    db.insertrelation.run(
+      account.id + globalid,
+      account.id,
+      globalid,
+      3,
+      "[0,0]",
+    );
+    response.send("right");
   } else {
-    response.send('wrong');
+    response.send("wrong");
   }
 });
 
 //Creates a room
-app.post('/createroom', function (request, response) {
+app.post("/createroom", function (request, response) {
   var id = shortid.generate();
   var admin = request.query.id;
   let settings = request.query.settings;
@@ -290,27 +333,26 @@ app.post('/createroom', function (request, response) {
 });
 
 //Pulls room from a unique link
-app.get('/room/:id', function (request, response) {
+app.get("/room/:id", function (request, response) {
   //console.log(request.headers['cookie'] )
   // var order = db.get('orders').find({ id: request.params.id}).value();
   if (db.logincheck(request)) {
     var account = parsecookies(request);
     var rank = db.getmembership(account.id, request.params.id);
     if (rank < 4) {
-      response.sendFile(__dirname + '/views/global.html');
+      response.sendFile(__dirname + "/views/global.html");
     }
     if (rank >= 4) {
-      response.redirect('/request/' + request.params.id);
+      response.redirect("/request/" + request.params.id);
     }
   } else {
-    response.cookie('redir_room', request.params.id);
-    response.redirect('/auth');
+    response.cookie("redir_room", request.params.id);
+    response.redirect("/auth");
   }
 });
 
-
 //pulls room from a unique link, part 2
-app.post('/getroom', function (request, response) {
+app.post("/getroom", function (request, response) {
   var packet = {};
   packet.users = db.getroomusers(request.query.id);
   packet.meta = db.getroominfo(request.query.id);
@@ -323,47 +365,55 @@ app.post('/getroom', function (request, response) {
   response.send(packet);
 });
 
-app.get('/getcurrentwar', function (request, response) {
+app.get("/getcurrentwar", function (request, response) {
   var packet = {
     totalplayers: socket.totalplayers,
     warstats: socket.warstats,
     wr: warapi.WR,
-    currentwar: socket.currentwar
+    currentwar: socket.currentwar,
   };
   response.send(packet);
 });
 
 //Pulls room from a unique link
-app.get('/getwar/:warnumber', function (request, response) {
+app.get("/getwar/:warnumber", function (request, response) {
   let war = db.GetWar(request.params.warnumber);
   response.send(war);
 });
 
 //Get account data from cookies
 function parsecookies(request) {
-  if (request.headers['cookie'] == undefined) {
+  if (request.headers["cookie"] == undefined) {
     return false;
   }
-  if (!request.headers['cookie'].includes('salt')) {
+  if (!request.headers["cookie"].includes("salt")) {
     return false;
   }
-  var cookiestring = request.headers['cookie'];
-  var id = cookiestring.substring(cookiestring.indexOf(' steamid=') + 9, cookiestring.indexOf(' steamid=') + 26)
-    .replace(';', '');
-  var salt = cookiestring.substring(cookiestring.indexOf(' salt=') + 6, cookiestring.indexOf(' salt=') + 15)
-    .replace(';', '');
+  var cookiestring = request.headers["cookie"];
+  var id = cookiestring
+    .substring(
+      cookiestring.indexOf(" steamid=") + 9,
+      cookiestring.indexOf(" steamid=") + 26,
+    )
+    .replace(";", "");
+  var salt = cookiestring
+    .substring(
+      cookiestring.indexOf(" salt=") + 6,
+      cookiestring.indexOf(" salt=") + 15,
+    )
+    .replace(";", "");
   var result = {
     id: id,
-    salt: salt
+    salt: salt,
   };
   return result;
 }
 
 //onetimers.wipe();
 //discordbot.cunt("loaded");
-db.cunt('loaded');
-warapi.cunt('loaded');
-socket.cunt('loaded');
+db.cunt("loaded");
+warapi.cunt("loaded");
+socket.cunt("loaded");
 
 //patch();
 

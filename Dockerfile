@@ -10,6 +10,10 @@ RUN npm install
 ADD conf conf
 ADD src src
 ADD views views
+ADD img img
+ADD map_tiles map_tiles
+ADD map_tiles_adv map_tiles_adv
+ADD map_tiles_placeholders map_tiles_placeholders
 
 COPY [ ".babelrc", "dbfunctions.js", "discordbot.js", "onetimers.js", "server.js", "socket.js", "warapi.js", "webpack.config.js", "./" ]
 
