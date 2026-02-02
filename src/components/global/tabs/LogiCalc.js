@@ -166,12 +166,12 @@ export class LogiCalc extends React.Component {
                   {this.GetTotal("he")}
                   <img
                     className="totalicon"
-                    src="https://hq.mreboy.com/img/glitch/CrateItemIcon.png"
+                    src="/img/glitch/CrateItemIcon.png"
                   />
                   <a id="totalcrates">{this.GetCrates()}</a>
                   <img
                     className="totalicon"
-                    src="https://hq.mreboy.com/img/glitch/TruckWarden.png"
+                    src="/img/glitch/TruckWarden.png"
                   />
                   <a id="totalvehicles">{this.GetVehicles()}</a>
                 </h4>
@@ -205,7 +205,7 @@ export class LogiCalc extends React.Component {
                     <th>
                       <img
                         className="crate"
-                        src="https://hq.mreboy.com/img/glitch/CrateItemIcon.png"
+                        src="/img/glitch/CrateItemIcon.png"
                         style={{ width: 34, height: 34 }}
                       />
                     </th>
@@ -273,7 +273,7 @@ function Item(props) {
         >
           <img
             className="removebutton"
-            src="https://hq.mreboy.com/img/glitch/X.png"
+            src="/img/glitch/X.png"
           />
         </button>
       </td>

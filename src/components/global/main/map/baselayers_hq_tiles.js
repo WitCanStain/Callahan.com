@@ -1,7 +1,7 @@
-import React from 'react';
-import { connect } from 'react-redux';
+import React from "react";
+import { connect } from "react-redux";
 
-const L = require('react-leaflet');
+const L = require("react-leaflet");
 
 function BaseLayers_(props) {
   const { satmap } = props;
@@ -12,9 +12,12 @@ function BaseLayers_(props) {
         <L.TileLayer
           noWrap={true}
           continuousWorld={true}
-          bounds={[[-256, 0], [0, 256]]}
+          bounds={[
+            [-256, 0],
+            [0, 256],
+          ]}
           maxNativeZoom={5}
-          url='http://hq.mreboy.com/map_tiles/{z}/{z}_{x}_{y}.png'
+          url={MAP_TILES + "/map_tiles/{z}/{z}_{x}_{y}.png"}
         />
       </L.LayersControl.BaseLayer>
 
@@ -22,18 +25,21 @@ function BaseLayers_(props) {
         <L.TileLayer
           noWrap={true}
           continuousWorld={true}
-          bounds={[[-256, 0], [0, 256]]}
+          bounds={[
+            [-256, 0],
+            [0, 256],
+          ]}
           maxNativeZoom={5}
-          url='https://raw.githubusercontent.com/Kastow/Foxhole-Map-Tiles/master/Sat Tiles/{z}/{z}_{x}_{y}.png'
+          url="https://raw.githubusercontent.com/Kastow/Foxhole-Map-Tiles/master/Sat Tiles/{z}/{z}_{x}_{y}.png"
         />
       </L.LayersControl.BaseLayer>
     </L.LayersControl>
   );
 }
 
-const mapStateToProps = store => {
+const mapStateToProps = (store) => {
   return {
-    satmap: store.display.satmap
+    satmap: store.display.satmap,
   };
 };
 

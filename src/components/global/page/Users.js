@@ -1,24 +1,24 @@
-import React from 'react';
+import React from "react";
 const ReactDOM = require("react-dom");
 import socket from "../../../_static/socket";
 import store from "../../../redux/store";
-import {connect} from 'react-redux';
+import { connect } from "react-redux";
 import U from "../useful_functions";
 import A from "../../../redux/actions";
 const rankclasses = [
   ,
   "row-admin", //1
   "row-mod", //2
-  "row-user" //3
+  "row-user", //3
 ];
 
 window.userlist = {
   users: [],
-  onlineusers: []
+  onlineusers: [],
 };
 
 ////////////////////////////////////////SOCKET AREA BEGINS//////////////////////////////////////////////////
-socket.on("onlineusers", function(userlist) {
+socket.on("onlineusers", function (userlist) {
   //console.log("Online users",userlist)
   window.userlist = userlist;
   for (var i = 0; i < window.userlist.users.length; i++) {
@@ -32,7 +32,7 @@ socket.on("onlineusers", function(userlist) {
 });
 
 //Updates changes of user ranks
-socket.on("updateusers", function(newusers) {
+socket.on("updateusers", function (newusers) {
   //console.log("Socket users",newusers)
   for (var i = 0; i < newusers.length; i++) {
     if (window.steamid == newusers[i].id) {
@@ -53,7 +53,7 @@ socket.on("updateusers", function(newusers) {
 });
 
 //Transfers ownership
-socket.on("hailnewking", function(newadmin) {
+socket.on("hailnewking", function (newadmin) {
   store.dispatch(A.hailNewKing(newadmin));
 });
 ////////////////////////////////////////SOCKET AREA ENDS//////////////////////////////////////////////////
@@ -64,13 +64,13 @@ class UserList extends React.Component {
     super(props);
     this.state = {
       showOnlineUsers: true,
-      showOfflineUsers: false
+      showOfflineUsers: false,
     };
   }
   shouldComponentUpdate(nextProps, nextState) {
     //console.log(this.props.tab,nextProps.tab)
     if (
-      this.state.showOnlineUsers !== nextState.showOnlineUsers || 
+      this.state.showOnlineUsers !== nextState.showOnlineUsers ||
       this.state.showOfflineUsers !== nextState.showOfflineUsers
     ) {
       return true;
@@ -107,7 +107,7 @@ class UserList extends React.Component {
     //console.log("Rendering users")
     let userlist = {
       online: [],
-      offline: []
+      offline: [],
     };
     let users = this.props.users.users;
     for (let user of users) {
@@ -119,7 +119,7 @@ class UserList extends React.Component {
     }
     userlist.online = userlist.online
       .sort(U.compare)
-      .map(user => (
+      .map((user) => (
         <UserlistUnit
           key={user.id}
           user={user}
@@ -130,7 +130,7 @@ class UserList extends React.Component {
       ));
     userlist.offline = userlist.offline
       .sort(U.compare)
-      .map(user => (
+      .map((user) => (
         <UserlistUnit
           key={user.id}
           user={user}
@@ -144,8 +144,14 @@ class UserList extends React.Component {
       <div id="usrow" className="col-sm-12 col-lg-2 user_panel">
         <label className="user-row usertable_heading">
           <span>Online Users</span>
-          <button type="button" className="usertable_heading_btn" onClick={() => this.setState({ showOnlineUsers: !this.state.showOnlineUsers })}>
-            {this.state.showOnlineUsers ? '−' : '+'}
+          <button
+            type="button"
+            className="usertable_heading_btn"
+            onClick={() =>
+              this.setState({ showOnlineUsers: !this.state.showOnlineUsers })
+            }
+          >
+            {this.state.showOnlineUsers ? "−" : "+"}
           </button>
         </label>
         {this.state.showOnlineUsers && (
@@ -159,8 +165,14 @@ class UserList extends React.Component {
         )}
         <label className="user-row usertable_heading">
           <span>Offline Users</span>
-          <button type="button" className="usertable_heading_btn" onClick={() => this.setState({ showOfflineUsers: !this.state.showOfflineUsers })}>
-            {this.state.showOfflineUsers ? '−' : '+'}
+          <button
+            type="button"
+            className="usertable_heading_btn"
+            onClick={() =>
+              this.setState({ showOfflineUsers: !this.state.showOfflineUsers })
+            }
+          >
+            {this.state.showOfflineUsers ? "−" : "+"}
           </button>
         </label>
         {this.state.showOfflineUsers && (
@@ -182,13 +194,13 @@ class UserlistUnit extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      time: 0
+      time: 0,
     };
   }
   componentDidMount() {
     this.interval = setInterval(
       () => this.setState({ time: Date.now() }),
-      1000
+      1000,
     );
   }
   componentWillUnmount() {
@@ -277,7 +289,7 @@ class UserlistUnit extends React.Component {
                   className="profileimg"
                   src={
                     this.props.user.id.includes("anonymous")
-                      ? "https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fdasd.jpg?1556805827222"
+                      ? "/img/glitch/dasd.jpg?1556805827222"
                       : this.props.user.avatar
                   }
                 ></img>{" "}
@@ -311,7 +323,7 @@ class UserlistUnit extends React.Component {
                   <img
                     className="userlist_status_icon"
                     id="userlist_truck_icon"
-                    src="https://hq.mreboy.com/img/glitch/truckmove.png"
+                    src="/img/glitch/truckmove.png"
                   />
                 )}
               </div>
@@ -341,23 +353,23 @@ function compareonline(a, b) {
   return 0;
 }
 
-const mapStateToProps = store => {
+const mapStateToProps = (store) => {
   //console.log(store)
   let privateinfo = store.private;
   return {
     users: store.users,
     private: { requests: privateinfo.requests, refinery: privateinfo.refinery },
     squads: store.squads,
-    tab: store.tab
+    tab: store.tab,
   };
 };
-const mapStateToPropsUser = store => {
+const mapStateToPropsUser = (store) => {
   //console.log(store)
   let privateinfo = store.private;
   return {
     users: store.users,
     private: { requests: privateinfo.requests, refinery: privateinfo.refinery },
-    squads: store.squads
+    squads: store.squads,
   };
 };
 export default connect(mapStateToProps)(UserList);

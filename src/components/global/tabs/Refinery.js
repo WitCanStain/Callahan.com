@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 import socket from "../../../_static/socket";
 import store from "../../../redux/store";
-import {connect} from 'react-redux';
+import { connect } from "react-redux";
 import A from "../../../redux/actions.js";
 import U from "../useful_functions";
 import UR from "../useful_react";
@@ -10,8 +10,7 @@ import * as MO from "../main/map/map-objects";
 const NativeL = require("leaflet");
 import RegionImages from "../../../_static/region-images";
 import markers from "../../../_static/markers";
-const repo =
-  "https://raw.githubusercontent.com/the-fellowship-of-the-warapi/Assets/master/Item Icons/Materials/";
+const repo = IMG + "/img/Item Icons/Materials/";
 //Images of resources
 const refineryStatic = [
   {
@@ -20,7 +19,7 @@ const refineryStatic = [
     startName: "Salvage",
     startUrl: repo + "SalvageIcon.png",
     finishName: "Basic Materials",
-    finishUrl: repo + "BasicMaterialsIcon.png"
+    finishUrl: repo + "BasicMaterialsIcon.png",
   },
   {
     time: 12000,
@@ -28,7 +27,7 @@ const refineryStatic = [
     startName: "Salvage",
     startUrl: repo + "SalvageIcon.png",
     finishName: "Diesel",
-    finishUrl: repo + "ResourceFuelIcon.png"
+    finishUrl: repo + "ResourceFuelIcon.png",
   },
   {
     time: 33300,
@@ -36,7 +35,7 @@ const refineryStatic = [
     startName: "Salvage",
     startUrl: repo + "SalvageIcon.png",
     finishName: "Explosive Materials",
-    finishUrl: repo + "ExplosiveMaterialIcon.png"
+    finishUrl: repo + "ExplosiveMaterialIcon.png",
   },
   {
     time: 40000,
@@ -44,7 +43,7 @@ const refineryStatic = [
     startName: "Components",
     startUrl: repo + "ComponentsIcon.png",
     finishName: "Refined Materials",
-    finishUrl: repo + "RefinedMaterialsIcon.png"
+    finishUrl: repo + "RefinedMaterialsIcon.png",
   },
   {
     time: 60000,
@@ -52,7 +51,7 @@ const refineryStatic = [
     startName: "Sulfur",
     startUrl: repo + "SulfurIcon.png",
     finishName: "Heavy Explosive Materials",
-    finishUrl: repo + "HeavyExplosiveMaterialIcon.png"
+    finishUrl: repo + "HeavyExplosiveMaterialIcon.png",
   },
   {
     time: 363640,
@@ -60,7 +59,7 @@ const refineryStatic = [
     startName: "Crude Oil",
     startUrl: repo + "CrudeOilIcon.png",
     finishName: "Petrol",
-    finishUrl: repo + "RefinedFuelIcon.png"
+    finishUrl: repo + "RefinedFuelIcon.png",
   },
   {
     time: 1000,
@@ -68,7 +67,7 @@ const refineryStatic = [
     startName: "Aluminum",
     startUrl: repo + "ResouceAluminumIcon.png",
     finishName: "Aluminum Alloy",
-    finishUrl: repo + "ResouceAluminumRefinedIcon.png"
+    finishUrl: repo + "ResouceAluminumRefinedIcon.png",
   },
   {
     time: 1000,
@@ -76,8 +75,8 @@ const refineryStatic = [
     startName: "Iron",
     startUrl: repo + "ResouceIronIcon.png",
     finishName: "Iron Alloy",
-    finishUrl: repo + "ResouceIronRefinedIcon.png"
-  }
+    finishUrl: repo + "ResouceIronRefinedIcon.png",
+  },
 ];
 
 export class Refinery extends React.Component {
@@ -92,7 +91,7 @@ export class Refinery extends React.Component {
         <div className="row">
           <div id="ref_col_container" className="col-sm-12 col-lg-3 nomargin">
             <RefinerySubmitMenu
-              ref={e => {
+              ref={(e) => {
                 window.refmenu = e;
               }}
             />
@@ -116,7 +115,7 @@ class RefinerySubmitMenu_ extends React.Component {
       signature: "",
       orderfilter: 0,
       selectedorder: { tableindex: -1 },
-      subtract_value: 0
+      subtract_value: 0,
     };
     this.handleAmountChange = this.handleAmountChange.bind(this);
     this.handleResourceChange = this.handleResourceChange.bind(this);
@@ -137,7 +136,7 @@ class RefinerySubmitMenu_ extends React.Component {
         value = value.slice(1);
       }
       this.setState({
-        amount: value
+        amount: value,
       });
     }
   }
@@ -150,7 +149,7 @@ class RefinerySubmitMenu_ extends React.Component {
   handleResourceChange(i) {
     //console.log(i)
     this.setState({
-      resource: i
+      resource: i,
     });
     this.refs.amount_input.focus();
   }
@@ -175,19 +174,19 @@ class RefinerySubmitMenu_ extends React.Component {
     } else {
       let time = Math.floor(
         (this.state.amount * refineryStatic[this.state.resource].time) /
-          refineryStatic[this.state.resource].ratio
+          refineryStatic[this.state.resource].ratio,
       );
       let finishtime = new Date(new Date().getTime() + time);
       //console.log(new Date(finishtime))
       let result = Math.floor(
-        this.state.amount / refineryStatic[this.state.resource].ratio
+        this.state.amount / refineryStatic[this.state.resource].ratio,
       );
       let packet = {
         amount: result,
         startDate: new Date(),
         finishDate: finishtime,
         type: this.state.resource,
-        author: window.steamid
+        author: window.steamid,
       };
       let obj = this.props.refinery[this.state.signature];
       if (obj == undefined) {
@@ -204,7 +203,7 @@ class RefinerySubmitMenu_ extends React.Component {
       socket.emit("updateObject", {
         type: "refinery",
         object: obj,
-        key: this.state.signature
+        key: this.state.signature,
       });
     }
   }
@@ -212,21 +211,21 @@ class RefinerySubmitMenu_ extends React.Component {
   handleDelete() {
     let packet = this.state.selectedorder;
     let refinery = JSON.parse(
-      JSON.stringify(this.props.refinery[packet.signature])
+      JSON.stringify(this.props.refinery[packet.signature]),
     );
     refinery.orders.splice(packet.index);
     store.dispatch(A.updateObject("refinery", refinery, packet.signature));
     socket.emit("updateObject", {
       type: "refinery",
       object: refinery,
-      key: packet.signature
+      key: packet.signature,
     });
     this.setState({ selectedorder: { tableindex: -1 } });
   }
   handleForceComplete() {
     let packet = this.state.selectedorder;
     let refinery = JSON.parse(
-      JSON.stringify(this.props.refinery[packet.signature])
+      JSON.stringify(this.props.refinery[packet.signature]),
     );
     let order = refinery.orders[packet.index];
     order.finishDate = new Date();
@@ -234,7 +233,7 @@ class RefinerySubmitMenu_ extends React.Component {
     socket.emit("updateObject", {
       type: "refinery",
       object: refinery,
-      key: packet.signature
+      key: packet.signature,
     });
   }
   handleChangeSubtract(e) {
@@ -247,7 +246,7 @@ class RefinerySubmitMenu_ extends React.Component {
   handleSubtract() {
     let packet = this.state.selectedorder;
     let refinery = JSON.parse(
-      JSON.stringify(this.props.refinery[packet.signature])
+      JSON.stringify(this.props.refinery[packet.signature]),
     );
     let order = refinery.orders[packet.index];
     if (this.state.subtract_value == order.amount) {
@@ -258,7 +257,7 @@ class RefinerySubmitMenu_ extends React.Component {
       socket.emit("updateObject", {
         type: "refinery",
         object: refinery,
-        key: packet.signature
+        key: packet.signature,
       });
       console.log("Ref values", this.state.subtract_value, order.amount);
       if (this.state.subtract_value > order.amount) {
@@ -269,7 +268,7 @@ class RefinerySubmitMenu_ extends React.Component {
   handleSubmitToTotal() {
     let packet = this.state.selectedorder;
     let refinery = JSON.parse(
-      JSON.stringify(this.props.refinery[packet.signature])
+      JSON.stringify(this.props.refinery[packet.signature]),
     );
     let order = refinery.orders[packet.index];
     let reftotal = this.props.reftotal;
@@ -291,15 +290,15 @@ class RefinerySubmitMenu_ extends React.Component {
     //console.log("Rendering refinery submit menu")
     let maxsubtract = 0;
     if (this.state.selectedorder.tableindex != -1) {
-      maxsubtract = this.props.refinery[this.state.selectedorder.signature]
-        .amount;
+      maxsubtract =
+        this.props.refinery[this.state.selectedorder.signature].amount;
     }
     let time = Math.floor(
       (this.state.amount * refineryStatic[this.state.resource].time) /
-        refineryStatic[this.state.resource].ratio
+        refineryStatic[this.state.resource].ratio,
     );
     let result = Math.floor(
-      this.state.amount / refineryStatic[this.state.resource].ratio
+      this.state.amount / refineryStatic[this.state.resource].ratio,
     );
     let timestring = U.SplitTime(time);
     let panel_images = [[], [], []];
@@ -319,20 +318,17 @@ class RefinerySubmitMenu_ extends React.Component {
           >
             <img className="refinery_topimg" src={obj.startUrl} />
           </button>
-        </td>
+        </td>,
       );
       panel_images[1].push(
         <td key={"refinery1" + index}>
-          <img
-            className="refinery_arrow"
-            src="https://hq.mreboy.com/img/downarrow.png"
-          />
-        </td>
+          <img className="refinery_arrow" src="/img/downarrow.png" />
+        </td>,
       );
       panel_images[2].push(
         <td key={"refinery2" + index}>
           <img className="refinery_bottomimg" src={obj.finishUrl} />
-        </td>
+        </td>,
       );
     }
     let orders = [];
@@ -364,7 +360,7 @@ class RefinerySubmitMenu_ extends React.Component {
                   tableindex={tableindex}
                   handleSelectOrder={this.handleSelectOrder}
                   selectedorder={this.state.selectedorder}
-                />
+                />,
               );
             }
             tableindex++;
@@ -423,7 +419,7 @@ class RefinerySubmitMenu_ extends React.Component {
                   type="number"
                   min="0"
                   value={this.state.amount}
-                  onChange={event => this.handleAmountChange(event)}
+                  onChange={(event) => this.handleAmountChange(event)}
                 />
                 <button
                   id="refinery_submit_btn"
@@ -452,7 +448,7 @@ class RefinerySubmitMenu_ extends React.Component {
                   min="0"
                   max={maxsubtract}
                   value={this.state.subtract_value}
-                  onChange={e => this.handleChangeSubtract(e)}
+                  onChange={(e) => this.handleChangeSubtract(e)}
                   id="ref_subtract_amount_input"
                 />
                 <br />
@@ -509,14 +505,14 @@ class RefineryOrder_ extends React.Component {
     super(props);
     this.state = {
       time: 0,
-      isPopoverOpen: false //,
+      isPopoverOpen: false, //,
       //subtract_value:0
     };
   }
   componentDidMount() {
     this.interval = setInterval(
       () => this.setState({ time: Date.now() }),
-      1000
+      1000,
     );
   }
   componentWillUnmount() {
@@ -555,7 +551,7 @@ class RefineryOrder_ extends React.Component {
           this.props.handleSelectOrder({
             tableindex: this.props.tableindex,
             index: this.props.index,
-            signature: this.props.signature
+            signature: this.props.signature,
           })
         }
       >
@@ -586,15 +582,15 @@ class RefineryMap extends React.Component {
     super(props);
     this.state = {
       ///State
-      selectedtown: -1
+      selectedtown: -1,
     };
     this.function = this.function.bind(this); //Function binding
   }
   function() {
-    this.setState(state => {
+    this.setState((state) => {
       //Setting state
       return {
-        selectedtown: 1
+        selectedtown: 1,
       };
     });
   }
@@ -629,11 +625,11 @@ class RefineryMap extends React.Component {
                 regionId={value.regionId}
                 dynamic={mapItem}
                 maptype={"refinery"}
-              />
+              />,
             );
         }
       });
-    })
+    });
 
     //let filters = cost.filters.map((obj,index) => this.function(obj,index))
     return (
@@ -656,12 +652,15 @@ class RefineryMap extends React.Component {
           <L.TileLayer
             noWrap={true}
             continuousWorld={true}
-            bounds={[[-256, 0], [0, 256]]}
+            bounds={[
+              [-256, 0],
+              [0, 256],
+            ]}
             url="https://raw.githubusercontent.com/Kastow/Foxhole-Map-Tiles/master/Tiles/{z}/{z}_{x}_{y}.png"
           />
           <L.LayerGroup>{refineries}</L.LayerGroup>
           <SelectIcon
-            ref={e => {
+            ref={(e) => {
               window.selecticonref = e;
             }}
             refmap={this}
@@ -678,7 +677,7 @@ class SelectIcon_ extends React.Component {
     super(props);
     this.state = {
       ///State
-      position: [-10000, -10000]
+      position: [-10000, -10000],
     };
     this.ChangePosition = this.ChangePosition.bind(this);
     this.SelectPrivate = this.SelectPrivate.bind(this);
@@ -754,7 +753,7 @@ class RefTotalTable_ extends React.Component {
             className="refinery_bottomimg"
             src={refineryStatic[i].finishUrl}
           />
-        </th>
+        </th>,
       );
       resourcetotals.push(0);
     }
@@ -763,8 +762,7 @@ class RefTotalTable_ extends React.Component {
         let user = U.GetUser(users, userid);
         if (!user.valid) {
           user.name = "Anonymous";
-          user.avatar =
-            "https://cdn.glitch.com/dd3f06b2-b7d4-4ccc-8675-05897efc4bb5%2Fdasd.jpg?1556805827222";
+          user.avatar = "/img/glitch/dasd.jpg?1556805827222";
         }
         let show = false;
         for (let prop in reftotal[userid]) {
@@ -794,9 +792,9 @@ class RefTotalTable_ extends React.Component {
                     type="number"
                     min="0"
                     value={value}
-                    onChange={e => this.handleChange(e, x, userid)}
+                    onChange={(e) => this.handleChange(e, x, userid)}
                   />
-                </td>
+                </td>,
               );
             } else {
               props.push(<td>{value}</td>);
@@ -809,7 +807,7 @@ class RefTotalTable_ extends React.Component {
                 {user.name}
               </td>
               {props}
-            </tr>
+            </tr>,
           );
         }
       }
@@ -836,9 +834,9 @@ class RefTotalTable_ extends React.Component {
             type="number"
             min="0"
             value={value}
-            onChange={e => this.handleChange(e, i, window.steamid)}
+            onChange={(e) => this.handleChange(e, i, window.steamid)}
           />
-        </td>
+        </td>,
       );
     }
 
@@ -869,34 +867,34 @@ class RefTotalTable_ extends React.Component {
   }
 }
 ///////////////////////////////////////////////////////
-const mapStateToPropsRefTotal = store => {
+const mapStateToPropsRefTotal = (store) => {
   //console.log(store)
   let roominfo = store.private;
   return {
     users: store.users,
-    reftotal: roominfo.misc.reftotal
+    reftotal: roominfo.misc.reftotal,
   };
 };
 
-const mapStateToProps = store => {
+const mapStateToProps = (store) => {
   //console.log(store)
   let roominfo = store.roominfo;
   return {
     dynamic: roominfo.dynamic,
     static: roominfo.static,
-    tab: store.tab
+    tab: store.tab,
   };
 };
-const mapStateToPropsRefineryOrder = store => {
+const mapStateToPropsRefineryOrder = (store) => {
   //console.log(store)
   let privateinfo = store.private;
   return {
     users: store.users,
     refinery: privateinfo.refinery,
-    reftotal: privateinfo.misc.reftotal
+    reftotal: privateinfo.misc.reftotal,
   };
 };
-const mapStateToPropsSubmit = store => {
+const mapStateToPropsSubmit = (store) => {
   //console.log(store)
   let roominfo = store.roominfo;
   let privateinfo = store.private;
@@ -904,27 +902,21 @@ const mapStateToPropsSubmit = store => {
     static: roominfo.static,
     selected: store.selected,
     refinery: privateinfo.refinery,
-    reftotal: privateinfo.misc.reftotal
+    reftotal: privateinfo.misc.reftotal,
   };
 };
 const Map = connect(mapStateToProps)(RefineryMap);
-const mapStateToPropsSelectIcon = store => {
+const mapStateToPropsSelectIcon = (store) => {
   //console.log(store)
   return {
-    private: store.private
+    private: store.private,
   };
 };
 const RefineryOrder = connect(mapStateToPropsRefineryOrder)(RefineryOrder_);
-const RefinerySubmitMenu = connect(
-  mapStateToPropsSubmit,
-  null,
-  null,
-  { forwardRef: true }
-)(RefinerySubmitMenu_);
-const SelectIcon = connect(
-  mapStateToPropsSelectIcon,
-  null,
-  null,
-  { forwardRef: true }
-)(SelectIcon_);
+const RefinerySubmitMenu = connect(mapStateToPropsSubmit, null, null, {
+  forwardRef: true,
+})(RefinerySubmitMenu_);
+const SelectIcon = connect(mapStateToPropsSelectIcon, null, null, {
+  forwardRef: true,
+})(SelectIcon_);
 const RefTotalTable = connect(mapStateToPropsRefTotal)(RefTotalTable_);

@@ -33,7 +33,7 @@ export function GetLine(array,index,facilities){ ////GET FACILITY TOOLTIP
     let numberstring = 0+"/"+facilitylimit;
     if(facilities!=undefined){
       if(facilities[facilitytypes.array[array][index].name]!=undefined){
-        numberstring = facilities[facilitytypes.array[array][index].name]==facilitylimit ? <img className="tooltip_img" src="https://hq.mreboy.com/img/glitch/checkmark.png" /> : facilities[facilitytypes.array[array][index].name] + "/"+facilitylimit
+        numberstring = facilities[facilitytypes.array[array][index].name]==facilitylimit ? <img className="tooltip_img" src="/img/glitch/checkmark.png" /> : facilities[facilitytypes.array[array][index].name] + "/"+facilitylimit
       }
     }
   return (

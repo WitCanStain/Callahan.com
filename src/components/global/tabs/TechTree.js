@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 const NativeL = require("leaflet");
 const L = require("react-leaflet");
 import tech from "../../../_static/techtree";
 import store from "../../../redux/store";
-import {connect} from 'react-redux';
+import { connect } from "react-redux";
 import A from "../../../redux/actions";
 import socket from "../../../_static/socket";
 const LeafletControl = require("react-leaflet-control");
@@ -21,7 +21,7 @@ class TechMap_ extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      zoom: -1.75
+      zoom: -1.75,
     };
     this.HandleZoom = this.HandleZoom.bind(this); //Function binding
   }
@@ -42,12 +42,15 @@ class TechMap_ extends React.Component {
   HandleZoom(zoom) {
     //console.log(zoom)
     this.setState({
-      zoom: zoom
+      zoom: zoom,
     });
   }
   render() {
     //console.log("Rendering tech map")
-    let bounds = [[0, 0], [1170, 2540]];
+    let bounds = [
+      [0, 0],
+      [1170, 2540],
+    ];
     let techlist = tech.map((obj, index) => (
       <Tech
         key={index}
@@ -63,7 +66,7 @@ class TechMap_ extends React.Component {
     return (
       <L.Map
         ref="techmap"
-        onZoomend={event => {
+        onZoomend={(event) => {
           this.HandleZoom(event.target._zoom);
           //zoom=event.target._zoom
           //console.log(zoom)
@@ -81,10 +84,14 @@ class TechMap_ extends React.Component {
         zoomSnap={0.25}
         attributionControl={false}
       >
-        <L.ImageOverlay
-          url="https://cdn.glitch.com/84b19724-a86b-4caa-8e69-1e9c973e043f%2FTechTree11-min.png?v=1569054128985"
-          bounds={bounds}
-        ></L.ImageOverlay>
+        <L.Pane>
+          <L.Rectangle
+            bounds={bounds}
+            color="#333"
+            fillOpacity=".9"
+            weight={1}
+          />
+        </L.Pane>
         {techlist}
         <LeafletControl.default
           position="topright"
@@ -134,8 +141,8 @@ class Tech extends React.Component {
       options: {
         iconSize: [size, size],
         iconAnchor: [size / 2, size / 2],
-        iconUrl: obj.url
-      }
+        iconUrl: obj.url,
+      },
     });
     //console.log(this.props.obj)
     let techlevel = 0;
@@ -144,7 +151,10 @@ class Tech extends React.Component {
     }
     let color = techlevel >= obj.needtech ? "#0E9A15" : "#0D9989";
     var squaretop = (techlevel / obj.needtech) * 120 + Number(obj.y) - 60;
-    var bounds = [[obj.y - 60, obj.x - 60], [squaretop, obj.x + 60]];
+    var bounds = [
+      [obj.y - 60, obj.x - 60],
+      [squaretop, obj.x + 60],
+    ];
     //return L.rectangle(bounds, {color: color, weight: 1,fillOpacity:0.8})
 
     return (
@@ -184,9 +194,8 @@ class TechCard_ extends React.Component {
     }
     let prevTech = 0;
     if (tech[this.props.selected.tech] != undefined) {
-      prevTech = this.props.techtree.techtree[
-        tech[this.props.selected.tech].name
-      ];
+      prevTech =
+        this.props.techtree.techtree[tech[this.props.selected.tech].name];
     }
     let nextTech = 0;
     if (tech[nextProps.selected.tech] != undefined) {
@@ -222,7 +231,7 @@ class TechCard_ extends React.Component {
       let packet = {
         type: 0,
         date: JSON.stringify(new Date()),
-        packet: this.props.selected.tech
+        packet: this.props.selected.tech,
       };
       store.dispatch(A.submitEvent(packet));
       socket.emit("submitEvent", packet);
@@ -274,7 +283,7 @@ class TechCard_ extends React.Component {
           min="0"
           max={obj.needtech}
           value={techtree[obj.name]}
-          onChange={event => this.handleChangeTech(event.target.value)}
+          onChange={(event) => this.handleChangeTech(event.target.value)}
         />
       );
       fillbtn = (
@@ -319,20 +328,19 @@ class TechCard_ extends React.Component {
   }
 }
 
-const mapStateToProps = store => {
+const mapStateToProps = (store) => {
   //console.log(store)
   return {
     techtree: store.techtree,
-    tab: store.tab
+    tab: store.tab,
   };
 };
-const mapStateToPropsCard = store => {
+const mapStateToPropsCard = (store) => {
   //console.log(store)
   return {
     techtree: store.techtree,
-    selected: store.selected
+    selected: store.selected,
   };
 };
 let TechCard = connect(mapStateToPropsCard)(TechCard_);
 let TechMap = connect(mapStateToProps)(TechMap_);
-

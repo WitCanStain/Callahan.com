@@ -1,15 +1,20 @@
-const repo = "https://raw.githubusercontent.com/the-fellowship-of-the-warapi/Assets/master/Item Icons/"
-const repo2 = "http://hq.mreboy.com/img/"
-import React from 'react';
+const repo = IMG + "/img/Item Icons/";
+const repo2 = IMG + "/img/";
+import React from "react";
 import store from "../../../../redux/store";
-import {connect} from 'react-redux';
+import { connect } from "react-redux";
 import U from "../../useful_functions";
 import A from "../../../../redux/actions.js";
 import socket from "../../../../_static/socket";
 
-const maxdistance = [[75, 150], [75, 150], [50, 100], [45, 65]];
+const maxdistance = [
+  [75, 150],
+  [75, 150],
+  [50, 100],
+  [45, 65],
+];
 
-socket.on("addArtyResult", function(packet) {
+socket.on("addArtyResult", function (packet) {
   store.dispatch(A.addArtyResult(packet.totalstring));
 });
 
@@ -22,7 +27,7 @@ class ArtyCalc_ extends React.Component {
       enemy_azimuth: 0,
       arty_distance: 0,
       arty_azimuth: 0,
-      arty_type: 0
+      arty_type: 0,
     };
     this.handleArtyChange = this.handleArtyChange.bind(this);
     this.handleFieldChange = this.handleFieldChange.bind(this);
@@ -55,7 +60,7 @@ class ArtyCalc_ extends React.Component {
   handleArtyChange(value, event) {
     event.target.parentNode.blur();
     this.setState({
-      arty_type: value
+      arty_type: value,
     });
   }
   handleFieldChange(event) {
@@ -64,7 +69,7 @@ class ArtyCalc_ extends React.Component {
     let validity = event.target.validity.valid;
     if (validity) {
       this.setState({
-        [name]: value
+        [name]: value,
       });
     }
   }
@@ -87,7 +92,7 @@ class ArtyCalc_ extends React.Component {
     let username = U.GetUsername(this.props.users.users, window.steamid);
     let totalstring = {
       date: dateString,
-      text: result.distance + "m " + result.azimuth + "° - " + username
+      text: result.distance + "m " + result.azimuth + "° - " + username,
     };
     store.dispatch(A.addArtyResult(totalstring));
     socket.emit("addArtyResult", { totalstring: totalstring });
@@ -117,15 +122,17 @@ class ArtyCalc_ extends React.Component {
 
     a_delt = e_azi > f_azi ? this.rad(e_azi - f_azi) : this.rad(f_azi - e_azi);
     r_dist = Math.sqrt(
-      e_dist * e_dist + f_dist * f_dist - 2 * e_dist * f_dist * Math.cos(a_delt)
+      e_dist * e_dist +
+        f_dist * f_dist -
+        2 * e_dist * f_dist * Math.cos(a_delt),
     );
     a_step = Math.round(
       this.deg(
         Math.acos(
           (-(e_dist * e_dist) + f_dist * f_dist + r_dist * r_dist) /
-            (2 * f_dist * r_dist)
-        )
-      )
+            (2 * f_dist * r_dist),
+        ),
+      ),
     );
     if (this.convertAngle(this.deg(a_delt)) > 180) {
       r_azi = e_azi > f_azi ? +f_azi + 180 + +a_step : +f_azi + 180 - +a_step;
@@ -179,11 +186,11 @@ class ArtyCalc_ extends React.Component {
                   ? "arty_type_btn arty_type_btn_selected"
                   : "arty_type_btn"
               }
-              onClick={e => this.handleArtyChange(0, e)}
+              onClick={(e) => this.handleArtyChange(0, e)}
             >
               <img
                 className="arty_type"
-                src={repo + 'Structures/StaticArtilleryStructureIcon.png'}
+                src={repo + "Structures/StaticArtilleryStructureIcon.png"}
               />
             </button>
             <button
@@ -192,11 +199,11 @@ class ArtyCalc_ extends React.Component {
                   ? "arty_type_btn arty_type_btn_selected"
                   : "arty_type_btn"
               }
-              onClick={e => this.handleArtyChange(1, e)}
+              onClick={(e) => this.handleArtyChange(1, e)}
             >
               <img
                 className="arty_type"
-                src={repo + 'Vehicles/ArtilleryIcon.png'}
+                src={repo + "Vehicles/ArtilleryIcon.png"}
               />
             </button>
             <button
@@ -205,9 +212,12 @@ class ArtyCalc_ extends React.Component {
                   ? "arty_type_btn arty_type_btn_selected"
                   : "arty_type_btn"
               }
-              onClick={e => this.handleArtyChange(2, e)}
+              onClick={(e) => this.handleArtyChange(2, e)}
             >
-              <img className="arty_type" src={repo2 + 'ObservationBunkerT2ItemIcon.png'} />
+              <img
+                className="arty_type"
+                src={repo2 + "ObservationBunkerT2ItemIcon.png"}
+              />
             </button>
             <button
               className={
@@ -215,9 +225,12 @@ class ArtyCalc_ extends React.Component {
                   ? "arty_type_btn arty_type_btn_selected"
                   : "arty_type_btn"
               }
-              onClick={e => this.handleArtyChange(3, e)}
+              onClick={(e) => this.handleArtyChange(3, e)}
             >
-              <img className="arty_type" src={ repo + 'Items/ListeningKitIcon.png'} />{" "}
+              <img
+                className="arty_type"
+                src={repo + "Items/ListeningKitIcon.png"}
+              />{" "}
             </button>
           </div>
           <table id="arttb" className="arty_table">
@@ -327,11 +340,11 @@ class ArtyCalc_ extends React.Component {
   }
 }
 /////////////////////////////////////////////////////////////////////////////////////
-const mapStateToPropsCalc = store => {
+const mapStateToPropsCalc = (store) => {
   return {
     users: store.users,
     arty: store.arty,
-    selected: store.selected
+    selected: store.selected,
   };
 };
 
