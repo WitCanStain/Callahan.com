@@ -49,12 +49,12 @@ return(
           onChange={this.handleChangeLevel}
           className="fob_card_dropdown"
          >
-		 <option value={3}>BB T1</option>
-         <option value={4}>BB T2</option>
-         <option value={5}>BB T3</option>
          <option value={0}>FOB T1</option>
          <option value={1}>FOB T2</option>
          <option value={2}>FOB T3</option>
+		 <option value={3}>BB T1</option>
+         <option value={4}>BB T2</option>
+         <option value={5}>BB T3</option>
 		 <option value={6}>BOBER</option>
 		 <option value={7}>SLEEPER T1</option>		 
 		 <option value={8}>SLEEPER T2</option>
