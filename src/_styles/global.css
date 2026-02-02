@@ -1288,10 +1288,9 @@ container,
 }
 
 .note_icon_text_container {
-    font-style: thin;
     background-color: rgba(0, 0, 0, 0.5);
     font-weight: lighter;
-    padding: 5px;
+    padding: 5px 10px;
     width: 100%;
     border: 1px solid black;
     border-radius: 2px;
@@ -1313,13 +1312,10 @@ container,
 
 .note_icon_text {
     font-weight: lighter;
-    margin-left: 10px;
-    font-family: jost;
+    font-family: Jost;
     font-size: 14px;
-    font-smooth: auto;
     -webkit-font-smoothing: auto;
     -moz-osx-font-smoothing: auto;
-    font-style: thin;
     color: #d6d6d6;
     background-color: transparent;
     opacity: 1;

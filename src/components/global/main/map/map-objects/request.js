@@ -7,6 +7,7 @@ import A from "../../../../../redux/actions.js";
 import socket from "../../../../../_static/socket";
 import U from "../../../useful_functions";
 import { NoteAddon } from "./note-addon.js";
+import { AuthorAddon } from "./author-addon.js";
 
 const getRequest = (requests, position) => {
   const signature = U.signature(position);
@@ -127,6 +128,7 @@ class RequestIcon_ extends React.Component {
     let icon = this.CheckCompleted();
     return (
       <React.Fragment>
+        {this.props.zoom > 3.5 && <AuthorAddon obj={reqObj} />}
         {this.props.zoom > 3.5 && <NoteAddon obj={reqObj} />}
         <L.Marker
           ref={this.markerRef}
