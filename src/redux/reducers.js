@@ -70,7 +70,7 @@ const initialStateMouse = {
 // ////////////////////////////////////////////////////////////////////////////////
 const RoomInfoReducer = (state = initialStateMap, action) => {
   let info = {};
-  console.log(`TEST RoomInfoReducer: ${state}, ${action}`);
+  //console.log(`TEST RoomInfoReducer: ${state}, ${action}`);
   switch (action.type) {
     case A.LOAD_PAGE:
       return {
@@ -113,8 +113,8 @@ const RoomInfoReducer = (state = initialStateMap, action) => {
         action.kind != "stockpiles" &&
         action.kind != "artypanel"
       ) {
+        if (!action.object.position) return state;
         info[action.kind][action.signature] = TransformObject(action.object);
-        // console.log(action)
         return { ...state, [action.kind]: info[action.kind] };
       }
 
@@ -148,10 +148,17 @@ const RoomInfoReducer = (state = initialStateMap, action) => {
   return state;
 };
 // //////////////////////////////////////////////////////////////////////////////////////////////////////////
+const mergeUpdateArray = (acc, curr) => {
+  if (!curr || acc.some((item) => item.author === curr.author)) return acc;
+  return [...acc, curr];
+};
+
 const PrivateReducer = (state = initialStateMapPrivate, action) => {
   // console.log("info:")
   // console.log(state)
-  console.log(`TEST PrivateReducer: ${state}, ${action}`);
+  // console.log(
+  //   `TEST PrivateReducer: ${JSON.stringify(state)}, ${JSON.stringify(action)}`,
+  // );
   let info = {};
   switch (action.type) {
     case A.LOAD_PAGE:
@@ -166,8 +173,8 @@ const PrivateReducer = (state = initialStateMapPrivate, action) => {
         misc: action.data.private.misc,
       };
     case A.UPDATE_OBJECT:
-      info = JSON.parse(JSON.stringify(state));
       if (action.kind.includes("misc")) {
+        info = JSON.parse(JSON.stringify(state));
         const kind = action.kind.slice(5);
         if (info.misc[kind] == undefined) {
           info.misc[kind] = {};
@@ -179,9 +186,31 @@ const PrivateReducer = (state = initialStateMapPrivate, action) => {
 
         return { ...state, misc: info.misc };
       }
-      info[action.kind][action.signature] = action.object;
-      info[action.kind][action.signature].lastupdate = new Date();
-      return { ...state, [action.kind]: info[action.kind] };
+
+      let update = {
+        ...state[action.kind][action.signature],
+        ...action.object,
+        lastupdate: new Date(),
+      };
+      if (action.kind.includes("requests")) {
+        update = {
+          ...state[action.kind][action.signature],
+          ...action.object,
+          key: action.signature,
+          wip: [
+            ...(action.object.wip || []),
+            ...((state[action.kind][action.signature] || {}).wip || []),
+          ].reduce(mergeUpdateArray, []),
+          lastupdate: new Date(),
+        };
+      }
+      return {
+        ...state,
+        [action.kind]: {
+          ...state[action.kind],
+          [action.signature]: update,
+        },
+      };
 
     case A.DELETE_OBJECT:
       info = JSON.parse(JSON.stringify(state));
@@ -245,7 +274,7 @@ const TechtreeReducer = (state = initialStateTech, action) => {
 // ///////////////////////////////////////////////////////////////////////////////////////////////////////
 const UserReducer = (state = initialStateUsers, action) => {
   let { users } = state;
-  console.log(`TEST UserReducer: ${state}, ${action}`);
+  //console.log(`TEST UserReducer: ${state}, ${action}`);
   // let meta = state.meta
 
   switch (action.type) {
@@ -354,7 +383,7 @@ const UserReducer = (state = initialStateUsers, action) => {
 // //////////////////////////////////////////////////////////////////////////////////////////////////
 const MetaReducer = (state = initialStateMeta, action) => {
   let settings = JSON.parse(JSON.stringify(state.settings));
-  console.log(`TEST MetaReducer: ${state}, ${action}`);
+  //console.log(`TEST MetaReducer: ${state}, ${action}`);
   switch (action.type) {
     case A.LOAD_PAGE:
       return {
@@ -401,7 +430,7 @@ const MetaReducer = (state = initialStateMeta, action) => {
 // /////////////////////////////////////////////////////////////////////////////////////////////////////
 const SelectedReducer = (state = initialStateSelected, action) => {
   let kind = "";
-  console.log(`TEST SelectedReducer: ${state}, ${action}`);
+  //console.log(`TEST SelectedReducer: ${state}, ${action}`);
   switch (action.type) {
     case A.SELECT_OBJECT:
       // console.log("Selecting object")
@@ -480,7 +509,7 @@ const SelectedReducer = (state = initialStateSelected, action) => {
 // ////////////////////////////////////////////////////////////////////////////////////////////////
 const TabReducer = (state = initialStateTab, action) => {
   let info = {};
-  console.log(`TEST TabReducer: ${state}, ${action}`);
+  //console.log(`TEST TabReducer: ${state}, ${action}`);
   switch (action.type) {
     case A.SELECT_TAB:
       if (action.tab == 5) {
@@ -582,7 +611,7 @@ const SquadsReducer = (state = initialStateSquads, action) => {
 // //////////////
 const EventsReducer = (state = initialStateEvents, action) => {
   let privateEvents = [];
-  console.log(`TEST EventsReducer`);
+  //console.log(`TEST EventsReducer`);
   if (state.privateEvents != undefined) {
     privateEvents = JSON.parse(JSON.stringify(state.privateEvents));
   }

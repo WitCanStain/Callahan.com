@@ -1,6 +1,6 @@
 //This file, AS THE NAME SUGGESTS, contains the tech tree of the game
 //tech - current tech, needtech - tech required, bp - blueprint production time in minutes
-const repo = IMG + "/img/Item Icons/";
+const repo = (typeof IMG === "undefined" ? "" : IMG) + "/img/Item Icons/";
 var techtree = [
   {
     name: "Bayonet",

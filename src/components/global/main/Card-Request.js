@@ -45,21 +45,19 @@ class RequestContainer extends React.Component {
   GetRequest() {
     return clone(this.props.requests[this.props.selected.key]);
   }
+
   SubmitItems() {
-    let request = this.GetRequest();
-    console.log(`TEST submitItems: ${JSON.stringify(request)}`);
-    let mywip = request.wip[FindMyProduction(request.wip)];
-    if (request.done == undefined) {
-      request.done = [];
-    }
-    for (var x = 0; x < mywip.request.length; x++) {
-      var item = mywip.request[x];
-      let obj = request.done.find(
+    const request = this.GetRequest();
+    const wip = request.wip[FindMyProduction(request.wip)];
+    let done = clone(request.done || []);
+    for (var x = 0; x < wip.request.length; x++) {
+      var item = wip.request[x];
+      let obj = done.find(
         (obj) => obj.catid == item.catid && obj.itemid == item.itemid,
       );
       //console.log(JSON.parse(JSON.stringify(item)));
       if (obj === undefined) {
-        request.done.push(clone(item));
+        done.push(clone(item));
       } else {
         obj.amount = Number(obj.amount) + Number(item.amount);
         obj.crates = Number(obj.crates) + Number(item.crates);
@@ -68,11 +66,11 @@ class RequestContainer extends React.Component {
     let packet = {
       type: 1,
       date: JSON.stringify(new Date()),
-      packet: JSON.stringify({ wip: mywip, request: this.props.selected.key }),
+      packet: JSON.stringify({ wip, request: this.props.selected.key }),
     };
     store.dispatch(A.submitEvent(packet));
     socket.emit("submitEvent", packet);
-    mywip.request = [];
+    wip.request = [];
 
     function CheckCompleted() {
       if (request.done == undefined) {
@@ -103,6 +101,7 @@ class RequestContainer extends React.Component {
       }
       return true;
     }
+
     if (CheckCompleted()) {
       let packet = {
         type: 2,
@@ -112,31 +111,34 @@ class RequestContainer extends React.Component {
       store.dispatch(A.submitEvent(packet));
       socket.emit("submitEvent", packet);
     }
-    this.UpdateRequest(request);
+
+    this.UpdateRequest({ wip: [wip], done });
   }
 
   RemoveItem(index) {
-    let request = this.GetRequest();
-    let mywip = FindMyProduction(request.wip);
-    request.wip[mywip].request.splice(index, 1);
-    this.UpdateRequest(request);
+    const request = this.GetRequest();
+    const mywip = FindMyProduction(request.wip);
+    const wip = clone(request.wip[mywip]);
+    wip.request.splice(index, 1);
+    this.UpdateRequest({ wip: [wip] });
   }
 
   handleAmountChange(event, index) {
     let request = this.GetRequest();
     let mywip = FindMyProduction(request.wip);
+    const wip = clone(request.wip[mywip]);
     let value = event.target.value;
     let validity = event.target.validity.valid;
     if (validity) {
-      request.wip[mywip].request[index].amount = value;
-      request.wip[mywip].request[index].crates = Math.ceil(
+      wip[mywip].request[index].amount = value;
+      wip[mywip].request[index].crates = Math.ceil(
         value /
-          cost.cost[request.wip[mywip].request[index].catid][
-            request.wip[mywip].request[index].itemid
+          cost.cost[wip[mywip].request[index].catid][
+            wip[mywip].request[index].itemid
           ].i,
       );
     }
-    this.UpdateRequest(request);
+    this.UpdateRequest({ wip: [wip] });
   }
 
   render() {
@@ -258,7 +260,6 @@ class RequestCard extends React.Component {
   }
 
   UpdateRequest(obj) {
-    console.log(`TEST UpdateRequest`);
     store.dispatch(A.updateObject("requests", obj, this.props.signature));
     socket.emit("updateObject", {
       type: "requests",
@@ -269,7 +270,6 @@ class RequestCard extends React.Component {
 
   AcceptItem(obj) {
     let index = FindMyProduction(this.props.request.wip);
-    let packet = clone(this.props.request);
     let wip;
     let defaultitem = cost.cost[obj.catid][obj.itemid];
     //console.log("index = "+index);
@@ -285,9 +285,8 @@ class RequestCard extends React.Component {
           },
         ],
       };
-      packet.wip.push(wip);
     } else {
-      wip = this.props.request.wip[index];
+      wip = clone(this.props.request.wip[index]);
       let i = cost.findItem(this.props.request.wip[index].request, obj);
       if (i == -1) {
         wip.request.push({
@@ -301,9 +300,8 @@ class RequestCard extends React.Component {
         wip.request[i].amount =
           Number(wip.request[i].amount) + Number(defaultitem.i);
       }
-      packet.wip[index] = wip;
     }
-    this.UpdateRequest(packet);
+    this.UpdateRequest({ wip: [wip] });
   }
 
   GetPriority(index, totalwip, done, stats) {
