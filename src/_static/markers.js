@@ -171,9 +171,9 @@ const FobIcon = [
   ],
   
   [
-    new FobIconBase({ iconUrl: `${repo}Bases/ATC-N.png` }), //Sleeper T3 Neut POSITION 9
-    new FobIconBase({ iconUrl: `${repo}Bases/ATC-C.png` }), //Sleeper T3 Col
-    new FobIconBase({ iconUrl: `${repo}Bases/ATC-W.png` }), //Sleeper T3 War
+    new FobIconBase({ iconUrl: `${repo}Bases/ATC-N.png` }), //ATC Tower N POSITION 10
+    new FobIconBase({ iconUrl: `${repo}Bases/ATC-C.png` }), //ATC Tower Col
+    new FobIconBase({ iconUrl: `${repo}Bases/ATC-W.png` }), //ATC Tower War
   ],
   
 ];
