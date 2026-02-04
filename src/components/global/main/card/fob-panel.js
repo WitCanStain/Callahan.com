@@ -58,7 +58,8 @@ return(
 		 <option value={6}>BOBER</option>
 		 <option value={7}>SLEEPER T1</option>		 
 		 <option value={8}>SLEEPER T2</option>
-		 <option value={9}>SLEEPER T3</option>		 
+		 <option value={9}>SLEEPER T3</option>
+		 <option value={10}>ATC TOWER</option>		 
       </select>
     </div>
 
