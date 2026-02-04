@@ -223,6 +223,31 @@ class MapIcons_ extends React.Component {
                   if(display.objectives.mhouses) {
                     iconlist.push(this.GetIcon(obj,region))
                   }
+                  break;
+				case 88://AIRCRAFT DEPOT
+                  if(display.production.airdepots) {
+                    iconlist.push(this.GetIcon(obj,region))
+                  }
+                  break;
+				case 89://AIRCRAFT FACTORY
+                  if(display.production.airfactories) {
+                    iconlist.push(this.GetIcon(obj,region))
+                  }
+                  break;
+				case 90://AIRCRAFT RADAR
+                  if(display.objectives.airradars) {
+                    iconlist.push(this.GetIcon(obj,region))
+                  }
+                  break;
+				case 91://AIRCRAFT RUNWAY T1
+                  if(display.objectives.runwayst1) {
+                    iconlist.push(this.GetIcon(obj,region))
+                  }
+                  break;
+				case 92://AIRCRAFT RUNWAY T2
+                  if(display.objectives.runwayst2) {
+                    iconlist.push(this.GetIcon(obj,region))
+                  }
                   break;				  
               //RESOURCE SECTION/////////////////////
                 case 20:

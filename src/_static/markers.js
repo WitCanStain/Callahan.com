@@ -801,6 +801,40 @@ const icons = [
     w: "Bases/MapIconMortarHouseW.png",
   }, //84 MORTAR HOUSE
 
+  "", //85
+  "", //86
+  "", //87
+  
+  {
+    n: "Bases/MapiIconAircraftDepot.png",
+    c: "Bases/MapiIconAircraftDepotC.png",
+    w: "Bases/MapiIconAircraftDepotW.png",
+  }, //88 AIRCRAFT DEPOT
+
+  {
+    n: "Bases/MapiIconAircraftFactory.png",
+    c: "Bases/MapiIconAircraftFactoryC.png",
+    w: "Bases/MapiIconAircraftFactoryW.png",
+  }, //89 AIRCRAFT FACTORY
+
+  {
+    n: "Bases/MapIconFortLargeRadar.png",
+    c: "Bases/MapIconFortLargeRadarC.png",
+    w: "Bases/MapIconFortLargeRadarW.png",
+  }, //90 AIRCRAFT RADAR
+
+  {
+    n: "Bases/MapiIconAircraftRunwayT1.png",
+    c: "Bases/MapiIconAircraftRunwayT1C.png",
+    w: "Bases/MapiIconAircraftRunwayT1W.png",
+  }, //91 AIRFIELD T1
+
+  {
+    n: "Bases/MapiIconAircraftRunwayT2.png",
+    c: "Bases/MapiIconAircraftRunwayT2C.png",
+    w: "Bases/MapiIconAircraftRunwayT2W.png",
+  }, //92 AIRFIELD T2
+
   // RELIC BASES
   /* {n:'',
      c:'',
@@ -918,6 +952,11 @@ function GenerateIcon(obj, param) {
       case 75:
       case 83:
       case 84:
+	  case 88:
+	  case 89:
+	  case 90:
+	  case 91:
+	  case 92:
         if (param == "min") {
           iconUrl = icons[obj.iconType].min[obj.teamId[0].toLowerCase()];
         } else {

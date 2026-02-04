@@ -40,7 +40,10 @@ function FilterPanel_(props) {
 					<LGC cat='objectives' item='wstations' name=' Weather Centers' src={ repo + 'MapIconWeatherStation.png' }/>
 					<LGC cat='objectives' item='mhouses' name=' Mortar Houses' src={ repo + 'MapIconMortarHouse.png' }/>
 					<LGC cat='objectives' item='rtarget' name=' R. Targets' src={ repo + 'MapIconRocketTarget.png' }/>
-					<LGC cat='objectives' item='rcrater' name=' R. Craters' src={ repo + 'MapIconRocketCrater.png' }/>					
+					<LGC cat='objectives' item='rcrater' name=' R. Craters' src={ repo + 'MapIconRocketCrater.png' }/>
+					<LGC cat='objectives' item='airradars' name=' Air Radars' src={ repo + 'MapIconFortLargeRadar.png' }/>
+					<LGC cat='objectives' item='runwayst1' name=' Runway (T1)' src={ repo + 'MapiIconAircraftRunwayT1.png' }/>
+					<LGC cat='objectives' item='runwayst2' name=' Runway (T2)' src={ repo + 'MapiIconAircraftRunwayT2.png' }/>			
                 </DropdownMenu>
             </Dropdown>
 
@@ -63,8 +66,8 @@ function FilterPanel_(props) {
                     <LGC cat='production' item='constructions' name=' Constr. Yards' src={ repo + 'MapIconConstructionYard.png' }/>
                     <LGC cat='production' item='rocketsites' name=' Rocket Sites' src={ repo + 'MapIconRocketSite.png' }/>
 					<LGC cat='production' item='rprepped' name=' Rocket Ready' src={ repo + 'RocketSiteWithRocketMapIcon.png' }/>						
-
-				
+					<LGC cat='production' item='airdepots' name=' Air Depots' src={ repo + 'MapiIconAircraftDepot.png' }/>
+					<LGC cat='production' item='airfactories' name=' Air Factories' src={ repo + 'MapiIconAircraftFactory.png' }/>				
                 </DropdownMenu> 
             </Dropdown>
 

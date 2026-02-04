@@ -19,7 +19,10 @@ const initialState = {
 		wstations: true,
 		mhouses: true,
 		rtarget: true,
-		rcrater: true
+		rcrater: true,
+		airradars: true,
+		runwayst1: true,
+		runwayst2: true
     },
     production: {
         total: false,
@@ -33,8 +36,9 @@ const initialState = {
         shipyards: false,
         rocketsites: false,
 		rprepped: false,
-		mpfs: false
-
+		mpfs: false,
+		airdepots: false,
+		airfactories: false
     },
     resources: {
         total: false,
