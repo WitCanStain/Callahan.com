@@ -227,6 +227,15 @@ class GlobalMap extends React.Component {
       />,
       document.getElementById("context_bunkers_dropdown"),
     );
+	ReactDOM.render(
+      <ContextDropdown
+        ref={(obj) => {
+          this.refs.context_airplanes_dropdown = obj;
+        }}
+        type={8}
+      />,
+      document.getElementById("context_airplanes_dropdown"),
+    );
   }
 
   PanRegion(regionId) {
@@ -422,6 +431,13 @@ class GlobalMap extends React.Component {
                 this.OpenMenu(event, "context_bunkers_dropdown", 7),
               hideOnSelect: false,
             },
+			{
+			  text: '<div class="dropup"><span class="dropdown-toggle" >Bunkers</span>  <div class="dropdown-menu" id="context_airplanes_dropdown"></div></div> ',
+              icon: "/img/IconFilterAircraft.png",
+              callback: (event) =>
+                this.OpenMenu(event, "context_airplanes_dropdown", 8),
+              hideOnSelect: false,
+			},
           ]}
         >
           <BaseLayers checked={this.state.satmap} />
