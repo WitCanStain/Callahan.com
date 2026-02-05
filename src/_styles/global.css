@@ -1494,7 +1494,7 @@ container,
     overflow: hidden;
 }
 .dropdown-menu.show {
-    min-width: 120px;
+    min-width: 150px;
     animation: fade8in 0.4s;
     background-color: #464646;
     border-radius: 1px;
