@@ -1298,7 +1298,6 @@ container,
     text-align: left;
     opacity: 1;
     overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 @keyframes fade8in {
