@@ -348,6 +348,21 @@ const MiscIconArray = [
   { name: " Crane", url: "/img/CraneVehicleIcon.png" }, //
   { name: " Drop EAT", url: "/img/RequestEAT.png" }, //
   { name: " Shirt Truck", url: "/img/ShirtTruck.png" }, // 117
+  
+  { name: " Bomber (W)", url: "/img/AircraftBomberWIcon.png" }, // 118 AIRCRAFT SECTION
+  { name: " Bomber (W)", url: "/img/AircraftBomberCIcon.png.png" }, //
+  { name: " Paratrooper (W)", url: "/img/AircraftParatrooperWIcon.png" }, //
+  { name: " Paratrooper (C)", url: "/img/AircraftParatrooperCIcon.png" }, //  
+  { name: " Fighter (W)", url: "/img/AircraftFighterWIcon.png" }, //
+  { name: " Fighter (C)", url: "/img/AircraftFigtherCIcon.png" }, //
+  { name: " Amphib. Fighter (W)", url: "/img/AircraftWaterWIcon.png" }, //
+  { name: " Torpedo Plane (W)", url: "/img/AircraftTorpedoWIcon.png" }, //
+  { name: " Dive Bomber (C)", url: "/img/AircraftDiveCIcon.png" }, //
+  { name: " Scout (W)", url: "/img/AircraftScoutWIcon.png" }, //
+  { name: " Scout (C)", url: "/img/AircraftScoutCIcon.png" }, //
+  { name: " Drop AAA", url: "/img/RequestAAA.png" }, //
+  { name: " Drop EMG", url: "/img/RequestEMG.png" }, // 130
+
 ];
 
 const icons = [

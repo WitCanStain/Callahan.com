@@ -87,7 +87,7 @@ export class ContextDropdown extends React.Component {  ////Component generation
     }
 	 break;
     case 8: //AIRPLANE icons
-    for(var i=74;i<=92;i++){
+    for(var i=118;i<=130;i++){
       items.push(this.GetItem(i))  
     }	
     }
