@@ -350,7 +350,7 @@ const MiscIconArray = [
   { name: " Shirt Truck", url: "/img/ShirtTruck.png" }, // 117
   
   { name: " Bomber (W)", url: "/img/AircraftBomberWIcon.png" }, // 118 AIRCRAFT SECTION
-  { name: " Bomber (W)", url: "/img/AircraftBomberCIcon.png.png" }, //
+  { name: " Bomber (C)", url: "/img/AircraftBomberCIcon.png" }, //
   { name: " Paratrooper (W)", url: "/img/AircraftParatrooperWIcon.png" }, //
   { name: " Paratrooper (C)", url: "/img/AircraftParatrooperCIcon.png" }, //  
   { name: " Fighter (W)", url: "/img/AircraftFighterWIcon.png" }, //
