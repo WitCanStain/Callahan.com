@@ -20,9 +20,9 @@ export class AuthorAddon extends React.Component {
             text +
             "</b></span></div>",
         });
-        IconText.options.iconSize = [undefined, undefined];
+        IconText.options.iconSize = [maxWidth * 6.24 + 60, undefined];
         IconText.options.iconAnchor = [
-          maxWidth * 4 - 3,
+          maxWidth * 3.12 + 30,
           authors.length * 22 + 30,
         ];
         return (
