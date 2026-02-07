@@ -343,7 +343,7 @@ const MiscIconArray = [
   { name: " Infantry (C)", url: "/img/LightBoatInfantryCIcon.png" }, //  
   { name: " Siege (W)", url: "/img/Gunboat2WIcon.png" }, //
   { name: " Siege (C)", url: "/img/GunBoat2CVehicleIcon.png" }, // 
-  { name: " Minelayer (C)", url: "/img/MineboatIcon.png" }, //   
+  { name: " Minelayer", url: "/img/MineboatIcon.png" }, //   
   { name: " Barge", url: "/img/BargeVehicleIcon.png" }, //
   { name: " Landing Craft", url: "/img/LandingShipWIcon.png", }, //
   { name: " APC", url: "/img/LandingCraftWarVehicleIcon.png", },
