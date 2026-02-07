@@ -62,12 +62,12 @@ export class ContextDropdown extends React.Component {  ////Component generation
     }
      break;
      case 3: //SHIPS icons
-    for(var i=93;i<=107;i++){
+    for(var i=98;i<=122;i++){
       items.push(this.GetItem(i))
     }
      break;
     case 4: //LOGI REQUEST icons
-    for(var i=108;i<=117;i++){
+    for(var i=123;i<=132;i++){
       items.push(this.GetItem(i))
 	} 
      break;
@@ -77,17 +77,17 @@ export class ContextDropdown extends React.Component {  ////Component generation
     }
      break;
     case 6: //FACILITY icons
-    for(var i=47;i<=66;i++){
+    for(var i=47;i<=67;i++){
 	items.push(this.GetItem(i))
 	}
 	 break;
     case 7: //BUNKER PC icons
-    for(var i=74;i<=92;i++){
+    for(var i=75;i<=97;i++){
       items.push(this.GetItem(i))  
     }
 	 break;
     case 8: //AIRPLANE icons
-    for(var i=118;i<=130;i++){
+    for(var i=133;i<=145;i++){
       items.push(this.GetItem(i))  
     }	
     }

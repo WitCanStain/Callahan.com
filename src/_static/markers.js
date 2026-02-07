@@ -276,6 +276,7 @@ const MiscIconArray = [
   { name: " Materials Fact.", url: "/img/MetalworksFactoryBase.png", }, // 47 FACILITY ICONS
   { name: " Sm. Arms Fact.", url: "/img/FacilitySmallArmsFactoryIcon.png", }, //
   { name: " Metalworks Fact.", url: "/img/FacilityRefinery2Icon.png", }, //
+  { name: " Aircraft Fact.", url: "/img/FacilityFactoryAircraftIcon.png", }, //
   { name: " Coal Refinery", url: "/img/FacilitiesCoolRefineryBaseIcon.png", }, //
   { name: " Oil Refinery", url: "/img/OilRefineryBaseIcon.png", }, //
   { name: " Ammo Factory", url: "/img/AmmoFactoryBaseIcon.png", }, //
@@ -292,53 +293,67 @@ const MiscIconArray = [
   { name: " Resource TS", url: "/img/MaterialTransferStationIcon.png", }, //
   { name: " Liquid TS", url: "/img/MaterialTransferStationLiquidIcon.png", }, //
   { name: " Crate TS", url: "/img/FacilityTransferCrateIcon.png", }, //
-  { name: " Dry Dock", url: "/img/DryDockItemIcon.png" }, // 66
+  { name: " Dry Dock", url: "/img/DryDockItemIcon.png" }, // 67
   
-  { name: " Locomotive", url: "/img/TrainEngineVehicleIcon.png", }, // 67 TRAIN ICONS
+  { name: " Locomotive", url: "/img/TrainEngineVehicleIcon.png", }, // 68 TRAIN ICONS
   { name: " Infantry Car", url: "/img/InfantryCarVehicleIcon.png", }, //
   { name: " 40mm Gun Car", url: "/img/CombatCarWVehicleIcon.png", }, //
   { name: " Flat Car", url: "/img/TrainCarVehicleIcon.png", }, //
   { name: " TSC Car", url: "/img/TrainLRArtilleryVehicleIcon_halo.png", }, //
   { name: " Hospital Car", url: "/img/TrainHospitalItemIcon.png", }, //
-  { name: " Caboose", url: "/img/WideGaugeCaboose.png" }, // 73
+  { name: " Caboose", url: "/img/WideGaugeCaboose.png" }, // 74
 
-  { name: " T1 Blank", url: "/img/FortT1Icon.png" }, // 74 BUNKER PC ICONS
-  { name: " T1 Rifle", url: "/img/FortT1GunAIIcon.png" }, //
+  { name: " T1 Blank", url: "/img/FortT1GunAIIcon.png" }, // 75 BUNKER PC ICONS
+  { name: " T1 Rifle", url: "/img/FortT1Icon.png" }, //
   { name: " T1 MG", url: "/img/FortT1MGunAIIcon.png" }, //
-  { name: " T2 Blank", url: "/img/FortT2Icon.png" }, //
-  { name: " T2 Rifle", url: "/img/FortT2GunAIIcon.png" }, //
+  { name: " T1 AT", url: "/img/FortT1ATGunAIIcon.png" }, //
+  { name: " T1 Howitzer", url: "/img/FortT2HowitzerAIIcon.png", }, //  
+  { name: " T2 Blank", url: "/img/FortT2GunAIIcon.png" }, //
+  { name: " T2 Rifle", url: "/img/FortT2Icon.png" }, //
   { name: " T2 MG", url: "/img/FortT2MGunAIIcon.png" }, //
   { name: " T2 AT", url: "/img/FortT2ATGunAIIcon.png" }, //
+  { name: " T2 Howitzer", url: "/img/FortT2HowitzerAIIcon.png", }, //  
   { name: " T2 Obs.", url: "/img/ObservationBunkerT2BBItemIcon.png", }, //
   { name: " T2 Engine", url: "/img/EngineRoomT2Icon.png" }, //
-  { name: " T3 Blank", url: "/img/FortT3Icon.png" }, //
-  { name: " T3 Rifle", url: "/img/FortT3GunAIIcon.png" }, //
+  { name: " T3 Blank", url: "/img/FortT3GunAIIcon.png" }, //
+  { name: " T3 Rifle", url: "/img/FortT3Icon.png" }, //
   { name: " T3 MG", url: "/img/FortT3MGunAIIcon.png" }, //
   { name: " T3 AT", url: "/img/FortT3ATGunAIIcon.png" }, //
   { name: " T3 Obs.", url: "/img/ObservationBunkerT3BBItemIcon.png", }, //
   { name: " T3 Engine", url: "/img/EngineRoomT3Icon.png" }, //
   { name: " T3 Howitzer", url: "/img/FortT3HowitzerAIIcon.png", }, //
   { name: " T3 Ammo", url: "/img/AmmoRoomT3Icon.png" }, //
+  { name: " T3 Weather", url: "/img/WeatherStationIcon.png", }, //
   { name: " T3 Intel", url: "/img/IntelligenceCenterT3Icon.png", }, //
-  { name: " T3 S. Cannon", url: "/img/LongRangedArtilleryT3Icon.png", }, // 92
+  { name: " T3 S. Cannon", url: "/img/LongRangedArtilleryT3Icon.png", }, // 97
 
-  { name: " BS (W)", url: "/img/LargeShipBattleshipWIcon.png", }, //93 SHIP ICONS
+  { name: " BS (W)", url: "/img/LargeShipBattleshipWIcon.png", }, //98 SHIP ICONS
   { name: " BS (C)", url: "/img/LargeShipBattleshipCIcon.png", }, //
+  { name: " Carrier (W)", url: "/img/LargeShipBattleshipAircraftWIcon.png", }, //
+  { name: " Carrier (C)", url: "/img/LargeShipBattleshipAircraftCIcon.png", }, //  
   { name: " Frigate (W)", url: "/img/ShipFrigate.png" }, //
   { name: " Destroyer (C)", url: "/img/LargeShipDestroyerCIcon.png", }, //
   { name: " Submarine (W)", url: "/img/LargeShipSubmarineWIcon.png", }, //
   { name: " Submarine (C)", url: "/img/LargeShipSubmarineCIcon.png", }, //
   { name: " Gunboat (W)", url: "/img/GunboatWIcon.png" }, //
-  { name: " Gunboat (C)", url: "/img/GunBoatVehicleIcon.png" }, //
+  { name: " Gunboat (C)", url: "/img/GunBoatVehicleIcon.png" }, //  
+  { name: " Gunship (W)", url: "/img/MediumBoatWVehicleIcon.png" }, //
+  { name: " Gunship (C)", url: "/img/MediumBoatCIcon.png" }, //
+  { name: " Infantry (W)", url: "/img/LightBoatInfantryWVehicleIcon.png" }, //
+  { name: " Infantry (C)", url: "/img/LightBoatInfantryCIcon.png" }, //  
+  { name: " Siege (W)", url: "/img/Gunboat2WIcon.png" }, //
+  { name: " Siege (C)", url: "/img/GunBoat2CVehicleIcon.png" }, // 
+  { name: " Minelayer (C)", url: "/img/MineboatIcon.png" }, //   
   { name: " Barge", url: "/img/BargeVehicleIcon.png" }, //
   { name: " Landing Craft", url: "/img/LandingShipWIcon.png", }, //
   { name: " APC", url: "/img/LandingCraftWarVehicleIcon.png", },
   { name: " Base Ship", url: "/img/LargeShipBaseShipIcon.png", }, //
   { name: " Depot Ship", url: "/img/LargeShipStorageShipIcon.png", }, //
   { name: " Resource Ship", url: "/img/LargeShipResourceIcon.png", }, //
-  { name: " Freighter", url: "/img/FreighterVehicleIcon.png", }, // 107
+  { name: " Freighter", url: "/img/FreighterVehicleIcon.png", }, //
+  { name: " Lt. Freighter", url: "/img/LightFreighterVehicleIcon.png", }, //122
 
-  { name: " Std. Truck", url: "/img/TruckWarVehicleIconBW.png", }, // 108 LOGI REQUEST ICONS
+  { name: " Std. Truck", url: "/img/TruckWarVehicleIconBW.png", }, // 123 LOGI REQUEST ICONS
   { name: " Hvy. Truck", url: "/img/HeavyTruckWItemIcon_copyBW.png", }, //
   { name: " Fuel Truck", url: "/img/OilTankerWarIcon.png" }, //
   { name: " Flatbed", url: "/img/FlatbedTruckVehicleIcon.png", }, //
@@ -347,9 +362,9 @@ const MiscIconArray = [
   { name: " CV", url: "/img/ConstructionVehicleIcon.png" }, //
   { name: " Crane", url: "/img/CraneVehicleIcon.png" }, //
   { name: " Drop EAT", url: "/img/RequestEAT.png" }, //
-  { name: " Shirt Truck", url: "/img/ShirtTruck.png" }, // 117
+  { name: " Shirt Truck", url: "/img/ShirtTruck.png" }, // 132
   
-  { name: " Bomber (W)", url: "/img/AircraftBomberWIcon.png" }, // 118 AIRCRAFT SECTION
+  { name: " Bomber (W)", url: "/img/AircraftBomberWIcon.png" }, // 133 AIRCRAFT SECTION
   { name: " Bomber (C)", url: "/img/AircraftBomberCIcon.png" }, //
   { name: " Paratrooper (W)", url: "/img/AircraftParatrooperWIcon.png" }, //
   { name: " Paratrooper (C)", url: "/img/AircraftParatrooperCIcon.png" }, //  
@@ -361,7 +376,7 @@ const MiscIconArray = [
   { name: " Scout (W)", url: "/img/AircraftScoutWIcon.png" }, //
   { name: " Scout (C)", url: "/img/AircraftScoutCIcon.png" }, //
   { name: " Drop AAA", url: "/img/RequestAAA.png" }, //
-  { name: " Drop EMG", url: "/img/RequestEMG.png" }, // 130
+  { name: " Drop EMG", url: "/img/RequestEMG.png" }, // 145
 
 ];
 
