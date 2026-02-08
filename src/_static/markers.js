@@ -307,7 +307,7 @@ const MiscIconArray = [
   { name: " T1 Rifle", url: "/img/FortT1Icon.png" }, //
   { name: " T1 MG", url: "/img/FortT1MGunAIIcon.png" }, //
   { name: " T1 AT", url: "/img/FortT1ATGunAIIcon.png" }, //
-  { name: " T1 Howitzer", url: "/img/FortT2HowitzerAIIcon.png", }, //  
+  { name: " T1 Howitzer", url: "/img/FortT1HowitzerAIIcon.png", }, //  
   { name: " T2 Blank", url: "/img/FortT2GunAIIcon.png" }, //
   { name: " T2 Rifle", url: "/img/FortT2Icon.png" }, //
   { name: " T2 MG", url: "/img/FortT2MGunAIIcon.png" }, //
