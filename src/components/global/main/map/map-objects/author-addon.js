@@ -1,14 +1,18 @@
 import React from "react";
 const L = require("react-leaflet");
+import U from "../../../useful_functions";
+import { connect } from "react-redux";
 const NativeL = require("leaflet");
 
-export class AuthorAddon extends React.Component {
+class AuthorAddon_ extends React.Component {
   render() {
     if (this.props.obj) {
       const authors = this.props.obj.wip
-        .map((item) =>
-          item.request && item.request.length > 0 ? item.author : null,
-        )
+        .map((item) => {
+          if (item.request && item.request.length > 0) {
+            return U.GetUsername(this.props.users.users, item.author);
+          }
+        })
         .filter((x) => x);
       const text = authors.join("<br>");
       if (text) {
@@ -38,3 +42,11 @@ export class AuthorAddon extends React.Component {
     return null;
   }
 }
+
+const mapStateToProps = (store) => {
+  return {
+    users: store.users,
+  };
+};
+
+export const AuthorAddon = connect(mapStateToProps)(AuthorAddon_);
