@@ -71,6 +71,7 @@ function GetUser(users, id) {
 }
 ///////////////////////////////////////////////////////////////////////
 function signature(obj) {
+  if (!obj) return 0;
   if (obj.regionId == undefined) {
     return obj.x + obj.y;
   } else {
