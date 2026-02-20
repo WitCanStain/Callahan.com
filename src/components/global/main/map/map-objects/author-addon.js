@@ -14,21 +14,16 @@ class AuthorAddon_ extends React.Component {
           }
         })
         .filter((x) => x);
-      const text = authors.join("<br>");
-      if (text) {
-        const maxWidth = Math.max(...authors.map((a) => a.length));
+      if (authors.length) {
         var IconText = NativeL.divIcon({
-          className: "note_icon_txtc",
+          className: "author_icon_txtc",
           html:
-            "<div class='note_icon_text_container'><span class='note_icon_text'><b>" +
-            text +
+            "<div class='author_icon_text_container'><span class='note_icon_text'><b>" +
+            `<img src="/img/Dunne_Transport_Vehicle_Icon.png"/> ${authors.length}` +
             "</b></span></div>",
         });
-        IconText.options.iconSize = [maxWidth * 6.24 + 60, undefined];
-        IconText.options.iconAnchor = [
-          maxWidth * 3.12 + 30,
-          authors.length * 22 + 30,
-        ];
+        IconText.options.iconSize = [54, undefined];
+        IconText.options.iconAnchor = [27, 52];
         return (
           <L.Marker
             position={[this.props.obj.position.y, this.props.obj.position.x]}
