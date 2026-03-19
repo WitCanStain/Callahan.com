@@ -176,6 +176,11 @@ const FobIcon = [
     new FobIconBase({ iconUrl: `${repo}Bases/ATC-W.png` }), //ATC Tower War
   ],
   
+  [
+    new FobIconBase({ iconUrl: `${repo}Bases/MapIconsFortGarrisonStation.png` }), //Underground Neut POSITION 11
+    new FobIconBase({ iconUrl: `${repo}Bases/MapIconsFortGarrisonStationC.png` }), //Underground Col
+    new FobIconBase({ iconUrl: `${repo}Bases/MapIconsFortGarrisonStationW.png` }), //Underground War
+  ],
 ];
 
 const MiscIcon = L.Icon.extend({
