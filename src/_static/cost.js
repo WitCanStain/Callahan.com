@@ -80,7 +80,7 @@ var iteminfo = [
   [
     //Heavy Ammo 3
     { name: "950-70b Flak Ammo", i: 1, b: 60, e: 15, t: 55, src: "AmmoAAFlak.png", },
-    { name: "20mm Ammo", i: 5, b: 60, e: 15, t: 55, src: "AmmoMG20.png", },
+    { name: "Absol AA Ammo" i: 5, b: 60, e: 15, t: 55, src: "LightAAAmmoIcon.png", },
 	{ name: "120mm Arty Ammo", i: 5, b: 60, e: 15, t: 55, src: "LightArtilleryAmmoItemIcon.png", },
     { name: "150mm Arty Ammo", i: 5, b: 120, he: 10, t: 65, src: "HeavyArtilleryAmmoItemIcon.png", },
     { name: "250mm 'Purity' Ammo", i: 5, b: 120, he: 25, t: 150, src: "MortarTankIcon.png", },
@@ -200,6 +200,7 @@ var iteminfo = [
     { name: "Gallant ST", i: 1, r: 90, v: true, src: "KingGallant.png" },
     { name: "Jester ST", i: 1, r: 90, v: true, src: "ScoutTankJester.png" },
     { name: "LT", i: 1, r: 140, v: true, src: "Devitt_Mark_III_Vehicle_Icon.png", },
+    { name: "AA LT", i: 1, r: 140, v: true, src: "LightTank3WVehicleIcon.png", },	
     { name: "ULT", i: 1, r: 160, v: true, src: "Devitt_Ironhide_Mk._IV_Vehicle_Icon.png", },
     { name: "MLT", i: 1, r: 150, v: true, src: "Devitte-Caine_Mk-IV_MMR_Icon.png", },
     { name: "BT", i: 1, r: 400, v: true, src: "Flood_Mk-1_Vehicle_Icon.png" },
@@ -272,6 +273,7 @@ var iteminfo = [
     { name: "Pallet - Depth Charges", i: 60, b: 100, src: "pallet_depth_charge.png", },
     { name: "Pallet - Sea Mines", i: 60, b: 100, src: "pallet_sea_mine.png" },
     { name: "Pallet - Torpedoes", i: 60, b: 100, src: "pallet_torpedoes.png" },
+	{ name: "Pallet - Med. Torpedoes", i: 60, b: 100, src: "pallet_med_torpedoes.png" },
     { name: "Tank - Water", i: 100, b: 100, src: "liquids_blue.png" },
     { name: "Tank - Diesel", i: 100, b: 100, src: "liquids_green.png" },
     { name: "Tank - Petrol", i: 100, b: 100, src: "liquids_yellow.png" },
