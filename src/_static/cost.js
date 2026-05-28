@@ -80,7 +80,7 @@ var iteminfo = [
   [
     //Heavy Ammo 3
     { name: "950-70b Flak Ammo", i: 1, b: 60, e: 15, t: 55, src: "AmmoAAFlak.png", },
-    { name: "Absol AA Ammo" i: 5, b: 60, e: 15, t: 55, src: "LightAAAmmoIcon.png", },
+    { name: "Absol AA Ammo", i: 5, b: 60, e: 15, t: 55, src: "LightAAAmmoIcon.png", },
 	{ name: "120mm Arty Ammo", i: 5, b: 60, e: 15, t: 55, src: "LightArtilleryAmmoItemIcon.png", },
     { name: "150mm Arty Ammo", i: 5, b: 120, he: 10, t: 65, src: "HeavyArtilleryAmmoItemIcon.png", },
     { name: "250mm 'Purity' Ammo", i: 5, b: 120, he: 25, t: 150, src: "MortarTankIcon.png", },
