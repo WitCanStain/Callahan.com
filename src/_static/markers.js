@@ -379,10 +379,12 @@ const MiscIconArray = [
   { name: " Amphib. Fighter (W)", url: "/img/AircraftWaterWIcon.png" }, //
   { name: " Torpedo Plane (W)", url: "/img/AircraftTorpedoWIcon.png" }, //
   { name: " Dive Bomber (C)", url: "/img/AircraftDiveCIcon.png" }, //
-  { name: " Scout (W)", url: "/img/AircraftScoutWIcon.png" }, //
-  { name: " Scout (C)", url: "/img/AircraftScoutCIcon.png" }, //
+  { name: " Scout (W Torp.)", url: "/img/AircraftScoutWIcon.png" }, //
+  { name: " Scout (W Bomb)", url: "/img/AircraftScout2WIcon.png" }, //
+  { name: " Scout (C Torp.)", url: "/img/AircraftScout2CIcon.png" }, //    
+  { name: " Scout (C Bomb)", url: "/img/AircraftScoutCIcon.png" }, //
   { name: " Drop AAA", url: "/img/RequestAAA.png" }, //
-  { name: " Drop EMG", url: "/img/RequestEMG.png" }, // 146
+  { name: " Drop EMG", url: "/img/RequestEMG.png" }, // 148
 
 ];
 
