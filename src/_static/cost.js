@@ -40,8 +40,8 @@ var iteminfo = [
     { name: "Malone HMG", i: 5, r: 30, t: 100, src: "Malone_MG_Icon.png" },
     { name: "12.7mm HMG Ammo", i: 20, b: 100, t: 70, src: "MachineGunAmmoIcon.png", },
     { name: "Smoke Grenade", i: 15, b: 120, t: 75, src: "SmokeGrenade.png" },
-    { name: "Fragmentation Grenade", i: 20, b: 100, e: 20, t: 100, src: "GrenadeItemIcon.png", },
-    { name: "Gas Grenade", i: 10, b: 140, t: 100, src: "DeadlyGas01Icon.png" },
+    { name: "Fragmentation Grenade", i: 10, b: 100, e: 20, t: 100, src: "GrenadeItemIcon.png", },
+    { name: "Gas Grenade", i: 5, b: 140, t: 100, src: "DeadlyGas01Icon.png" },
     { name: "Cascadier Burst Pistol",  i: 40, b: 60, t: 50, src: "Burst_Pistol_Icon.png", },
     { name: "Pistol Ammo", i: 40, b: 60, t: 50, src: "PistolAmmoItemIcon.png" },
     //{i:, b:, name:"",src:""},
@@ -115,9 +115,9 @@ var iteminfo = [
     { name: "Flamer Fuel", i: 10, b: 135, he: 5, t: 50, src: "FlamePackWIcon.png", },
     { name: "Grenade Launcher", i: 20, b: 85, r: 10, src: "GrenadeAdapterIcon.png", },
     { name: "Radio", i: 5, b: 100, t: 50, src: "RadioItemIcon.png" },
-    { name: "Liason Transmitter", i: 5, b: 100, t: 50, src: "UtilityRadioAir.png" },
     { name: "Radio Backpack",i: 5,b: 150,t: 75,src: "RadioBackpackItemIcon.png",},
-    { name: "Parachute", i: 10, b: 100, t: 50, src: "Parachute.png" },	
+    { name: "Parachute", i: 10, b: 100, t: 50, src: "Parachute.png" },
+    { name: "Pilot's Mask", i: 5, b: 150, t: 50, src: "PilotMaskIcon.png" },	
     { name: "Satchel Charge",i: 5,b: 100,he: 15,t: 100,src: "SatchelCharge2.png",},
     { name: "Havoc Charge", i: 5,b: 75,he: 10,t: 100,src: "ExplosiveTripodIcon.png",},
     { name: "Havoc Detonator", i: 5, b: 75, he: 15, t: 100, src: "SatchelChargeTIcon.png", },
@@ -131,6 +131,10 @@ var iteminfo = [
     { name: "Listening Kit", i: 5, b: 120, t: 50, src: "ListeningKitIcon.png" },
     { name: "Wind Sock", i: 5, b: 120, t: 50, src: "WindsockItemIcon.png" },
     { name: "War Ensign", i: 5, b: 120, t: 50, src: "BannerTWItemIcon.png" },
+    { name: "Naval Buoy", i: 5, b: 150, t: 50, src: "WaterWallItemIcon.png" },
+    { name: "Air Raid Siren", i: 5, b: 150, t: 50, src: "AirSirenTIcon.png" },
+	
+	
 
     //{i:, b:, name:"",src:""},
   ],
