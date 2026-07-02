@@ -74,6 +74,7 @@ var iteminfo = [
     { name: "Flask AT Grenade", i: 10, b: 100, e: 40, t: 75, src: "WhiteAsh.png", },
     { name: "Launched AT Grenade", i: 20, b: 100, e: 40, t: 75, src: "GrenadeATVarsi.png", },
     { name: "30mm Ammo", i: 20, b: 80, e: 20, t: 100, src: "MiniTankAmmoItemIcon.png", },
+	{ name: "Naval Buoy", i: 5, b: 150, t: 50, src: "WaterWallItemIcon.png" },
     //{i:, b:, name:"",src:""},
   ],
 
@@ -131,7 +132,6 @@ var iteminfo = [
     { name: "Listening Kit", i: 5, b: 120, t: 50, src: "ListeningKitIcon.png" },
     { name: "Wind Sock", i: 5, b: 120, t: 50, src: "WindsockItemIcon.png" },
     { name: "War Ensign", i: 5, b: 120, t: 50, src: "BannerTWItemIcon.png" },
-    { name: "Naval Buoy", i: 5, b: 150, t: 50, src: "WaterWallItemIcon.png" },
     { name: "Air Raid Siren", i: 5, b: 150, t: 50, src: "AirSirenTIcon.png" },
 	
 	
