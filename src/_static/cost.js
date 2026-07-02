@@ -74,7 +74,6 @@ var iteminfo = [
     { name: "Flask AT Grenade", i: 10, b: 100, e: 40, t: 75, src: "WhiteAsh.png", },
     { name: "Launched AT Grenade", i: 20, b: 100, e: 40, t: 75, src: "GrenadeATVarsi.png", },
     { name: "30mm Ammo", i: 20, b: 80, e: 20, t: 100, src: "MiniTankAmmoItemIcon.png", },
-	{ name: "Naval Buoy", i: 5, b: 150, t: 50, src: "WaterWallItemIcon.png" },
     //{i:, b:, name:"",src:""},
   ],
 
@@ -99,6 +98,7 @@ var iteminfo = [
 	{ name: "'Hullbreaker' Sea Mine", i: 5, b: 120, he: 25, t: 150, src: "SeaMineSurface.png" },
     { name: "Depth Charge", i: 1, b: 120, he: 25, t: 150, src: "DepthChargeIcon.png", },
 	{ name: "'Quillback' Mini Torpedo", i: 5, b: 120, he: 25, t: 150, src: "TorpedoMini.png", },
+	{ name: "Naval Buoy", i: 5, b: 150, t: 50, src: "WaterWallItemIcon.png" },
     //{i:, b:, name:"",src:""},
   ],
 
