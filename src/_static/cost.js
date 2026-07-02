@@ -40,8 +40,8 @@ var iteminfo = [
     { name: "Malone HMG", i: 5, r: 30, t: 100, src: "Malone_MG_Icon.png" },
     { name: "12.7mm HMG Ammo", i: 20, b: 100, t: 70, src: "MachineGunAmmoIcon.png", },
     { name: "Smoke Grenade", i: 15, b: 120, t: 75, src: "SmokeGrenade.png" },
-    { name: "Fragmentation Grenade", i: 10, b: 100, e: 20, t: 100, src: "GrenadeItemIcon.png", },
-    { name: "Gas Grenade", i: 5, b: 140, t: 100, src: "DeadlyGas01Icon.png" },
+    { name: "Fragmentation Grenade", i: 20, b: 100, e: 20, t: 100, src: "GrenadeItemIcon.png", },
+    { name: "Gas Grenade", i: 10, b: 140, t: 100, src: "DeadlyGas01Icon.png" },
     { name: "Cascadier Burst Pistol",  i: 40, b: 60, t: 50, src: "Burst_Pistol_Icon.png", },
     { name: "Pistol Ammo", i: 40, b: 60, t: 50, src: "PistolAmmoItemIcon.png" },
     //{i:, b:, name:"",src:""},
@@ -80,7 +80,7 @@ var iteminfo = [
   [
     //Heavy Ammo 3
     { name: "950-70b Flak Ammo", i: 1, b: 60, e: 15, t: 55, src: "AmmoAAFlak.png", },
-	{ name: "20mm Ammo", i: 5, b: 60, e: 15, t: 55, src: "AmmoMG20.png", },
+	{ name: "20mm Ammo", i: 5, b: 60, e: 15, t: 55, src: "AircraftAmmoIcon.png", },
     { name: "Absol AA Ammo", i: 5, b: 60, e: 15, t: 55, src: "LightAAAmmoIcon.png", },
 	{ name: "120mm Arty Ammo", i: 5, b: 60, e: 15, t: 55, src: "LightArtilleryAmmoItemIcon.png", },
     { name: "150mm Arty Ammo", i: 5, b: 120, he: 10, t: 65, src: "HeavyArtilleryAmmoItemIcon.png", },
