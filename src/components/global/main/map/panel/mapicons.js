@@ -248,6 +248,11 @@ class MapIcons_ extends React.Component {
                   if(display.objectives.runwayst2) {
                     iconlist.push(this.GetIcon(obj,region))
                   }
+                  break;
+				case 97://ANTI-AIRCRAFT GUN
+                  if(display.objectives.aaguns) {
+                    iconlist.push(this.GetIcon(obj,region))
+                  }
                   break;				  
               //RESOURCE SECTION/////////////////////
                 case 20:

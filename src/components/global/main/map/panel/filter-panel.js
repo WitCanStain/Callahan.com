@@ -35,6 +35,7 @@ function FilterPanel_(props) {
 					<LGC cat='objectives' item='techcenters' name=' Tech Centers' src={ repo + 'MapIconTechCenter.png' }/>
 					<LGC cat='objectives' item='seaports' name=' Seaports' src={ repo + 'MapIconSeaport.png' }/>
 					<LGC cat='objectives' item='coastalguns' name=' Coastal Guns' src={ repo + 'MapIconCoastalGun.png' }/>
+					<LGC cat='objectives' item='aaguns' name=' AA Guns' src={ repo + 'MapIconAAGunAI.png' }/>					
 					<LGC cat='objectives' item='stormcannons' name=' Storm Cannons' src={ repo + 'MapIconStormcannon.png' }/>
 					<LGC cat='objectives' item='intelcenters' name=' Intel Centers' src={ repo + 'MapIconIntelcenter.png' }/>
 					<LGC cat='objectives' item='wstations' name=' Weather Centers' src={ repo + 'MapIconWeatherStation.png' }/>

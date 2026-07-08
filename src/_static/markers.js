@@ -672,6 +672,16 @@ const icons = [
     c: "Bases/MapiIconAircraftRunwayT2C.png",
     w: "Bases/MapiIconAircraftRunwayT2W.png",
   }, //92 AIRFIELD T2
+  
+  "", //93
+  "", //94
+  "", //95
+  "", //96  
+  {
+    n: "Bases/MapIconAAGunAI.png",
+    c: "Bases/MapIconAAGunAIC.png.png",
+    w: "Bases/MapIconAAGunAIW.png.png",
+  }, //97 ANTI-AIRCRAFT GUN
 
   // RELIC BASES
   /* {n:'',
@@ -795,6 +805,7 @@ function GenerateIcon(obj, param) {
 	  case 90:
 	  case 91:
 	  case 92:
+	  case 97:
         if (param == "min") {
           iconUrl = icons[obj.iconType].min[obj.teamId[0].toLowerCase()];
         } else {
