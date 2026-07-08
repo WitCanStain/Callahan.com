@@ -14,7 +14,7 @@ const initialState = {
 		techcenters: true,
 		seaports: true,
 		coastalguns: true,
-		aaguns; true,
+		aaguns: true,
 		stormcannons: true,
 		intelcenters: true,
 		wstations: true,
