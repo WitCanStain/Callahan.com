@@ -679,8 +679,8 @@ const icons = [
   "", //96  
   {
     n: "Bases/MapIconAAGunAI.png",
-    c: "Bases/MapIconAAGunAIC.png.png",
-    w: "Bases/MapIconAAGunAIW.png.png",
+    c: "Bases/MapIconAAGunAIC.png",
+    w: "Bases/MapIconAAGunAIW.png",
   }, //97 ANTI-AIRCRAFT GUN
 
   // RELIC BASES
