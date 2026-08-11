@@ -72,15 +72,20 @@ class RequestIcon_ extends React.Component {
   if(this.CheckCompleted()){
     icon=markers.RequestIcon.complete
   }
-  return(
-    <L.Marker ref={this.markerRef} 
-              position={[request.position.y,request.position.x]} 
-              icon={icon} 
-              onClick={()=>this.SelectRequest(this.props.request)}
-              draggable={true} 
-              onDragend={(e)=>this.handleDragEnd(e)}>
-      </L.Marker>
+  try {
+    return (
+      <L.Marker ref={this.markerRef} 
+                position={[request.position.y,request.position.x]} 
+                icon={icon} 
+                onClick={()=>this.SelectRequest(this.props.request)}
+                draggable={true} 
+                onDragend={(e)=>this.handleDragEnd(e)}>
+        </L.Marker>
       )
+    }    
+  } catch (error) {
+    console.error(error)
+    return null
   }
 }
 
